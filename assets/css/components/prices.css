@@ -1,0 +1,148 @@
+.prices {
+  padding-block: var(--section-fade);
+  background: var(--color-cutout);
+}
+
+.prices__inner {
+  width: min(100% - (var(--section-padding-inline) * 2), var(--container-width));
+  margin-inline: auto;
+}
+
+.prices__lead {
+  margin: 0 0 0.75rem;
+  max-width: 44rem;
+  color: var(--color-text-muted);
+}
+
+.prices__geo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.prices__geo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.95rem 1rem;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-light);
+}
+
+.prices__geo-icon {
+  display: inline-flex;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.prices__geo-label {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.prices__geo-value {
+  display: block;
+  margin-top: 0.15rem;
+  font-family: var(--font-headline);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.prices__board {
+  margin-top: 0.5rem;
+}
+
+.prices__columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.prices__column {
+  padding: 1.35rem;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-soft);
+}
+
+.prices__column-head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.85rem;
+}
+
+.prices__column-icon {
+  width: 3.75rem;
+  height: 3.75rem;
+  object-fit: contain;
+}
+
+.prices__column-title {
+  display: block;
+  font-family: var(--font-headline);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.prices__column-price {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.prices__column-price span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.prices__desc {
+  margin: 0 0 0.85rem;
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-muted);
+}
+
+.prices__list-title {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-headline);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.prices__includes {
+  margin: 0 0 0.85rem;
+  padding-left: 1.1rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body-sm);
+}
+
+.prices__includes li + li {
+  margin-top: 0.25rem;
+}
+
+.prices__footnote {
+  margin: 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border-light);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 40rem) {
+  .prices__geo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .prices__columns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
