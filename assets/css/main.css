@@ -1,0 +1,24 @@
+@import url("./base/reset.css");
+@import url("./base/root.css");
+@import url("./base/typography.css");
+@import url("./base/base.css");
+
+@import url("./layout/container.css");
+
+@import url("./utilities/visually-hidden.css");
+
+@import url("./components/button.css");
+@import url("./components/icons.css");
+@import url("./components/header.css");
+@import url("./components/mobile-menu.css");
+@import url("./components/hero.css");
+@import url("./components/about.css");
+@import url("./components/advantages.css");
+@import url("./components/services.css");
+@import url("./components/prices.css");
+@import url("./components/steps.css");
+@import url("./components/perks.css");
+@import url("./components/reviews.css");
+@import url("./components/faq.css");
+@import url("./components/contact.css");
+@import url("./components/footer.css");
