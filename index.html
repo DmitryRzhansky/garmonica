@@ -48,12 +48,16 @@
         <div class="hero-header__logo-wrap">
           <a class="hero-header__logo" href="#top" aria-label="Гармоника — на главную">
             <img
-              class="hero-header__logo-img"
+              class="hero-header__logo-mark"
               src="assets/images/logo.png"
-              alt="Гармоника — наркологическая клиника"
-              width="360"
-              height="200"
+              alt=""
+              width="64"
+              height="64"
             >
+            <span class="hero-header__logo-text">
+              <span class="hero-header__logo-name">Гармоника</span>
+              <span class="hero-header__logo-tag">наркологическая клиника</span>
+            </span>
           </a>
         </div>
 
@@ -147,10 +151,6 @@
       <section class="hero" aria-label="Главный экран клиники Гармоника">
         <div class="hero__inner">
           <div class="hero__content">
-            <p class="hero__badge">
-              <img class="hero__badge-icon" src="assets/icons/leaf.svg" alt="" width="14" height="14" decoding="async">
-              Наркологическая клиника «Гармоника»
-            </p>
             <h1 class="hero__title">
               Путь к восстановлению начинается с&nbsp;<span class="hero__title-accent">заботы и ясности</span>
             </h1>
@@ -210,7 +210,6 @@
       <section class="about" id="about" aria-labelledby="about-title">
         <div class="about__inner">
           <div class="about__content">
-            <p class="about__label">О клинике</p>
             <h2 class="about__title" id="about-title">
               «Гармоника» — поддержка, когда важно действовать спокойно и вовремя
             </h2>
@@ -309,7 +308,6 @@
       <section class="services" id="services" aria-labelledby="services-title">
         <div class="services__inner">
           <header class="section__header">
-            <p class="section__label">Услуги</p>
             <h2 class="section__title" id="services-title">Помощь «Гармоники» под вашу ситуацию</h2>
           </header>
           <p class="services__intro">
@@ -411,7 +409,6 @@
       <section class="prices" id="prices" aria-labelledby="prices-title">
         <div class="prices__inner">
           <header class="section__header">
-            <p class="section__label">Стоимость</p>
             <h2 class="section__title" id="prices-title">Цены на помощь в «Гармонике»</h2>
           </header>
           <p class="prices__lead">
@@ -543,7 +540,6 @@
       <section class="steps" id="steps" aria-labelledby="steps-title">
         <div class="steps__inner">
           <header class="section__header">
-            <p class="section__label">Как это работает</p>
             <h2 class="section__title" id="steps-title">Три шага к помощи в «Гармонике»</h2>
             <p class="section__lead">
               Простой порядок действий — чтобы в стрессовой ситуации было понятно, что делать дальше.
@@ -605,7 +601,6 @@
       <section class="perks" id="perks" aria-labelledby="perks-title">
         <div class="perks__inner">
           <header class="section__header">
-            <p class="section__label">Почему «Гармоника»</p>
             <h2 class="section__title" id="perks-title">То, на что семьи опираются в первые часы</h2>
           </header>
           <ul class="perks__grid" role="list">
@@ -633,73 +628,246 @@
         </div>
       </section>
 
-      <section class="reviews" id="reviews" aria-labelledby="reviews-title">
+      <section class="reviews" id="reviews" data-reviews aria-labelledby="reviews-title">
+        <input class="reviews__tab-input" type="radio" name="reviews-tab" id="reviews-tab-yandex" data-reviews-tab="yandex" checked>
+        <input class="reviews__tab-input" type="radio" name="reviews-tab" id="reviews-tab-2gis" data-reviews-tab="2gis">
+        <input class="reviews__tab-input" type="radio" name="reviews-tab" id="reviews-tab-google" data-reviews-tab="google">
+
         <div class="reviews__inner">
-          <header class="section__header">
-            <p class="section__label">Отзывы</p>
-            <h2 class="section__title" id="reviews-title">Что говорят о работе «Гармоники»</h2>
-          </header>
-          <ul class="reviews__grid" role="list">
-            <li>
-              <article class="reviews__card">
-                <div class="reviews__stars" aria-label="Оценка 5 из 5">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                </div>
-                <p class="reviews__text">
-                  Вызвали врача ночью. Приехали, спокойно объяснили, что можно сделать дома,
-                  и согласовали стоимость до капельницы. Чувствовалось, что нас не «продают»,
-                  а действительно разбираются в ситуации.
-                </p>
-                <p class="reviews__author">Алексей</p>
-                <p class="reviews__meta">Вызов на дом · Москва</p>
-              </article>
-            </li>
-            <li>
-              <article class="reviews__card">
-                <div class="reviews__stars" aria-label="Оценка 5 из 5">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                </div>
-                <p class="reviews__text">
-                  После осмотра рекомендовали стационар — и помогли организовать всё без хаоса.
-                  В клинике держали в курсе, отвечали на вопросы. Для семьи это было важно.
-                </p>
-                <p class="reviews__author">Игорь</p>
-                <p class="reviews__meta">Госпитализация · «Гармоника»</p>
-              </article>
-            </li>
-            <li>
-              <article class="reviews__card">
-                <div class="reviews__stars" aria-label="Оценка 5 из 5">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                  <img class="reviews__star" src="assets/icons/star.svg" alt="" width="16" height="16" decoding="async">
-                </div>
-                <p class="reviews__text">
-                  Понравилось, что сразу сказали рамки: что входит в выезд, что будет стоить
-                  дополнительно. После помощи дали понятные рекомендации, что делать дальше.
-                </p>
-                <p class="reviews__author">Дмитрий</p>
-                <p class="reviews__meta">Детоксикация на дому</p>
-              </article>
-            </li>
-          </ul>
+          <div class="reviews__header">
+            <h2 class="reviews__title" id="reviews-title">Отзывы о клинике «Гармоника»</h2>
+            <div class="reviews__filters" role="tablist" aria-label="Источники отзывов">
+              <label class="reviews__filter" for="reviews-tab-yandex" data-reviews-filter="yandex">
+                <img class="reviews__filter-icon" src="assets/icons/reviews/yandex.webp" alt="" width="16" height="16" decoding="async">
+                <span>Яндекс Карты</span>
+              </label>
+              <label class="reviews__filter" for="reviews-tab-2gis" data-reviews-filter="2gis">
+                <img class="reviews__filter-icon" src="assets/icons/reviews/2gis.webp" alt="" width="16" height="16" decoding="async">
+                <span>2ГИС</span>
+              </label>
+              <label class="reviews__filter" for="reviews-tab-google" data-reviews-filter="google">
+                <img class="reviews__filter-icon" src="assets/icons/reviews/google.webp" alt="" width="16" height="16" decoding="async">
+                <span>Гугл Карты</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="reviews__slider" data-reviews-slider>
+
+            <div class="reviews__panel" data-reviews-panel="yandex" role="tabpanel">
+              <div class="reviews__viewport">
+                <ul class="reviews__track" role="list" data-reviews-track>
+
+                <li class="reviews__slide">
+                  <article class="reviews__card">
+                    <div class="reviews__card-top">
+                      <span class="reviews__avatar" aria-hidden="true">Д</span>
+                      <div class="reviews__person">
+                        <p class="reviews__name">Дмитрий</p>
+                      </div>
+                    </div>
+                    <div class="reviews__rating">
+                      <p class="reviews__stars" aria-label="Оценка 5 из 5">★★★★★</p>
+                      <p class="reviews__date">14 января</p>
+                    </div>
+                    <p class="reviews__text">До этого уже сталкивался с клиникой, где по телефону называли одну сумму, а на месте начинался другой разговор. В «Гармонике» сначала озвучили стоимость выезда, а окончательный объём помощи согласовали после осмотра.</p>
+                    <span class="reviews__original">Читать оригинал</span>
+                  </article>
+                </li>
+                <li class="reviews__slide">
+                  <article class="reviews__card">
+                    <div class="reviews__card-top">
+                      <span class="reviews__avatar reviews__avatar--brown" aria-hidden="true">А</span>
+                      <div class="reviews__person">
+                        <p class="reviews__name">Андрей</p>
+                      </div>
+                    </div>
+                    <div class="reviews__rating">
+                      <p class="reviews__stars" aria-label="Оценка 5 из 5">★★★★★</p>
+                      <p class="reviews__date">5 января</p>
+                    </div>
+                    <p class="reviews__text">Нужна была помощь ночью. Оператор сразу сказал, какие симптомы важно озвучить врачу. После визита остались рекомендации, а не просто «процедуру сделали и уехали».</p>
+                    <span class="reviews__original">Читать оригинал</span>
+                  </article>
+                </li>
+                <li class="reviews__slide">
+                  <article class="reviews__card">
+                    <div class="reviews__card-top">
+                      <span class="reviews__avatar reviews__avatar--violet" aria-hidden="true">И</span>
+                      <div class="reviews__person">
+                        <p class="reviews__name">Игорь</p>
+                      </div>
+                    </div>
+                    <div class="reviews__rating">
+                      <p class="reviews__stars" aria-label="Оценка 5 из 5">★★★★★</p>
+                      <p class="reviews__date">22 декабря</p>
+                    </div>
+                    <p class="reviews__text">Обратился из-за повторной ситуации у брата. Врач не обещал, что один выезд решит проблему, а отдельно объяснил, что относится к помощи сейчас, а что требует дальнейшего лечения.</p>
+                    <span class="reviews__original">Читать оригинал</span>
+                  </article>
+                </li>
+                <li class="reviews__slide">
+                  <article class="reviews__card">
+                    <div class="reviews__card-top">
+                      <span class="reviews__avatar reviews__avatar--green" aria-hidden="true">С</span>
+                      <div class="reviews__person">
+                        <p class="reviews__name">Сергей</p>
+                      </div>
+                    </div>
+                    <div class="reviews__rating">
+                      <p class="reviews__stars" aria-label="Оценка 5 из 5">★★★★★</p>
+                      <p class="reviews__date">11 декабря</p>
+                    </div>
+                    <p class="reviews__text">При оформлении заявки уточнили адрес и заранее сориентировали по условиям выезда. Для меня было важно понимать это до приезда специалиста.</p>
+                    <span class="reviews__original">Читать оригинал</span>
+                  </article>
+                </li>
+                </ul>
+              </div>
+              <div class="reviews__controls">
+                <button class="reviews__nav reviews__nav--prev" type="button" data-reviews-prev aria-label="Предыдущие отзывы">
+                  <img class="reviews__nav-icon" src="assets/icons/arrow-right.svg" alt="" width="16" height="16" decoding="async">
+                </button>
+                <button class="reviews__nav reviews__nav--next" type="button" data-reviews-next aria-label="Следующие отзывы">
+                  <img class="reviews__nav-icon" src="assets/icons/arrow-right.svg" alt="" width="16" height="16" decoding="async">
+                </button>
+              </div>
+            </div>
+
+            <div class="reviews__panel" data-reviews-panel="2gis" role="tabpanel">
+              <div class="reviews__viewport">
+                <ul class="reviews__track" role="list" data-reviews-track>
+
+                <li class="reviews__slide">
+                  <article class="reviews__card">
+                    <div class="reviews__card-top">
+                      <span class="reviews__avatar" aria-hidden="true">М</span>
+                      <div class="reviews__person">
+                        <p class="reviews__name">Максим</p>
+                      </div>
+                    </div>
+                    <div class="reviews__rating">
+                      <p class="reviews__stars" aria-label="Оценка 5 из 5">★★★★★</p>
+                      <p class="reviews__date">3 февраля</p>
+                    </div>
+                    <p class="reviews__text">Вызвали на дом утром. Приехали без задержек, спокойно объяснили варианты и согласовали стоимость до начала процедур.</p>
+                    <span class="reviews__original">Читать оригинал</span>
+                  </article>
+                </li>
+                <li class="reviews__slide">
+                  <article class="reviews__card">
+                    <div class="reviews__card-top">
+                      <span class="reviews__avatar reviews__avatar--orange" aria-hidden="true">П</span>
+                      <div class="reviews__person">
+                        <p class="reviews__name">Павел</p>
+                      </div>
+                    </div>
+                    <div class="reviews__rating">
+                      <p class="reviews__stars" aria-label="Оценка 5 из 5">★★★★★</p>
+                      <p class="reviews__date">28 января</p>
+                    </div>
+                    <p class="reviews__text">Перевели брата в стационар «Гармоники». Держали в курсе, отвечали на вопросы. Для семьи это было очень важно.</p>
+                    <span class="reviews__original">Читать оригинал</span>
+                  </article>
+                </li>
+                <li class="reviews__slide">
+                  <article class="reviews__card">
+                    <div class="reviews__card-top">
+                      <span class="reviews__avatar reviews__avatar--brown" aria-hidden="true">Н</span>
+                      <div class="reviews__person">
+                        <p class="reviews__name">Николай</p>
+                      </div>
+                    </div>
+                    <div class="reviews__rating">
+                      <p class="reviews__stars" aria-label="Оценка 5 из 5">★★★★★</p>
+                      <p class="reviews__date">19 января</p>
+                    </div>
+                    <p class="reviews__text">Понравилось, что сразу сказали рамки: что входит в выезд и что будет стоить дополнительно.</p>
+                    <span class="reviews__original">Читать оригинал</span>
+                  </article>
+                </li>
+                </ul>
+              </div>
+              <div class="reviews__controls">
+                <button class="reviews__nav reviews__nav--prev" type="button" data-reviews-prev aria-label="Предыдущие отзывы">
+                  <img class="reviews__nav-icon" src="assets/icons/arrow-right.svg" alt="" width="16" height="16" decoding="async">
+                </button>
+                <button class="reviews__nav reviews__nav--next" type="button" data-reviews-next aria-label="Следующие отзывы">
+                  <img class="reviews__nav-icon" src="assets/icons/arrow-right.svg" alt="" width="16" height="16" decoding="async">
+                </button>
+              </div>
+            </div>
+
+            <div class="reviews__panel" data-reviews-panel="google" role="tabpanel">
+              <div class="reviews__viewport">
+                <ul class="reviews__track" role="list" data-reviews-track>
+
+                <li class="reviews__slide">
+                  <article class="reviews__card">
+                    <div class="reviews__card-top">
+                      <span class="reviews__avatar" aria-hidden="true">Р</span>
+                      <div class="reviews__person">
+                        <p class="reviews__name">Роман</p>
+                      </div>
+                    </div>
+                    <div class="reviews__rating">
+                      <p class="reviews__stars" aria-label="Оценка 5 из 5">★★★★★</p>
+                      <p class="reviews__date">8 февраля</p>
+                    </div>
+                    <p class="reviews__text">Обратился после срыва. В клинике спокойно объяснили маршрут: сначала стабилизация, потом план дальше. Без давления.</p>
+                    <span class="reviews__original">Читать оригинал</span>
+                  </article>
+                </li>
+                <li class="reviews__slide">
+                  <article class="reviews__card">
+                    <div class="reviews__card-top">
+                      <span class="reviews__avatar reviews__avatar--violet" aria-hidden="true">В</span>
+                      <div class="reviews__person">
+                        <p class="reviews__name">Виктор</p>
+                      </div>
+                    </div>
+                    <div class="reviews__rating">
+                      <p class="reviews__stars" aria-label="Оценка 5 из 5">★★★★★</p>
+                      <p class="reviews__date">30 января</p>
+                    </div>
+                    <p class="reviews__text">Вызов ночью, всё прошло аккуратно и конфиденциально. После помощи дали понятные рекомендации.</p>
+                    <span class="reviews__original">Читать оригинал</span>
+                  </article>
+                </li>
+                <li class="reviews__slide">
+                  <article class="reviews__card">
+                    <div class="reviews__card-top">
+                      <span class="reviews__avatar reviews__avatar--green" aria-hidden="true">Е</span>
+                      <div class="reviews__person">
+                        <p class="reviews__name">Евгений</p>
+                      </div>
+                    </div>
+                    <div class="reviews__rating">
+                      <p class="reviews__stars" aria-label="Оценка 5 из 5">★★★★★</p>
+                      <p class="reviews__date">17 января</p>
+                    </div>
+                    <p class="reviews__text">Цена совпала с тем, что озвучили по телефону. Это редкость, поэтому отдельно отмечу.</p>
+                    <span class="reviews__original">Читать оригинал</span>
+                  </article>
+                </li>
+                </ul>
+              </div>
+              <div class="reviews__controls">
+                <button class="reviews__nav reviews__nav--prev" type="button" data-reviews-prev aria-label="Предыдущие отзывы">
+                  <img class="reviews__nav-icon" src="assets/icons/arrow-right.svg" alt="" width="16" height="16" decoding="async">
+                </button>
+                <button class="reviews__nav reviews__nav--next" type="button" data-reviews-next aria-label="Следующие отзывы">
+                  <img class="reviews__nav-icon" src="assets/icons/arrow-right.svg" alt="" width="16" height="16" decoding="async">
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="faq" id="faq" aria-labelledby="faq-title" data-faq>
         <div class="faq__inner">
           <header class="section__header">
-            <p class="section__label">FAQ</p>
             <h2 class="section__title" id="faq-title">Частые вопросы о клинике «Гармоника»</h2>
           </header>
           <div class="faq__list">
@@ -788,119 +956,262 @@
         </div>
       </section>
 
-      <section class="contact" id="contact" aria-labelledby="contact-title">
-        <div class="contact__inner">
-          <div class="contact__content">
-            <header class="section__header">
-              <p class="section__label">Контакты</p>
-              <h2 class="section__title" id="contact-title">Связаться с клиникой «Гармоника»</h2>
-              <p class="section__lead">
-                Позвоните или оставьте заявку — перезвоним, уточним ситуацию и подскажем
-                ближайший доступный формат помощи.
+      <section
+        class="contact-section"
+        id="contact"
+        aria-labelledby="request-form-title"
+      >
+        <div class="contact-section__inner">
+          <div class="contact-section__form-panel">
+            <form
+              class="request-form"
+              id="request-form"
+              data-request-form
+              action="#"
+              method="post"
+              novalidate
+              aria-labelledby="request-form-title"
+            >
+              <span class="request-form__title" id="request-form-title">
+                Вызовите врача «Гармоники»
+              </span>
+              <p class="request-form__text">
+                Оставьте заявку — оператор свяжется, уточнит адрес и согласует
+                выезд. Работаем круглосуточно, конфиденциально.
               </p>
-            </header>
 
-            <ul class="contact__info-list" role="list">
-              <li>
-                <address class="contact__info-item">
-                  <img class="contact__info-icon" src="assets/icons/phone.svg" alt="" width="20" height="20" decoding="async">
-                  <span>
-                    <span class="contact__info-label">Телефон</span>
-                    <a class="contact__info-value" href="tel:+74951204567">+7 (495) 120-45-67</a>
+              <div
+                class="request-form__error-summary"
+                data-form-error-summary
+                role="alert"
+                tabindex="-1"
+                hidden
+              ></div>
+
+              <div
+                class="request-form__success"
+                data-form-success
+                role="status"
+                tabindex="-1"
+                hidden
+              ></div>
+
+              <div class="request-form__fields">
+                <label class="request-form__field" for="request-name">
+                  <span class="visually-hidden">Имя</span>
+                  <input
+                    id="request-name"
+                    name="name"
+                    type="text"
+                    placeholder="Имя"
+                    autocomplete="given-name"
+                    data-required
+                    data-label="Имя"
+                  >
+                  <span class="request-form__error" data-field-error hidden></span>
+                </label>
+
+                <label class="request-form__field" for="request-lastname">
+                  <span class="visually-hidden">Фамилия</span>
+                  <input
+                    id="request-lastname"
+                    name="lastname"
+                    type="text"
+                    placeholder="Фамилия"
+                    autocomplete="family-name"
+                    data-required
+                    data-label="Фамилия"
+                  >
+                  <span class="request-form__error" data-field-error hidden></span>
+                </label>
+
+                <label class="request-form__field request-form__field--icon" for="request-phone">
+                  <span class="visually-hidden">Телефон</span>
+                  <span class="request-form__field-icon" aria-hidden="true">
+                    <img src="assets/icons/contact/phone.svg" alt="" width="16" height="16" decoding="async">
                   </span>
-                </address>
-              </li>
-              <li>
-                <p class="contact__info-item">
-                  <img class="contact__info-icon" src="assets/icons/clock.svg" alt="" width="20" height="20" decoding="async">
-                  <span>
-                    <span class="contact__info-label">Режим</span>
-                    <span class="contact__info-value">Круглосуточно, без выходных</span>
+                  <input
+                    id="request-phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="+7 (000) 000-00-00"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    data-required
+                    data-label="Телефон"
+                  >
+                  <span class="request-form__error" data-field-error hidden></span>
+                </label>
+
+                <label class="request-form__field request-form__field--icon" for="request-email">
+                  <span class="visually-hidden">Электронная почта</span>
+                  <span class="request-form__field-icon" aria-hidden="true">
+                    <img src="assets/icons/contact/envelope.svg" alt="" width="16" height="16" decoding="async">
                   </span>
-                </p>
-              </li>
-              <li>
-                <address class="contact__info-item">
-                  <img class="contact__info-icon" src="assets/icons/map-pin.svg" alt="" width="20" height="20" decoding="async">
-                  <span>
-                    <span class="contact__info-label">Зона работы</span>
-                    <span class="contact__info-value">Москва и Московская область</span>
-                  </span>
-                </address>
-              </li>
-              <li>
-                <p class="contact__info-item">
-                  <img class="contact__info-icon" src="assets/icons/envelope.svg" alt="" width="20" height="20" decoding="async">
-                  <span>
-                    <span class="contact__info-label">Почта</span>
-                    <a class="contact__info-value" href="mailto:info@garmonica-clinic.ru">info@garmonica-clinic.ru</a>
-                  </span>
-                </p>
-              </li>
-            </ul>
+                  <input
+                    id="request-email"
+                    name="email"
+                    type="email"
+                    placeholder="Электронная почта"
+                    autocomplete="email"
+                    data-required
+                    data-label="Электронная почта"
+                  >
+                  <span class="request-form__error" data-field-error hidden></span>
+                </label>
+
+                <label class="request-form__field request-form__field--wide" for="request-details">
+                  <span class="visually-hidden">Детали заявки</span>
+                  <textarea
+                    id="request-details"
+                    name="details"
+                    rows="3"
+                    placeholder="Адрес, что случилось и удобное время для связи"
+                  ></textarea>
+                </label>
+              </div>
+
+              <div class="request-form__honeypot" aria-hidden="true">
+                <label for="request-website">Сайт</label>
+                <input
+                  id="request-website"
+                  name="website"
+                  type="text"
+                  tabindex="-1"
+                  autocomplete="off"
+                >
+              </div>
+
+              <label class="request-form__consent" for="request-consent">
+                <input id="request-consent" name="consent" type="checkbox" required>
+                <span class="request-form__consent-text">
+                  Даю согласие на
+                  <a class="request-form__consent-link" href="#">
+                    обработку персональных данных
+                  </a>
+                </span>
+              </label>
+
+              <button class="request-form__button" type="submit">
+                <svg class="request-form__button-icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" width="16" height="16"><path d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.49,29.8L102,154l41.3,84.87A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14,0-.07-40.06-82.3,48-48a8,8,0,0,0-11.31-11.31l-48,48L24.08,98.25l-.07,0,.14,0L216,40Z"/></svg>
+                Отправить заявку
+              </button>
+            </form>
           </div>
 
-          <form class="contact__form" action="#" method="post" data-contact-form>
-            <h3 class="contact__form-title">Заявка на обратный звонок</h3>
-            <p class="contact__form-note">
-              Демо-форма без бэкенда: данные никуда не отправляются. Для реальной помощи звоните в клинику.
-            </p>
+          <div class="contact-section__info-panel">
+            <div class="contact-info">
+              <span class="contact-info__title">Как связаться</span>
 
-            <div class="contact__field">
-              <label class="contact__label" for="contact-name">Имя</label>
-              <input
-                class="contact__input"
-                id="contact-name"
-                name="name"
-                type="text"
-                autocomplete="name"
-                required
-              >
+              <div class="contact-info__grid">
+                <div class="contact-info__column">
+                  <div class="contact-info__item">
+                    <span class="contact-info__label">Адрес:</span>
+                    <address class="contact-info__value">
+                      Москва и область · выезд на дом и приём в клинике
+                    </address>
+                  </div>
+
+                  <div class="contact-info__item">
+                    <span class="contact-info__label">Часы работы:</span>
+                    <p class="contact-info__value">Круглосуточно 24/7</p>
+                  </div>
+                </div>
+
+                <div class="contact-info__column">
+                  <div class="contact-info__item">
+                    <span class="contact-info__label">Телефон и почта:</span>
+                    <p class="contact-info__value">
+                      <a href="tel:+74951204567">+7 (495) 120-45-67</a>
+                    </p>
+                    <p class="contact-info__value">
+                      <a href="mailto:info@garmonica-clinic.ru">info@garmonica-clinic.ru</a>
+                    </p>
+                  </div>
+
+                  <div class="contact-info__item">
+                    <span class="contact-info__label">Мессенджеры:</span>
+                    <ul class="contact-info__messengers" role="list">
+                      <li>
+                        <a
+                          class="contact-info__messenger"
+                          href="https://t.me/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            class="contact-info__messenger-icon"
+                            src="assets/icons/messengers/telegram.png"
+                            alt=""
+                            width="18"
+                            height="18"
+                            decoding="async"
+                          >
+                          Телеграм
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="contact-info__messenger"
+                          href="https://max.ru/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            class="contact-info__messenger-icon"
+                            src="assets/icons/messengers/max.png"
+                            alt=""
+                            width="18"
+                            height="18"
+                            decoding="async"
+                          >
+                          Макс
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="contact-info__messenger"
+                          href="https://wa.me/74951204567"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            class="contact-info__messenger-icon"
+                            src="assets/icons/messengers/whatsapp.svg"
+                            alt=""
+                            width="18"
+                            height="18"
+                            decoding="async"
+                          >
+                          Ватсап
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-info__map">
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/?ll=37.617635%2C55.755814&z=11"
+                  title="Карта зоны работы клиники Гармоника"
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
             </div>
-
-            <div class="contact__field">
-              <label class="contact__label" for="contact-phone">Телефон</label>
-              <input
-                class="contact__input"
-                id="contact-phone"
-                name="phone"
-                type="tel"
-                autocomplete="tel"
-                inputmode="tel"
-                required
-              >
-            </div>
-
-            <div class="contact__field">
-              <label class="contact__label" for="contact-message">Кратко о ситуации</label>
-              <textarea
-                class="contact__textarea"
-                id="contact-message"
-                name="message"
-                rows="4"
-              ></textarea>
-            </div>
-
-            <label class="contact__consent">
-              <input type="checkbox" name="consent" required>
-              <span>Согласен(а) на обработку персональных данных для обратной связи</span>
-            </label>
-
-            <button class="button button--primary" type="submit">
-              Отправить заявку
-            </button>
-            <p class="contact__status" data-form-status hidden></p>
-          </form>
+          </div>
         </div>
       </section>
+
     </main>
 
-    <footer class="footer">
-      <div class="footer__inner">
-        <div class="footer__brand">
-          <a class="footer__logo" href="#top" aria-label="Гармоника — на главную">
+    <footer class="site-footer" data-site-footer>
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <a class="site-footer__logo" href="#top" aria-label="Гармоника — на главную">
             <img
-              class="footer__logo-img"
               src="assets/images/logo.png"
               alt="Гармоника"
               width="280"
@@ -909,35 +1220,93 @@
               decoding="async"
             >
           </a>
-          <p class="footer__text">
-            Наркологическая клиника «Гармоника» — выездная помощь, детоксикация
-            и стационар с понятным маршрутом восстановления.
+          <p class="site-footer__brand-name">Гармоника</p>
+          <p class="site-footer__description">
+            Наркологическая клиника: выезд врача на дом, детоксикация, стационар
+            и сопровождение восстановления. Работаем круглосуточно и конфиденциально.
           </p>
+          <div class="site-footer__socials">
+            <a class="site-footer__social" href="https://t.me/" aria-label="Телеграм" target="_blank" rel="noopener noreferrer">
+              <img class="site-footer__social-icon" src="assets/icons/messengers/telegram.png" alt="" width="16" height="16" decoding="async">
+            </a>
+            <a class="site-footer__social" href="https://max.ru/" aria-label="MAX" target="_blank" rel="noopener noreferrer">
+              <img class="site-footer__social-icon" src="assets/icons/messengers/max.png" alt="" width="16" height="16" decoding="async">
+            </a>
+            <a class="site-footer__social" href="mailto:info@garmonica-clinic.ru" aria-label="Написать на почту">
+              <img class="site-footer__social-icon" src="assets/icons/envelope.svg" alt="" width="16" height="16" decoding="async">
+            </a>
+          </div>
+          <div class="site-footer__requisites">
+            <p>ООО «Гармоника»</p>
+            <p>Наркологическая клиника</p>
+            <p>Москва и Московская область</p>
+          </div>
         </div>
 
-        <div>
-          <p class="footer__nav-title">Разделы</p>
-          <ul class="footer__nav-list" role="list">
-            <li><a class="footer__nav-link" href="#about">О клинике</a></li>
-            <li><a class="footer__nav-link" href="#services">Услуги</a></li>
-            <li><a class="footer__nav-link" href="#prices">Цены</a></li>
-            <li><a class="footer__nav-link" href="#faq">Вопросы</a></li>
-            <li><a class="footer__nav-link" href="#contact">Контакты</a></li>
+        <nav class="site-footer__column" aria-label="Услуги">
+          <span class="site-footer__title"><a href="#services">Услуги</a></span>
+          <ul class="site-footer__list" role="list">
+            <li><a href="#services">Вызов нарколога на дом</a></li>
+            <li><a href="#services">Детоксикация</a></li>
+            <li><a href="#services">Стационар и госпитализация</a></li>
+            <li><a href="#prices">Выезд и осмотр</a></li>
+            <li><a href="#prices">Помощь на дому</a></li>
+            <li><a href="#steps">Как проходит помощь</a></li>
           </ul>
-        </div>
+        </nav>
 
-        <div>
-          <p class="footer__contacts-title">Связь</p>
-          <ul class="footer__contacts-list" role="list">
-            <li><a class="footer__contacts-link" href="tel:+74951204567">+7 (495) 120-45-67</a></li>
-            <li><a class="footer__contacts-link" href="mailto:info@garmonica-clinic.ru">info@garmonica-clinic.ru</a></li>
-            <li><span>Москва и область · 24/7</span></li>
+        <nav class="site-footer__column" aria-label="Пациентам">
+          <span class="site-footer__title">Пациентам</span>
+          <ul class="site-footer__list" role="list">
+            <li><a href="#about">О клинике</a></li>
+            <li><a href="#advantages">Почему «Гармоника»</a></li>
+            <li><a href="#prices">Цены</a></li>
+            <li><a href="#perks">Преимущества</a></li>
+            <li><a href="#faq">Ответы на вопросы</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
           </ul>
-        </div>
+        </nav>
 
-        <div class="footer__bottom">
-          <p>© 2026 Наркологическая клиника «Гармоника»</p>
-          <p>Информация на сайте носит ознакомительный характер и не заменяет очную консультацию врача.</p>
+        <nav class="site-footer__column" aria-label="Связь">
+          <span class="site-footer__title">Связь</span>
+          <ul class="site-footer__list" role="list">
+            <li><a href="tel:+74951204567">+7 (495) 120-45-67</a></li>
+            <li><a href="mailto:info@garmonica-clinic.ru">info@garmonica-clinic.ru</a></li>
+            <li><a href="#contact">Оставить заявку</a></li>
+            <li><a href="#contact">Адрес и карта</a></li>
+          </ul>
+          <a class="button button--primary site-footer__cta" href="#contact">Оставить заявку</a>
+        </nav>
+      </div>
+
+      <div class="site-footer__contacts-wrap">
+        <div class="site-footer__contacts-bar" aria-label="Контакты клиники">
+          <div class="site-footer__contacts-bar-inner">
+            <a class="site-footer__contacts-bar-item" href="tel:+74951204567">
+              <img class="site-footer__contacts-bar-icon" src="assets/icons/phone.svg" alt="" width="20" height="20" decoding="async">
+              <span>+7 (495) 120-45-67</span>
+            </a>
+            <a class="site-footer__contacts-bar-item" href="mailto:info@garmonica-clinic.ru">
+              <img class="site-footer__contacts-bar-icon" src="assets/icons/envelope.svg" alt="" width="20" height="20" decoding="async">
+              <span>info@garmonica-clinic.ru</span>
+            </a>
+            <span class="site-footer__contacts-bar-item site-footer__contacts-bar-item--static">
+              <img class="site-footer__contacts-bar-icon" src="assets/icons/map-pin.svg" alt="" width="20" height="20" decoding="async">
+              <span>Москва и область</span>
+            </span>
+            <span class="site-footer__contacts-bar-item site-footer__contacts-bar-item--static">
+              <img class="site-footer__contacts-bar-icon" src="assets/icons/clock.svg" alt="" width="20" height="20" decoding="async">
+              <span>Круглосуточно 24/7</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">© 2026 Наркологическая клиника «Гармоника»</p>
+        <div class="site-footer__legal">
+          <a href="#">Политика конфиденциальности</a>
+          <a href="#">Согласие на обработку персональных данных</a>
         </div>
       </div>
     </footer>
