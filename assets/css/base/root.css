@@ -1,0 +1,77 @@
+:root {
+  --color-black: #0f1720;
+  --color-white: #ffffff;
+  --color-text-dark: #1a2a3a;
+  --color-text-muted: #5a6b7c;
+  --color-text-hover: #243447;
+
+  --color-accent: #5b9bd5;
+  --color-accent-hover: #4a89c3;
+  --color-accent-soft: #bde0f5;
+  --color-accent-light: #e8f4fb;
+
+  --color-warm: #fdb863;
+  --color-warm-hover: #f0a74a;
+  --color-warm-soft: #ffe8cc;
+
+  --color-cutout: #f5f9fc;
+  --color-surface: #ffffff;
+  --color-consult-bg: #f0f6fb;
+  --color-border: #d7e6f2;
+  --color-border-light: #eef5fa;
+
+  --font-headline: "Montserrat", Arial, sans-serif;
+  --font-text: "Manrope", Arial, sans-serif;
+  --font-size-h1: clamp(1.875rem, 1.5rem + 1.8vw, 3rem);
+  --font-size-h2: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
+  --font-size-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-size-body-sm: clamp(0.875rem, 0.85rem + 0.15vw, 1rem);
+
+  --container-width: 75rem;
+  --section-padding-inline: 1.25rem;
+  --section-fade: clamp(3rem, 6vw, 5rem);
+  --header-offset: 6.5rem;
+
+  --radius-sm: 0.4375rem; /* 7px */
+  --radius-md: 0.625rem; /* 10px */
+  --radius-lg: 0.8125rem; /* 13px */
+  --radius-xl: 1.25rem;
+  --radius-button: 0.625rem;
+
+  --transition-base: 0.2s ease;
+
+  --glass-bg: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(91, 155, 213, 0.18);
+  --shadow-soft: 0 0.75rem 2rem rgba(26, 42, 58, 0.08);
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --section-padding-inline: 2rem;
+    --header-offset: 7.5rem;
+  }
+}
+
+@media (min-width: 60rem) {
+  :root {
+    --section-padding-inline: 2.75rem;
+    --header-offset: 8.5rem;
+  }
+}
+
+@media (min-width: 75rem) {
+  :root {
+    --section-padding-inline: clamp(3rem, 5vw, 4.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
