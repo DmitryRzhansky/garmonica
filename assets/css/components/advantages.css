@@ -13,6 +13,7 @@
   margin: 0 0 1.5rem;
   max-width: 40rem;
   font-size: var(--font-size-h2);
+  font-weight: 400;
 }
 
 .advantages__list {

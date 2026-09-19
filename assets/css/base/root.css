@@ -30,7 +30,7 @@
   --container-width: 75rem;
   --section-padding-inline: 1.25rem;
   --section-fade: clamp(3rem, 6vw, 5rem);
-  --header-offset: 6.5rem;
+  --header-offset: 4rem;
 
   --radius-sm: 0.4375rem; /* 7px */
   --radius-md: 0.625rem; /* 10px */
@@ -48,14 +48,14 @@
 @media (min-width: 40rem) {
   :root {
     --section-padding-inline: 2rem;
-    --header-offset: 7.5rem;
+    --header-offset: 4.5rem;
   }
 }
 
 @media (min-width: 60rem) {
   :root {
     --section-padding-inline: 2.75rem;
-    --header-offset: 8.5rem;
+    --header-offset: 5.75rem;
   }
 }
 

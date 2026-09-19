@@ -1,4 +1,4 @@
-.prices {
+﻿.prices {
   padding-block: var(--section-fade);
   background: var(--color-cutout);
 }
@@ -48,7 +48,7 @@
   margin-top: 0.15rem;
   font-family: var(--font-headline);
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-text-dark);
 }
 
@@ -87,20 +87,20 @@
   display: block;
   font-family: var(--font-headline);
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .prices__column-price {
   margin: 0.2rem 0 0;
   font-family: var(--font-headline);
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--color-accent);
 }
 
 .prices__column-price span {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .prices__desc {
@@ -113,7 +113,7 @@
   margin: 0 0 0.45rem;
   font-family: var(--font-headline);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .prices__includes {
@@ -146,3 +146,4 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+

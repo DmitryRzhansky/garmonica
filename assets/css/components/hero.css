@@ -1,4 +1,4 @@
-.hero {
+﻿.hero {
   position: relative;
   padding: calc(var(--header-offset) + 0.75rem) var(--section-padding-inline) 2.5rem;
   background:
@@ -31,7 +31,7 @@
   padding: 0.4rem 0.75rem;
   font-family: var(--font-headline);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-accent-hover);
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid var(--glass-border);
@@ -46,7 +46,7 @@
 .hero__title {
   margin: 0;
   font-size: var(--font-size-h1);
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .hero__title-accent {
@@ -120,7 +120,7 @@
 .hero__fact-text strong {
   display: block;
   font-family: var(--font-headline);
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-text-dark);
 }
 
@@ -147,3 +147,4 @@
     aspect-ratio: 5 / 4;
   }
 }
+

@@ -1,4 +1,4 @@
-.perks {
+﻿.perks {
   padding-block: var(--section-fade);
   background:
     linear-gradient(160deg, #eaf4fb 0%, #fff8ef 55%, var(--color-cutout) 100%);
@@ -38,7 +38,7 @@
   margin: 0;
   font-family: var(--font-headline);
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .perks__text {
@@ -58,3 +58,4 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+

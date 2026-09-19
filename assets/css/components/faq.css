@@ -1,4 +1,4 @@
-.faq {
+﻿.faq {
   padding-block: var(--section-fade);
   background: var(--color-cutout);
 }
@@ -32,7 +32,7 @@
   text-align: left;
   font-family: var(--font-headline);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-text-dark);
 }
 
@@ -66,3 +66,4 @@
 .faq__answer p {
   margin: 0;
 }
+

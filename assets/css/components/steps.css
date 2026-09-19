@@ -1,4 +1,4 @@
-.steps {
+﻿.steps {
   padding-block: var(--section-fade);
   background: var(--color-white);
 }
@@ -35,7 +35,7 @@
   right: 1rem;
   font-family: var(--font-headline);
   font-size: 0.875rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--color-accent);
   opacity: 0.55;
 }
@@ -50,7 +50,7 @@
   margin: 0;
   font-family: var(--font-headline);
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .steps__text {
@@ -64,3 +64,4 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
