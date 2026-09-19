@@ -1,0 +1,227 @@
+.hero-header {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 120rem;
+  margin-inline: auto;
+  padding: 0.65rem clamp(0.75rem, 2.4vw, 2rem);
+  pointer-events: none;
+}
+
+.hero-header__shell {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas:
+    "meta logo actions"
+    "nav nav nav";
+  align-items: center;
+  gap: 0.55rem 0.75rem;
+  padding: 0.55rem 0.75rem 0.65rem;
+  border-radius: var(--radius-lg);
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-soft);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  backdrop-filter: saturate(180%) blur(18px);
+  pointer-events: auto;
+}
+
+.hero-header__meta {
+  grid-area: meta;
+  display: none;
+  min-width: 0;
+}
+
+.hero-header__logo-wrap {
+  grid-area: logo;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+}
+
+.hero-header__logo {
+  display: block;
+  width: min(11.5rem, 46vw);
+}
+
+.hero-header__logo-img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-header__actions {
+  grid-area: actions;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.hero-header__phone {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.75rem;
+  font-family: var(--font-headline);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  background-color: var(--color-accent-light);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.hero-header__phone:hover {
+  color: var(--color-white);
+  background-color: var(--color-accent);
+}
+
+.hero-header__phone-icon {
+  width: 0.9375rem;
+  height: 0.9375rem;
+  flex-shrink: 0;
+}
+
+.hero-header__burger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-text-dark);
+  background-color: var(--color-consult-bg);
+  border-radius: var(--radius-sm);
+}
+
+.hero-header__burger:hover {
+  color: var(--color-white);
+  background-color: var(--color-accent);
+}
+
+.hero-header__burger-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.hero-header__nav {
+  grid-area: nav;
+  display: none;
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 0.45rem;
+}
+
+.hero-header__nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem 0.35rem;
+}
+
+.hero-header__nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.7rem;
+  font-family: var(--font-headline);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-base), background-color var(--transition-base);
+}
+
+.hero-header__nav-link:hover,
+.hero-header__nav-link[aria-current="page"] {
+  color: var(--color-accent);
+  background-color: var(--color-accent-light);
+}
+
+.hero-header__meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.hero-header__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  font-style: normal;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.hero-header__meta-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+.hero-header__meta-value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-width: 40rem) {
+  .hero-header__phone {
+    display: inline-flex;
+  }
+
+  .hero-header__phone-text {
+    display: none;
+  }
+}
+
+@media (min-width: 48rem) {
+  .hero-header__phone-text {
+    display: inline;
+  }
+
+  .hero-header__meta {
+    display: block;
+  }
+
+  .hero-header__logo {
+    width: 12.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .hero-header__shell {
+    grid-template-areas:
+      "meta logo actions"
+      "nav nav nav";
+    padding: 0.65rem 1rem 0.7rem;
+  }
+
+  .hero-header__nav {
+    display: block;
+  }
+
+  .hero-header__burger {
+    display: none;
+  }
+
+  .hero-header__logo {
+    width: 13.5rem;
+  }
+}
+
+@media (min-width: 75rem) {
+  .hero-header__logo {
+    width: 14.5rem;
+  }
+
+  .hero-header__nav-link {
+    font-size: 0.875rem;
+    padding: 0.45rem 0.85rem;
+  }
+}
