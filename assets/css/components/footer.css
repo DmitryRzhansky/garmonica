@@ -201,11 +201,14 @@
 
 .site-footer__legal {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.5rem 1.25rem;
-  margin-left: auto;
-  text-align: right;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin-left: 0;
+  width: 100%;
+  text-align: left;
 }
 
 .site-footer__legal a {
@@ -224,6 +227,14 @@
 
   .site-footer__inner {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-footer__legal {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: auto;
+    width: auto;
+    text-align: right;
   }
 }
 
