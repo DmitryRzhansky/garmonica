@@ -1,12 +1,7 @@
 ﻿.contact-section {
-  padding-block: 2.5rem 3rem;
+  padding-block: var(--section-fade);
   color: var(--color-text-dark);
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f7fbfe 35%,
-    var(--color-cutout) 100%
-  );
+  background: transparent;
 }
 
 .contact-section__inner {
@@ -459,10 +454,6 @@
 }
 
 @media (min-width: 60rem) {
-  .contact-section {
-    padding-block: 3rem 3.5rem;
-  }
-
   .contact-section__inner {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 1.25rem;

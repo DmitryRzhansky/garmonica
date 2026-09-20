@@ -1,6 +1,6 @@
 ﻿.perks {
   padding-block: var(--section-fade);
-  background: #f3f6f9;
+  background: transparent;
 }
 
 .perks__inner {

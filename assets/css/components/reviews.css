@@ -1,13 +1,7 @@
 ﻿.reviews {
   position: relative;
-  padding-block: 2.5rem 3rem;
-  background: linear-gradient(
-    180deg,
-    var(--color-cutout) 0%,
-    #eef6fb 40%,
-    #f7fbfe 75%,
-    #ffffff 100%
-  );
+  padding-block: var(--section-fade);
+  background: transparent;
 }
 
 .reviews__tab-input {
@@ -442,11 +436,6 @@
 }
 
 @media (min-width: 60rem) {
-  .reviews {
-    padding-block: 3rem 3.5rem;
-  }
-
-
   .reviews__controls {
     padding-inline: 0.5rem;
   }

@@ -1,12 +1,6 @@
 ﻿.faq {
   padding-block: var(--section-fade);
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    var(--color-cutout) 30%,
-    #eef6fb 70%,
-    #f7fbfe 100%
-  );
+  background: transparent;
 }
 
 .faq__inner {

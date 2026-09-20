@@ -1,12 +1,6 @@
 ﻿.prices {
   padding-block: var(--section-fade);
-  background: linear-gradient(
-    180deg,
-    var(--color-cutout) 0%,
-    #eef6fb 35%,
-    #f7fbfe 70%,
-    #ffffff 100%
-  );
+  background: transparent;
 }
 
 .prices__inner {

@@ -12,14 +12,21 @@ body {
 
 body {
   overflow-x: clip;
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    var(--color-cutout) 18%,
-    #ffffff 48%,
-    var(--color-cutout) 78%,
-    #f7fbfe 100%
-  );
+  background:
+    radial-gradient(ellipse 90% 40% at 100% 8%, rgba(253, 184, 99, 0.14), transparent 55%),
+    radial-gradient(ellipse 80% 45% at 0% 35%, rgba(189, 224, 245, 0.45), transparent 50%),
+    radial-gradient(ellipse 70% 40% at 90% 65%, rgba(91, 155, 213, 0.12), transparent 55%),
+    radial-gradient(ellipse 85% 35% at 10% 90%, rgba(253, 184, 99, 0.1), transparent 50%),
+    linear-gradient(
+      180deg,
+      var(--page-gradient-top) 0%,
+      var(--page-gradient-mid) 18%,
+      var(--page-gradient-soft) 36%,
+      var(--page-gradient-mid) 52%,
+      var(--page-gradient-warm) 68%,
+      var(--page-gradient-soft) 84%,
+      var(--page-gradient-end) 100%
+    );
   background-attachment: fixed;
 }
 

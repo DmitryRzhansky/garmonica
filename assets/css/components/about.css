@@ -1,6 +1,6 @@
 .about {
-  padding-block: var(--section-fade) 0;
-  background: #f4f6f8;
+  padding-block: var(--section-fade);
+  background: transparent;
   overflow: hidden;
 }
 
@@ -10,7 +10,6 @@
   gap: 1.75rem;
   width: var(--page-shell-width);
   margin-inline: auto;
-  padding-bottom: var(--section-fade);
 }
 
 .about__top {

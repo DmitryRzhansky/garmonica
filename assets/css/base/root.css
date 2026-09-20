@@ -30,8 +30,15 @@
   --container-width: 75rem;
   /* 15–20px side gutters */
   --section-padding-inline: clamp(0.9375rem, 1.2vw, 1.25rem);
-  --section-fade: clamp(3rem, 6vw, 5rem);
+  /* Единый вертикальный ритм между всеми секциями */
+  --section-fade: clamp(2.25rem, 4.5vw, 3.5rem);
   --header-offset: 4rem;
+
+  --page-gradient-top: #ffffff;
+  --page-gradient-mid: #f5f9fc;
+  --page-gradient-soft: #eaf3fa;
+  --page-gradient-warm: #fef8f1;
+  --page-gradient-end: #f0f6fb;
 
   --radius-sm: 0.4375rem; /* 7px */
   --radius-md: 0.625rem; /* 10px */

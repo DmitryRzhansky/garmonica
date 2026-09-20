@@ -1,6 +1,6 @@
 .stages {
   padding-block: var(--section-fade);
-  background: #f7f8f9;
+  background: transparent;
 }
 
 .stages__inner {

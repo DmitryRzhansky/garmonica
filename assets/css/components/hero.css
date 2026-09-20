@@ -7,11 +7,8 @@
   padding:
     calc(var(--header-offset) + 4.375rem) /* 70px below header */
     0
-    clamp(1rem, 2.5vh, 1.75rem);
-  background:
-    radial-gradient(ellipse 70% 55% at 85% 20%, rgba(253, 184, 99, 0.2), transparent 60%),
-    radial-gradient(ellipse 65% 50% at 8% 45%, rgba(189, 224, 245, 0.55), transparent 55%),
-    linear-gradient(180deg, #ffffff 0%, #f7fbfe 55%, var(--color-cutout) 100%);
+    var(--section-fade);
+  background: transparent;
 }
 
 .hero__inner {
@@ -168,10 +165,6 @@
 }
 
 @media (min-width: 64rem) {
-  .hero {
-    padding-bottom: clamp(1.25rem, 2.5vh, 2rem);
-  }
-
   .hero__inner {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     align-items: start;
