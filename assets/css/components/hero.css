@@ -5,7 +5,7 @@
   box-sizing: border-box;
   min-height: 100svh;
   padding:
-    calc(var(--header-offset) + 4.375rem) /* 70px below header */
+    calc(var(--header-offset) + 1rem)
     0
     var(--section-fade);
   background: transparent;
@@ -168,6 +168,10 @@
 }
 
 @media (min-width: 64rem) {
+  .hero {
+    padding-top: calc(var(--header-offset) + 4.375rem);
+  }
+
   .hero__inner {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     grid-template-areas:
