@@ -15,17 +15,27 @@
 }
 
 .faq__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+  margin-top: 1.75rem;
+  align-items: start;
+}
+
+.faq__column {
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
-  margin-top: 1.75rem;
+  min-width: 0;
+  width: 100%;
 }
 
 .faq__item {
+  width: 100%;
   background: var(--color-white);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
-  overflow: hidden;
+  overflow: clip;
 }
 
 .faq__question {
@@ -34,42 +44,99 @@
   justify-content: space-between;
   gap: 1rem;
   width: 100%;
+  min-height: 3.75rem;
   padding: 1rem 1.15rem;
+  list-style: none;
+  cursor: pointer;
   text-align: left;
   font-family: var(--font-headline);
   font-size: 1rem;
   font-weight: 400;
   color: var(--color-text-dark);
+  transition: color var(--transition-base);
+}
+
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question::marker {
+  content: "";
+  font-size: 0;
+}
+
+.faq__question-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .faq__question:hover {
   color: var(--color-accent);
 }
 
+.faq__question:focus-visible {
+  outline: 0.1875rem solid var(--color-accent);
+  outline-offset: -0.1875rem;
+}
+
 .faq__icon {
   flex-shrink: 0;
   width: 1.15rem;
   height: 1.15rem;
-  color: var(--color-accent);
-  transition: transform var(--transition-base);
+  transition: transform 0.35s ease;
 }
 
-.faq__item.is-open .faq__icon {
+.faq__item[open] .faq__icon {
   transform: rotate(180deg);
 }
 
 .faq__answer {
-  display: none;
-  padding: 0 1.15rem 1.1rem;
-  color: var(--color-text-muted);
-  font-size: var(--font-size-body-sm);
+  border-top: 0 solid transparent;
 }
 
-.faq__item.is-open .faq__answer {
-  display: block;
+.faq__answer-inner {
+  overflow: hidden;
 }
 
 .faq__answer p {
   margin: 0;
+  padding: 0.15rem 1.15rem 1.15rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body-sm);
+  line-height: 1.5;
 }
 
+.faq__item[open] .faq__answer-inner {
+  animation: faq-reveal 0.35s ease;
+}
+
+@keyframes faq-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-0.4rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq__icon,
+  .faq__item[open] .faq__answer-inner {
+    animation: none;
+    transition: none;
+  }
+}
+
+@media (min-width: 64rem) {
+  .faq__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .faq__column {
+    gap: 0.75rem;
+  }
+}

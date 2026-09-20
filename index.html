@@ -1046,86 +1046,119 @@
             <h2 class="section__title" id="faq-title">Частые вопросы о клинике «Гармоника»</h2>
           </header>
           <div class="faq__list">
-            <div class="faq__item" data-faq-item>
-              <button
-                class="faq__question"
-                type="button"
-                data-faq-trigger
-                aria-expanded="false"
-                aria-controls="faq-answer-1"
-                id="faq-question-1"
-              >
-                Можно ли вызвать врача ночью?
-                <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
-              </button>
-              <div class="faq__answer" id="faq-answer-1" data-faq-answer hidden role="region" aria-labelledby="faq-question-1">
-                <p>
-                  Да. «Гармоника» принимает обращения круглосуточно. После уточнения адреса
-                  и состояния пациента согласуем возможность выезда и ориентировочное время.
-                </p>
-              </div>
+            <div class="faq__column">
+              <details class="faq__item" data-faq-item>
+                <summary class="faq__question">
+                  <span class="faq__question-text">Можно ли вызвать врача ночью?</span>
+                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                </summary>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    <p>Да. «Гармоника» принимает обращения круглосуточно. После уточнения адреса и состояния пациента согласуем возможность выезда и ориентировочное время.</p>
+                  </div>
+                </div>
+              </details>
+              <details class="faq__item" data-faq-item>
+                <summary class="faq__question">
+                  <span class="faq__question-text">Когда помощь на дому невозможна?</span>
+                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                </summary>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    <p>Если состояние требует постоянного контроля, есть риски осложнений или дома нельзя обеспечить безопасные условия, врач предложит госпитализацию и поможет организовать перевод в клинику.</p>
+                  </div>
+                </div>
+              </details>
+              <details class="faq__item" data-faq-item>
+                <summary class="faq__question">
+                  <span class="faq__question-text">Согласуют ли цену до процедур?</span>
+                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                </summary>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    <p>Да. Базовую стоимость выезда и осмотра озвучиваем заранее. Если нужны дополнительные процедуры, их объём и цену согласовываем до начала.</p>
+                  </div>
+                </div>
+              </details>
+              <details class="faq__item" data-faq-item>
+                <summary class="faq__question">
+                  <span class="faq__question-text">Обращение конфиденциально?</span>
+                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                </summary>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    <p>Мы организуем выезд и консультации аккуратно и не передаём сведения об обращении посторонним. Детали лечения обсуждаем только с пациентом и лицами, которых он указал.</p>
+                  </div>
+                </div>
+              </details>
+              <details class="faq__item" data-faq-item>
+                <summary class="faq__question">
+                  <span class="faq__question-text">Сколько ждать врача после звонка?</span>
+                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                </summary>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    <p>Обычно выезд организуем в течение 40–90 минут после подтверждения адреса и формата помощи. Точное окно называем по телефону с учётом района и загруженности бригады.</p>
+                  </div>
+                </div>
+              </details>
             </div>
-
-            <div class="faq__item" data-faq-item>
-              <button
-                class="faq__question"
-                type="button"
-                data-faq-trigger
-                aria-expanded="false"
-                aria-controls="faq-answer-2"
-                id="faq-question-2"
-              >
-                Когда помощь на дому невозможна?
-                <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
-              </button>
-              <div class="faq__answer" id="faq-answer-2" data-faq-answer hidden role="region" aria-labelledby="faq-question-2">
-                <p>
-                  Если состояние требует постоянного контроля, есть риски осложнений или дома
-                  нельзя обеспечить безопасные условия, врач предложит госпитализацию
-                  и поможет организовать перевод в клинику.
-                </p>
-              </div>
-            </div>
-
-            <div class="faq__item" data-faq-item>
-              <button
-                class="faq__question"
-                type="button"
-                data-faq-trigger
-                aria-expanded="false"
-                aria-controls="faq-answer-3"
-                id="faq-question-3"
-              >
-                Согласуют ли цену до процедур?
-                <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
-              </button>
-              <div class="faq__answer" id="faq-answer-3" data-faq-answer hidden role="region" aria-labelledby="faq-question-3">
-                <p>
-                  Да. Базовую стоимость выезда и осмотра озвучиваем заранее. Если нужны
-                  дополнительные процедуры, их объём и цену согласовываем до начала.
-                </p>
-              </div>
-            </div>
-
-            <div class="faq__item" data-faq-item>
-              <button
-                class="faq__question"
-                type="button"
-                data-faq-trigger
-                aria-expanded="false"
-                aria-controls="faq-answer-4"
-                id="faq-question-4"
-              >
-                Обращение конфиденциально?
-                <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
-              </button>
-              <div class="faq__answer" id="faq-answer-4" data-faq-answer hidden role="region" aria-labelledby="faq-question-4">
-                <p>
-                  Мы организуем выезд и консультации аккуратно и не передаём сведения
-                  об обращении посторонним. Детали лечения обсуждаем только с пациентом
-                  и лицами, которых он указал.
-                </p>
-              </div>
+            <div class="faq__column">
+              <details class="faq__item" data-faq-item>
+                <summary class="faq__question">
+                  <span class="faq__question-text">Нужно ли согласие пациента?</span>
+                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                </summary>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    <p>Да, плановая помощь и большинство процедур проводятся при добровольном согласии пациента. В острых ситуациях врач оценивает состояние и объясняет семье, какие варианты допустимы по показаниям.</p>
+                  </div>
+                </div>
+              </details>
+              <details class="faq__item" data-faq-item>
+                <summary class="faq__question">
+                  <span class="faq__question-text">Что входит в выезд и осмотр?</span>
+                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                </summary>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    <p>В базовый выезд входят осмотр, оценка состояния, измерение показателей и рекомендации по дальнейшим действиям. Капельницы и другие процедуры обсуждаются отдельно и только по согласованию.</p>
+                  </div>
+                </div>
+              </details>
+              <details class="faq__item" data-faq-item>
+                <summary class="faq__question">
+                  <span class="faq__question-text">Можно ли вызвать психиатра на дом?</span>
+                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                </summary>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    <p>Да. При необходимости организуем консультацию психиатра или психиатрическую помощь на дому. Формат подбираем после уточнения симптомов и рисков для пациента и семьи.</p>
+                  </div>
+                </div>
+              </details>
+              <details class="faq__item" data-faq-item>
+                <summary class="faq__question">
+                  <span class="faq__question-text">Как проходит госпитализация?</span>
+                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                </summary>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    <p>После осмотра врач объясняет, зачем нужен стационар, какой ориентировочный срок и что входит в сутки пребывания. Перевод организуем бережно, родственников держим в курсе по согласованию.</p>
+                  </div>
+                </div>
+              </details>
+              <details class="faq__item" data-faq-item>
+                <summary class="faq__question">
+                  <span class="faq__question-text">Работаете ли вы в Подмосковье?</span>
+                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                </summary>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    <p>Да, выезжаем по Москве и ближайшему Подмосковью. Возможность выезда в конкретный населённый пункт и время в пути уточняем при звонке по адресу пациента.</p>
+                  </div>
+                </div>
+              </details>
             </div>
           </div>
         </div>
@@ -1486,5 +1519,48 @@
     </footer>
 
     <script type="module" src="assets/js/main.js"></script>
+    <script>
+      (function () {
+        function initExclusiveFaq() {
+          var root = document.querySelector("[data-faq]");
+          if (!root || root.dataset.faqReady === "true") {
+            return;
+          }
+
+          root.dataset.faqReady = "true";
+          var items = root.querySelectorAll("details[data-faq-item]");
+
+          root.addEventListener("click", function (event) {
+            var summary = event.target.closest("summary.faq__question");
+            if (!summary || !root.contains(summary)) {
+              return;
+            }
+
+            var details = summary.closest("details[data-faq-item]");
+            if (!details) {
+              return;
+            }
+
+            event.preventDefault();
+
+            var willOpen = !details.open;
+
+            for (var i = 0; i < items.length; i += 1) {
+              items[i].open = false;
+            }
+
+            if (willOpen) {
+              details.open = true;
+            }
+          });
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initExclusiveFaq);
+        } else {
+          initExclusiveFaq();
+        }
+      })();
+    </script>
   </body>
 </html>
