@@ -1,12 +1,6 @@
 ﻿.perks {
   padding-block: var(--section-fade);
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #eaf4fb 38%,
-    #fff8ef 72%,
-    var(--color-cutout) 100%
-  );
+  background: #f3f6f9;
 }
 
 .perks__inner {
@@ -14,52 +8,307 @@
   margin-inline: auto;
 }
 
-.perks__grid {
+.section__header--center {
+  text-align: center;
+}
+
+.section__header--center .section__title {
+  max-width: 28rem;
+  margin-inline: auto;
+}
+
+.perks__bento {
+  --perks-radius: 1.75rem;
+  --perks-gap: 0.875rem;
+  --perks-soft: #e8f0fb;
+  --perks-wide: #eaf3fb;
+  --perks-accent: #4f8fd0;
+  --perks-accent-deep: #3f7bb8;
+
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: var(--perks-gap);
   margin-top: 1.75rem;
+  align-items: stretch;
 }
 
-.perks__card {
+.perks__tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--perks-radius);
+  min-width: 0;
+}
+
+.perks__tile--note {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 1.25rem;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 12.5rem;
+  padding: 1.75rem 1.35rem;
+  text-align: center;
+  background: #ffffff;
 }
 
-.perks__icon {
-  width: 4.25rem;
-  height: 4.25rem;
+.perks__tile-icon {
+  width: 2.5rem;
+  height: 2.5rem;
   object-fit: contain;
 }
 
-.perks__title {
+.perks__tile-copy {
   margin: 0;
-  font-family: var(--font-headline);
-  font-size: 1.05rem;
-  font-weight: 400;
+  max-width: 15.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--color-text-dark);
 }
 
-.perks__text {
+.perks__tile--stat {
+  display: flex;
+  flex-direction: column;
+  min-height: 20rem;
+  padding: 1.75rem 1.5rem 0;
+  color: #ffffff;
+  background: linear-gradient(165deg, #5b9bd5 0%, #3f7bb8 100%);
+}
+
+.perks__stat-copy {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+}
+
+.perks__stat-value {
   margin: 0;
-  font-size: var(--font-size-body-sm);
-  color: var(--color-text-muted);
+  font-family: var(--font-headline);
+  font-size: clamp(2.75rem, 2.2rem + 2vw, 3.75rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.perks__stat-label {
+  margin: 0.4rem 0 0.9rem;
+  font-family: var(--font-headline);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.perks__stat-text {
+  margin: 0;
+  max-width: 20rem;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.perks__stat-visual {
+  display: block;
+  width: min(100%, 17rem);
+  margin: 1rem auto 0;
+  height: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 0.5rem 1rem rgba(26, 42, 58, 0.12));
+}
+
+.perks__tile--protect {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  align-items: end;
+  min-height: 18rem;
+  padding: 1.75rem 0 0 1.5rem;
+  background: var(--perks-soft);
+}
+
+.perks__protect-copy {
+  padding-right: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.perks__protect-title {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-headline);
+  font-size: clamp(1.25rem, 1.1rem + 0.55vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--color-text-dark);
+}
+
+.perks__protect-list {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--color-text-dark);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.perks__protect-list li::marker {
+  color: var(--perks-accent-deep);
+}
+
+.perks__protect-list li + li {
+  margin-top: 0.5rem;
+}
+
+.perks__protect-visual {
+  display: block;
+  width: min(100%, 13rem);
+  margin: 0 0 -0.35rem auto;
+  height: auto;
+  object-fit: contain;
+  object-position: bottom right;
+}
+
+.perks__tile--wide {
+  display: flex;
+  align-items: center;
+  min-height: 12.5rem;
+  padding: 1.75rem 1.5rem;
+  background: var(--perks-wide);
+}
+
+.perks__wide-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+
+.perks__tile--wide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(234, 243, 251, 0.94) 0%,
+    rgba(234, 243, 251, 0.78) 38%,
+    rgba(234, 243, 251, 0.28) 68%,
+    rgba(234, 243, 251, 0.08) 100%
+  );
+  pointer-events: none;
+}
+
+.perks__wide-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 28rem;
+}
+
+.perks__wide-text {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: clamp(1.2rem, 1.05rem + 0.65vw, 1.7rem);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-text-dark);
 }
 
 @media (min-width: 40rem) {
-  .perks__grid {
+  .perks__bento {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .perks__tile--stat,
+  .perks__tile--protect,
+  .perks__tile--wide {
+    grid-column: 1 / -1;
+  }
+
+  .perks__tile--protect {
+    grid-template-columns: minmax(0, 1.2fr) minmax(10rem, 0.8fr);
+    padding: 1.85rem 0 0 1.75rem;
+  }
+
+  .perks__protect-visual {
+    width: 100%;
+    max-width: 15rem;
+  }
+
+  .perks__tile--wide {
+    min-height: 13rem;
+    padding: 2rem 2rem;
+  }
+
+  .perks__wide-content {
+    max-width: 30rem;
   }
 }
 
 @media (min-width: 64rem) {
-  .perks__grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .perks__bento {
+    --perks-gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: minmax(13.5rem, auto) minmax(17.5rem, 1fr) minmax(11.5rem, auto);
+  }
+
+  .perks__tile--note-a {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .perks__tile--note-b {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .perks__tile--stat {
+    grid-column: 3;
+    grid-row: 1 / 3;
+    height: 100%;
+    min-height: 0;
+    padding: 2rem 1.65rem 0;
+  }
+
+  .perks__tile--protect {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .perks__tile--wide {
+    grid-column: 1 / 4;
+    grid-row: 3;
+    min-height: 12.5rem;
+    padding: 2rem 2.25rem;
+  }
+
+  .perks__tile--note {
+    height: 100%;
+    min-height: 0;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .perks__stat-visual {
+    width: 100%;
+    max-width: none;
+    margin-top: auto;
+  }
+
+  .perks__protect-copy {
+    align-self: center;
+    padding-bottom: 1.5rem;
+  }
+
+  .perks__protect-visual {
+    width: 100%;
+    max-width: 16rem;
+    align-self: end;
+  }
+
+  .perks__wide-content {
+    max-width: 32rem;
   }
 }

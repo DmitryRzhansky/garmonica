@@ -131,7 +131,6 @@
             <li><a class="mobile-menu__link" href="#prices">Услуги</a></li>
             <li><a class="mobile-menu__link" href="#prices">Цены</a></li>
             <li><a class="mobile-menu__link" href="#perks">Преимущества</a></li>
-            <li><a class="mobile-menu__link" href="#perks">Преимущества</a></li>
             <li><a class="mobile-menu__link" href="#reviews">Отзывы</a></li>
             <li><a class="mobile-menu__link" href="#faq">Вопросы</a></li>
             <li><a class="mobile-menu__link" href="#contact">Контакты</a></li>
@@ -558,31 +557,106 @@
 
       <section class="perks" id="perks" aria-labelledby="perks-title">
         <div class="perks__inner">
-          <header class="section__header">
+          <header class="section__header section__header--center">
             <h2 class="section__title" id="perks-title">То, на что семьи опираются в первые часы</h2>
           </header>
-          <ul class="perks__grid" role="list">
-            <li class="perks__card">
-              <img class="perks__icon" src="assets/images/perks/perk-247-3d.png" alt="" width="256" height="256" loading="lazy" decoding="async">
-              <h3 class="perks__title">Круглосуточный контакт</h3>
-              <p class="perks__text">Можно позвонить ночью и в выходные — помощь не «до завтра».</p>
-            </li>
-            <li class="perks__card">
-              <img class="perks__icon" src="assets/images/perks/perk-fast-3d.png" alt="" width="256" height="256" loading="lazy" decoding="async">
-              <h3 class="perks__title">Быстрая организация выезда</h3>
-              <p class="perks__text">После подтверждения адреса выезжаем в согласованное окно.</p>
-            </li>
-            <li class="perks__card">
-              <img class="perks__icon" src="assets/images/perks/perk-privacy-3d.png" alt="" width="256" height="256" loading="lazy" decoding="async">
-              <h3 class="perks__title">Конфиденциальность</h3>
-              <p class="perks__text">Аккуратный формат обращения без лишнего внимания к семье.</p>
-            </li>
-            <li class="perks__card">
-              <img class="perks__icon" src="assets/images/perks/perk-care-3d.png" alt="" width="256" height="256" loading="lazy" decoding="async">
-              <h3 class="perks__title">Бережный тон общения</h3>
-              <p class="perks__text">Объясняем шаги спокойно — без давления и пугающих формулировок.</p>
-            </li>
-          </ul>
+
+          <div class="perks__bento">
+            <article class="perks__tile perks__tile--note perks__tile--note-a">
+              <img
+                class="perks__tile-icon"
+                src="assets/icons/seal-check.svg"
+                alt=""
+                width="48"
+                height="48"
+                loading="lazy"
+                decoding="async"
+              >
+              <p class="perks__tile-copy">
+                Клиника работает официально: помощь по показаниям, с понятными
+                правилами и уважением к пациенту и семье.
+              </p>
+            </article>
+
+            <article class="perks__tile perks__tile--note perks__tile--note-b">
+              <img
+                class="perks__tile-icon"
+                src="assets/icons/checks.svg"
+                alt=""
+                width="48"
+                height="48"
+                loading="lazy"
+                decoding="async"
+              >
+              <p class="perks__tile-copy">
+                Формат помощи подбираем под ситуацию: выезд, капельница,
+                консультация или стационар — без шаблонного пакета.
+              </p>
+            </article>
+
+            <article class="perks__tile perks__tile--stat">
+              <div class="perks__stat-copy">
+                <p class="perks__stat-value">24/7</p>
+                <p class="perks__stat-label">на связи с семьёй</p>
+                <p class="perks__stat-text">
+                  Можно позвонить ночью и в выходные — организуем выезд после
+                  подтверждения адреса и состояния.
+                </p>
+              </div>
+              <img
+                class="perks__stat-visual"
+                src="assets/images/perks/bento/perk-bento-support-3d.png"
+                alt=""
+                width="1024"
+                height="768"
+                loading="lazy"
+                decoding="async"
+              >
+            </article>
+
+            <article class="perks__tile perks__tile--protect">
+              <div class="perks__protect-copy">
+                <h3 class="perks__protect-title">Конфиденциальность в первые часы</h3>
+                <ul class="perks__protect-list">
+                  <li>Закрытый формат обращения — без лишнего внимания к адресу и семье</li>
+                  <li>Спокойный тон без давления и пугающих формулировок</li>
+                  <li>Объём помощи и стоимость согласовываем до процедур</li>
+                  <li>Связь с родственниками — только по договорённости</li>
+                </ul>
+              </div>
+              <img
+                class="perks__protect-visual"
+                src="assets/images/perks/bento/perk-bento-guard-3d.png"
+                alt=""
+                width="1024"
+                height="1024"
+                loading="lazy"
+                decoding="async"
+              >
+            </article>
+
+            <article class="perks__tile perks__tile--wide">
+              <img
+                class="perks__wide-bg"
+                src="assets/images/perks/bento/perk-bento-wide-bg.png"
+                alt=""
+                width="1376"
+                height="768"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="perks__wide-content">
+                <p class="perks__wide-text">
+                  Когда счёт идёт на часы, важно быстро понять, что делать дальше —
+                  дома, с капельницей или уже в стационаре.
+                </p>
+                <a class="button button--warm" href="#contact">
+                  Получить консультацию
+                  <img class="button__icon" src="assets/icons/arrow-right.svg" alt="" width="16" height="16" decoding="async">
+                </a>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
