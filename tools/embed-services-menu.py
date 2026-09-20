@@ -111,28 +111,34 @@ def desktop_html() -> str:
 
 
 def mobile_html() -> str:
-    blocks = [
-        '          <p class="mobile-menu__services-title">Услуги</p>',
-    ]
+    categories = []
     for item in MENU:
         links = [
-            f'              <a href="{esc(item["link"])}" data-menu-close>Все услуги раздела</a>'
+            f'                <a href="{esc(item["link"])}" data-menu-close>Все услуги раздела</a>'
         ]
         for child in item.get("child") or []:
             links.append(
-                f'              <a href="{esc(child["link"])}" data-menu-close>{esc(child["title"])}</a>'
+                f'                <a href="{esc(child["link"])}" data-menu-close>{esc(child["title"])}</a>'
             )
-        blocks.append(
-            f"""          <div class="mobile-menu__accordion" data-mobile-accordion>
-            <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
-              {esc(item["parent"])}
-            </button>
-            <div class="mobile-menu__accordion-panel">
+        categories.append(
+            f"""            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
+              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
+                {esc(item["parent"])}
+              </button>
+              <div class="mobile-menu__accordion-panel">
 {chr(10).join(links)}
+              </div>
+            </div>"""
+        )
+
+    return f"""          <div class="mobile-menu__accordion mobile-menu__accordion--services" data-mobile-accordion>
+            <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
+              Услуги
+            </button>
+            <div class="mobile-menu__accordion-panel mobile-menu__accordion-panel--services">
+{chr(10).join(categories)}
             </div>
           </div>"""
-        )
-    return "\n".join(blocks)
 
 
 def patch_index() -> None:
@@ -158,11 +164,19 @@ def patch_index() -> None:
 
     mobile = mobile_html()
     html = re.sub(
-        r'<div data-services-menu-mobile></div>',
-        f'<div data-services-menu-mobile>\n{mobile}\n          </div>',
+        r'<div data-services-menu-mobile>.*?</div>\s*(?=<ul class="mobile-menu__list")',
+        f'<div data-services-menu-mobile>\n{mobile}\n          </div>\n\n          ',
         html,
         count=1,
+        flags=re.S,
     )
+
+    if 'data-services-menu-mobile></div>' in html and "mobile-menu__accordion--services" not in html:
+        html = html.replace(
+            '<div data-services-menu-mobile></div>',
+            f'<div data-services-menu-mobile>\n{mobile}\n          </div>',
+            1,
+        )
 
     html = re.sub(
         r'<script type="module" src="assets/js/main\.js[^"]*"></script>',

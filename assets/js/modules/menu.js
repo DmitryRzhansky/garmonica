@@ -59,6 +59,14 @@ function initMenu() {
   const focusableSelector =
     'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
+  function resetAccordions() {
+    menu.querySelectorAll("[data-mobile-accordion].is-open").forEach((item) => {
+      item.classList.remove("is-open");
+      const btn = item.querySelector(":scope > [data-mobile-accordion-btn]");
+      btn?.setAttribute("aria-expanded", "false");
+    });
+  }
+
   function openMenu() {
     menu.classList.add("is-open");
     menu.removeAttribute("hidden");
@@ -75,6 +83,7 @@ function initMenu() {
     menu.setAttribute("aria-hidden", "true");
     toggle.setAttribute("aria-expanded", "false");
     document.body.classList.remove("is-menu-open");
+    resetAccordions();
     toggle.focus();
 
     window.setTimeout(() => {
@@ -110,9 +119,23 @@ function initMenu() {
       return;
     }
 
-    const isOpen = accordion.classList.contains("is-open");
-    accordion.classList.toggle("is-open", !isOpen);
-    accordionBtn.setAttribute("aria-expanded", String(!isOpen));
+    const willOpen = !accordion.classList.contains("is-open");
+    const parent = accordion.parentElement;
+
+    if (parent) {
+      parent.querySelectorAll(":scope > [data-mobile-accordion].is-open").forEach((item) => {
+        if (item === accordion) {
+          return;
+        }
+        item.classList.remove("is-open");
+        item
+          .querySelector(":scope > [data-mobile-accordion-btn]")
+          ?.setAttribute("aria-expanded", "false");
+      });
+    }
+
+    accordion.classList.toggle("is-open", willOpen);
+    accordionBtn.setAttribute("aria-expanded", String(willOpen));
   });
 
   document.addEventListener("keydown", (event) => {

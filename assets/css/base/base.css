@@ -34,6 +34,10 @@ body.is-menu-open {
   overflow: hidden;
 }
 
+html:has(body.is-menu-open) {
+  overflow: hidden;
+}
+
 main {
   display: block;
   width: 100%;
