@@ -39,13 +39,13 @@
 
 .prices__geo-label {
   display: block;
+  margin-top: 0.15rem;
   font-size: 0.8125rem;
   color: var(--color-text-muted);
 }
 
 .prices__geo-value {
   display: block;
-  margin-top: 0.15rem;
   font-family: var(--font-headline);
   font-size: 0.9375rem;
   font-weight: 400;
@@ -158,12 +158,13 @@
 
   .prices__table thead th {
     padding: 1rem 1.15rem;
-    background: linear-gradient(180deg, #f3f8fc 0%, #eaf3fa 100%);
+    background: linear-gradient(180deg, #eef5fa 0%, #e2edf5 100%);
     border-bottom: 1px solid var(--color-border);
     font-family: var(--font-headline);
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--color-text-dark);
+    text-align: center;
     white-space: nowrap;
   }
 
@@ -173,7 +174,6 @@
 
   .prices__table thead th:last-child {
     width: 18%;
-    text-align: right;
   }
 
   .prices__table tbody tr {
