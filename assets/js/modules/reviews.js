@@ -18,7 +18,7 @@ export function initReviews() {
   function getActivePanel() {
     const checked = root.querySelector(".reviews__tab-input:checked");
     const key = checked ? checked.getAttribute("data-reviews-tab") : "yandex";
-    return panels.find((panel) => panel.getAttribute("data-reviews-panel") === key);
+    return panels.find((panel) => panel.getAttribute("data-reviews-panel") === key) || null;
   }
 
   function getPerView(track) {
@@ -31,6 +31,17 @@ export function initReviews() {
     return Array.from(panel.querySelectorAll(".reviews__slide"));
   }
 
+  function getMaxIndex(panel) {
+    const track = panel.querySelector("[data-reviews-track]");
+    const slides = getSlides(panel);
+
+    if (!track || !slides.length) {
+      return 0;
+    }
+
+    return Math.max(0, slides.length - getPerView(track));
+  }
+
   function getStep(panel) {
     const track = panel.querySelector("[data-reviews-track]");
     const slides = getSlides(panel);
@@ -41,7 +52,25 @@ export function initReviews() {
 
     const styles = getComputedStyle(track);
     const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
-    return slides[0].getBoundingClientRect().width + gap;
+    const width = slides[0].getBoundingClientRect().width;
+
+    return width > 0 ? width + gap : 0;
+  }
+
+  function setNavState(button, isInactive) {
+    if (!button) {
+      return;
+    }
+
+    button.disabled = isInactive;
+    button.classList.toggle("reviews__nav--hidden", isInactive);
+    button.setAttribute("aria-hidden", String(isInactive));
+
+    if (isInactive) {
+      button.setAttribute("tabindex", "-1");
+    } else {
+      button.removeAttribute("tabindex");
+    }
   }
 
   function syncViewportHeight(panel, state) {
@@ -74,31 +103,37 @@ export function initReviews() {
     const prevButton = panel.querySelector("[data-reviews-prev]");
     const nextButton = panel.querySelector("[data-reviews-next]");
     const state = panelState.get(panel) || { index: 0 };
-    const slides = getSlides(panel);
-    const perView = track ? getPerView(track) : 1;
-    const maxIndex = Math.max(0, slides.length - perView);
+    const maxIndex = getMaxIndex(panel);
 
     state.index = Math.min(Math.max(0, state.index), maxIndex);
     panelState.set(panel, state);
 
     if (track) {
       const step = getStep(panel);
-      track.style.transform = step
-        ? `translate3d(-${state.index * step}px, 0, 0)`
-        : "translate3d(0, 0, 0)";
+      track.style.transform =
+        step > 0
+          ? `translate3d(-${state.index * step}px, 0, 0)`
+          : "translate3d(0, 0, 0)";
     }
 
-    if (prevButton) {
-      prevButton.disabled = state.index <= 0;
-    }
-
-    if (nextButton) {
-      nextButton.disabled = state.index >= maxIndex;
-    }
+    setNavState(prevButton, state.index <= 0);
+    setNavState(nextButton, state.index >= maxIndex);
 
     requestAnimationFrame(() => {
       syncViewportHeight(panel, state);
     });
+  }
+
+  function movePanel(panel, delta) {
+    if (!panel) {
+      return;
+    }
+
+    const state = panelState.get(panel) || { index: 0 };
+    const maxIndex = getMaxIndex(panel);
+    state.index = Math.min(maxIndex, Math.max(0, state.index + delta));
+    panelState.set(panel, state);
+    updatePanel(panel);
   }
 
   function onTabChange() {
@@ -118,43 +153,35 @@ export function initReviews() {
     tab.addEventListener("change", onTabChange);
   });
 
-  root.addEventListener("click", (event) => {
-    const prevButton = event.target.closest("[data-reviews-prev]");
+  panels.forEach((panel) => {
+    const prevButton = panel.querySelector("[data-reviews-prev]");
+    const nextButton = panel.querySelector("[data-reviews-next]");
 
-    if (prevButton && root.contains(prevButton)) {
-      event.preventDefault();
-      const panel = prevButton.closest("[data-reviews-panel]") || getActivePanel();
+    if (prevButton) {
+      prevButton.removeAttribute("hidden");
+      prevButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
 
-      if (!panel) {
-        return;
-      }
+        if (prevButton.disabled || prevButton.classList.contains("reviews__nav--hidden")) {
+          return;
+        }
 
-      const state = panelState.get(panel) || { index: 0 };
-      state.index = Math.max(0, state.index - 1);
-      panelState.set(panel, state);
-      updatePanel(panel);
-      return;
+        movePanel(panel, -1);
+      });
     }
 
-    const nextButton = event.target.closest("[data-reviews-next]");
+    if (nextButton) {
+      nextButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
 
-    if (nextButton && root.contains(nextButton)) {
-      event.preventDefault();
-      const panel = nextButton.closest("[data-reviews-panel]") || getActivePanel();
+        if (nextButton.disabled || nextButton.classList.contains("reviews__nav--hidden")) {
+          return;
+        }
 
-      if (!panel) {
-        return;
-      }
-
-      const track = panel.querySelector("[data-reviews-track]");
-      const maxIndex = Math.max(
-        0,
-        getSlides(panel).length - (track ? getPerView(track) : 1)
-      );
-      const state = panelState.get(panel) || { index: 0 };
-      state.index = Math.min(maxIndex, state.index + 1);
-      panelState.set(panel, state);
-      updatePanel(panel);
+        movePanel(panel, 1);
+      });
     }
   });
 

@@ -175,39 +175,21 @@
 }
 
 .reviews__avatar {
-  display: grid;
-  place-items: center;
   width: 2.5rem;
   height: 2.5rem;
-  font-family: var(--font-text);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--color-white);
   border-radius: 50%;
-  background-color: var(--color-accent);
+  background-color: var(--color-cutout);
 }
 
 .reviews__avatar--image {
   display: block;
+  width: 2.5rem;
+  height: 2.5rem;
   object-fit: cover;
+  object-position: center top;
   padding: 0;
+  border-radius: 50%;
   background-color: var(--color-cutout);
-}
-
-.reviews__avatar--violet {
-  background-color: #7b6bb5;
-}
-
-.reviews__avatar--brown {
-  background-color: #8b6b4f;
-}
-
-.reviews__avatar--green {
-  background-color: #4f8b6b;
-}
-
-.reviews__avatar--orange {
-  background-color: #c47a3a;
 }
 
 .reviews__person {
@@ -329,10 +311,8 @@
   left: 0;
   right: 0;
   z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
+  display: block;
+  height: 2.75rem;
   padding-inline: 0.35rem;
   margin: 0;
   transform: translateY(-50%);
@@ -340,6 +320,9 @@
 }
 
 .reviews__nav {
+  position: absolute;
+  top: 0;
+  z-index: 4;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -355,24 +338,37 @@
   transition:
     background-color var(--transition-base),
     border-color var(--transition-base),
-    opacity var(--transition-base);
+    color var(--transition-base);
 }
 
-.reviews__nav:hover:not(:disabled) {
+.reviews__nav--prev {
+  left: 0.35rem;
+}
+
+.reviews__nav--next {
+  right: 0.35rem;
+}
+
+.reviews__nav:hover:not(:disabled):not(.reviews__nav--hidden),
+.reviews__nav:focus-visible:not(:disabled):not(.reviews__nav--hidden) {
   color: var(--color-white);
   background-color: var(--color-accent);
   border-color: var(--color-accent);
 }
 
-.reviews__nav:disabled {
-  opacity: 0.35;
-  cursor: default;
+.reviews__nav--hidden {
+  display: none !important;
 }
 
 .reviews__nav-icon {
   display: block;
   width: 1rem;
   height: 1rem;
+  flex-shrink: 0;
+  color: inherit;
+  fill: currentColor;
+  pointer-events: none;
+  transition: color var(--transition-base);
 }
 
 .reviews__nav--prev .reviews__nav-icon {
