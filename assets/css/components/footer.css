@@ -108,6 +108,12 @@
   display: block;
   width: 1rem;
   height: 1rem;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.site-footer__social-icon--mail {
+  filter: brightness(0) invert(1);
 }
 
 .site-footer__column {

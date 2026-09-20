@@ -275,6 +275,7 @@
 .mobile-menu__social-icon {
   width: 1rem;
   height: 1rem;
+  object-fit: contain;
 }
 
 .mobile-menu__cta {
