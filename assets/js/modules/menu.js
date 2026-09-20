@@ -1,7 +1,7 @@
-export function initMenu() {
+function initMenu() {
   const toggle = document.querySelector("[data-menu-toggle]");
   const menu = document.querySelector("[data-mobile-menu]");
-  const closeButtons = document.querySelectorAll("[data-menu-close]");
+  const header = document.querySelector("[data-header]");
 
   if (!toggle || !menu) {
     return;
@@ -14,6 +14,7 @@ export function initMenu() {
   function openMenu() {
     menu.classList.add("is-open");
     menu.removeAttribute("hidden");
+    menu.setAttribute("aria-hidden", "false");
     toggle.setAttribute("aria-expanded", "true");
     document.body.classList.add("is-menu-open");
 
@@ -23,6 +24,7 @@ export function initMenu() {
 
   function closeMenu() {
     menu.classList.remove("is-open");
+    menu.setAttribute("aria-hidden", "true");
     toggle.setAttribute("aria-expanded", "false");
     document.body.classList.remove("is-menu-open");
     toggle.focus();
@@ -43,12 +45,26 @@ export function initMenu() {
     }
   });
 
-  closeButtons.forEach((button) => {
-    button.addEventListener("click", closeMenu);
+  menu.addEventListener("click", (event) => {
+    if (event.target.closest("[data-menu-close]")) {
+      closeMenu();
+    }
   });
 
-  menu.querySelectorAll("a[href^='#']").forEach((link) => {
-    link.addEventListener("click", closeMenu);
+  menu.addEventListener("click", (event) => {
+    const accordionBtn = event.target.closest("[data-mobile-accordion-btn]");
+    if (!accordionBtn) {
+      return;
+    }
+
+    const accordion = accordionBtn.closest("[data-mobile-accordion]");
+    if (!accordion) {
+      return;
+    }
+
+    const isOpen = accordion.classList.contains("is-open");
+    accordion.classList.toggle("is-open", !isOpen);
+    accordionBtn.setAttribute("aria-expanded", String(!isOpen));
   });
 
   document.addEventListener("keydown", (event) => {
@@ -56,4 +72,14 @@ export function initMenu() {
       closeMenu();
     }
   });
+
+  if (header) {
+    const onScroll = () => {
+      header.classList.toggle("hero-header--scrolled", window.scrollY > 24);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
 }
+
+window.initMenu = initMenu;

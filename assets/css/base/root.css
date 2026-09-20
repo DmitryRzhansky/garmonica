@@ -32,7 +32,7 @@
   --section-padding-inline: clamp(0.9375rem, 1.2vw, 1.25rem);
   /* Единый вертикальный ритм между всеми секциями */
   --section-fade: clamp(2.25rem, 4.5vw, 3.5rem);
-  --header-offset: 4rem;
+  --header-offset: 4.75rem;
 
   --page-gradient-top: #ffffff;
   --page-gradient-mid: #f5f9fc;
@@ -50,6 +50,8 @@
 
   --glass-bg: rgba(255, 255, 255, 0.82);
   --glass-border: rgba(91, 155, 213, 0.18);
+  --glass-logo-bg: rgba(26, 42, 58, 0.78);
+  --glass-nav-bg: rgba(26, 42, 58, 0.78);
   --shadow-soft: 0 0.75rem 2rem rgba(26, 42, 58, 0.08);
 
   --page-shell-width: min(
@@ -58,15 +60,15 @@
   );
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 48rem) {
   :root {
-    --header-offset: 4.5rem;
+    --header-offset: 6.75rem;
   }
 }
 
-@media (min-width: 60rem) {
+@media (min-width: 64rem) {
   :root {
-    --header-offset: 5.75rem;
+    --header-offset: 7.25rem;
   }
 }
 

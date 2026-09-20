@@ -1,8 +1,8 @@
-import { initMenu } from "./modules/menu.js";
-import { initContactForm } from "./modules/contact-form.js";
-import { initReviews } from "./modules/reviews.js";
-
 function safeInit(label, fn) {
+  if (typeof fn !== "function") {
+    return;
+  }
+
   try {
     fn();
   } catch (error) {
@@ -11,9 +11,14 @@ function safeInit(label, fn) {
 }
 
 function initApp() {
-  safeInit("menu", initMenu);
-  safeInit("contact-form", initContactForm);
-  safeInit("reviews", initReviews);
+  safeInit("menu", window.initMenu);
+  safeInit("services-menu", window.initServicesMenu);
+  safeInit("contact-form", window.initContactForm);
+  safeInit("reviews", window.initReviews);
 }
 
-document.addEventListener("DOMContentLoaded", initApp);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initApp);
+} else {
+  initApp();
+}

@@ -1,4 +1,4 @@
-export function initReviews() {
+function initReviews() {
   const root = document.querySelector("[data-reviews]");
 
   if (!root || root.dataset.reviewsReady === "true") {
@@ -191,3 +191,5 @@ export function initReviews() {
 
   onTabChange();
 }
+
+window.initReviews = initReviews;

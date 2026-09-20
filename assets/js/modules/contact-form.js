@@ -1,4 +1,4 @@
-export function initContactForm() {
+function initContactForm() {
   function formatPhone(value) {
     const digits = value.replace(/\D/g, "");
 
@@ -167,3 +167,5 @@ export function initContactForm() {
     }
   });
 }
+
+window.initContactForm = initContactForm;

@@ -1,0 +1,95 @@
+.hero-header__nav-item--about {
+  position: relative;
+}
+
+.hero-header__nav-item--about:hover > .hero-header__nav-link,
+.hero-header__nav-item--about:focus-within > .hero-header__nav-link {
+  color: var(--color-text-hover);
+  background-color: var(--color-white);
+}
+
+.about-menu {
+  position: absolute;
+  z-index: 90;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  min-width: 17.5rem;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  box-shadow: 0 0.75rem 2rem rgba(26, 42, 58, 0.16);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(0.25rem);
+  transition:
+    opacity var(--transition-base),
+    visibility var(--transition-base),
+    transform var(--transition-base);
+}
+
+.about-menu::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 0.5rem;
+}
+
+.hero-header__nav-item--about:hover .about-menu,
+.hero-header__nav-item--about:focus-within .about-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.about-menu__list {
+  display: grid;
+  gap: 0.125rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-menu__link {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-text);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--color-text-dark);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.about-menu__link:hover {
+  color: var(--color-accent);
+  background-color: var(--color-accent-light);
+}
+
+.about-menu__link:focus-visible {
+  outline: 0.125rem solid var(--color-accent);
+  outline-offset: 0.125rem;
+}
+
+.about-menu__icon {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  /* SVG as <img> is black; map to --color-accent (#5b9bd5) */
+  filter: invert(58%) sepia(35%) saturate(700%) hue-rotate(172deg) brightness(95%) contrast(92%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-menu {
+    transition: none;
+  }
+}
