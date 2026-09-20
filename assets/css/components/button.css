@@ -33,13 +33,14 @@
 }
 
 .button--warm {
-  color: var(--color-text-dark);
-  background: linear-gradient(135deg, var(--color-warm) 0%, #ffe0a8 100%);
-  box-shadow: 0 0.35rem 1rem rgba(253, 184, 99, 0.35);
+  color: var(--color-white);
+  background: linear-gradient(135deg, #e8912e 0%, #f0a84a 100%);
+  box-shadow: 0 0.35rem 1.1rem rgba(200, 120, 30, 0.38);
 }
 
 .button--warm:hover {
-  background: linear-gradient(135deg, var(--color-warm-hover) 0%, var(--color-warm) 100%);
+  background: linear-gradient(135deg, #d98220 0%, #e8912e 100%);
+  box-shadow: 0 0.4rem 1.2rem rgba(180, 105, 20, 0.42);
 }
 
 .button--outline {
