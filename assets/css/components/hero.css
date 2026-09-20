@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  order: 2;
+  order: 3;
   min-width: 0;
 }
 
@@ -87,93 +87,63 @@
   object-position: center;
 }
 
-.hero__facts {
+.hero__signals {
+  order: 2;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.55rem;
-  margin: 0.35rem 0 0;
+  gap: 0;
+  width: 100%;
+  margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.hero__fact {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.85rem 0.95rem;
   border-radius: var(--radius-lg);
-  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
 }
 
-.hero__fact--time {
-  background: linear-gradient(135deg, rgba(232, 244, 251, 0.95) 0%, rgba(255, 255, 255, 0.92) 100%);
-  border-color: rgba(91, 155, 213, 0.22);
-}
-
-.hero__fact--privacy {
-  background: linear-gradient(135deg, rgba(255, 248, 239, 0.98) 0%, rgba(255, 255, 255, 0.92) 100%);
-  border-color: rgba(253, 184, 99, 0.35);
-}
-
-.hero__fact--care {
-  background: linear-gradient(135deg, rgba(232, 247, 241, 0.98) 0%, rgba(255, 255, 255, 0.92) 100%);
-  border-color: rgba(90, 170, 150, 0.28);
-}
-
-.hero__fact-icon-wrap {
+.hero__signal {
   display: grid;
-  place-items: center;
-  width: 2.4rem;
-  height: 2.4rem;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0.75rem;
+  padding: 0.95rem 1rem;
+}
+
+.hero__signal + .hero__signal {
+  border-top: 1px solid var(--color-border-light);
+}
+
+.hero__signal-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.15rem;
   flex-shrink: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 0.25rem 0.75rem rgba(26, 42, 58, 0.06);
+  object-fit: contain;
 }
 
-.hero__fact-icon {
-  width: 1.2rem;
-  height: 1.2rem;
+.hero__signal-body {
+  min-width: 0;
 }
 
-.hero__fact--time .hero__fact-icon {
-  filter: invert(55%) sepia(35%) saturate(700%) hue-rotate(170deg) brightness(95%) contrast(90%);
-}
-
-.hero__fact--privacy .hero__fact-icon {
-  filter: invert(62%) sepia(45%) saturate(650%) hue-rotate(350deg) brightness(95%) contrast(92%);
-}
-
-.hero__fact--care .hero__fact-icon {
-  filter: invert(48%) sepia(24%) saturate(700%) hue-rotate(118deg) brightness(95%) contrast(90%);
-}
-
-.hero__fact-text {
-  margin: 0;
+.hero__signal-title {
+  margin: 0 0 0.2rem;
   font-family: var(--font-headline);
-  font-size: 0.98rem;
+  font-size: 0.975rem;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.25;
   color: var(--color-text-dark);
 }
 
-.hero__fact-index {
-  display: none;
+.hero__signal-text {
+  margin: 0;
+  max-width: 22rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--color-text-muted);
 }
 
 @media (min-width: 40rem) {
-  .hero__facts {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .hero__fact {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.7rem;
-    min-height: 6.5rem;
-    padding: 1rem;
-  }
-
   .hero__media {
     max-width: 24rem;
     padding: 1.5rem;
@@ -181,6 +151,19 @@
 
   .hero__logo {
     width: min(100%, 18rem);
+  }
+
+  .hero__signals {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero__signal {
+    padding: 1.05rem 1.15rem;
+  }
+
+  .hero__signal + .hero__signal {
+    border-top: 0;
+    border-left: 1px solid var(--color-border);
   }
 }
 
@@ -192,7 +175,7 @@
   .hero__inner {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     align-items: start;
-    gap: 1.75rem;
+    gap: 1.25rem 1.75rem;
   }
 
   .hero__content {
@@ -214,8 +197,22 @@
     width: min(100%, 22rem);
   }
 
-  .hero__facts {
-    margin-top: auto;
+  .hero__signals {
+    order: 3;
+    grid-column: 1 / -1;
+    margin-top: 0.25rem;
+  }
+
+  .hero__signal {
+    padding: 1.15rem 1.35rem;
+  }
+
+  .hero__signal-title {
+    font-size: 1rem;
+  }
+
+  .hero__signal-text {
+    font-size: 0.875rem;
   }
 }
 
@@ -231,8 +228,14 @@
     max-height: 22rem;
   }
 
-  .hero__fact {
-    min-height: 0;
-    padding: 0.85rem;
+  .hero__signal {
+    padding: 0.95rem 1.1rem;
+  }
+
+  .hero__signal-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }

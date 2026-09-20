@@ -1,6 +1,7 @@
 /* Soft blue tint for monochrome Phosphor SVGs loaded via <img> */
 .hero-header__meta-icon,
 .hero-header__phone-icon,
+.hero__signal-icon,
 .prices__geo-icon img,
 .contact__info-icon,
 .faq__icon {
