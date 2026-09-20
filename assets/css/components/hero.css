@@ -1,34 +1,44 @@
 ﻿.hero {
   position: relative;
-  padding: calc(var(--header-offset) + 0.75rem) 0 2.5rem;
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f7fbfe 42%,
-    var(--color-cutout) 100%
-  );
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 100svh;
+  padding:
+    calc(var(--header-offset) + 4.375rem) /* 70px below header */
+    0
+    clamp(1rem, 2.5vh, 1.75rem);
+  background:
+    radial-gradient(ellipse 70% 55% at 85% 20%, rgba(253, 184, 99, 0.2), transparent 60%),
+    radial-gradient(ellipse 65% 50% at 8% 45%, rgba(189, 224, 245, 0.55), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #f7fbfe 55%, var(--color-cutout) 100%);
 }
 
 .hero__inner {
   display: grid;
+  flex: 1 1 auto;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 1rem;
+  align-content: start;
+  align-items: start;
   width: var(--page-shell-width);
+  min-height: 0;
   margin-inline: auto;
 }
 
 .hero__content {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.85rem;
   order: 2;
   min-width: 0;
 }
 
 .hero__title {
   margin: 0;
-  font-size: var(--font-size-h1);
+  font-size: clamp(1.65rem, 1.2rem + 2vw, 2.75rem);
   font-weight: 400;
+  line-height: 1.15;
 }
 
 .hero__title-accent {
@@ -38,39 +48,50 @@
 .hero__description {
   margin: 0;
   max-width: 36rem;
+  font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
   color: var(--color-text-muted);
 }
 
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 .hero__media {
   order: 1;
   position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 22rem;
+  margin-inline: auto;
+  aspect-ratio: 1 / 1;
+  padding: 1.25rem;
   overflow: hidden;
   border-radius: var(--radius-xl);
   background:
-    linear-gradient(145deg, var(--color-accent-soft) 0%, #ffffff 45%, var(--color-warm-soft) 100%);
-  min-height: 14rem;
-  aspect-ratio: 16 / 10;
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.55) 42%, transparent 68%),
+    linear-gradient(160deg, #d7ecf8 0%, #ffffff 48%, #ffe8cc 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(91, 155, 213, 0.14),
+    0 1rem 2.5rem rgba(91, 155, 213, 0.1);
 }
 
-.hero__image {
+.hero__logo {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: min(100%, 16rem);
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
   object-position: center;
 }
 
 .hero__facts {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.5rem;
-  margin: 0.25rem 0 0;
+  gap: 0.55rem;
+  margin: 0.35rem 0 0;
   padding: 0;
   list-style: none;
 }
@@ -78,62 +99,140 @@
 .hero__fact {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 0.7rem;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-md);
+  gap: 0.75rem;
+  padding: 0.85rem 0.95rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+}
+
+.hero__fact--time {
+  background: linear-gradient(135deg, rgba(232, 244, 251, 0.95) 0%, rgba(255, 255, 255, 0.92) 100%);
+  border-color: rgba(91, 155, 213, 0.22);
+}
+
+.hero__fact--privacy {
+  background: linear-gradient(135deg, rgba(255, 248, 239, 0.98) 0%, rgba(255, 255, 255, 0.92) 100%);
+  border-color: rgba(253, 184, 99, 0.35);
+}
+
+.hero__fact--care {
+  background: linear-gradient(135deg, rgba(232, 247, 241, 0.98) 0%, rgba(255, 255, 255, 0.92) 100%);
+  border-color: rgba(90, 170, 150, 0.28);
+}
+
+.hero__fact-icon-wrap {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0.25rem 0.75rem rgba(26, 42, 58, 0.06);
 }
 
 .hero__fact-icon {
-  width: 1.05rem;
-  height: 1.05rem;
-  flex-shrink: 0;
-  color: var(--color-accent);
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.hero__fact--time .hero__fact-icon {
+  filter: invert(55%) sepia(35%) saturate(700%) hue-rotate(170deg) brightness(95%) contrast(90%);
+}
+
+.hero__fact--privacy .hero__fact-icon {
+  filter: invert(62%) sepia(45%) saturate(650%) hue-rotate(350deg) brightness(95%) contrast(92%);
+}
+
+.hero__fact--care .hero__fact-icon {
+  filter: invert(48%) sepia(24%) saturate(700%) hue-rotate(118deg) brightness(95%) contrast(90%);
 }
 
 .hero__fact-text {
   margin: 0;
   font-family: var(--font-headline);
-  font-size: 0.9375rem;
+  font-size: 0.98rem;
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.2;
   color: var(--color-text-dark);
+}
+
+.hero__fact-index {
+  display: none;
 }
 
 @media (min-width: 40rem) {
   .hero__facts {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .hero__fact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    min-height: 6.5rem;
+    padding: 1rem;
+  }
+
+  .hero__media {
+    max-width: 24rem;
+    padding: 1.5rem;
+  }
+
+  .hero__logo {
+    width: min(100%, 18rem);
+  }
 }
 
 @media (min-width: 64rem) {
+  .hero {
+    padding-bottom: clamp(1.25rem, 2.5vh, 2rem);
+  }
+
   .hero__inner {
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    align-items: stretch;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: start;
     gap: 1.75rem;
   }
 
   .hero__content {
     order: 1;
-    justify-content: flex-start;
+    gap: 1rem;
   }
 
   .hero__media {
     order: 2;
-    align-self: stretch;
-    min-height: 0;
-    height: auto;
-    aspect-ratio: auto;
+    align-self: start;
+    max-width: none;
+    width: 100%;
+    max-height: 28rem;
+    aspect-ratio: 1 / 1;
+    padding: 1.75rem;
   }
 
-  .hero__image {
-    position: absolute;
-    inset: 0;
-    max-width: none;
+  .hero__logo {
+    width: min(100%, 22rem);
   }
 
   .hero__facts {
     margin-top: auto;
+  }
+}
+
+@media (max-height: 48rem) and (min-width: 64rem) {
+  .hero__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .hero__media {
+    max-height: 22rem;
+  }
+
+  .hero__fact {
+    min-height: 0;
+    padding: 0.85rem;
   }
 }
