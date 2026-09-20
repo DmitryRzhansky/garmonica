@@ -82,26 +82,44 @@
                     </li>
                     <li>
                       <a class="about-menu__link" href="#about">
+                        <img class="about-menu__icon" src="assets/icons/hospital.svg" alt="" width="20" height="20" decoding="async">
+                        <span>Клиника</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="about-menu__link" href="#about">
                         <img class="about-menu__icon" src="assets/icons/shield-check.svg" alt="" width="20" height="20" decoding="async">
                         <span>Лицензия</span>
                       </a>
                     </li>
                     <li>
-                      <a class="about-menu__link" href="#contact">
-                        <img class="about-menu__icon" src="assets/icons/envelope.svg" alt="" width="20" height="20" decoding="async">
-                        <span>Юридическая информация</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="about-menu__link" href="#stages">
-                        <img class="about-menu__icon" src="assets/icons/first-aid.svg" alt="" width="20" height="20" decoding="async">
-                        <span>Методы оказания помощи</span>
-                      </a>
-                    </li>
-                    <li>
                       <a class="about-menu__link" href="#perks">
+                        <img class="about-menu__icon" src="assets/icons/seal-check.svg" alt="" width="20" height="20" decoding="async">
+                        <span>Гарантия</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="about-menu__link" href="#contact">
+                        <img class="about-menu__icon" src="assets/icons/lock.svg" alt="" width="20" height="20" decoding="async">
+                        <span>Договор</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="about-menu__link" href="#about">
+                        <img class="about-menu__icon" src="assets/icons/sun.svg" alt="" width="20" height="20" decoding="async">
+                        <span>Фотогалерея</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="about-menu__link" href="#reviews">
                         <img class="about-menu__icon" src="assets/icons/star.svg" alt="" width="20" height="20" decoding="async">
-                        <span>Преимущества</span>
+                        <span>Кейсы</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="about-menu__link" href="#reviews">
+                        <img class="about-menu__icon" src="assets/icons/chat-circle.svg" alt="" width="20" height="20" decoding="async">
+                        <span>Отзывы</span>
                       </a>
                     </li>
                   </ul>
@@ -680,20 +698,32 @@
                 <span>Врачи</span>
               </a>
               <a class="mobile-menu__about-link" href="#about" data-menu-close>
+                <img class="mobile-menu__about-icon" src="assets/icons/hospital.svg" alt="" width="20" height="20" decoding="async">
+                <span>Клиника</span>
+              </a>
+              <a class="mobile-menu__about-link" href="#about" data-menu-close>
                 <img class="mobile-menu__about-icon" src="assets/icons/shield-check.svg" alt="" width="20" height="20" decoding="async">
                 <span>Лицензия</span>
               </a>
-              <a class="mobile-menu__about-link" href="#contact" data-menu-close>
-                <img class="mobile-menu__about-icon" src="assets/icons/envelope.svg" alt="" width="20" height="20" decoding="async">
-                <span>Юридическая информация</span>
-              </a>
-              <a class="mobile-menu__about-link" href="#stages" data-menu-close>
-                <img class="mobile-menu__about-icon" src="assets/icons/first-aid.svg" alt="" width="20" height="20" decoding="async">
-                <span>Методы оказания помощи</span>
-              </a>
               <a class="mobile-menu__about-link" href="#perks" data-menu-close>
+                <img class="mobile-menu__about-icon" src="assets/icons/seal-check.svg" alt="" width="20" height="20" decoding="async">
+                <span>Гарантия</span>
+              </a>
+              <a class="mobile-menu__about-link" href="#contact" data-menu-close>
+                <img class="mobile-menu__about-icon" src="assets/icons/lock.svg" alt="" width="20" height="20" decoding="async">
+                <span>Договор</span>
+              </a>
+              <a class="mobile-menu__about-link" href="#about" data-menu-close>
+                <img class="mobile-menu__about-icon" src="assets/icons/sun.svg" alt="" width="20" height="20" decoding="async">
+                <span>Фотогалерея</span>
+              </a>
+              <a class="mobile-menu__about-link" href="#reviews" data-menu-close>
                 <img class="mobile-menu__about-icon" src="assets/icons/star.svg" alt="" width="20" height="20" decoding="async">
-                <span>Преимущества</span>
+                <span>Кейсы</span>
+              </a>
+              <a class="mobile-menu__about-link" href="#reviews" data-menu-close>
+                <img class="mobile-menu__about-icon" src="assets/icons/chat-circle.svg" alt="" width="20" height="20" decoding="async">
+                <span>Отзывы</span>
               </a>
             </div>
           </div>
@@ -2832,6 +2862,7 @@
     </main>
 
     <footer class="site-footer" data-site-footer>
+      <div class="site-footer__frame">
       <div class="site-footer__inner">
         <div class="site-footer__brand">
           <a class="site-footer__logo" href="#top" aria-label="Гармоника — на главную">
@@ -2870,58 +2901,52 @@
         <nav class="site-footer__column" aria-label="Услуги">
           <span class="site-footer__title"><a href="#prices">Услуги</a></span>
           <ul class="site-footer__list" role="list">
-            <li><a href="#prices">Вызов нарколога на дом</a></li>
-            <li><a href="#prices">Капельницы и консультации</a></li>
+            <li><a href="#prices">Наркологическая помощь</a></li>
+            <li><a href="#prices">Лечение алкоголизма</a></li>
+            <li><a href="#prices">Лечение наркомании</a></li>
+            <li><a href="#prices">Другие зависимости</a></li>
+            <li><a href="#prices">Реабилитация зависимых</a></li>
             <li><a href="#prices">Психиатрическая помощь</a></li>
-            <li><a href="#prices">Стационар и госпитализация</a></li>
-            <li><a href="#perks">Преимущества</a></li>
+            <li><a href="#prices">Психотерапия и психология</a></li>
+            <li><a href="#prices">Помощь родственникам зависимого</a></li>
+            <li><a href="#prices">Диагностика</a></li>
+            <li><a href="#prices">Восстановительная терапия</a></li>
           </ul>
         </nav>
 
-        <nav class="site-footer__column" aria-label="Пациентам">
-          <span class="site-footer__title">Пациентам</span>
+        <nav class="site-footer__column" aria-label="О компании">
+          <span class="site-footer__title"><a href="#about">О компании</a></span>
           <ul class="site-footer__list" role="list">
-            <li><a href="#about">О клинике</a></li>
-            <li><a href="#about">Почему «Гармоника»</a></li>
-            <li><a href="#prices">Цены</a></li>
-            <li><a href="#perks">Преимущества</a></li>
-            <li><a href="#faq">Ответы на вопросы</a></li>
+            <li><a href="#about-team">Врачи</a></li>
+            <li><a href="#about">Клиника</a></li>
+            <li><a href="#about">Лицензия</a></li>
+            <li><a href="#perks">Гарантия</a></li>
+            <li><a href="#contact">Договор</a></li>
+            <li><a href="#about">Фотогалерея</a></li>
+            <li><a href="#reviews">Кейсы</a></li>
             <li><a href="#reviews">Отзывы</a></li>
           </ul>
         </nav>
 
-        <nav class="site-footer__column" aria-label="Связь">
-          <span class="site-footer__title">Связь</span>
-          <ul class="site-footer__list" role="list">
-            <li><a href="tel:+74951204567">+7 (495) 120-45-67</a></li>
-            <li><a href="mailto:info@garmonica-clinic.ru">info@garmonica-clinic.ru</a></li>
-            <li><a href="#contact">Оставить заявку</a></li>
-            <li><a href="#contact">Адрес и карта</a></li>
+        <div class="site-footer__column" aria-label="Контакты">
+          <span class="site-footer__title"><a href="#contact">Контакты</a></span>
+          <ul class="site-footer__list site-footer__list--contacts" role="list">
+            <li>
+              <span class="site-footer__contact-label">Время работы:</span>
+              <span class="site-footer__contact-value">Круглосуточно 24/7</span>
+            </li>
+            <li>
+              <span class="site-footer__contact-label">Адрес:</span>
+              <span class="site-footer__contact-value">Москва и область · выезд на дом и приём в клинике</span>
+            </li>
+            <li>
+              <a href="tel:+74951204567">+7 (495) 120-45-67</a>
+            </li>
+            <li>
+              <a href="mailto:info@garmonica-clinic.ru">info@garmonica-clinic.ru</a>
+            </li>
           </ul>
           <a class="button button--primary site-footer__cta" href="#contact">Оставить заявку</a>
-        </nav>
-      </div>
-
-      <div class="site-footer__contacts-wrap">
-        <div class="site-footer__contacts-bar" aria-label="Контакты клиники">
-          <div class="site-footer__contacts-bar-inner">
-            <a class="site-footer__contacts-bar-item" href="tel:+74951204567">
-              <img class="site-footer__contacts-bar-icon" src="assets/icons/phone.svg" alt="" width="20" height="20" decoding="async">
-              <span>+7 (495) 120-45-67</span>
-            </a>
-            <a class="site-footer__contacts-bar-item" href="mailto:info@garmonica-clinic.ru">
-              <img class="site-footer__contacts-bar-icon" src="assets/icons/envelope.svg" alt="" width="20" height="20" decoding="async">
-              <span>info@garmonica-clinic.ru</span>
-            </a>
-            <span class="site-footer__contacts-bar-item site-footer__contacts-bar-item--static">
-              <img class="site-footer__contacts-bar-icon" src="assets/icons/map-pin.svg" alt="" width="20" height="20" decoding="async">
-              <span>Москва и область</span>
-            </span>
-            <span class="site-footer__contacts-bar-item site-footer__contacts-bar-item--static">
-              <img class="site-footer__contacts-bar-icon" src="assets/icons/clock.svg" alt="" width="20" height="20" decoding="async">
-              <span>Круглосуточно 24/7</span>
-            </span>
-          </div>
         </div>
       </div>
 
@@ -2931,6 +2956,7 @@
           <a href="#">Политика конфиденциальности</a>
           <a href="#">Согласие на обработку персональных данных</a>
         </div>
+      </div>
       </div>
     </footer>
 
