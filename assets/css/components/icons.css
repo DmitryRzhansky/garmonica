@@ -1,8 +1,6 @@
 /* Soft blue tint for monochrome Phosphor SVGs loaded via <img> */
 .hero-header__meta-icon,
 .hero-header__phone-icon,
-.hero__fact-icon,
-.advantages__icon,
 .prices__geo-icon img,
 .contact__info-icon,
 .faq__icon {
@@ -13,8 +11,7 @@
 .hero-header__burger:hover .hero-header__burger-icon,
 .mobile-menu__close:hover img,
 .button--primary .button__icon,
-.button--warm .button__icon,
-.services__card-link--solid .services__card-link-icon {
+.button--warm .button__icon {
   filter: brightness(0) invert(1);
 }
 
