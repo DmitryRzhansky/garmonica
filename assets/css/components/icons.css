@@ -13,7 +13,9 @@
 .hero-header__burger:hover .hero-header__burger-icon,
 .mobile-menu__close:hover img,
 .button--primary .button__icon,
-.button--warm .button__icon {
+.button--warm .button__icon,
+.button--outline:hover .button__icon,
+.request-form__button .request-form__button-icon {
   filter: brightness(0) invert(1);
 }
 
