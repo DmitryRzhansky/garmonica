@@ -32,6 +32,7 @@ function initServicesMenu() {
       return;
     }
     panel.style.top = `${Math.round(header.getBoundingClientRect().bottom + 8)}px`;
+    // 8px === --header-dropdown-gap (same as about-menu)
   }
 
   function openMenu() {

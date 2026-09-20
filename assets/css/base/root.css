@@ -53,6 +53,7 @@
   --glass-logo-bg: rgba(26, 42, 58, 0.78);
   --glass-nav-bg: rgba(26, 42, 58, 0.78);
   --shadow-soft: 0 0.75rem 2rem rgba(26, 42, 58, 0.08);
+  --header-dropdown-gap: 0.5rem;
 
   --page-shell-width: min(
     100% - (var(--section-padding-inline) * 2),
