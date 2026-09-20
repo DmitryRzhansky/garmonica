@@ -112,10 +112,6 @@
   border-radius: 50%;
 }
 
-.site-footer__social-icon--mail {
-  filter: brightness(0) invert(1);
-}
-
 .site-footer__column {
   min-width: 0;
 }

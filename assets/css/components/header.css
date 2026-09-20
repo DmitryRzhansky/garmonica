@@ -355,6 +355,10 @@
   border-radius: 50%;
 }
 
+.hero-header__social-icon--mail {
+  filter: brightness(0) invert(1);
+}
+
 @supports (width: 100dvw) {
   .hero-header {
     max-width: min(120rem, 100dvw);
