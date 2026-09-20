@@ -1,16 +1,20 @@
 ﻿.contact-section {
   padding-block: 2.5rem 3rem;
   color: var(--color-text-dark);
-  background-color: var(--color-cutout);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f7fbfe 35%,
+    var(--color-cutout) 100%
+  );
 }
 
 .contact-section__inner {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
-  width: 100%;
+  width: var(--page-shell-width);
   margin-inline: auto;
-  padding-inline: var(--section-padding-inline);
   align-items: stretch;
 }
 
@@ -462,7 +466,6 @@
   .contact-section__inner {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 1.25rem;
-    padding-inline: var(--section-padding-inline);
   }
 
   .contact-section__info-panel {

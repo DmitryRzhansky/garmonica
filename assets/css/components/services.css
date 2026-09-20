@@ -1,10 +1,16 @@
 ﻿.services {
   padding-block: var(--section-fade);
-  background: var(--color-white);
+  background: linear-gradient(
+    180deg,
+    #f7fbfe 0%,
+    #ffffff 24%,
+    #ffffff 76%,
+    var(--color-cutout) 100%
+  );
 }
 
 .services__inner {
-  width: min(100% - (var(--section-padding-inline) * 2), var(--container-width));
+  width: var(--page-shell-width);
   margin-inline: auto;
 }
 
@@ -25,7 +31,7 @@
   flex-direction: column;
   height: 100%;
   padding: 1.25rem;
-  background: var(--color-cutout);
+  background: rgba(245, 249, 252, 0.85);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
@@ -128,4 +134,3 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-

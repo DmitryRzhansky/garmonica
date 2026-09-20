@@ -12,7 +12,15 @@ body {
 
 body {
   overflow-x: clip;
-  background-color: var(--color-cutout);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    var(--color-cutout) 18%,
+    #ffffff 48%,
+    var(--color-cutout) 78%,
+    #f7fbfe 100%
+  );
+  background-attachment: fixed;
 }
 
 body.is-menu-open {

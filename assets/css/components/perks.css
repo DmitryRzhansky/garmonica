@@ -1,11 +1,16 @@
 ﻿.perks {
   padding-block: var(--section-fade);
-  background:
-    linear-gradient(160deg, #eaf4fb 0%, #fff8ef 55%, var(--color-cutout) 100%);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #eaf4fb 38%,
+    #fff8ef 72%,
+    var(--color-cutout) 100%
+  );
 }
 
 .perks__inner {
-  width: min(100% - (var(--section-padding-inline) * 2), var(--container-width));
+  width: var(--page-shell-width);
   margin-inline: auto;
 }
 
@@ -58,4 +63,3 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
-

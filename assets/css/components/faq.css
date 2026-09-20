@@ -1,10 +1,16 @@
 ﻿.faq {
   padding-block: var(--section-fade);
-  background: var(--color-cutout);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    var(--color-cutout) 30%,
+    #eef6fb 70%,
+    #f7fbfe 100%
+  );
 }
 
 .faq__inner {
-  width: min(100% - (var(--section-padding-inline) * 2), var(--container-width));
+  width: var(--page-shell-width);
   margin-inline: auto;
 }
 

@@ -10,7 +10,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem 1.5rem;
-  width: min(100% - 1.5rem, var(--container-width));
+  width: var(--page-shell-width);
   margin-inline: auto;
 }
 
@@ -142,7 +142,7 @@
 }
 
 .site-footer__contacts-wrap {
-  width: min(100% - 1.5rem, var(--container-width));
+  width: var(--page-shell-width);
   margin: 2.25rem auto 0;
 }
 
@@ -192,7 +192,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.85rem 1.5rem;
-  width: min(100% - 1.5rem, var(--container-width));
+  width: var(--page-shell-width);
   margin: 1.75rem auto 0;
   padding-top: 1.35rem;
   border-top: 1px solid rgba(255, 255, 255, 0.14);

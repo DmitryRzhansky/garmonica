@@ -28,7 +28,8 @@
   --font-size-body-sm: clamp(0.875rem, 0.85rem + 0.15vw, 1rem);
 
   --container-width: 75rem;
-  --section-padding-inline: 1.25rem;
+  /* 15–20px side gutters */
+  --section-padding-inline: clamp(0.9375rem, 1.2vw, 1.25rem);
   --section-fade: clamp(3rem, 6vw, 5rem);
   --header-offset: 4rem;
 
@@ -43,25 +44,22 @@
   --glass-bg: rgba(255, 255, 255, 0.82);
   --glass-border: rgba(91, 155, 213, 0.18);
   --shadow-soft: 0 0.75rem 2rem rgba(26, 42, 58, 0.08);
+
+  --page-shell-width: min(
+    100% - (var(--section-padding-inline) * 2),
+    var(--container-width)
+  );
 }
 
 @media (min-width: 40rem) {
   :root {
-    --section-padding-inline: 2rem;
     --header-offset: 4.5rem;
   }
 }
 
 @media (min-width: 60rem) {
   :root {
-    --section-padding-inline: 2.75rem;
     --header-offset: 5.75rem;
-  }
-}
-
-@media (min-width: 75rem) {
-  :root {
-    --section-padding-inline: clamp(3rem, 5vw, 4.5rem);
   }
 }
 

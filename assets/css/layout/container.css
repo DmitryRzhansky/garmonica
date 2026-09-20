@@ -1,5 +1,10 @@
+.page-shell {
+  width: var(--page-shell-width);
+  margin-inline: auto;
+}
+
 .container {
-  width: min(100% - (var(--section-padding-inline) * 2), var(--container-width));
+  width: var(--page-shell-width);
   margin-inline: auto;
 }
 
@@ -8,7 +13,6 @@
 }
 
 .section__header {
-  max-width: 42rem;
   margin-bottom: 2rem;
 }
 
@@ -22,11 +26,4 @@
   margin: 0;
   font-size: var(--font-size-body);
   color: var(--color-text-muted);
-}
-
-@media (min-width: 75rem) {
-  .container {
-    width: min(100%, var(--container-width));
-    padding-inline: var(--section-padding-inline);
-  }
 }

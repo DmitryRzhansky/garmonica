@@ -1,13 +1,19 @@
 .about {
   padding-block: var(--section-fade);
-  background-color: var(--color-white);
+  background: linear-gradient(
+    180deg,
+    var(--color-cutout) 0%,
+    #ffffff 28%,
+    #ffffff 72%,
+    #f7fbfe 100%
+  );
 }
 
 .about__inner {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.75rem;
-  width: min(100% - (var(--section-padding-inline) * 2), var(--container-width));
+  width: var(--page-shell-width);
   margin-inline: auto;
 }
 
@@ -47,7 +53,7 @@
 
 .about__stat {
   padding: 1rem 1.1rem;
-  background: var(--color-cutout);
+  background: rgba(255, 255, 255, 0.78);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border-light);
 }
@@ -56,7 +62,7 @@
   margin: 0 0 0.25rem;
   font-family: var(--font-headline);
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--color-accent);
 }
 
