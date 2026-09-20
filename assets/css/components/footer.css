@@ -110,19 +110,6 @@
   height: 1rem;
 }
 
-.site-footer__requisites {
-  display: grid;
-  gap: 0.25rem;
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.site-footer__requisites p {
-  margin: 0;
-}
-
 .site-footer__column {
   min-width: 0;
 }
