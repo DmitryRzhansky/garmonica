@@ -116,18 +116,22 @@
 }
 
 .perks__tile--protect {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.5rem;
-  align-items: end;
+  align-items: center;
   min-height: 18rem;
-  padding: 1.75rem 0 0 1.5rem;
+  padding: 1.75rem 1.5rem;
+  overflow: hidden;
   background: var(--perks-soft);
 }
 
 .perks__protect-copy {
-  padding-right: 1.5rem;
-  padding-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+  width: min(28rem, 58%);
+  max-width: 100%;
 }
 
 .perks__protect-title {
@@ -156,12 +160,18 @@
 }
 
 .perks__protect-visual {
-  display: block;
-  width: min(100%, 13rem);
-  margin: 0 0 -0.35rem auto;
-  height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: auto;
+  height: 100%;
+  max-width: none;
+  margin: 0;
   object-fit: contain;
-  object-position: bottom right;
+  object-position: right center;
+  pointer-events: none;
 }
 
 .perks__tile--wide {
@@ -227,13 +237,7 @@
   }
 
   .perks__tile--protect {
-    grid-template-columns: minmax(0, 1.2fr) minmax(10rem, 0.8fr);
-    padding: 1.85rem 0 0 1.75rem;
-  }
-
-  .perks__protect-visual {
-    width: 100%;
-    max-width: 15rem;
+    padding: 1.85rem 1.75rem;
   }
 
   .perks__tile--wide {
@@ -295,17 +299,6 @@
     width: 100%;
     max-width: none;
     margin-top: auto;
-  }
-
-  .perks__protect-copy {
-    align-self: center;
-    padding-bottom: 1.5rem;
-  }
-
-  .perks__protect-visual {
-    width: 100%;
-    max-width: 16rem;
-    align-self: end;
   }
 
   .perks__wide-content {
