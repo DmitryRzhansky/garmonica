@@ -189,6 +189,7 @@
   height: 100%;
   object-fit: cover;
   object-position: right center;
+  filter: brightness(0.62);
 }
 
 .perks__tile--wide::before {
@@ -198,10 +199,10 @@
   z-index: 0;
   background: linear-gradient(
     90deg,
-    rgba(234, 243, 251, 0.94) 0%,
-    rgba(234, 243, 251, 0.78) 38%,
-    rgba(234, 243, 251, 0.28) 68%,
-    rgba(234, 243, 251, 0.08) 100%
+    rgba(15, 23, 32, 0.72) 0%,
+    rgba(15, 23, 32, 0.55) 36%,
+    rgba(15, 23, 32, 0.35) 68%,
+    rgba(15, 23, 32, 0.28) 100%
   );
   pointer-events: none;
 }
@@ -222,7 +223,7 @@
   font-size: clamp(1.2rem, 1.05rem + 0.65vw, 1.7rem);
   font-weight: 500;
   line-height: 1.3;
-  color: var(--color-text-dark);
+  color: var(--color-white);
 }
 
 @media (min-width: 40rem) {
