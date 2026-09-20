@@ -14,26 +14,18 @@
 .hero__inner {
   display: grid;
   flex: 1 1 auto;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1rem;
   align-content: start;
-  align-items: start;
+  justify-items: stretch;
   width: var(--page-shell-width);
   min-height: 0;
   margin-inline: auto;
 }
 
-.hero__content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  order: 3;
-  min-width: 0;
-  min-height: 0;
-}
-
 .hero__title {
   margin: 0;
+  width: 100%;
   font-size: clamp(1.65rem, 1.2rem + 2vw, 2.75rem);
   font-weight: 400;
   line-height: 1.15;
@@ -45,26 +37,32 @@
 
 .hero__description {
   margin: 0;
-  max-width: 36rem;
+  width: 100%;
   font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
   color: var(--color-text-muted);
 }
 
 .hero__actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: stretch;
   gap: 0.65rem;
+  width: 100%;
+}
+
+.hero__actions .button {
+  width: 100%;
+  justify-content: center;
 }
 
 .hero__media {
-  order: 1;
   position: relative;
   display: grid;
   grid-template: minmax(0, 1fr) / minmax(0, 1fr);
   box-sizing: border-box;
   width: 100%;
-  max-width: 22rem;
-  margin-inline: auto;
+  max-width: none;
+  margin-inline: 0;
   aspect-ratio: 1 / 1;
   padding: 1.25rem;
   overflow: hidden;
@@ -96,9 +94,8 @@
 }
 
 .hero__signals {
-  order: 2;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0;
   width: 100%;
   margin: 0;
@@ -112,7 +109,7 @@
 
 .hero__signal {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: start;
   gap: 0.75rem;
   padding: 0.95rem 1rem;
@@ -145,7 +142,7 @@
 
 .hero__signal-text {
   margin: 0;
-  max-width: 22rem;
+  max-width: none;
   font-size: 0.8125rem;
   line-height: 1.4;
   color: var(--color-text-muted);
@@ -153,7 +150,6 @@
 
 @media (min-width: 40rem) {
   .hero__media {
-    max-width: 24rem;
     padding: 1.5rem;
   }
 
@@ -174,24 +170,42 @@
 @media (min-width: 64rem) {
   .hero__inner {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    align-items: stretch;
-    gap: 1.25rem 1.75rem;
+    grid-template-areas:
+      "title media"
+      "desc media"
+      "actions media"
+      "signals signals";
+    align-items: start;
+    column-gap: 1.75rem;
+    row-gap: 1rem;
   }
 
-  .hero__content {
-    order: 1;
-    gap: 1rem;
-    height: 100%;
+  .hero__title {
+    grid-area: title;
+  }
+
+  .hero__description {
+    grid-area: desc;
+    max-width: 36rem;
   }
 
   .hero__actions {
-    margin-top: auto;
+    grid-area: actions;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-self: end;
+    width: auto;
+  }
+
+  .hero__actions .button {
+    width: auto;
+    flex: 0 1 auto;
   }
 
   .hero__media {
-    order: 2;
+    grid-area: media;
     align-self: start;
-    max-width: none;
     width: 100%;
     max-height: 28rem;
     aspect-ratio: 1 / 1;
@@ -199,8 +213,7 @@
   }
 
   .hero__signals {
-    order: 3;
-    grid-column: 1 / -1;
+    grid-area: signals;
     margin-top: 0.25rem;
   }
 
