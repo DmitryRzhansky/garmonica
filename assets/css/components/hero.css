@@ -218,13 +218,6 @@
 }
 
 @media (max-height: 48rem) and (min-width: 64rem) {
-  .hero__description {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
   .hero__media {
     max-height: 22rem;
   }
