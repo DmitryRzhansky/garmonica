@@ -17,6 +17,7 @@ function initApp() {
   safeInit("reviews", window.initReviews);
   safeInit("licenses", window.initLicenses);
   safeInit("clinic-gallery", window.initClinicGallery);
+  safeInit("about-slider", window.initAboutSlider);
   safeInit("specialist-quiz", window.initSpecialistQuiz);
 }
 

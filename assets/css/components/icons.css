@@ -6,7 +6,10 @@
 .perks__tile-icon,
 .prices__geo-icon img,
 .contact__info-icon,
-.faq__icon {
+.faq__icon,
+.about__route-icon,
+.about-dept__trait-icon,
+.licenses__scope-icon {
   filter: invert(55%) sepia(35%) saturate(700%) hue-rotate(170deg) brightness(95%) contrast(90%);
 }
 

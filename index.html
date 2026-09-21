@@ -44,7 +44,7 @@
             </a>
           </address>
 
-          <p class="hero-header__org">Гармоника — наркологическая клиника</p>
+          <p class="hero-header__org">Гармоника — психиатрия и наркология</p>
 
           <p class="hero-header__meta-item hero-header__hours">
             <img
@@ -63,7 +63,7 @@
         </div>
 
         <div class="hero-header__bar">
-          <p class="hero-header__brand">Гармоника — наркологическая клиника</p>
+          <p class="hero-header__brand">Гармоника — психиатрия и наркология</p>
           <nav class="hero-header__nav" aria-label="Основная навигация">
             <ul class="hero-header__nav-list" role="list">
               <li class="hero-header__nav-item hero-header__nav-item--about">
@@ -88,7 +88,7 @@
                       </a>
                     </li>
                     <li>
-                      <a class="about-menu__link" href="#about">
+                      <a class="about-menu__link" href="#licenses">
                         <img class="about-menu__icon" src="assets/icons/shield-check.svg" alt="" width="20" height="20" decoding="async">
                         <span>Лицензия</span>
                       </a>
@@ -721,7 +721,7 @@
                 <img class="mobile-menu__about-icon" src="assets/icons/hospital.svg" alt="" width="20" height="20" decoding="async">
                 <span>Клиника</span>
               </a>
-              <a class="mobile-menu__about-link" href="#about" data-menu-close>
+              <a class="mobile-menu__about-link" href="#licenses" data-menu-close>
                 <img class="mobile-menu__about-icon" src="assets/icons/shield-check.svg" alt="" width="20" height="20" decoding="async">
                 <span>Лицензия</span>
               </a>
@@ -1184,144 +1184,366 @@
         <div data-specialist-dialog-content></div>
       </dialog>
 
-      <section class="about" id="about" aria-labelledby="about-title">
+      <section class="about" id="about" aria-labelledby="about-title" data-about-slider>
         <div class="about__inner">
-          <h2 class="about__title" id="about-title">
-            «Гармоника» — наркологическая клиника с системным подходом к лечению зависимости
-          </h2>
+          <h2 class="about__title" id="about-title">«Гармоника» — клиника психиатрии и наркологии</h2>
 
-          <div class="about__top">
-            <p class="about__lead">
-              Помогаем не только снять острое состояние, но и разобраться с причиной срывов,
-              подобрать дальнейшее лечение и пройти восстановление без разрывов между этапами.
-            </p>
+          <div class="about-slider">
+            <div class="about-slider__controls">
+              <button
+                class="about-slider__nav about-slider__nav--prev"
+                type="button"
+                aria-label="Предыдущее отделение"
+                data-about-prev
+              >
+                <svg class="about-slider__nav-icon" width="16" height="16" viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                </svg>
+              </button>
 
-            <div class="about__copy">
-              <p class="about__text">
-                Лечение строится вокруг пациента, а не отдельной процедуры.
-                Нарколог, психиатр, психотерапевт и другие специалисты работают по единому плану
-                и видят общую картину состояния.
+              <p class="about-slider__label" data-about-label aria-live="polite">
+                2 этаж · Наркологическое отделение
               </p>
-              <p class="about__text">
-                После детоксикации или стационара работа не заканчивается.
-                Вместе определяем следующий этап, контролируем динамику и подключаем родственников,
-                когда это действительно помогает лечению.
-              </p>
+
+              <button
+                class="about-slider__nav about-slider__nav--next"
+                type="button"
+                aria-label="Следующее отделение"
+                data-about-next
+              >
+                <svg class="about-slider__nav-icon" width="16" height="16" viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                </svg>
+              </button>
             </div>
-          </div>
 
-          <ul class="about__team" id="about-team" role="list" aria-label="Врачи клиники">
-            <li class="about__team-item">
-              <img
-                class="about__team-photo"
-                src="assets/images/about/team/about-doctor-1.png"
-                alt="Соколов Андрей Викторович — психиатр-нарколог"
-                width="768"
-                height="1024"
-                loading="lazy"
-                decoding="async"
-              >
-              <div class="about__doctor-card">
-                <span class="about__doctor-name">Соколов Андрей Викторович</span>
-                <p class="about__doctor-role">Психиатр-нарколог</p>
-                <dl class="about__doctor-meta">
-                  <div class="about__doctor-row">
-                    <dt>Опыт</dt>
-                    <dd>18 лет</dd>
-                  </div>
-                  <div class="about__doctor-row">
-                    <dt>Образование</dt>
-                    <dd>РНИМУ им. Н.&nbsp;И.&nbsp;Пирогова</dd>
-                  </div>
-                </dl>
-              </div>
-            </li>
-            <li class="about__team-item">
-              <img
-                class="about__team-photo"
-                src="assets/images/about/team/about-doctor-2.png"
-                alt="Морозов Дмитрий Сергеевич — врач-нарколог"
-                width="768"
-                height="1024"
-                loading="lazy"
-                decoding="async"
-              >
-              <div class="about__doctor-card">
-                <span class="about__doctor-name">Морозов Дмитрий Сергеевич</span>
-                <p class="about__doctor-role">Врач-нарколог</p>
-                <dl class="about__doctor-meta">
-                  <div class="about__doctor-row">
-                    <dt>Опыт</dt>
-                    <dd>14 лет</dd>
-                  </div>
-                  <div class="about__doctor-row">
-                    <dt>Образование</dt>
-                    <dd>Первый МГМУ им. И.&nbsp;М.&nbsp;Сеченова</dd>
-                  </div>
-                </dl>
-              </div>
-            </li>
-            <li class="about__team-item">
-              <img
-                class="about__team-photo"
-                src="assets/images/about/team/about-doctor-3.png"
-                alt="Кузнецов Иван Павлович — врач-психиатр"
-                width="768"
-                height="1024"
-                loading="lazy"
-                decoding="async"
-              >
-              <div class="about__doctor-card">
-                <span class="about__doctor-name">Кузнецов Иван Павлович</span>
-                <p class="about__doctor-role">Врач-психиатр</p>
-                <dl class="about__doctor-meta">
-                  <div class="about__doctor-row">
-                    <dt>Опыт</dt>
-                    <dd>11 лет</dd>
-                  </div>
-                  <div class="about__doctor-row">
-                    <dt>Образование</dt>
-                    <dd>МГМСУ им. А.&nbsp;И.&nbsp;Евдокимова</dd>
-                  </div>
-                </dl>
-              </div>
-            </li>
-            <li class="about__team-item">
-              <img
-                class="about__team-photo"
-                src="assets/images/about/team/about-doctor-4.png"
-                alt="Орлов Алексей Николаевич — психиатр-нарколог"
-                width="768"
-                height="1024"
-                loading="lazy"
-                decoding="async"
-              >
-              <div class="about__doctor-card">
-                <span class="about__doctor-name">Орлов Алексей Николаевич</span>
-                <p class="about__doctor-role">Психиатр-нарколог</p>
-                <dl class="about__doctor-meta">
-                  <div class="about__doctor-row">
-                    <dt>Опыт</dt>
-                    <dd>16 лет</dd>
-                  </div>
-                  <div class="about__doctor-row">
-                    <dt>Образование</dt>
-                    <dd>РУДН, медицинский факультет</dd>
-                  </div>
-                </dl>
-              </div>
-            </li>
-          </ul>
+            <div class="about-slider__viewport" data-about-viewport>
+              <div class="about-slider__track" data-about-track>
+                <article
+                  class="about-slider__slide about-dept about-dept--narcology"
+                  id="about-narcology"
+                  data-about-slide
+                  data-about-name="2 этаж · Наркологическое отделение"
+                  aria-labelledby="about-narcology-title"
+                >
+                  <div class="about-dept__layout">
+                    <div class="about-dept__media">
+                      <img
+                        class="about-dept__photo"
+                        src="assets/images/about/narcology-department.webp"
+                        alt="Наркологическое отделение клиники «Гармоника»"
+                        width="1152"
+                        height="864"
+                        loading="lazy"
+                        decoding="async"
+                      >
+                    </div>
 
-          <div class="about__actions">
-            <a class="button button--outline" href="#about">
-              <img class="button__icon" src="assets/icons/hospital.svg" alt="" width="16" height="16" decoding="async">
-              О нас
-            </a>
-            <a class="button button--primary" href="#about-team">
-              <img class="button__icon" src="assets/icons/users.svg" alt="" width="16" height="16" decoding="async">
-              Все врачи
-            </a>
+                    <div class="about-dept__content">
+                      <h3 class="about-dept__title visually-hidden" id="about-narcology-title">Наркологическое отделение</h3>
+                      <p class="about-dept__lead">
+                        Помощь при алкогольной, наркотической и других формах химической зависимости —
+                        от первичной оценки состояния до дальнейшего лечения и восстановления.
+                      </p>
+                      <p class="about-dept__text">
+                        Наркологическое направление объединяет помощь при острых состояниях,
+                        лечение зависимости и последующее сопровождение пациента.
+                        В зависимости от ситуации помощь может оказываться в клинике
+                        или на дому профильным специалистом.
+                      </p>
+
+                      <ul class="about-dept__traits" role="list">
+                        <li class="about-dept__trait">
+                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/first-aid.svg" alt="" width="22" height="22" decoding="async">
+                          <div>
+                            <span class="about-dept__trait-title">Помощь при острых состояниях</span>
+                            <p class="about-dept__trait-text">Оценка состояния, медицинская помощь и определение дальнейшей тактики.</p>
+                          </div>
+                        </li>
+                        <li class="about-dept__trait">
+                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/hospital.svg" alt="" width="22" height="22" decoding="async">
+                          <div>
+                            <span class="about-dept__trait-title">Лечение в стационаре</span>
+                            <p class="about-dept__trait-text">Наблюдение и медицинская помощь в условиях наркологического отделения.</p>
+                          </div>
+                        </li>
+                        <li class="about-dept__trait">
+                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/house-line.svg" alt="" width="22" height="22" decoding="async">
+                          <div>
+                            <span class="about-dept__trait-title">Выезд на дом</span>
+                            <p class="about-dept__trait-text">Возможность вызвать профильного специалиста по адресу пациента.</p>
+                          </div>
+                        </li>
+                        <li class="about-dept__trait">
+                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/clipboard-text.svg" alt="" width="22" height="22" decoding="async">
+                          <div>
+                            <span class="about-dept__trait-title">Дальнейшее лечение</span>
+                            <p class="about-dept__trait-text">После стабилизации определяется следующий этап помощи и наблюдения.</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="about-dept__team" id="about-team">
+                    <h4 class="about-dept__team-title">Специалисты наркологического отделения</h4>
+                    <ul class="about__team" role="list" aria-label="Врачи наркологического отделения">
+                      <li class="about__team-item">
+                        <img
+                          class="about__team-photo"
+                          src="assets/images/about/team/about-doctor-1.png"
+                          alt="Соколов Андрей Викторович — психиатр-нарколог"
+                          width="768"
+                          height="1024"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <div class="about__doctor-card">
+                          <span class="about__doctor-name">Соколов Андрей Викторович</span>
+                          <p class="about__doctor-role">Психиатр-нарколог</p>
+                          <dl class="about__doctor-meta">
+                            <div class="about__doctor-row">
+                              <dt>Опыт</dt>
+                              <dd>18 лет</dd>
+                            </div>
+                            <div class="about__doctor-row">
+                              <dt>Образование</dt>
+                              <dd>РНИМУ им. Н.&nbsp;И.&nbsp;Пирогова</dd>
+                            </div>
+                          </dl>
+                          <a class="button button--primary about__doctor-cta" href="#contact">Записаться к врачу</a>
+                        </div>
+                      </li>
+                      <li class="about__team-item">
+                        <img
+                          class="about__team-photo"
+                          src="assets/images/about/team/about-doctor-2.png"
+                          alt="Морозов Дмитрий Сергеевич — врач-нарколог"
+                          width="768"
+                          height="1024"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <div class="about__doctor-card">
+                          <span class="about__doctor-name">Морозов Дмитрий Сергеевич</span>
+                          <p class="about__doctor-role">Врач-нарколог</p>
+                          <dl class="about__doctor-meta">
+                            <div class="about__doctor-row">
+                              <dt>Опыт</dt>
+                              <dd>14 лет</dd>
+                            </div>
+                            <div class="about__doctor-row">
+                              <dt>Образование</dt>
+                              <dd>Первый МГМУ им. И.&nbsp;М.&nbsp;Сеченова</dd>
+                            </div>
+                          </dl>
+                          <a class="button button--primary about__doctor-cta" href="#contact">Записаться к врачу</a>
+                        </div>
+                      </li>
+                      <li class="about__team-item">
+                        <img
+                          class="about__team-photo"
+                          src="assets/images/about/team/about-doctor-4.png"
+                          alt="Орлов Алексей Николаевич — психиатр-нарколог"
+                          width="768"
+                          height="1024"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <div class="about__doctor-card">
+                          <span class="about__doctor-name">Орлов Алексей Николаевич</span>
+                          <p class="about__doctor-role">Психиатр-нарколог</p>
+                          <dl class="about__doctor-meta">
+                            <div class="about__doctor-row">
+                              <dt>Опыт</dt>
+                              <dd>16 лет</dd>
+                            </div>
+                            <div class="about__doctor-row">
+                              <dt>Образование</dt>
+                              <dd>РУДН, медицинский факультет</dd>
+                            </div>
+                          </dl>
+                          <a class="button button--primary about__doctor-cta" href="#contact">Записаться к врачу</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article
+                  class="about-slider__slide about-dept about-dept--psychiatry"
+                  id="about-psychiatry"
+                  data-about-slide
+                  data-about-name="3 этаж · Психиатрическое отделение"
+                  aria-labelledby="about-psychiatry-title"
+                  aria-hidden="true"
+                >
+                  <div class="about-dept__layout">
+                    <div class="about-dept__media">
+                      <img
+                        class="about-dept__photo"
+                        src="assets/images/about/psychiatry-department.webp"
+                        alt="Психиатрическое отделение клиники «Гармоника»"
+                        width="1152"
+                        height="864"
+                        loading="lazy"
+                        decoding="async"
+                      >
+                    </div>
+
+                    <div class="about-dept__content">
+                      <h3 class="about-dept__title visually-hidden" id="about-psychiatry-title">Психиатрическое отделение</h3>
+                      <p class="about-dept__lead">
+                        Отдельное направление клиники для диагностики, лечения и наблюдения
+                        при психических расстройствах и состояниях, не связанных непосредственно
+                        с употреблением психоактивных веществ.
+                      </p>
+                      <p class="about-dept__text">
+                        Психиатрическое отделение работает отдельно от наркологического:
+                        на другом этаже, со своей командой специалистов и своим профилем помощи.
+                        Работа начинается с консультации и оценки состояния, после чего врач
+                        определяет дальнейшую тактику наблюдения и лечения.
+                      </p>
+                      <p class="about-dept__note">
+                        В рамках профиля клиники помощь также может оказываться
+                        при поведенческих и нехимических зависимостях.
+                      </p>
+
+                      <ul class="about-dept__traits" role="list">
+                        <li class="about-dept__trait">
+                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/brain.svg" alt="" width="22" height="22" decoding="async">
+                          <div>
+                            <span class="about-dept__trait-title">Психиатрическая помощь</span>
+                            <p class="about-dept__trait-text">Консультация, оценка состояния и подбор дальнейшей тактики.</p>
+                          </div>
+                        </li>
+                        <li class="about-dept__trait">
+                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/chat-circle-dots.svg" alt="" width="22" height="22" decoding="async">
+                          <div>
+                            <span class="about-dept__trait-title">Индивидуальная работа</span>
+                            <p class="about-dept__trait-text">Тактика лечения определяется по состоянию конкретного пациента.</p>
+                          </div>
+                        </li>
+                        <li class="about-dept__trait">
+                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/calendar-check.svg" alt="" width="22" height="22" decoding="async">
+                          <div>
+                            <span class="about-dept__trait-title">Наблюдение в динамике</span>
+                            <p class="about-dept__trait-text">Врач оценивает изменения состояния и корректирует дальнейший план.</p>
+                          </div>
+                        </li>
+                        <li class="about-dept__trait">
+                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/users-three.svg" alt="" width="22" height="22" decoding="async">
+                          <div>
+                            <span class="about-dept__trait-title">Работа с близкими</span>
+                            <p class="about-dept__trait-text">При необходимости специалист объясняет родственникам порядок дальнейших действий.</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="about-dept__team">
+                    <h4 class="about-dept__team-title">Специалисты психиатрического отделения</h4>
+                    <ul class="about__team" role="list" aria-label="Врачи психиатрического отделения">
+                      <li class="about__team-item">
+                        <img
+                          class="about__team-photo"
+                          src="assets/images/about/team/about-doctor-3.png"
+                          alt="Кузнецов Иван Павлович — врач-психиатр"
+                          width="768"
+                          height="1024"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <div class="about__doctor-card">
+                          <span class="about__doctor-name">Кузнецов Иван Павлович</span>
+                          <p class="about__doctor-role">Врач-психиатр</p>
+                          <dl class="about__doctor-meta">
+                            <div class="about__doctor-row">
+                              <dt>Опыт</dt>
+                              <dd>11 лет</dd>
+                            </div>
+                            <div class="about__doctor-row">
+                              <dt>Образование</dt>
+                              <dd>МГМСУ им. А.&nbsp;И.&nbsp;Евдокимова</dd>
+                            </div>
+                          </dl>
+                          <a class="button button--primary about__doctor-cta" href="#contact">Записаться к врачу</a>
+                        </div>
+                      </li>
+                      <li class="about__team-item">
+                        <img
+                          class="about__team-photo"
+                          src="assets/images/about/team/about-doctor-5.png"
+                          alt="Белов Сергей Михайлович — врач-психиатр"
+                          width="768"
+                          height="1024"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <div class="about__doctor-card">
+                          <span class="about__doctor-name">Белов Сергей Михайлович</span>
+                          <p class="about__doctor-role">Врач-психиатр</p>
+                          <dl class="about__doctor-meta">
+                            <div class="about__doctor-row">
+                              <dt>Опыт</dt>
+                              <dd>13 лет</dd>
+                            </div>
+                            <div class="about__doctor-row">
+                              <dt>Образование</dt>
+                              <dd>Первый СПбГМУ им. И.&nbsp;П.&nbsp;Павлова</dd>
+                            </div>
+                          </dl>
+                          <a class="button button--primary about__doctor-cta" href="#contact">Записаться к врачу</a>
+                        </div>
+                      </li>
+                      <li class="about__team-item">
+                        <img
+                          class="about__team-photo"
+                          src="assets/images/about/team/about-doctor-6.png"
+                          alt="Волков Никита Андреевич — врач-психиатр"
+                          width="768"
+                          height="1024"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <div class="about__doctor-card">
+                          <span class="about__doctor-name">Волков Никита Андреевич</span>
+                          <p class="about__doctor-role">Врач-психиатр</p>
+                          <dl class="about__doctor-meta">
+                            <div class="about__doctor-row">
+                              <dt>Опыт</dt>
+                              <dd>9 лет</dd>
+                            </div>
+                            <div class="about__doctor-row">
+                              <dt>Образование</dt>
+                              <dd>РНИМУ им. Н.&nbsp;И.&nbsp;Пирогова</dd>
+                            </div>
+                          </dl>
+                          <a class="button button--primary about__doctor-cta" href="#contact">Записаться к врачу</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="about-slider__dots" role="group" aria-label="Выбор отделения">
+              <button
+                class="about-slider__dot about-slider__dot--active"
+                type="button"
+                aria-label="2 этаж · Наркологическое отделение"
+                aria-current="true"
+                data-about-dot
+              ></button>
+              <button
+                class="about-slider__dot"
+                type="button"
+                aria-label="3 этаж · Психиатрическое отделение"
+                data-about-dot
+              ></button>
+            </div>
           </div>
         </div>
       </section>
@@ -1497,11 +1719,40 @@
 
       <section class="licenses" id="licenses" aria-labelledby="licenses-title" data-licenses>
         <div class="licenses__inner">
+          <!--
+            TODO:
+            После получения документов клиники указать точные наименования
+            работ/услуг из действующей лицензии и при необходимости нормативные
+            основания/приказы.
+          -->
+          <header class="licenses__scopes-header">
+            <h2 class="licenses__scopes-title" id="licenses-scopes-title">
+              Виды оказываемых медицинских услуг
+            </h2>
+            <p class="licenses__scopes-intro">
+              Ознакомьтесь с направлениями медицинской деятельности, предусмотренными лицензией клиники.
+            </p>
+          </header>
+
+          <ul class="licenses__scopes" role="list" aria-label="Направления медицинской деятельности по лицензии">
+            <li class="licenses__scope">
+              <img class="licenses__scope-icon" src="assets/icons/phosphor/brain.svg" alt="" width="22" height="22" decoding="async">
+              <span class="licenses__scope-title">Психиатрия</span>
+            </li>
+            <li class="licenses__scope">
+              <img class="licenses__scope-icon" src="assets/icons/phosphor/stethoscope.svg" alt="" width="22" height="22" decoding="async">
+              <span class="licenses__scope-title">Психиатрия-наркология</span>
+            </li>
+            <li class="licenses__scope">
+              <img class="licenses__scope-icon" src="assets/icons/phosphor/ambulance.svg" alt="" width="22" height="22" decoding="async">
+              <span class="licenses__scope-title">Скорая медицинская помощь</span>
+            </li>
+          </ul>
+
           <header class="licenses__header">
             <h2 class="licenses__title" id="licenses-title">Наши лицензии и документы</h2>
             <p class="licenses__intro">
-              Основные документы о лицензировании медицинской деятельности
-              и санитарно-эпидемиологическом соответствии.
+              Основные документы клиники, связанные с осуществлением медицинской деятельности.
             </p>
           </header>
 
@@ -3322,7 +3573,7 @@
           <ul class="site-footer__list" role="list">
             <li><a href="#about-team">Врачи</a></li>
             <li><a href="#about">Клиника</a></li>
-            <li><a href="#about">Лицензия</a></li>
+            <li><a href="#licenses">Лицензия</a></li>
             <li><a href="#perks">Гарантия</a></li>
             <li><a href="#contact">Договор</a></li>
             <li><a href="#about">Фотогалерея</a></li>
@@ -3385,6 +3636,7 @@
     <script src="assets/js/modules/reviews.js" defer></script>
     <script src="assets/js/modules/licenses.js" defer></script>
     <script src="assets/js/modules/clinic-gallery.js" defer></script>
+    <script src="assets/js/modules/about-slider.js" defer></script>
     <script src="assets/js/data/specialist-directions.js" defer></script>
     <script src="assets/js/data/specialist-questions.js" defer></script>
     <script src="assets/js/data/specialists.js" defer></script>
