@@ -1127,6 +1127,63 @@
         </div>
       </section>
 
+      <section class="specialist-quiz" id="specialist-appointment" aria-labelledby="specialist-quiz-title" data-specialist-quiz>
+        <div class="specialist-quiz__inner">
+          <header class="specialist-quiz__heading">
+            <p class="specialist-quiz__eyebrow">
+              <img
+                class="specialist-quiz__eyebrow-icon"
+                src="assets/icons/stethoscope.svg"
+                alt=""
+                width="18"
+                height="18"
+                decoding="async"
+                aria-hidden="true"
+              >
+              Поможем сделать первый шаг
+            </p>
+            <h2 class="specialist-quiz__title" id="specialist-quiz-title">Запись к специалисту</h2>
+          </header>
+          <div class="specialist-quiz__intro" data-quiz-intro>
+            <div class="specialist-quiz__intro-copy">
+              <span class="specialist-quiz__pill">4 простых шага · около минуты</span>
+              <span class="specialist-quiz__intro-title">Поддержка начинается<br>с подходящего специалиста</span>
+              <p class="specialist-quiz__intro-text">Расскажите, какая помощь вам нужна. Мы учтём ваш запрос, удобный формат и пожелания по дате.</p>
+              <div class="specialist-quiz__intro-actions">
+                <button class="button specialist-quiz__primary" type="button" data-action="start">
+                  <img class="button__icon" src="assets/icons/stethoscope.svg" alt="" width="16" height="16" decoding="async" aria-hidden="true">
+                  Подобрать специалиста
+                  <img class="button__icon" src="assets/icons/arrow-right.svg" alt="" width="16" height="16" decoding="async" aria-hidden="true">
+                </button>
+              </div>
+            </div>
+            <div class="specialist-quiz__intro-visual">
+              <div class="specialist-quiz__portrait-stack" aria-hidden="true">
+                <img class="specialist-quiz__intro-portrait specialist-quiz__intro-portrait--back" src="assets/images/specialists/specialist-05.webp" alt="" width="480" height="640" loading="lazy" decoding="async">
+                <img class="specialist-quiz__intro-portrait specialist-quiz__intro-portrait--front" src="assets/images/specialists/specialist-01.webp" alt="" width="480" height="640" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+          <p class="specialist-quiz__loading" data-quiz-loading role="status" hidden></p>
+          <noscript><p>Для интерактивного подбора включите JavaScript. Вы также можете связаться с клиникой по телефону из шапки сайта.</p></noscript>
+          <div class="specialist-quiz__panel" data-quiz-panel hidden></div>
+          <div class="specialist-results" id="specialist-results" data-quiz-results hidden>
+            <div class="specialist-results__heading">
+              <span class="specialist-results__title" tabindex="-1" data-results-title>Мы подобрали специалистов</span>
+              <p class="specialist-quiz__hint" data-results-count></p>
+            </div>
+            <p class="specialist-results__notice" data-results-emergency hidden>При угрожающем жизни состоянии не используйте онлайн-запись. Обратитесь за экстренной медицинской помощью: <a href="tel:112">112</a>.</p>
+            <div class="specialist-results__grid" data-specialist-list></div>
+            <button class="button button--outline specialist-results__more" type="button" data-action="more">Показать всех подходящих специалистов</button>
+          </div>
+        </div>
+      </section>
+
+      <dialog class="specialist-dialog" aria-labelledby="specialist-dialog-title" data-specialist-dialog>
+        <button class="specialist-dialog__close" type="button" aria-label="Закрыть окно специалиста" data-specialist-dialog-close>×</button>
+        <div data-specialist-dialog-content></div>
+      </dialog>
+
       <section class="about" id="about" aria-labelledby="about-title">
         <div class="about__inner">
           <h2 class="about__title" id="about-title">
@@ -1165,7 +1222,7 @@
                 decoding="async"
               >
               <div class="about__doctor-card">
-                <h3 class="about__doctor-name">Соколов Андрей Викторович</h3>
+                <span class="about__doctor-name">Соколов Андрей Викторович</span>
                 <p class="about__doctor-role">Психиатр-нарколог</p>
                 <dl class="about__doctor-meta">
                   <div class="about__doctor-row">
@@ -1190,7 +1247,7 @@
                 decoding="async"
               >
               <div class="about__doctor-card">
-                <h3 class="about__doctor-name">Морозов Дмитрий Сергеевич</h3>
+                <span class="about__doctor-name">Морозов Дмитрий Сергеевич</span>
                 <p class="about__doctor-role">Врач-нарколог</p>
                 <dl class="about__doctor-meta">
                   <div class="about__doctor-row">
@@ -1215,7 +1272,7 @@
                 decoding="async"
               >
               <div class="about__doctor-card">
-                <h3 class="about__doctor-name">Кузнецов Иван Павлович</h3>
+                <span class="about__doctor-name">Кузнецов Иван Павлович</span>
                 <p class="about__doctor-role">Врач-психиатр</p>
                 <dl class="about__doctor-meta">
                   <div class="about__doctor-row">
@@ -1240,7 +1297,7 @@
                 decoding="async"
               >
               <div class="about__doctor-card">
-                <h3 class="about__doctor-name">Орлов Алексей Николаевич</h3>
+                <span class="about__doctor-name">Орлов Алексей Николаевич</span>
                 <p class="about__doctor-role">Психиатр-нарколог</p>
                 <dl class="about__doctor-meta">
                   <div class="about__doctor-row">
@@ -1269,6 +1326,309 @@
         </div>
       </section>
 
+      <section class="clinic-gallery" id="clinic-gallery" aria-labelledby="clinic-gallery-title" data-clinic-gallery>
+        <div class="clinic-gallery__inner">
+          <h2 class="clinic-gallery__title" id="clinic-gallery-title">Фотографии нашей клиники</h2>
+
+          <div class="clinic-gallery__tabs" role="tablist" aria-label="Площадки клиники">
+            <button
+              class="clinic-gallery__tab"
+              id="clinic-gallery-tab-clinic"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="clinic-gallery-panel-clinic"
+              data-gallery-tab
+            >
+              <img class="clinic-gallery__tab-icon" src="assets/icons/hospital.svg" alt="" width="18" height="18" decoding="async">
+              Наркологическая клиника
+            </button>
+            <button
+              class="clinic-gallery__tab"
+              id="clinic-gallery-tab-rehab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="clinic-gallery-panel-rehab"
+              tabindex="-1"
+              data-gallery-tab
+            >
+              <img class="clinic-gallery__tab-icon" src="assets/icons/house.svg" alt="" width="18" height="18" decoding="async">
+              Загородный реабилитационный центр
+            </button>
+          </div>
+
+          <div
+            class="clinic-gallery__panel"
+            id="clinic-gallery-panel-clinic"
+            role="tabpanel"
+            aria-labelledby="clinic-gallery-tab-clinic"
+            data-gallery-panel
+          >
+            <ul class="clinic-gallery__bento" role="list">
+              <li class="clinic-gallery__cell clinic-gallery__cell--lead">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Ресепшен">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-reception.webp" alt="Ресепшен наркологической клиники: светлый холл с диванами и стойкой администратора" width="864" height="1152" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+              <li class="clinic-gallery__cell">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Одноместная палата">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-room-blue.webp" alt="Одноместная палата со светло-голубыми стенами и серым бельём" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+              <li class="clinic-gallery__cell">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Двухместная палата">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-room-table.webp" alt="Двухместная палата с круглым столом и полосатым бельём" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+              <li class="clinic-gallery__cell">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Палата">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-room-wood.webp" alt="Палата с деревянным изголовьем и двумя креслами" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+              <li class="clinic-gallery__cell">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Диагностический кабинет">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-procedure.webp" alt="Диагностический кабинет с аппаратом УЗИ и медицинской кушеткой" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+              <li class="clinic-gallery__cell clinic-gallery__cell--wide">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Стационар">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-ward.webp" alt="Стационарная палата с двумя кроватями и прикроватными мониторами" width="1280" height="720" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+              <li class="clinic-gallery__cell">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Процедурный кабинет">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-exam.webp" alt="Процедурный кабинет с синей кушеткой и шкафом для расходных материалов" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+              <li class="clinic-gallery__cell">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Зал ЛФК">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-gym.webp" alt="Небольшой зал лечебной физкультуры с гантелями и беговой дорожкой" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="clinic-gallery__panel"
+            id="clinic-gallery-panel-rehab"
+            role="tabpanel"
+            aria-labelledby="clinic-gallery-tab-rehab"
+            data-gallery-panel
+            hidden
+          >
+            <ul class="clinic-gallery__bento" role="list">
+              <li class="clinic-gallery__cell clinic-gallery__cell--lead">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Холл">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-hall.webp" alt="Холл загородного реабилитационного центра с окнами в сад" width="864" height="1152" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+              <li class="clinic-gallery__cell">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Спальня">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-bedroom.webp" alt="Спальня реабилитационного центра с видом на берёзы" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+              <li class="clinic-gallery__cell">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Гостиная">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-living.webp" alt="Гостиная с камином и диванами" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+              <li class="clinic-gallery__cell">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Зал для занятий">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-circle.webp" alt="Зал для групповых занятий со стульями по кругу" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+              <li class="clinic-gallery__cell">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Столовая">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-dining.webp" alt="Столовая с длинным деревянным столом и окнами в сад" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+              <li class="clinic-gallery__cell clinic-gallery__cell--wide">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Терраса">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-terrace.webp" alt="Деревянная терраса с видом на лужайку и лес" width="1280" height="720" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+              <li class="clinic-gallery__cell">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Зал для нагрузки">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-fitness.webp" alt="Зал для физической нагрузки с беговой дорожкой и гантелями" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+              <li class="clinic-gallery__cell">
+                <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Сад">
+                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-garden.webp" alt="Сад реабилитационного центра: гравийная дорожка, берёзы и скамейка" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <dialog class="clinic-gallery__lightbox" data-gallery-lightbox aria-label="Просмотр фотографии">
+          <div class="clinic-gallery__lightbox-frame">
+            <img class="clinic-gallery__lightbox-image" src="" alt="" data-gallery-lightbox-image>
+            <button class="clinic-gallery__nav clinic-gallery__nav--prev" type="button" aria-label="Предыдущее фото" data-gallery-prev>
+              <img src="assets/icons/caret-left.svg" alt="" width="20" height="20">
+            </button>
+            <button class="clinic-gallery__nav clinic-gallery__nav--next" type="button" aria-label="Следующее фото" data-gallery-next>
+              <img src="assets/icons/caret-right.svg" alt="" width="20" height="20">
+            </button>
+            <button class="clinic-gallery__lightbox-close" type="button" aria-label="Закрыть фото" data-gallery-close>
+              <img src="assets/icons/x.svg" alt="" width="20" height="20">
+            </button>
+          </div>
+          <p class="clinic-gallery__lightbox-caption" data-gallery-lightbox-caption role="status"></p>
+        </dialog>
+      </section>
+
+      <section class="licenses" id="licenses" aria-labelledby="licenses-title" data-licenses>
+        <div class="licenses__inner">
+          <header class="licenses__header">
+            <h2 class="licenses__title" id="licenses-title">Наши лицензии и документы</h2>
+            <p class="licenses__intro">
+              Основные документы о лицензировании медицинской деятельности
+              и санитарно-эпидемиологическом соответствии.
+            </p>
+          </header>
+
+          <ul class="licenses__grid" role="list">
+            <li class="licenses__item">
+              <article class="license-card">
+                <button
+                  class="license-card__preview"
+                  type="button"
+                  aria-label="Открыть первую страницу выписки"
+                  data-license-open
+                  data-license-image="assets/images/licenses/license-register-page-1.png"
+                  data-license-alt="Демонстрационный образец выписки из реестра, страница 1"
+                >
+                  <img
+                    class="license-card__image"
+                    src="assets/images/licenses/license-register-page-1.png"
+                    alt=""
+                    width="1024"
+                    height="1536"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span class="license-card__zoom" aria-hidden="true">
+                    <img src="assets/icons/magnifying-glass.svg" alt="" width="22" height="22">
+                  </span>
+                </button>
+                <div class="license-card__body">
+                  <div>
+                    <span class="license-card__title">Выписка из реестра</span>
+                    <p class="license-card__meta">Страница 1 из 2</p>
+                  </div>
+                  <button class="button button--outline license-card__download" type="button" data-license-download>
+                    <img class="button__icon" src="assets/icons/file-text.svg" alt="" width="16" height="16" aria-hidden="true">
+                    Скачать
+                  </button>
+                </div>
+              </article>
+            </li>
+
+            <li class="licenses__item">
+              <article class="license-card">
+                <button
+                  class="license-card__preview"
+                  type="button"
+                  aria-label="Открыть вторую страницу выписки"
+                  data-license-open
+                  data-license-image="assets/images/licenses/license-register-page-2.png"
+                  data-license-alt="Демонстрационный образец выписки из реестра, страница 2"
+                >
+                  <img
+                    class="license-card__image"
+                    src="assets/images/licenses/license-register-page-2.png"
+                    alt=""
+                    width="1024"
+                    height="1536"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span class="license-card__zoom" aria-hidden="true">
+                    <img src="assets/icons/magnifying-glass.svg" alt="" width="22" height="22">
+                  </span>
+                </button>
+                <div class="license-card__body">
+                  <div>
+                    <span class="license-card__title">Выписка из реестра</span>
+                    <p class="license-card__meta">Страница 2 из 2</p>
+                  </div>
+                  <button class="button button--outline license-card__download" type="button" data-license-download>
+                    <img class="button__icon" src="assets/icons/file-text.svg" alt="" width="16" height="16" aria-hidden="true">
+                    Скачать
+                  </button>
+                </div>
+              </article>
+            </li>
+
+            <li class="licenses__item">
+              <article class="license-card">
+                <button
+                  class="license-card__preview"
+                  type="button"
+                  aria-label="Открыть санитарно-эпидемиологическое заключение"
+                  data-license-open
+                  data-license-image="assets/images/licenses/sanitary-conclusion.png"
+                  data-license-alt="Демонстрационный образец санитарно-эпидемиологического заключения"
+                >
+                  <img
+                    class="license-card__image"
+                    src="assets/images/licenses/sanitary-conclusion.png"
+                    alt=""
+                    width="1024"
+                    height="1536"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span class="license-card__zoom" aria-hidden="true">
+                    <img src="assets/icons/magnifying-glass.svg" alt="" width="22" height="22">
+                  </span>
+                </button>
+                <div class="license-card__body">
+                  <div>
+                    <span class="license-card__title">Санитарное заключение</span>
+                  </div>
+                  <button class="button button--outline license-card__download" type="button" data-license-download>
+                    <img class="button__icon" src="assets/icons/file-text.svg" alt="" width="16" height="16" aria-hidden="true">
+                    Скачать
+                  </button>
+                </div>
+              </article>
+            </li>
+          </ul>
+
+          <p class="licenses__notice" data-license-notice aria-live="polite"></p>
+        </div>
+
+        <dialog class="license-viewer" data-license-dialog aria-label="Просмотр документа">
+          <div class="license-viewer__bar">
+            <button class="license-viewer__close" type="button" aria-label="Закрыть просмотр" data-license-close>
+              <img src="assets/icons/x.svg" alt="" width="24" height="24" aria-hidden="true">
+            </button>
+          </div>
+          <div class="license-viewer__stage">
+            <img class="license-viewer__image" src="" alt="" width="1024" height="1536" data-license-dialog-image>
+          </div>
+        </dialog>
+      </section>
+
       <section class="perks" id="perks" aria-labelledby="perks-title">
         <div class="perks__inner">
           <header class="section__header section__header--center">
@@ -1286,7 +1646,7 @@
                 loading="lazy"
                 decoding="async"
               >
-              <h3 class="perks__tile-title">План лечения до начала</h3>
+              <span class="perks__tile-title">План лечения до начала</span>
               <p class="perks__tile-copy">
                 После осмотра объясняем, что именно требуется, какие будут этапы
                 и сколько это будет стоить. Без процедур «на всякий случай».
@@ -1303,7 +1663,7 @@
                 loading="lazy"
                 decoding="async"
               >
-              <h3 class="perks__tile-title">Один врач ведёт случай</h3>
+              <span class="perks__tile-title">Один врач ведёт случай</span>
               <p class="perks__tile-copy">
                 Лечащий врач знает историю пациента и координирует работу
                 остальных специалистов на всех этапах.
@@ -1332,7 +1692,7 @@
 
             <article class="perks__tile perks__tile--protect">
               <div class="perks__protect-copy">
-                <h3 class="perks__protect-title">Семья&nbsp;— часть лечения</h3>
+                <span class="perks__protect-title">Семья&nbsp;— часть лечения</span>
                 <ul class="perks__protect-list">
                   <li>Отдельно объясняем родственникам, что происходит и чего ждать дальше</li>
                   <li>Даём понятный план действий на случай ухудшения или срыва</li>
@@ -1648,7 +2008,7 @@
           <ol class="stages__list">
             <li class="stages__item">
               <span class="stages__num" aria-hidden="true">01</span>
-              <h3 class="stages__item-title">Рассказываете, что случилось</h3>
+              <span class="stages__item-title">Рассказываете, что случилось</span>
               <p class="stages__item-text">
                 Уточняем состояние пациента, симптомы, возраст, что он принимал,
                 адрес и насколько срочно нужна помощь.
@@ -1656,7 +2016,7 @@
             </li>
             <li class="stages__item">
               <span class="stages__num" aria-hidden="true">02</span>
-              <h3 class="stages__item-title">Определяем, какая помощь нужна</h3>
+              <span class="stages__item-title">Определяем, какая помощь нужна</span>
               <p class="stages__item-text">
                 Предлагаем подходящий вариант: выезд на дом, приём в клинике или стационар.
                 Сразу называем ориентир по стоимости.
@@ -1664,7 +2024,7 @@
             </li>
             <li class="stages__item">
               <span class="stages__num" aria-hidden="true">03</span>
-              <h3 class="stages__item-title">Врач проводит осмотр</h3>
+              <span class="stages__item-title">Врач проводит осмотр</span>
               <p class="stages__item-text">
                 Оценивает состояние, проверяет основные показатели,
                 уточняет противопоказания и объясняет возможные варианты помощи.
@@ -1672,7 +2032,7 @@
             </li>
             <li class="stages__item">
               <span class="stages__num" aria-hidden="true">04</span>
-              <h3 class="stages__item-title">Проводим лечение</h3>
+              <span class="stages__item-title">Проводим лечение</span>
               <p class="stages__item-text">
                 Детоксикация, симптоматическая терапия, консультация или госпитализация —
                 по показаниям и после согласования с пациентом.
@@ -1680,7 +2040,7 @@
             </li>
             <li class="stages__item">
               <span class="stages__num" aria-hidden="true">05</span>
-              <h3 class="stages__item-title">Составляем план дальше</h3>
+              <span class="stages__item-title">Составляем план дальше</span>
               <p class="stages__item-text">
                 После стабилизации объясняем следующие шаги: наблюдение,
                 лечение зависимости, психотерапия или реабилитация.
@@ -2989,6 +3349,18 @@
             <li>
               <a href="mailto:info@garmonica-clinic.ru">info@garmonica-clinic.ru</a>
             </li>
+            <li>
+              <span class="site-footer__contact-label">ИНН:</span>
+              <span class="site-footer__contact-value">7726481935</span>
+            </li>
+            <li>
+              <span class="site-footer__contact-label">ОГРН:</span>
+              <span class="site-footer__contact-value">1227703846197</span>
+            </li>
+            <li>
+              <span class="site-footer__contact-label">Лицензия:</span>
+              <span class="site-footer__contact-value">Л041-63827-41/00729518</span>
+            </li>
           </ul>
           <a class="button button--primary site-footer__cta" href="#contact">
             <img class="button__icon" src="assets/icons/paper-plane-tilt.svg" alt="" width="16" height="16" decoding="async">
@@ -2998,7 +3370,7 @@
       </div>
 
       <div class="site-footer__bottom">
-        <p class="site-footer__copyright">© 2026 Наркологическая клиника «Гармоника»</p>
+        <p class="site-footer__copyright">© 2026 ООО «Гармоника»</p>
         <div class="site-footer__legal">
           <a href="#">Политика конфиденциальности</a>
           <a href="#">Согласие на обработку персональных данных</a>
@@ -3011,6 +3383,15 @@
     <script src="assets/js/modules/services-menu.js" defer></script>
     <script src="assets/js/modules/contact-form.js" defer></script>
     <script src="assets/js/modules/reviews.js" defer></script>
+    <script src="assets/js/modules/licenses.js" defer></script>
+    <script src="assets/js/modules/clinic-gallery.js" defer></script>
+    <script src="assets/js/data/specialist-directions.js" defer></script>
+    <script src="assets/js/data/specialist-questions.js" defer></script>
+    <script src="assets/js/data/specialists.js" defer></script>
+    <script src="assets/js/modules/specialist-matching.js" defer></script>
+    <script src="assets/js/modules/specialist-views.js" defer></script>
+    <script src="assets/js/modules/specialist-dialog.js" defer></script>
+    <script src="assets/js/modules/specialist-quiz.js" defer></script>
     <script src="assets/js/main.js" defer></script>
     <script>
       (function () {

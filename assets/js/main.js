@@ -15,6 +15,9 @@ function initApp() {
   safeInit("services-menu", window.initServicesMenu);
   safeInit("contact-form", window.initContactForm);
   safeInit("reviews", window.initReviews);
+  safeInit("licenses", window.initLicenses);
+  safeInit("clinic-gallery", window.initClinicGallery);
+  safeInit("specialist-quiz", window.initSpecialistQuiz);
 }
 
 if (document.readyState === "loading") {

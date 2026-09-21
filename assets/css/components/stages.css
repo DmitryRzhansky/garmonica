@@ -81,6 +81,7 @@
 }
 
 .stages__item-title {
+  display: block;
   margin: 0.2rem 0 0.55rem;
   font-family: var(--font-headline);
   font-size: 1.05rem;

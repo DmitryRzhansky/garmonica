@@ -1,0 +1,35 @@
+.specialist-dialog { width: min(48rem, calc(100% - 1.5rem)); max-height: calc(100dvh - 1.5rem); padding: 3.25rem 1.25rem 1.5rem; margin: auto; border: 1px solid var(--color-border); border-radius: 1.25rem; color: var(--color-text-dark); background: #fff; overscroll-behavior: contain; line-height: 1.7; }
+.specialist-dialog::backdrop { background: rgba(17, 36, 49, 0.6); backdrop-filter: blur(3px); }
+html:has(.specialist-dialog[open]) { overflow: hidden; }
+.specialist-dialog__close { position: absolute; right: 0.75rem; top: 0.75rem; display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border: 1px solid var(--color-border); border-radius: 50%; background: #f5f9fc; color: #254d68; font-size: 1.75rem; line-height: 1; cursor: pointer; }
+.specialist-dialog__title { margin: 0.5rem 0 1rem; font-size: clamp(1.35rem, 1rem + 1vw, 1.875rem); font-family: var(--font-text); font-weight: 500; letter-spacing: -0.025em; line-height: 1.4; }
+.specialist-dialog__profile-header { display: grid; gap: 1.25rem; font-size: 0.875rem; }
+.specialist-dialog__profile-header p { margin-block: 0.5rem; }
+.specialist-dialog__photo { width: 8rem; aspect-ratio: 4/5; height: auto; object-fit: cover; border-radius: 0.75rem; }
+.specialist-dialog__experience { color: #426582; }
+.specialist-dialog__section { margin-block: 1.75rem; font-size: 0.875rem; }
+.specialist-dialog__section-title { display: block; font-family: var(--font-text); font-size: 1.0625rem; margin: 0 0 0.75rem; font-weight: 600; }
+.specialist-dialog__section p { margin-block: 0.75rem; }
+.specialist-dialog__list { margin: 0; padding-left: 1.25rem; }
+.specialist-dialog__list li { margin-bottom: 0.5rem; padding-left: 0.25rem; }
+.specialist-dialog__list li::marker { color: #7996ab; }
+.specialist-dialog__slots { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.specialist-dialog__slot { padding: 0.7rem 1rem; border: 1px solid #acc3d3; border-radius: 0.5rem; background: #f2f8fc; color: #254d68; font-size: 0.8125rem; cursor: pointer; }
+.specialist-dialog__slot:hover { background: #e4eff7; }
+.specialist-dialog__notice { background: #f0f6fb; padding: 1rem; border-radius: 0.5rem; font-size: 0.8125rem; line-height: 1.75; margin-block: 1.25rem; }
+.specialist-dialog__notice strong { display: block; }
+.specialist-booking { display: grid; gap: 1rem; }
+.specialist-booking__field { display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; font-size: 0.875rem; }
+.specialist-booking__field input, .specialist-booking__field select { width: 100%; min-width: 0; min-height: 3rem; border: 1px solid #afc4d2; border-radius: 0.5rem; padding: 0.7rem; font: inherit; color: var(--color-text-dark); background: #fff; }
+.specialist-booking__row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+.specialist-booking__consent { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.8125rem; line-height: 1.7; cursor: pointer; }
+.specialist-booking__consent input { flex: 0 0 1.15rem; width: 1.15rem; height: 1.15rem; margin-top: 0.15rem; accent-color: #326c96; }
+.specialist-booking__policy { padding: 0; border: 0; background: transparent; color: #254d68; font: inherit; text-decoration: underline; text-underline-offset: 0.2em; cursor: pointer; text-align: left; }
+.specialist-dialog__success { padding-block: 1.5rem; text-align: center; }
+.specialist-dialog__success-mark { display: grid; place-items: center; width: 4rem; height: 4rem; margin: 0 auto 1.5rem; border-radius: 50%; background: #e7f1f5; color: #326c96; font-size: 1.75rem; }
+@media (min-width: 48rem) {
+  .specialist-dialog { padding: 3rem; }
+  .specialist-dialog__profile-header { grid-template-columns: 9rem minmax(0, 1fr); gap: 1.5rem; }
+  .specialist-dialog__photo { width: 9rem; }
+  .specialist-booking__row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
