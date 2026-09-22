@@ -1202,7 +1202,7 @@
               </button>
 
               <p class="about-slider__label" data-about-label aria-live="polite">
-                2 этаж · Наркологическое отделение
+                1 этаж · Амбулаторная и психологическая помощь
               </p>
 
               <button
@@ -1220,11 +1220,87 @@
             <div class="about-slider__viewport" data-about-viewport>
               <div class="about-slider__track" data-about-track>
                 <article
+                  class="about-slider__slide about-dept about-dept--outpatient"
+                  id="about-outpatient"
+                  data-about-slide
+                  data-about-name="1 этаж · Амбулаторная и психологическая помощь"
+                  aria-labelledby="about-outpatient-title"
+                >
+                  <div class="about-dept__layout">
+                    <div class="about-dept__media">
+                      <img
+                        class="about-dept__photo"
+                        src="assets/images/about/outpatient-department.webp"
+                        alt="Амбулаторная и психологическая помощь на первом этаже клиники «Гармоника»"
+                        width="1152"
+                        height="864"
+                        loading="lazy"
+                        decoding="async"
+                      >
+                    </div>
+
+                    <div class="about-dept__content">
+                      <h3 class="about-dept__title visually-hidden" id="about-outpatient-title">
+                        Амбулаторная и психологическая помощь
+                      </h3>
+                      <p class="about-dept__lead">
+                        Первый этаж клиники — для амбулаторного приёма, психологической помощи
+                        и работы с родственниками пациентов.
+                      </p>
+                      <p class="about-dept__text">
+                        Здесь можно пройти консультацию, обсудить состояние и дальнейшие шаги
+                        без госпитализации, а также получить поддержку и разъяснения для близких.
+                        Формат рассчитан на спокойный приём и понятную организацию помощи.
+                      </p>
+
+                      <ul class="about-dept__traits" role="list">
+                        <li class="about-dept__trait">
+                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/chat-circle-dots.svg" alt="" width="22" height="22" decoding="async">
+                          <div>
+                            <span class="about-dept__trait-title">Психологическая помощь</span>
+                            <p class="about-dept__trait-text">Консультации и сопровождение при эмоциональных трудностях и запросах, связанных с лечением.</p>
+                          </div>
+                        </li>
+                        <li class="about-dept__trait">
+                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/calendar-check.svg" alt="" width="22" height="22" decoding="async">
+                          <div>
+                            <span class="about-dept__trait-title">Амбулаторный приём</span>
+                            <p class="about-dept__trait-text">Приём специалистов без размещения в стационаре — в удобном для пациента формате.</p>
+                          </div>
+                        </li>
+                        <li class="about-dept__trait">
+                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/users-three.svg" alt="" width="22" height="22" decoding="async">
+                          <div>
+                            <span class="about-dept__trait-title">Приём родственников</span>
+                            <p class="about-dept__trait-text">Разъяснение ситуации близким, порядок дальнейших действий и поддержка семьи.</p>
+                          </div>
+                        </li>
+                        <li class="about-dept__trait">
+                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/clipboard-text.svg" alt="" width="22" height="22" decoding="async">
+                          <div>
+                            <span class="about-dept__trait-title">Понятный следующий шаг</span>
+                            <p class="about-dept__trait-text">После консультации специалист помогает определить дальнейший маршрут помощи в клинике.</p>
+                          </div>
+                        </li>
+                      </ul>
+
+                      <div class="about-dept__actions">
+                        <a class="button button--primary" href="#contact">
+                          <img class="button__icon" src="assets/icons/calendar-check.svg" alt="" width="16" height="16" decoding="async" aria-hidden="true">
+                          Записаться на приём
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article
                   class="about-slider__slide about-dept about-dept--narcology"
                   id="about-narcology"
                   data-about-slide
                   data-about-name="2 этаж · Наркологическое отделение"
                   aria-labelledby="about-narcology-title"
+                  aria-hidden="true"
                 >
                   <div class="about-dept__layout">
                     <div class="about-dept__media">
@@ -1533,8 +1609,14 @@
               <button
                 class="about-slider__dot about-slider__dot--active"
                 type="button"
-                aria-label="2 этаж · Наркологическое отделение"
+                aria-label="1 этаж · Амбулаторная и психологическая помощь"
                 aria-current="true"
+                data-about-dot
+              ></button>
+              <button
+                class="about-slider__dot"
+                type="button"
+                aria-label="2 этаж · Наркологическое отделение"
                 data-about-dot
               ></button>
               <button

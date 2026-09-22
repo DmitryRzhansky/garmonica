@@ -164,18 +164,26 @@ function initAboutSlider() {
   });
 
   if (window.location.hash === "#about-psychiatry") {
+    goTo(2);
+  } else if (window.location.hash === "#about-narcology" || window.location.hash === "#about-team") {
     goTo(1);
+  } else if (window.location.hash === "#about-outpatient") {
+    goTo(0);
   } else {
     goTo(0);
   }
 
   window.addEventListener("hashchange", function () {
-    if (window.location.hash === "#about-psychiatry") {
-      goTo(1);
+    if (window.location.hash === "#about-outpatient") {
+      goTo(0);
     }
 
     if (window.location.hash === "#about-narcology" || window.location.hash === "#about-team") {
-      goTo(0);
+      goTo(1);
+    }
+
+    if (window.location.hash === "#about-psychiatry") {
+      goTo(2);
     }
   });
 }
