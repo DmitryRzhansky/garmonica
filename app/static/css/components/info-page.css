@@ -1,0 +1,23 @@
+.info-page {
+  padding-top: calc(var(--header-offset) + 2rem);
+  padding-bottom: var(--section-fade);
+}
+
+.info-page__title {
+  margin: 0 0 1rem;
+  font-family: var(--font-headline);
+  font-size: var(--font-size-h1);
+  font-weight: 500;
+  color: var(--color-text-dark);
+}
+
+.info-page__text {
+  max-width: 42rem;
+  margin: 0 0 1rem;
+  font-size: var(--font-size-body);
+  color: var(--color-text-muted);
+}
+
+.info-page__text:last-child {
+  margin-bottom: 0;
+}

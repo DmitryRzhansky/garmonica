@@ -1,0 +1,939 @@
+    <header class="hero-header" data-header>
+      <div class="hero-header__logo-wrap">
+        <a class="hero-header__logo" href="/" aria-label="Нова клиник — на главную">
+            <img
+              class="hero-header__logo-img"
+              src="/assets/images/logo-mark.png"
+              alt="Нова клиник"
+              width="512"
+              height="512"
+            >
+        </a>
+      </div>
+
+      <div class="hero-header__body">
+        <div class="hero-header__meta">
+          <address class="hero-header__meta-item hero-header__address">
+            <a class="hero-header__meta-link" href="/#contact">
+              <img
+                class="hero-header__meta-icon"
+                src="/assets/icons/map-pin.svg"
+                alt=""
+                width="14"
+                height="14"
+                decoding="async"
+              >
+              <span class="hero-header__meta-text">
+                <span class="hero-header__meta-label">Адрес</span>
+                <span class="hero-header__meta-value">г. Москва, ул. Профсоюзная, 56</span>
+              </span>
+            </a>
+          </address>
+
+          <p class="hero-header__org">Нова клиник — психиатрия и наркология</p>
+
+          <p class="hero-header__meta-item hero-header__hours">
+            <img
+              class="hero-header__meta-icon"
+              src="/assets/icons/clock.svg"
+              alt=""
+              width="14"
+              height="14"
+              decoding="async"
+            >
+            <span class="hero-header__meta-text">
+              <span class="hero-header__meta-label">Время работы</span>
+              <span class="hero-header__meta-value">Круглосуточно 24/7</span>
+            </span>
+          </p>
+        </div>
+
+        <div class="hero-header__bar">
+          <p class="hero-header__brand">Нова клиник — психиатрия и наркология</p>
+          <nav class="hero-header__nav" aria-label="Основная навигация">
+            <ul class="hero-header__nav-list" role="list">
+              <li class="hero-header__nav-item hero-header__nav-item--about">
+                <a class="hero-header__nav-link" href="/#about">
+                  О клинике
+                  <svg class="hero-header__nav-chevron" aria-hidden="true" width="12" height="12" viewBox="0 0 256 256" fill="currentColor">
+                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/>
+                  </svg>
+                </a>
+                <div class="about-menu" id="about-dropdown">
+                  <ul class="about-menu__list" role="list">
+                    <li>
+                      <a class="about-menu__link" href="/vrachi/">
+                        <img class="about-menu__icon" src="/assets/icons/users.svg" alt="" width="20" height="20" decoding="async">
+                        <span>Врачи</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="about-menu__link" href="/#about">
+                        <img class="about-menu__icon" src="/assets/icons/hospital.svg" alt="" width="20" height="20" decoding="async">
+                        <span>Клиника</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="about-menu__link" href="/licenziya/">
+                        <img class="about-menu__icon" src="/assets/icons/shield-check.svg" alt="" width="20" height="20" decoding="async">
+                        <span>Лицензия</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="about-menu__link" href="/garantiya/">
+                        <img class="about-menu__icon" src="/assets/icons/seal-check.svg" alt="" width="20" height="20" decoding="async">
+                        <span>Гарантия</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="about-menu__link" href="/dogovor/">
+                        <img class="about-menu__icon" src="/assets/icons/lock.svg" alt="" width="20" height="20" decoding="async">
+                        <span>Договор</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="about-menu__link" href="/galereya/">
+                        <img class="about-menu__icon" src="/assets/icons/sun.svg" alt="" width="20" height="20" decoding="async">
+                        <span>Фотогалерея</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="about-menu__link" href="/kejsy/">
+                        <img class="about-menu__icon" src="/assets/icons/star.svg" alt="" width="20" height="20" decoding="async">
+                        <span>Кейсы</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="about-menu__link" href="/voprosy/">
+                        <img class="about-menu__icon" src="/assets/icons/chat-circle.svg" alt="" width="20" height="20" decoding="async">
+                        <span>ЧаВо</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="hero-header__nav-item hero-header__nav-item--services" data-services-menu>
+                <button
+                  class="hero-header__nav-link hero-header__nav-link--menu"
+                  type="button"
+                  data-services-menu-trigger
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-controls="services-menu"
+                >
+                  Услуги
+                  <svg class="hero-header__nav-chevron" aria-hidden="true" width="12" height="12" viewBox="0 0 256 256" fill="currentColor">
+                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/>
+                  </svg>
+                </button>
+              </li>
+
+              <li class="hero-header__nav-item">
+                <a class="hero-header__nav-link" href="/#prices">Цены</a>
+              </li>
+              <li class="hero-header__nav-item">
+                <a class="hero-header__nav-link" href="/#reviews">Отзывы</a>
+              </li>
+              <li class="hero-header__nav-item">
+                <a class="hero-header__nav-link" href="/#blog">Блог</a>
+              </li>
+              <li class="hero-header__nav-item">
+                <a class="hero-header__nav-link" href="/#contact">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="hero-header__actions">
+            <a class="hero-header__phone" href="tel:+74951204567" aria-label="Позвонить: +7 (495) 120-45-67">
+              <img
+                class="hero-header__phone-icon"
+                src="/assets/icons/phone.svg"
+                alt=""
+                width="15"
+                height="15"
+                decoding="async"
+              >
+              <span class="hero-header__phone-text">+7 (495) 120-45-67</span>
+            </a>
+
+            <div class="hero-header__socials">
+              <a
+                class="hero-header__social"
+                href="https://t.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram"
+              >
+                <img class="hero-header__social-icon" src="/assets/icons/messengers/telegram.svg" alt="" width="16" height="16" decoding="async">
+              </a>
+              <a
+                class="hero-header__social"
+                href="https://wa.me/74951204567"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                <img class="hero-header__social-icon" src="/assets/icons/messengers/whatsapp.png" alt="" width="16" height="16" decoding="async">
+              </a>
+              <a
+                class="hero-header__social"
+                href="https://max.ru/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MAX"
+              >
+                <img class="hero-header__social-icon" src="/assets/icons/messengers/max.png" alt="" width="16" height="16" decoding="async">
+              </a>
+              <a
+                class="hero-header__social"
+                href="https://vk.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ВКонтакте"
+              >
+                <img class="hero-header__social-icon" src="/assets/icons/messengers/vk.png" alt="" width="16" height="16" decoding="async">
+              </a>
+              <a
+                class="hero-header__social"
+                href="mailto:info@nova-clinic.ru"
+                aria-label="Написать на почту"
+              >
+                <img class="hero-header__social-icon hero-header__social-icon--mail" src="/assets/icons/envelope.svg" alt="" width="16" height="16" decoding="async">
+              </a>
+            </div>
+
+            <a class="button button--consult button--warm" href="/#contact">
+              <img class="button__icon" src="/assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
+              Заказать звонок
+            </a>
+
+            <button
+              class="hero-header__burger"
+              type="button"
+              data-menu-toggle
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Открыть меню"
+            >
+              <img
+                class="hero-header__burger-icon"
+                src="/assets/icons/list.svg"
+                alt=""
+                width="20"
+                height="20"
+                decoding="async"
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+        <div class="services-menu" id="services-menu" data-services-menu-panel>
+      <div class="services-menu__toolbar">
+        <form class="services-menu__search" action="#" method="get" data-services-search-form>
+          <label class="services-menu__search-field">
+            <span class="visually-hidden">Поиск услуги</span>
+            <svg class="services-menu__search-icon" aria-hidden="true" width="14" height="14" viewBox="0 0 256 256" fill="currentColor">
+              <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/>
+            </svg>
+            <input class="services-menu__search-input" type="search" placeholder="Поиск услуги" autocomplete="off" data-services-search>
+          </label>
+        </form>
+        <button class="services-menu__clear" type="button" data-services-clear>
+          <img class="services-menu__clear-icon" src="/assets/icons/x.svg" alt="" width="13" height="13" decoding="async">
+          <span>Очистить</span>
+        </button>
+      </div>
+      <div class="services-menu__results" data-services-results hidden>
+        <span class="services-menu__results-title">Результаты поиска</span>
+        <ul class="services-menu__results-list" role="list" data-services-results-list>
+                  <li data-services-search-item hidden><a href="/uslugi/narkolog-na-dom/">Нарколог на дом</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/narkologicheskaya-pomosh/konsultaciya-narkologa/">Консультация нарколога</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/narkologicheskaya-pomosh/psihiatr-narkolog/">Приём психиатра-нарколога</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/narkologicheskaya-pomosh/onlajn-konsultaciya/">Онлайн-консультация психиатра-нарколога</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/narkologicheskaya-pomosh/stacionar/">Наркологический стационар</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/narkologicheskaya-pomosh/gospitalizaciya/">Госпитализация в стационар</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/narkologicheskaya-pomosh/chastnyj-vytrezvitel/">Частный вытрезвитель</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/narkologicheskaya-pomosh/srochnaya-pomosh/">Срочная наркологическая помощь</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-alkogolizma/na-domu/">Лечение алкоголизма на дому</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-alkogolizma/v-stacionare/">Лечение алкоголизма в стационаре</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-alkogolizma/ambulatorno/">Амбулаторное лечение алкоголизма</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-alkogolizma/zhenskij-alkogolizm/">Лечение женского алкоголизма</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-alkogolizma/muzhskoj-alkogolizm/">Лечение мужского алкоголизма</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-alkogolizma/pivnoj-alkogolizm/">Лечение пивного алкоголизма</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-alkogolizma/hronicheskij-alkogolizm/">Лечение хронического алкоголизма</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-alkogolizma/u-pozhilyh/">Лечение алкоголизма у пожилых</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-alkogolizma/bez-kodirovaniya/">Лечение алкоголизма без кодирования</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-alkogolizma/podrostkovyj/">Лечение подросткового алкоголизма</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-alkogolizma/alkogolnyj-delirij/">Помощь при алкогольном делирии</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/vyvod-iz-zapoya/">Вывод из запоя</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kapelnitsy/">Капельницы и детокс</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/">Кодирование от алкоголизма</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kapelnitsy/detoksikaciya/">Алкогольная детоксикация</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kapelnitsy/alkogolnaya-intoksikaciya/">Алкогольная интоксикация</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kapelnitsy/abstinentnyj-sindrom/">Алкогольный абстинентный синдром</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/vshivanie/">Вшивание / подшивка</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/vyvod-iz-zapoya/s-dalnejshim-lecheniem/">Вывод из запоя + дальнейшее лечение</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/vyvod-iz-zapoya/v-stacionare/">Вывод из запоя в стационаре</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/vyvod-iz-zapoya/na-domu/">Вывод из запоя на дому</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/dvojnoj-blok/">Двойной блок</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/">Капельница на дому</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/">Капельница от алкоголя</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/">Капельница от запоя</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kapelnitsy/ot-pohmelya/">Капельница от похмелья</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/v-klinike/">Кодирование в клинике</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/gipnoz/">Кодирование гипнозом</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/na-domu/">Кодирование на дому</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/metod-dovzhenko/">Кодирование по методу Довженко</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/s-provokaciej/">Кодирование с провокацией</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/ukol/">Кодирование уколом</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/preparaty/akvilong/">Кодирование: Аквилонг</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/preparaty/algominal/">Кодирование: Алгоминал</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/preparaty/vivitrol/">Кодирование: Вивитрол</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/preparaty/disulfiram/">Кодирование: Дисульфирам</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/preparaty/naltrekson/">Кодирование: Налтрексон</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/preparaty/torpedo/">Кодирование: Торпедо</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/preparaty/esperal/">Кодирование: Эспераль</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/medikamentoznoe/">Медикаментозное кодирование</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/preparaty/">Препараты для кодирования</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/kodirovanie/raskodirovanie/">Раскодирование</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/v-stacionare/">Лечение наркомании в стационаре</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/na-domu/">Лечение наркомании на дому</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/ambulatorno/">Амбулаторное лечение наркомании</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/medikamentoznoe/">Медикаментозное лечение наркомании</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/snyatie-lomki/">Снятие ломки</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/detoksikaciya/">Детоксикация от наркотиков</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/moskovskaya-oblast/">Лечение наркомании по городам МО</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/geroin/">Лечение героиновой зависимости</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/metadon/">Лечение метадоновой зависимости</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/mefedron/">Лечение мефедроновой зависимости</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/kokain/">Лечение кокаиновой зависимости</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/amfetamin/">Лечение амфетаминовой зависимости</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/metamfetamin/">Лечение метамфетаминовой зависимости</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/spajs/">Лечение зависимости от спайса</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/gashish/">Лечение зависимости от гашиша</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/marihuana/">Лечение зависимости от марихуаны</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/soli/">Лечение зависимости от солей</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/alfa-pvp/">Лечение зависимости от Альфа-PVP</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/butirat/">Лечение зависимости от бутирата</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/detoksikaciya/kapelnica/">Капельница при наркотической интоксикации</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/snyatie-lomki/v-stacionare/">Снятие ломки в стационаре</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/snyatie-lomki/na-domu/">Снятие ломки на дому</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/lechenie-narkomanii/detoksikaciya/ubod/">УБОД</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/drugie-zavisimosti/igromaniya/">Игромания / лудомания</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/drugie-zavisimosti/stavki/">Зависимость от ставок</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/drugie-zavisimosti/kompyuternaya/">Компьютерная зависимость</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/drugie-zavisimosti/internet/">Интернет-зависимость</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/drugie-zavisimosti/nikotinovaya/">Никотиновая зависимость</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/drugie-zavisimosti/toksikomaniya/">Токсикомания</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/">Лекарственная зависимость</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/antidepressanty/">Антидепрессанты: сопровождение отмены</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/benzodiazepiny/">Бензодиазепины</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/gabapentin/">Габапентин</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/kodein/">Кодеин</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/pregabalin/">Прегабалин / Лирика</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/tramadol/">Трамадол</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/fenazepam/">Феназепам</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/reabilitaciya/alkogolizm/">Реабилитация при алкоголизме</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/reabilitaciya/narkomaniya/">Реабилитация при наркомании</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/reabilitaciya/igromaniya/">Реабилитация при игромании</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/reabilitaciya/">Медико-социальная реабилитация</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/reabilitaciya/12-shagov/">Программа «12 шагов»</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/reabilitaciya/">Метод Шичко</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/reabilitaciya/resocializaciya/">Ресоциализация</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/reabilitaciya/moskovskaya-oblast/">Реабилитация по городам МО</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/konsultaciya/">Консультация психиатра</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/psihiatr-na-dom/">Психиатр на дом</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/onlajn/">Онлайн-консультация психиатра</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/stacionar/">Психиатрический стационар</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/">Тревожные и стрессовые расстройства</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/">Расстройства настроения</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/">Психотические расстройства</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/">Расстройства личности и поведения</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/">Расстройства пищевого поведения</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/kognitivnye-i-organicheskie/">Когнитивные и органические расстройства</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-sna/">Расстройства сна</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/agorafobiya/">Агорафобия</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-sna/bessonnica/">Бессонница</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/bipolyarnoe/">Биполярное расстройство</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/kognitivnye-i-organicheskie/alcgejmer/">Болезнь Альцгеймера</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/bredovoe/">Бредовое расстройство</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/generalizovannoe-trevozhnoe/">Генерализованное тревожное расстройство</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/kognitivnye-i-organicheskie/demenciya/">Деменция</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/depressiya/">Депрессия</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/distimiya/">Дистимия</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/zavisimoe/">Зависимое расстройство личности</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/izbegayushchee/">Избегающее расстройство личности</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/kompulsivnoe-pereedanie/">Компульсивное переедание</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-sna/lunatizm/">Лунатизм</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-sna/narkolepsiya/">Нарколепсия</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/narcissicheskoe/">Нарциссическое расстройство личности</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/nevroz/">Неврозы</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/anoreksiya/">Нервная анорексия</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/bulimiya/">Нервная булимия</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/okr/">ОКР</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/ptsr/">ПТСР</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/panicheskoe/">Паническое расстройство и панические атаки</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/paranoidnoe/">Параноидное расстройство личности</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/pogranichnoe/">Пограничное расстройство личности</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/poslerodovaya-depressiya/">Послеродовая депрессия</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/psihoz/">Психоз</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/kognitivnye-i-organicheskie/sosudistaya-demenciya/">Сосудистая деменция</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/sociofobiya/">Социофобия</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/fobii/">Фобии</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/shizoaffektivnoe/">Шизоаффективное расстройство</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/shizoidnoe/">Шизоидное расстройство личности</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/shizotipicheskoe/">Шизотипическое расстройство</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/shizofreniya/">Шизофрения</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihoterapiya-i-psihologiya/psihoterapevt/">Консультация психотерапевта</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihoterapiya-i-psihologiya/individualnaya/">Индивидуальная психотерапия</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihoterapiya-i-psihologiya/semejnaya/">Семейная психотерапия</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihoterapiya-i-psihologiya/psiholog/">Консультация психолога</a></li>
+                  <li data-services-search-item hidden><a href="/uslugi/psihoterapiya-i-psihologiya/semejnyj-psiholog/">Семейный психолог</a></li>
+        </ul>
+        <p class="services-menu__empty" data-services-empty hidden>Ничего не найдено</p>
+      </div>
+      <div class="services-menu__layout" data-services-layout>
+        <ul class="services-menu__cats" role="list">
+                  <li>
+                    <button class="services-menu__cat is-active" type="button" data-services-cat="0">
+                      <img class="services-menu__cat-icon" src="/assets/icons/ambulance.svg" alt="" width="16" height="16" decoding="async">
+                      <span>Наркологическая помощь</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="services-menu__cat" type="button" data-services-cat="1">
+                      <img class="services-menu__cat-icon" src="/assets/icons/first-aid.svg" alt="" width="16" height="16" decoding="async">
+                      <span>Лечение алкоголизма</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="services-menu__cat" type="button" data-services-cat="2">
+                      <img class="services-menu__cat-icon" src="/assets/icons/syringe.svg" alt="" width="16" height="16" decoding="async">
+                      <span>Лечение наркомании</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="services-menu__cat" type="button" data-services-cat="3">
+                      <img class="services-menu__cat-icon" src="/assets/icons/heartbeat.svg" alt="" width="16" height="16" decoding="async">
+                      <span>Другие зависимости</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="services-menu__cat" type="button" data-services-cat="4">
+                      <img class="services-menu__cat-icon" src="/assets/icons/leaf.svg" alt="" width="16" height="16" decoding="async">
+                      <span>Реабилитация зависимых</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="services-menu__cat" type="button" data-services-cat="5">
+                      <img class="services-menu__cat-icon" src="/assets/icons/users.svg" alt="" width="16" height="16" decoding="async">
+                      <span>Психиатрическая помощь</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="services-menu__cat" type="button" data-services-cat="6">
+                      <img class="services-menu__cat-icon" src="/assets/icons/chat-circle.svg" alt="" width="16" height="16" decoding="async">
+                      <span>Психотерапия и психология</span>
+                    </button>
+                  </li>
+        </ul>
+        <div class="services-menu__panels">
+                <div class="services-menu__panel is-active" data-services-panel="0">
+                  <ul class="services-menu__panel-list" role="list">
+                    <li><a href="/uslugi/narkolog-na-dom/">Нарколог на дом</a></li>
+                    <li><a href="/uslugi/narkologicheskaya-pomosh/konsultaciya-narkologa/">Консультация нарколога</a></li>
+                    <li><a href="/uslugi/narkologicheskaya-pomosh/psihiatr-narkolog/">Приём психиатра-нарколога</a></li>
+                    <li><a href="/uslugi/narkologicheskaya-pomosh/onlajn-konsultaciya/">Онлайн-консультация психиатра-нарколога</a></li>
+                    <li><a href="/uslugi/narkologicheskaya-pomosh/stacionar/">Наркологический стационар</a></li>
+                    <li><a href="/uslugi/narkologicheskaya-pomosh/gospitalizaciya/">Госпитализация в стационар</a></li>
+                    <li><a href="/uslugi/narkologicheskaya-pomosh/chastnyj-vytrezvitel/">Частный вытрезвитель</a></li>
+                    <li><a href="/uslugi/narkologicheskaya-pomosh/srochnaya-pomosh/">Срочная наркологическая помощь</a></li>
+                  </ul>
+                </div>
+                <div class="services-menu__panel" data-services-panel="1">
+                  <ul class="services-menu__panel-list" role="list">
+                    <li><a href="/uslugi/lechenie-alkogolizma/na-domu/">Лечение алкоголизма на дому</a></li>
+                    <li><a href="/uslugi/lechenie-alkogolizma/v-stacionare/">Лечение алкоголизма в стационаре</a></li>
+                    <li><a href="/uslugi/lechenie-alkogolizma/ambulatorno/">Амбулаторное лечение алкоголизма</a></li>
+                    <li><a href="/uslugi/lechenie-alkogolizma/zhenskij-alkogolizm/">Лечение женского алкоголизма</a></li>
+                    <li><a href="/uslugi/lechenie-alkogolizma/muzhskoj-alkogolizm/">Лечение мужского алкоголизма</a></li>
+                    <li><a href="/uslugi/lechenie-alkogolizma/pivnoj-alkogolizm/">Лечение пивного алкоголизма</a></li>
+                    <li><a href="/uslugi/lechenie-alkogolizma/hronicheskij-alkogolizm/">Лечение хронического алкоголизма</a></li>
+                    <li><a href="/uslugi/lechenie-alkogolizma/u-pozhilyh/">Лечение алкоголизма у пожилых</a></li>
+                    <li><a href="/uslugi/lechenie-alkogolizma/bez-kodirovaniya/">Лечение алкоголизма без кодирования</a></li>
+                    <li><a href="/uslugi/lechenie-alkogolizma/podrostkovyj/">Лечение подросткового алкоголизма</a></li>
+                    <li><a href="/uslugi/lechenie-alkogolizma/alkogolnyj-delirij/">Помощь при алкогольном делирии</a></li>
+                    <li><a href="/uslugi/vyvod-iz-zapoya/">Вывод из запоя</a></li>
+                    <li><a href="/uslugi/kapelnitsy/">Капельницы и детокс</a></li>
+                    <li><a href="/uslugi/kodirovanie/">Кодирование от алкоголизма</a></li>
+                    <li><a href="/uslugi/kapelnitsy/detoksikaciya/">Алкогольная детоксикация</a></li>
+                    <li><a href="/uslugi/kapelnitsy/alkogolnaya-intoksikaciya/">Алкогольная интоксикация</a></li>
+                    <li><a href="/uslugi/kapelnitsy/abstinentnyj-sindrom/">Алкогольный абстинентный синдром</a></li>
+                    <li><a href="/uslugi/kodirovanie/vshivanie/">Вшивание / подшивка</a></li>
+                    <li><a href="/uslugi/vyvod-iz-zapoya/s-dalnejshim-lecheniem/">Вывод из запоя + дальнейшее лечение</a></li>
+                    <li><a href="/uslugi/vyvod-iz-zapoya/v-stacionare/">Вывод из запоя в стационаре</a></li>
+                    <li><a href="/uslugi/vyvod-iz-zapoya/na-domu/">Вывод из запоя на дому</a></li>
+                    <li><a href="/uslugi/kodirovanie/dvojnoj-blok/">Двойной блок</a></li>
+                    <li><a href="/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/">Капельница на дому</a></li>
+                    <li><a href="/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/">Капельница от алкоголя</a></li>
+                    <li><a href="/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/">Капельница от запоя</a></li>
+                    <li><a href="/uslugi/kapelnitsy/ot-pohmelya/">Капельница от похмелья</a></li>
+                    <li><a href="/uslugi/kodirovanie/v-klinike/">Кодирование в клинике</a></li>
+                    <li><a href="/uslugi/kodirovanie/gipnoz/">Кодирование гипнозом</a></li>
+                    <li><a href="/uslugi/kodirovanie/na-domu/">Кодирование на дому</a></li>
+                    <li><a href="/uslugi/kodirovanie/metod-dovzhenko/">Кодирование по методу Довженко</a></li>
+                    <li><a href="/uslugi/kodirovanie/s-provokaciej/">Кодирование с провокацией</a></li>
+                    <li><a href="/uslugi/kodirovanie/ukol/">Кодирование уколом</a></li>
+                    <li><a href="/uslugi/kodirovanie/preparaty/akvilong/">Кодирование: Аквилонг</a></li>
+                    <li><a href="/uslugi/kodirovanie/preparaty/algominal/">Кодирование: Алгоминал</a></li>
+                    <li><a href="/uslugi/kodirovanie/preparaty/vivitrol/">Кодирование: Вивитрол</a></li>
+                    <li><a href="/uslugi/kodirovanie/preparaty/disulfiram/">Кодирование: Дисульфирам</a></li>
+                    <li><a href="/uslugi/kodirovanie/preparaty/naltrekson/">Кодирование: Налтрексон</a></li>
+                    <li><a href="/uslugi/kodirovanie/preparaty/torpedo/">Кодирование: Торпедо</a></li>
+                    <li><a href="/uslugi/kodirovanie/preparaty/esperal/">Кодирование: Эспераль</a></li>
+                    <li><a href="/uslugi/kodirovanie/medikamentoznoe/">Медикаментозное кодирование</a></li>
+                    <li><a href="/uslugi/kodirovanie/preparaty/">Препараты для кодирования</a></li>
+                    <li><a href="/uslugi/kodirovanie/raskodirovanie/">Раскодирование</a></li>
+                  </ul>
+                </div>
+                <div class="services-menu__panel" data-services-panel="2">
+                  <ul class="services-menu__panel-list" role="list">
+                    <li><a href="/uslugi/lechenie-narkomanii/v-stacionare/">Лечение наркомании в стационаре</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/na-domu/">Лечение наркомании на дому</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/ambulatorno/">Амбулаторное лечение наркомании</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/medikamentoznoe/">Медикаментозное лечение наркомании</a></li>
+                    <li><a href="/uslugi/snyatie-lomki/">Снятие ломки</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/detoksikaciya/">Детоксикация от наркотиков</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/moskovskaya-oblast/">Лечение наркомании по городам МО</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/geroin/">Лечение героиновой зависимости</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/metadon/">Лечение метадоновой зависимости</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/mefedron/">Лечение мефедроновой зависимости</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/kokain/">Лечение кокаиновой зависимости</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/amfetamin/">Лечение амфетаминовой зависимости</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/metamfetamin/">Лечение метамфетаминовой зависимости</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/spajs/">Лечение зависимости от спайса</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/gashish/">Лечение зависимости от гашиша</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/marihuana/">Лечение зависимости от марихуаны</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/soli/">Лечение зависимости от солей</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/alfa-pvp/">Лечение зависимости от Альфа-PVP</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/butirat/">Лечение зависимости от бутирата</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/detoksikaciya/kapelnica/">Капельница при наркотической интоксикации</a></li>
+                    <li><a href="/uslugi/snyatie-lomki/v-stacionare/">Снятие ломки в стационаре</a></li>
+                    <li><a href="/uslugi/snyatie-lomki/na-domu/">Снятие ломки на дому</a></li>
+                    <li><a href="/uslugi/lechenie-narkomanii/detoksikaciya/ubod/">УБОД</a></li>
+                  </ul>
+                </div>
+                <div class="services-menu__panel" data-services-panel="3">
+                  <ul class="services-menu__panel-list" role="list">
+                    <li><a href="/uslugi/drugie-zavisimosti/igromaniya/">Игромания / лудомания</a></li>
+                    <li><a href="/uslugi/drugie-zavisimosti/stavki/">Зависимость от ставок</a></li>
+                    <li><a href="/uslugi/drugie-zavisimosti/kompyuternaya/">Компьютерная зависимость</a></li>
+                    <li><a href="/uslugi/drugie-zavisimosti/internet/">Интернет-зависимость</a></li>
+                    <li><a href="/uslugi/drugie-zavisimosti/nikotinovaya/">Никотиновая зависимость</a></li>
+                    <li><a href="/uslugi/drugie-zavisimosti/toksikomaniya/">Токсикомания</a></li>
+                    <li><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/">Лекарственная зависимость</a></li>
+                    <li><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/antidepressanty/">Антидепрессанты: сопровождение отмены</a></li>
+                    <li><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/benzodiazepiny/">Бензодиазепины</a></li>
+                    <li><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/gabapentin/">Габапентин</a></li>
+                    <li><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/kodein/">Кодеин</a></li>
+                    <li><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/pregabalin/">Прегабалин / Лирика</a></li>
+                    <li><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/tramadol/">Трамадол</a></li>
+                    <li><a href="/uslugi/drugie-zavisimosti/lekarstvennaya/fenazepam/">Феназепам</a></li>
+                  </ul>
+                </div>
+                <div class="services-menu__panel" data-services-panel="4">
+                  <ul class="services-menu__panel-list" role="list">
+                    <li><a href="/uslugi/reabilitaciya/alkogolizm/">Реабилитация при алкоголизме</a></li>
+                    <li><a href="/uslugi/reabilitaciya/narkomaniya/">Реабилитация при наркомании</a></li>
+                    <li><a href="/uslugi/reabilitaciya/igromaniya/">Реабилитация при игромании</a></li>
+                    <li><a href="/uslugi/reabilitaciya/">Медико-социальная реабилитация</a></li>
+                    <li><a href="/uslugi/reabilitaciya/12-shagov/">Программа «12 шагов»</a></li>
+                    <li><a href="/uslugi/reabilitaciya/">Метод Шичко</a></li>
+                    <li><a href="/uslugi/reabilitaciya/resocializaciya/">Ресоциализация</a></li>
+                    <li><a href="/uslugi/reabilitaciya/moskovskaya-oblast/">Реабилитация по городам МО</a></li>
+                  </ul>
+                </div>
+                <div class="services-menu__panel" data-services-panel="5">
+                  <ul class="services-menu__panel-list" role="list">
+                    <li><a href="/uslugi/psihiatriya/konsultaciya/">Консультация психиатра</a></li>
+                    <li><a href="/uslugi/psihiatriya/psihiatr-na-dom/">Психиатр на дом</a></li>
+                    <li><a href="/uslugi/psihiatriya/onlajn/">Онлайн-консультация психиатра</a></li>
+                    <li><a href="/uslugi/psihiatriya/stacionar/">Психиатрический стационар</a></li>
+                    <li><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/">Тревожные и стрессовые расстройства</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/">Расстройства настроения</a></li>
+                    <li><a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/">Психотические расстройства</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/">Расстройства личности и поведения</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/">Расстройства пищевого поведения</a></li>
+                    <li><a href="/uslugi/psihiatriya/kognitivnye-i-organicheskie/">Когнитивные и органические расстройства</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-sna/">Расстройства сна</a></li>
+                    <li><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/agorafobiya/">Агорафобия</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-sna/bessonnica/">Бессонница</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/bipolyarnoe/">Биполярное расстройство</a></li>
+                    <li><a href="/uslugi/psihiatriya/kognitivnye-i-organicheskie/alcgejmer/">Болезнь Альцгеймера</a></li>
+                    <li><a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/bredovoe/">Бредовое расстройство</a></li>
+                    <li><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/generalizovannoe-trevozhnoe/">Генерализованное тревожное расстройство</a></li>
+                    <li><a href="/uslugi/psihiatriya/kognitivnye-i-organicheskie/demenciya/">Деменция</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/depressiya/">Депрессия</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/distimiya/">Дистимия</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/zavisimoe/">Зависимое расстройство личности</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/izbegayushchee/">Избегающее расстройство личности</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/kompulsivnoe-pereedanie/">Компульсивное переедание</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-sna/lunatizm/">Лунатизм</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-sna/narkolepsiya/">Нарколепсия</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/narcissicheskoe/">Нарциссическое расстройство личности</a></li>
+                    <li><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/nevroz/">Неврозы</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/anoreksiya/">Нервная анорексия</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/bulimiya/">Нервная булимия</a></li>
+                    <li><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/okr/">ОКР</a></li>
+                    <li><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/ptsr/">ПТСР</a></li>
+                    <li><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/panicheskoe/">Паническое расстройство и панические атаки</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/paranoidnoe/">Параноидное расстройство личности</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/pogranichnoe/">Пограничное расстройство личности</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/poslerodovaya-depressiya/">Послеродовая депрессия</a></li>
+                    <li><a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/psihoz/">Психоз</a></li>
+                    <li><a href="/uslugi/psihiatriya/kognitivnye-i-organicheskie/sosudistaya-demenciya/">Сосудистая деменция</a></li>
+                    <li><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/sociofobiya/">Социофобия</a></li>
+                    <li><a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/fobii/">Фобии</a></li>
+                    <li><a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/shizoaffektivnoe/">Шизоаффективное расстройство</a></li>
+                    <li><a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/shizoidnoe/">Шизоидное расстройство личности</a></li>
+                    <li><a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/shizotipicheskoe/">Шизотипическое расстройство</a></li>
+                    <li><a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/shizofreniya/">Шизофрения</a></li>
+                  </ul>
+                </div>
+                <div class="services-menu__panel" data-services-panel="6">
+                  <ul class="services-menu__panel-list" role="list">
+                    <li><a href="/uslugi/psihoterapiya-i-psihologiya/psihoterapevt/">Консультация психотерапевта</a></li>
+                    <li><a href="/uslugi/psihoterapiya-i-psihologiya/individualnaya/">Индивидуальная психотерапия</a></li>
+                    <li><a href="/uslugi/psihoterapiya-i-psihologiya/semejnaya/">Семейная психотерапия</a></li>
+                    <li><a href="/uslugi/psihoterapiya-i-psihologiya/psiholog/">Консультация психолога</a></li>
+                    <li><a href="/uslugi/psihoterapiya-i-psihologiya/semejnyj-psiholog/">Семейный психолог</a></li>
+                  </ul>
+                </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="mobile-menu"
+      id="mobile-menu"
+      data-mobile-menu
+      hidden
+      aria-hidden="true"
+    >
+      <button
+        class="mobile-menu__backdrop"
+        type="button"
+        data-menu-close
+        aria-label="Закрыть меню"
+      ></button>
+      <div class="mobile-menu__panel" data-mobile-menu-panel role="dialog" aria-modal="true" aria-label="Мобильное меню">
+        <div class="mobile-menu__top">
+          <a class="mobile-menu__logo" href="/" aria-label="Нова клиник — на главную" data-menu-close>
+            <img src="/assets/images/logo-mark.png" alt="Нова клиник" width="64" height="64" decoding="async">
+          </a>
+          <p class="mobile-menu__org">Нова клиник</p>
+          <button class="mobile-menu__close" type="button" data-menu-close aria-label="Закрыть меню">
+            <img src="/assets/icons/x.svg" alt="" width="20" height="20" decoding="async">
+          </button>
+        </div>
+
+        <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
+          <div class="mobile-menu__accordion" data-mobile-accordion>
+            <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
+              О клинике
+            </button>
+            <div class="mobile-menu__accordion-panel">
+              <a href="/#about" data-menu-close>О клинике</a>
+              <a class="mobile-menu__about-link" href="/vrachi/" data-menu-close>
+                <img class="mobile-menu__about-icon" src="/assets/icons/users.svg" alt="" width="20" height="20" decoding="async">
+                <span>Врачи</span>
+              </a>
+              <a class="mobile-menu__about-link" href="/#about" data-menu-close>
+                <img class="mobile-menu__about-icon" src="/assets/icons/hospital.svg" alt="" width="20" height="20" decoding="async">
+                <span>Клиника</span>
+              </a>
+              <a class="mobile-menu__about-link" href="/licenziya/" data-menu-close>
+                <img class="mobile-menu__about-icon" src="/assets/icons/shield-check.svg" alt="" width="20" height="20" decoding="async">
+                <span>Лицензия</span>
+              </a>
+              <a class="mobile-menu__about-link" href="/garantiya/" data-menu-close>
+                <img class="mobile-menu__about-icon" src="/assets/icons/seal-check.svg" alt="" width="20" height="20" decoding="async">
+                <span>Гарантия</span>
+              </a>
+              <a class="mobile-menu__about-link" href="/dogovor/" data-menu-close>
+                <img class="mobile-menu__about-icon" src="/assets/icons/lock.svg" alt="" width="20" height="20" decoding="async">
+                <span>Договор</span>
+              </a>
+              <a class="mobile-menu__about-link" href="/galereya/" data-menu-close>
+                <img class="mobile-menu__about-icon" src="/assets/icons/sun.svg" alt="" width="20" height="20" decoding="async">
+                <span>Фотогалерея</span>
+              </a>
+              <a class="mobile-menu__about-link" href="/kejsy/" data-menu-close>
+                <img class="mobile-menu__about-icon" src="/assets/icons/star.svg" alt="" width="20" height="20" decoding="async">
+                <span>Кейсы</span>
+              </a>
+              <a class="mobile-menu__about-link" href="/voprosy/" data-menu-close>
+                <img class="mobile-menu__about-icon" src="/assets/icons/chat-circle.svg" alt="" width="20" height="20" decoding="async">
+                <span>ЧаВо</span>
+              </a>
+            </div>
+          </div>
+
+          <div data-services-menu-mobile>
+          <div class="mobile-menu__accordion mobile-menu__accordion--services" data-mobile-accordion>
+            <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
+              Услуги
+            </button>
+            <div class="mobile-menu__accordion-panel mobile-menu__accordion-panel--services">
+            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
+              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
+                Наркологическая помощь
+              </button>
+              <div class="mobile-menu__accordion-panel">
+                <a href="/uslugi/narkologicheskaya-pomosh/" data-menu-close>Все услуги раздела</a>
+                <a href="/uslugi/narkolog-na-dom/" data-menu-close>Нарколог на дом</a>
+                <a href="/uslugi/narkologicheskaya-pomosh/konsultaciya-narkologa/" data-menu-close>Консультация нарколога</a>
+                <a href="/uslugi/narkologicheskaya-pomosh/psihiatr-narkolog/" data-menu-close>Приём психиатра-нарколога</a>
+                <a href="/uslugi/narkologicheskaya-pomosh/onlajn-konsultaciya/" data-menu-close>Онлайн-консультация психиатра-нарколога</a>
+                <a href="/uslugi/narkologicheskaya-pomosh/stacionar/" data-menu-close>Наркологический стационар</a>
+                <a href="/uslugi/narkologicheskaya-pomosh/gospitalizaciya/" data-menu-close>Госпитализация в стационар</a>
+                <a href="/uslugi/narkologicheskaya-pomosh/chastnyj-vytrezvitel/" data-menu-close>Частный вытрезвитель</a>
+                <a href="/uslugi/narkologicheskaya-pomosh/srochnaya-pomosh/" data-menu-close>Срочная наркологическая помощь</a>
+              </div>
+            </div>
+            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
+              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
+                Лечение алкоголизма
+              </button>
+              <div class="mobile-menu__accordion-panel">
+                <a href="/uslugi/lechenie-alkogolizma/" data-menu-close>Все услуги раздела</a>
+                <a href="/uslugi/lechenie-alkogolizma/na-domu/" data-menu-close>Лечение алкоголизма на дому</a>
+                <a href="/uslugi/lechenie-alkogolizma/v-stacionare/" data-menu-close>Лечение алкоголизма в стационаре</a>
+                <a href="/uslugi/lechenie-alkogolizma/ambulatorno/" data-menu-close>Амбулаторное лечение алкоголизма</a>
+                <a href="/uslugi/lechenie-alkogolizma/zhenskij-alkogolizm/" data-menu-close>Лечение женского алкоголизма</a>
+                <a href="/uslugi/lechenie-alkogolizma/muzhskoj-alkogolizm/" data-menu-close>Лечение мужского алкоголизма</a>
+                <a href="/uslugi/lechenie-alkogolizma/pivnoj-alkogolizm/" data-menu-close>Лечение пивного алкоголизма</a>
+                <a href="/uslugi/lechenie-alkogolizma/hronicheskij-alkogolizm/" data-menu-close>Лечение хронического алкоголизма</a>
+                <a href="/uslugi/lechenie-alkogolizma/u-pozhilyh/" data-menu-close>Лечение алкоголизма у пожилых</a>
+                <a href="/uslugi/lechenie-alkogolizma/bez-kodirovaniya/" data-menu-close>Лечение алкоголизма без кодирования</a>
+                <a href="/uslugi/lechenie-alkogolizma/podrostkovyj/" data-menu-close>Лечение подросткового алкоголизма</a>
+                <a href="/uslugi/lechenie-alkogolizma/alkogolnyj-delirij/" data-menu-close>Помощь при алкогольном делирии</a>
+                <a href="/uslugi/vyvod-iz-zapoya/" data-menu-close>Вывод из запоя</a>
+                <a href="/uslugi/kapelnitsy/" data-menu-close>Капельницы и детокс</a>
+                <a href="/uslugi/kodirovanie/" data-menu-close>Кодирование от алкоголизма</a>
+                <a href="/uslugi/kapelnitsy/detoksikaciya/" data-menu-close>Алкогольная детоксикация</a>
+                <a href="/uslugi/kapelnitsy/alkogolnaya-intoksikaciya/" data-menu-close>Алкогольная интоксикация</a>
+                <a href="/uslugi/kapelnitsy/abstinentnyj-sindrom/" data-menu-close>Алкогольный абстинентный синдром</a>
+                <a href="/uslugi/kodirovanie/vshivanie/" data-menu-close>Вшивание / подшивка</a>
+                <a href="/uslugi/vyvod-iz-zapoya/s-dalnejshim-lecheniem/" data-menu-close>Вывод из запоя + дальнейшее лечение</a>
+                <a href="/uslugi/vyvod-iz-zapoya/v-stacionare/" data-menu-close>Вывод из запоя в стационаре</a>
+                <a href="/uslugi/vyvod-iz-zapoya/na-domu/" data-menu-close>Вывод из запоя на дому</a>
+                <a href="/uslugi/kodirovanie/dvojnoj-blok/" data-menu-close>Двойной блок</a>
+                <a href="/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/" data-menu-close>Капельница на дому</a>
+                <a href="/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/" data-menu-close>Капельница от алкоголя</a>
+                <a href="/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/" data-menu-close>Капельница от запоя</a>
+                <a href="/uslugi/kapelnitsy/ot-pohmelya/" data-menu-close>Капельница от похмелья</a>
+                <a href="/uslugi/kodirovanie/v-klinike/" data-menu-close>Кодирование в клинике</a>
+                <a href="/uslugi/kodirovanie/gipnoz/" data-menu-close>Кодирование гипнозом</a>
+                <a href="/uslugi/kodirovanie/na-domu/" data-menu-close>Кодирование на дому</a>
+                <a href="/uslugi/kodirovanie/metod-dovzhenko/" data-menu-close>Кодирование по методу Довженко</a>
+                <a href="/uslugi/kodirovanie/s-provokaciej/" data-menu-close>Кодирование с провокацией</a>
+                <a href="/uslugi/kodirovanie/ukol/" data-menu-close>Кодирование уколом</a>
+                <a href="/uslugi/kodirovanie/preparaty/akvilong/" data-menu-close>Кодирование: Аквилонг</a>
+                <a href="/uslugi/kodirovanie/preparaty/algominal/" data-menu-close>Кодирование: Алгоминал</a>
+                <a href="/uslugi/kodirovanie/preparaty/vivitrol/" data-menu-close>Кодирование: Вивитрол</a>
+                <a href="/uslugi/kodirovanie/preparaty/disulfiram/" data-menu-close>Кодирование: Дисульфирам</a>
+                <a href="/uslugi/kodirovanie/preparaty/naltrekson/" data-menu-close>Кодирование: Налтрексон</a>
+                <a href="/uslugi/kodirovanie/preparaty/torpedo/" data-menu-close>Кодирование: Торпедо</a>
+                <a href="/uslugi/kodirovanie/preparaty/esperal/" data-menu-close>Кодирование: Эспераль</a>
+                <a href="/uslugi/kodirovanie/medikamentoznoe/" data-menu-close>Медикаментозное кодирование</a>
+                <a href="/uslugi/kodirovanie/preparaty/" data-menu-close>Препараты для кодирования</a>
+                <a href="/uslugi/kodirovanie/raskodirovanie/" data-menu-close>Раскодирование</a>
+              </div>
+            </div>
+            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
+              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
+                Лечение наркомании
+              </button>
+              <div class="mobile-menu__accordion-panel">
+                <a href="/uslugi/lechenie-narkomanii/" data-menu-close>Все услуги раздела</a>
+                <a href="/uslugi/lechenie-narkomanii/v-stacionare/" data-menu-close>Лечение наркомании в стационаре</a>
+                <a href="/uslugi/lechenie-narkomanii/na-domu/" data-menu-close>Лечение наркомании на дому</a>
+                <a href="/uslugi/lechenie-narkomanii/ambulatorno/" data-menu-close>Амбулаторное лечение наркомании</a>
+                <a href="/uslugi/lechenie-narkomanii/medikamentoznoe/" data-menu-close>Медикаментозное лечение наркомании</a>
+                <a href="/uslugi/snyatie-lomki/" data-menu-close>Снятие ломки</a>
+                <a href="/uslugi/lechenie-narkomanii/detoksikaciya/" data-menu-close>Детоксикация от наркотиков</a>
+                <a href="/uslugi/lechenie-narkomanii/moskovskaya-oblast/" data-menu-close>Лечение наркомании по городам МО</a>
+                <a href="/uslugi/lechenie-narkomanii/geroin/" data-menu-close>Лечение героиновой зависимости</a>
+                <a href="/uslugi/lechenie-narkomanii/metadon/" data-menu-close>Лечение метадоновой зависимости</a>
+                <a href="/uslugi/lechenie-narkomanii/mefedron/" data-menu-close>Лечение мефедроновой зависимости</a>
+                <a href="/uslugi/lechenie-narkomanii/kokain/" data-menu-close>Лечение кокаиновой зависимости</a>
+                <a href="/uslugi/lechenie-narkomanii/amfetamin/" data-menu-close>Лечение амфетаминовой зависимости</a>
+                <a href="/uslugi/lechenie-narkomanii/metamfetamin/" data-menu-close>Лечение метамфетаминовой зависимости</a>
+                <a href="/uslugi/lechenie-narkomanii/spajs/" data-menu-close>Лечение зависимости от спайса</a>
+                <a href="/uslugi/lechenie-narkomanii/gashish/" data-menu-close>Лечение зависимости от гашиша</a>
+                <a href="/uslugi/lechenie-narkomanii/marihuana/" data-menu-close>Лечение зависимости от марихуаны</a>
+                <a href="/uslugi/lechenie-narkomanii/soli/" data-menu-close>Лечение зависимости от солей</a>
+                <a href="/uslugi/lechenie-narkomanii/alfa-pvp/" data-menu-close>Лечение зависимости от Альфа-PVP</a>
+                <a href="/uslugi/lechenie-narkomanii/butirat/" data-menu-close>Лечение зависимости от бутирата</a>
+                <a href="/uslugi/lechenie-narkomanii/detoksikaciya/kapelnica/" data-menu-close>Капельница при наркотической интоксикации</a>
+                <a href="/uslugi/snyatie-lomki/v-stacionare/" data-menu-close>Снятие ломки в стационаре</a>
+                <a href="/uslugi/snyatie-lomki/na-domu/" data-menu-close>Снятие ломки на дому</a>
+                <a href="/uslugi/lechenie-narkomanii/detoksikaciya/ubod/" data-menu-close>УБОД</a>
+              </div>
+            </div>
+            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
+              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
+                Другие зависимости
+              </button>
+              <div class="mobile-menu__accordion-panel">
+                <a href="/uslugi/drugie-zavisimosti/" data-menu-close>Все услуги раздела</a>
+                <a href="/uslugi/drugie-zavisimosti/igromaniya/" data-menu-close>Игромания / лудомания</a>
+                <a href="/uslugi/drugie-zavisimosti/stavki/" data-menu-close>Зависимость от ставок</a>
+                <a href="/uslugi/drugie-zavisimosti/kompyuternaya/" data-menu-close>Компьютерная зависимость</a>
+                <a href="/uslugi/drugie-zavisimosti/internet/" data-menu-close>Интернет-зависимость</a>
+                <a href="/uslugi/drugie-zavisimosti/nikotinovaya/" data-menu-close>Никотиновая зависимость</a>
+                <a href="/uslugi/drugie-zavisimosti/toksikomaniya/" data-menu-close>Токсикомания</a>
+                <a href="/uslugi/drugie-zavisimosti/lekarstvennaya/" data-menu-close>Лекарственная зависимость</a>
+                <a href="/uslugi/drugie-zavisimosti/lekarstvennaya/antidepressanty/" data-menu-close>Антидепрессанты: сопровождение отмены</a>
+                <a href="/uslugi/drugie-zavisimosti/lekarstvennaya/benzodiazepiny/" data-menu-close>Бензодиазепины</a>
+                <a href="/uslugi/drugie-zavisimosti/lekarstvennaya/gabapentin/" data-menu-close>Габапентин</a>
+                <a href="/uslugi/drugie-zavisimosti/lekarstvennaya/kodein/" data-menu-close>Кодеин</a>
+                <a href="/uslugi/drugie-zavisimosti/lekarstvennaya/pregabalin/" data-menu-close>Прегабалин / Лирика</a>
+                <a href="/uslugi/drugie-zavisimosti/lekarstvennaya/tramadol/" data-menu-close>Трамадол</a>
+                <a href="/uslugi/drugie-zavisimosti/lekarstvennaya/fenazepam/" data-menu-close>Феназепам</a>
+              </div>
+            </div>
+            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
+              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
+                Реабилитация зависимых
+              </button>
+              <div class="mobile-menu__accordion-panel">
+                <a href="/uslugi/reabilitaciya/" data-menu-close>Все услуги раздела</a>
+                <a href="/uslugi/reabilitaciya/alkogolizm/" data-menu-close>Реабилитация при алкоголизме</a>
+                <a href="/uslugi/reabilitaciya/narkomaniya/" data-menu-close>Реабилитация при наркомании</a>
+                <a href="/uslugi/reabilitaciya/igromaniya/" data-menu-close>Реабилитация при игромании</a>
+                <a href="/uslugi/reabilitaciya/" data-menu-close>Медико-социальная реабилитация</a>
+                <a href="/uslugi/reabilitaciya/12-shagov/" data-menu-close>Программа «12 шагов»</a>
+                <a href="/uslugi/reabilitaciya/" data-menu-close>Метод Шичко</a>
+                <a href="/uslugi/reabilitaciya/resocializaciya/" data-menu-close>Ресоциализация</a>
+                <a href="/uslugi/reabilitaciya/moskovskaya-oblast/" data-menu-close>Реабилитация по городам МО</a>
+              </div>
+            </div>
+            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
+              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
+                Психиатрическая помощь
+              </button>
+              <div class="mobile-menu__accordion-panel">
+                <a href="/uslugi/psihiatriya/" data-menu-close>Все услуги раздела</a>
+                <a href="/uslugi/psihiatriya/konsultaciya/" data-menu-close>Консультация психиатра</a>
+                <a href="/uslugi/psihiatriya/psihiatr-na-dom/" data-menu-close>Психиатр на дом</a>
+                <a href="/uslugi/psihiatriya/onlajn/" data-menu-close>Онлайн-консультация психиатра</a>
+                <a href="/uslugi/psihiatriya/stacionar/" data-menu-close>Психиатрический стационар</a>
+                <a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/" data-menu-close>Тревожные и стрессовые расстройства</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/" data-menu-close>Расстройства настроения</a>
+                <a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/" data-menu-close>Психотические расстройства</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/" data-menu-close>Расстройства личности и поведения</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/" data-menu-close>Расстройства пищевого поведения</a>
+                <a href="/uslugi/psihiatriya/kognitivnye-i-organicheskie/" data-menu-close>Когнитивные и органические расстройства</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-sna/" data-menu-close>Расстройства сна</a>
+                <a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/agorafobiya/" data-menu-close>Агорафобия</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-sna/bessonnica/" data-menu-close>Бессонница</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/bipolyarnoe/" data-menu-close>Биполярное расстройство</a>
+                <a href="/uslugi/psihiatriya/kognitivnye-i-organicheskie/alcgejmer/" data-menu-close>Болезнь Альцгеймера</a>
+                <a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/bredovoe/" data-menu-close>Бредовое расстройство</a>
+                <a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/generalizovannoe-trevozhnoe/" data-menu-close>Генерализованное тревожное расстройство</a>
+                <a href="/uslugi/psihiatriya/kognitivnye-i-organicheskie/demenciya/" data-menu-close>Деменция</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/depressiya/" data-menu-close>Депрессия</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/distimiya/" data-menu-close>Дистимия</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/zavisimoe/" data-menu-close>Зависимое расстройство личности</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/izbegayushchee/" data-menu-close>Избегающее расстройство личности</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/kompulsivnoe-pereedanie/" data-menu-close>Компульсивное переедание</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-sna/lunatizm/" data-menu-close>Лунатизм</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-sna/narkolepsiya/" data-menu-close>Нарколепсия</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/narcissicheskoe/" data-menu-close>Нарциссическое расстройство личности</a>
+                <a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/nevroz/" data-menu-close>Неврозы</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/anoreksiya/" data-menu-close>Нервная анорексия</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/bulimiya/" data-menu-close>Нервная булимия</a>
+                <a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/okr/" data-menu-close>ОКР</a>
+                <a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/ptsr/" data-menu-close>ПТСР</a>
+                <a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/panicheskoe/" data-menu-close>Паническое расстройство и панические атаки</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/paranoidnoe/" data-menu-close>Параноидное расстройство личности</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/pogranichnoe/" data-menu-close>Пограничное расстройство личности</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-nastroeniya/poslerodovaya-depressiya/" data-menu-close>Послеродовая депрессия</a>
+                <a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/psihoz/" data-menu-close>Психоз</a>
+                <a href="/uslugi/psihiatriya/kognitivnye-i-organicheskie/sosudistaya-demenciya/" data-menu-close>Сосудистая деменция</a>
+                <a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/sociofobiya/" data-menu-close>Социофобия</a>
+                <a href="/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/fobii/" data-menu-close>Фобии</a>
+                <a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/shizoaffektivnoe/" data-menu-close>Шизоаффективное расстройство</a>
+                <a href="/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/shizoidnoe/" data-menu-close>Шизоидное расстройство личности</a>
+                <a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/shizotipicheskoe/" data-menu-close>Шизотипическое расстройство</a>
+                <a href="/uslugi/psihiatriya/psihoticheskie-rasstrojstva/shizofreniya/" data-menu-close>Шизофрения</a>
+              </div>
+            </div>
+            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
+              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
+                Психотерапия и психология
+              </button>
+              <div class="mobile-menu__accordion-panel">
+                <a href="/uslugi/psihoterapiya-i-psihologiya/" data-menu-close>Все услуги раздела</a>
+                <a href="/uslugi/psihoterapiya-i-psihologiya/psihoterapevt/" data-menu-close>Консультация психотерапевта</a>
+                <a href="/uslugi/psihoterapiya-i-psihologiya/individualnaya/" data-menu-close>Индивидуальная психотерапия</a>
+                <a href="/uslugi/psihoterapiya-i-psihologiya/semejnaya/" data-menu-close>Семейная психотерапия</a>
+                <a href="/uslugi/psihoterapiya-i-psihologiya/psiholog/" data-menu-close>Консультация психолога</a>
+                <a href="/uslugi/psihoterapiya-i-psihologiya/semejnyj-psiholog/" data-menu-close>Семейный психолог</a>
+              </div>
+            </div>
+            </div>
+          </div>
+          </div>
+
+          <ul class="mobile-menu__list" role="list">
+            <li><a class="mobile-menu__link" href="/#prices" data-menu-close>Цены</a></li>
+            <li><a class="mobile-menu__link" href="/#reviews" data-menu-close>Отзывы</a></li>
+            <li><a class="mobile-menu__link" href="/#blog" data-menu-close>Блог</a></li>
+            <li><a class="mobile-menu__link" href="/#contact" data-menu-close>Контакты</a></li>
+          </ul>
+        </nav>
+
+        <div class="mobile-menu__footer">
+          <div class="mobile-menu__details">
+            <p class="mobile-menu__detail">г. Москва, ул. Профсоюзная, 56</p>
+            <p class="mobile-menu__detail">Круглосуточно 24/7</p>
+          </div>
+          <div class="mobile-menu__contacts">
+            <a class="mobile-menu__phone" href="tel:+74951204567">+7 (495) 120-45-67</a>
+            <div class="mobile-menu__socials">
+              <a class="mobile-menu__social" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                <img class="mobile-menu__social-icon" src="/assets/icons/messengers/telegram.svg" alt="" width="16" height="16" decoding="async">
+              </a>
+              <a class="mobile-menu__social" href="https://wa.me/74951204567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <img class="mobile-menu__social-icon" src="/assets/icons/messengers/whatsapp.png" alt="" width="16" height="16" decoding="async">
+              </a>
+              <a class="mobile-menu__social" href="https://max.ru/" target="_blank" rel="noopener noreferrer" aria-label="MAX">
+                <img class="mobile-menu__social-icon" src="/assets/icons/messengers/max.png" alt="" width="16" height="16" decoding="async">
+              </a>
+              <a class="mobile-menu__social" href="https://vk.com/" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
+                <img class="mobile-menu__social-icon" src="/assets/icons/messengers/vk.png" alt="" width="16" height="16" decoding="async">
+              </a>
+              <a class="mobile-menu__social" href="mailto:info@nova-clinic.ru" aria-label="Написать на почту">
+                <img class="mobile-menu__social-icon" src="/assets/icons/envelope.svg" alt="" width="16" height="16" decoding="async">
+              </a>
+            </div>
+          </div>
+          <div class="mobile-menu__cta">
+            <a class="button button--primary" href="tel:+74951204567">
+              <img class="button__icon" src="/assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
+              Позвонить в «Нова клиник»
+            </a>
+            <a class="button button--outline" href="/#contact" data-menu-close>
+              <img class="button__icon" src="/assets/icons/paper-plane-tilt.svg" alt="" width="16" height="16" decoding="async">
+              Оставить заявку
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ meta_title }}</title>
+    <meta name="description" content="{{ meta_description }}">
+    {% if canonical %}
+    <link rel="canonical" href="{{ canonical }}">
+    {% endif %}
+    <link rel="icon" href="/assets/images/logo-mark.png" type="image/png">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  <body>
+    {% include "components/header.html" %}
+    {% block content %}{% endblock %}
+    {% include "components/footer.html" %}
+    <script src="/assets/js/modules/menu.js" defer></script>
+    <script src="/assets/js/modules/services-menu.js" defer></script>
+    <script src="/assets/js/modules/contact-form.js" defer></script>
+    <script src="/assets/js/modules/reviews.js" defer></script>
+    <script src="/assets/js/modules/licenses.js" defer></script>
+    <script src="/assets/js/modules/clinic-gallery.js" defer></script>
+    <script src="/assets/js/modules/about-slider.js" defer></script>
+    <script src="/assets/js/modules/faq.js" defer></script>
+    <script src="/assets/js/data/specialist-directions.js" defer></script>
+    <script src="/assets/js/data/specialist-questions.js" defer></script>
+    <script src="/assets/js/data/specialists.js" defer></script>
+    <script src="/assets/js/modules/specialist-matching.js" defer></script>
+    <script src="/assets/js/modules/specialist-views.js" defer></script>
+    <script src="/assets/js/modules/specialist-dialog.js" defer></script>
+    <script src="/assets/js/modules/specialist-quiz.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
+  </body>
+</html>

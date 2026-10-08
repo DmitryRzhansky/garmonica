@@ -2,3 +2,9 @@
 Thumbs.db
 *.log
 logo-source.png
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+instance/
+.env

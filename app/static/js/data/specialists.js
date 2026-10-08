@@ -51,7 +51,7 @@
       experience: experience,
       specialties: specialties,
       problems: problems,
-      photo: 'assets/images/specialists/specialist-' + String(index + 1).padStart(2, '0') + '.webp',
+      photo: '/assets/images/specialists/specialist-' + String(index + 1).padStart(2, '0') + '.webp',
       description: descriptions[group] + ' Основной фокус — ' + focus.toLocaleLowerCase('ru') + '.',
       about: [
         name + ' — ' + role.toLocaleLowerCase('ru') + '. Стаж: ' + experience + ' лет. Основное направление работы — ' + focus.toLocaleLowerCase('ru') + '.',

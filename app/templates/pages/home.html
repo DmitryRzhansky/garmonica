@@ -1,957 +1,6 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Нова клиник — наркологическая клиника | Помощь 24/7</title>
-    <meta
-      name="description"
-      content="Наркологическая клиника «Нова клиник»: вызов врача на дом, детоксикация, стационар и сопровождение восстановления. Круглосуточно, конфиденциально, с понятной стоимостью до начала помощи."
-    >
-    <link rel="icon" href="assets/images/logo-mark.png" type="image/png">
-    <link rel="stylesheet" href="assets/css/main.css">
-  </head>
-  <body>
-    <header class="hero-header" data-header>
-      <div class="hero-header__logo-wrap">
-        <a class="hero-header__logo" href="#top" aria-label="Нова клиник — на главную">
-            <img
-              class="hero-header__logo-img"
-              src="assets/images/logo-mark.png"
-              alt="Нова клиник"
-              width="512"
-              height="512"
-            >
-        </a>
-      </div>
+{% extends "base.html" %}
 
-      <div class="hero-header__body">
-        <div class="hero-header__meta">
-          <address class="hero-header__meta-item hero-header__address">
-            <a class="hero-header__meta-link" href="#contact">
-              <img
-                class="hero-header__meta-icon"
-                src="assets/icons/map-pin.svg"
-                alt=""
-                width="14"
-                height="14"
-                decoding="async"
-              >
-              <span class="hero-header__meta-text">
-                <span class="hero-header__meta-label">Адрес</span>
-                <span class="hero-header__meta-value">г. Москва, ул. Профсоюзная, 56</span>
-              </span>
-            </a>
-          </address>
-
-          <p class="hero-header__org">Нова клиник — психиатрия и наркология</p>
-
-          <p class="hero-header__meta-item hero-header__hours">
-            <img
-              class="hero-header__meta-icon"
-              src="assets/icons/clock.svg"
-              alt=""
-              width="14"
-              height="14"
-              decoding="async"
-            >
-            <span class="hero-header__meta-text">
-              <span class="hero-header__meta-label">Время работы</span>
-              <span class="hero-header__meta-value">Круглосуточно 24/7</span>
-            </span>
-          </p>
-        </div>
-
-        <div class="hero-header__bar">
-          <p class="hero-header__brand">Нова клиник — психиатрия и наркология</p>
-          <nav class="hero-header__nav" aria-label="Основная навигация">
-            <ul class="hero-header__nav-list" role="list">
-              <li class="hero-header__nav-item hero-header__nav-item--about">
-                <a class="hero-header__nav-link" href="#about">
-                  О клинике
-                  <svg class="hero-header__nav-chevron" aria-hidden="true" width="12" height="12" viewBox="0 0 256 256" fill="currentColor">
-                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/>
-                  </svg>
-                </a>
-                <div class="about-menu" id="about-dropdown">
-                  <ul class="about-menu__list" role="list">
-                    <li>
-                      <a class="about-menu__link" href="#about-team">
-                        <img class="about-menu__icon" src="assets/icons/users.svg" alt="" width="20" height="20" decoding="async">
-                        <span>Врачи</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="about-menu__link" href="#about">
-                        <img class="about-menu__icon" src="assets/icons/hospital.svg" alt="" width="20" height="20" decoding="async">
-                        <span>Клиника</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="about-menu__link" href="#licenses">
-                        <img class="about-menu__icon" src="assets/icons/shield-check.svg" alt="" width="20" height="20" decoding="async">
-                        <span>Лицензия</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="about-menu__link" href="#perks">
-                        <img class="about-menu__icon" src="assets/icons/seal-check.svg" alt="" width="20" height="20" decoding="async">
-                        <span>Гарантия</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="about-menu__link" href="#contact">
-                        <img class="about-menu__icon" src="assets/icons/lock.svg" alt="" width="20" height="20" decoding="async">
-                        <span>Договор</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="about-menu__link" href="#about">
-                        <img class="about-menu__icon" src="assets/icons/sun.svg" alt="" width="20" height="20" decoding="async">
-                        <span>Фотогалерея</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="about-menu__link" href="#reviews">
-                        <img class="about-menu__icon" src="assets/icons/star.svg" alt="" width="20" height="20" decoding="async">
-                        <span>Кейсы</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="about-menu__link" href="#faq">
-                        <img class="about-menu__icon" src="assets/icons/chat-circle.svg" alt="" width="20" height="20" decoding="async">
-                        <span>ЧаВо</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-              <li class="hero-header__nav-item hero-header__nav-item--services" data-services-menu>
-                <button
-                  class="hero-header__nav-link hero-header__nav-link--menu"
-                  type="button"
-                  data-services-menu-trigger
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  aria-controls="services-menu"
-                >
-                  Услуги
-                  <svg class="hero-header__nav-chevron" aria-hidden="true" width="12" height="12" viewBox="0 0 256 256" fill="currentColor">
-                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/>
-                  </svg>
-                </button>
-              </li>
-
-              <li class="hero-header__nav-item">
-                <a class="hero-header__nav-link" href="#prices">Цены</a>
-              </li>
-              <li class="hero-header__nav-item">
-                <a class="hero-header__nav-link" href="#reviews">Отзывы</a>
-              </li>
-              <li class="hero-header__nav-item">
-                <a class="hero-header__nav-link" href="#blog">Блог</a>
-              </li>
-              <li class="hero-header__nav-item">
-                <a class="hero-header__nav-link" href="#contact">Контакты</a>
-              </li>
-            </ul>
-          </nav>
-
-          <div class="hero-header__actions">
-            <a class="hero-header__phone" href="tel:+74951204567" aria-label="Позвонить: +7 (495) 120-45-67">
-              <img
-                class="hero-header__phone-icon"
-                src="assets/icons/phone.svg"
-                alt=""
-                width="15"
-                height="15"
-                decoding="async"
-              >
-              <span class="hero-header__phone-text">+7 (495) 120-45-67</span>
-            </a>
-
-            <div class="hero-header__socials">
-              <a
-                class="hero-header__social"
-                href="https://t.me/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Telegram"
-              >
-                <img class="hero-header__social-icon" src="assets/icons/messengers/telegram.svg" alt="" width="16" height="16" decoding="async">
-              </a>
-              <a
-                class="hero-header__social"
-                href="https://wa.me/74951204567"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-              >
-                <img class="hero-header__social-icon" src="assets/icons/messengers/whatsapp.png" alt="" width="16" height="16" decoding="async">
-              </a>
-              <a
-                class="hero-header__social"
-                href="https://max.ru/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="MAX"
-              >
-                <img class="hero-header__social-icon" src="assets/icons/messengers/max.png" alt="" width="16" height="16" decoding="async">
-              </a>
-              <a
-                class="hero-header__social"
-                href="https://vk.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="ВКонтакте"
-              >
-                <img class="hero-header__social-icon" src="assets/icons/messengers/vk.png" alt="" width="16" height="16" decoding="async">
-              </a>
-              <a
-                class="hero-header__social"
-                href="mailto:info@nova-clinic.ru"
-                aria-label="Написать на почту"
-              >
-                <img class="hero-header__social-icon hero-header__social-icon--mail" src="assets/icons/envelope.svg" alt="" width="16" height="16" decoding="async">
-              </a>
-            </div>
-
-            <a class="button button--consult button--warm" href="#contact">
-              <img class="button__icon" src="assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
-              Заказать звонок
-            </a>
-
-            <button
-              class="hero-header__burger"
-              type="button"
-              data-menu-toggle
-              aria-expanded="false"
-              aria-controls="mobile-menu"
-              aria-label="Открыть меню"
-            >
-              <img
-                class="hero-header__burger-icon"
-                src="assets/icons/list.svg"
-                alt=""
-                width="20"
-                height="20"
-                decoding="async"
-              >
-            </button>
-          </div>
-        </div>
-      </div>
-    </header>
-
-        <div class="services-menu" id="services-menu" data-services-menu-panel>
-      <div class="services-menu__toolbar">
-        <form class="services-menu__search" action="#" method="get" data-services-search-form>
-          <label class="services-menu__search-field">
-            <span class="visually-hidden">Поиск услуги</span>
-            <svg class="services-menu__search-icon" aria-hidden="true" width="14" height="14" viewBox="0 0 256 256" fill="currentColor">
-              <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/>
-            </svg>
-            <input class="services-menu__search-input" type="search" placeholder="Поиск услуги" autocomplete="off" data-services-search>
-          </label>
-        </form>
-        <button class="services-menu__clear" type="button" data-services-clear>
-          <img class="services-menu__clear-icon" src="assets/icons/x.svg" alt="" width="13" height="13" decoding="async">
-          <span>Очистить</span>
-        </button>
-      </div>
-      <div class="services-menu__results" data-services-results hidden>
-        <span class="services-menu__results-title">Результаты поиска</span>
-        <ul class="services-menu__results-list" role="list" data-services-results-list>
-                  <li data-services-search-item hidden><a href="uslugi/narkolog-na-dom/">Нарколог на дом</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Консультация нарколога</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Приём психиатра-нарколога</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Онлайн-консультация психиатра-нарколога</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Наркологический стационар</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Госпитализация в стационар</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Частный вытрезвитель</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Срочная наркологическая помощь</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение алкоголизма на дому</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение алкоголизма в стационаре</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Амбулаторное лечение алкоголизма</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение женского алкоголизма</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение мужского алкоголизма</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение пивного алкоголизма</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение хронического алкоголизма</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение алкоголизма у пожилых</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение алкоголизма без кодирования</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение подросткового алкоголизма</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Помощь при алкогольном делирии</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Вывод из запоя</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Капельницы и детокс</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодирование от алкоголизма</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Алкогольная детоксикация</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Алкогольная интоксикация</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Алкогольный абстинентный синдром</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Вшивание / подшивка</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Вывод из запоя + дальнейшее лечение</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Вывод из запоя в стационаре</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Вывод из запоя на дому</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Двойной блок</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Капельница на дому</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Капельница от алкоголя</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Капельница от запоя</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Капельница от похмелья</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодирование в клинике</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодирование гипнозом</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодирование на дому</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодирование по методу Довженко</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодирование с провокацией</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодирование уколом</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодирование: Аквилонг</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодирование: Алгоминал</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодирование: Вивитрол</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодирование: Дисульфирам</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодирование: Налтрексон</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодирование: Торпедо</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодирование: Эспераль</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Медикаментозное кодирование</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Препараты для кодирования</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Раскодирование</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение наркомании в стационаре</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение наркомании на дому</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Амбулаторное лечение наркомании</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Медикаментозное лечение наркомании</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Снятие ломки</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Детоксикация от наркотиков</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение наркомании по городам МО</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение героиновой зависимости</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение метадоновой зависимости</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение мефедроновой зависимости</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение кокаиновой зависимости</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение амфетаминовой зависимости</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение метамфетаминовой зависимости</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение зависимости от спайса</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение зависимости от гашиша</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение зависимости от марихуаны</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение зависимости от солей</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение зависимости от Альфа-PVP</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лечение зависимости от бутирата</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Капельница при наркотической интоксикации</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Снятие ломки в стационаре</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Снятие ломки на дому</a></li>
-                  <li data-services-search-item hidden><a href="#prices">УБОД</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Игромания / лудомания</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Зависимость от ставок</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Компьютерная зависимость</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Интернет-зависимость</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Никотиновая зависимость</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Токсикомания</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лекарственная зависимость</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Антидепрессанты: сопровождение отмены</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Бензодиазепины</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Габапентин</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Кодеин</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Прегабалин / Лирика</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Трамадол</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Феназепам</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Реабилитация при алкоголизме</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Реабилитация при наркомании</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Реабилитация при игромании</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Медико-социальная реабилитация</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Программа «12 шагов»</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Метод Шичко</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Ресоциализация</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Реабилитация по городам МО</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Консультация психиатра</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Психиатр на дом</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Онлайн-консультация психиатра</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Психиатрический стационар</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Тревожные и стрессовые расстройства</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Расстройства настроения</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Психотические расстройства</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Расстройства личности и поведения</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Расстройства пищевого поведения</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Когнитивные и органические расстройства</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Расстройства сна</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Агорафобия</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Бессонница</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Биполярное расстройство</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Болезнь Альцгеймера</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Бредовое расстройство</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Генерализованное тревожное расстройство</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Деменция</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Депрессия</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Дистимия</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Зависимое расстройство личности</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Избегающее расстройство личности</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Компульсивное переедание</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Лунатизм</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Нарколепсия</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Нарциссическое расстройство личности</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Неврозы</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Нервная анорексия</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Нервная булимия</a></li>
-                  <li data-services-search-item hidden><a href="#prices">ОКР</a></li>
-                  <li data-services-search-item hidden><a href="#prices">ПТСР</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Паническое расстройство и панические атаки</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Параноидное расстройство личности</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Пограничное расстройство личности</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Послеродовая депрессия</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Психоз</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Сосудистая деменция</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Социофобия</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Фобии</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Шизоаффективное расстройство</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Шизоидное расстройство личности</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Шизотипическое расстройство</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Шизофрения</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Консультация психотерапевта</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Индивидуальная психотерапия</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Семейная психотерапия</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Консультация психолога</a></li>
-                  <li data-services-search-item hidden><a href="#prices">Семейный психолог</a></li>
-        </ul>
-        <p class="services-menu__empty" data-services-empty hidden>Ничего не найдено</p>
-      </div>
-      <div class="services-menu__layout" data-services-layout>
-        <ul class="services-menu__cats" role="list">
-                  <li>
-                    <button class="services-menu__cat is-active" type="button" data-services-cat="0">
-                      <img class="services-menu__cat-icon" src="assets/icons/ambulance.svg" alt="" width="16" height="16" decoding="async">
-                      <span>Наркологическая помощь</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button class="services-menu__cat" type="button" data-services-cat="1">
-                      <img class="services-menu__cat-icon" src="assets/icons/first-aid.svg" alt="" width="16" height="16" decoding="async">
-                      <span>Лечение алкоголизма</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button class="services-menu__cat" type="button" data-services-cat="2">
-                      <img class="services-menu__cat-icon" src="assets/icons/syringe.svg" alt="" width="16" height="16" decoding="async">
-                      <span>Лечение наркомании</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button class="services-menu__cat" type="button" data-services-cat="3">
-                      <img class="services-menu__cat-icon" src="assets/icons/heartbeat.svg" alt="" width="16" height="16" decoding="async">
-                      <span>Другие зависимости</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button class="services-menu__cat" type="button" data-services-cat="4">
-                      <img class="services-menu__cat-icon" src="assets/icons/leaf.svg" alt="" width="16" height="16" decoding="async">
-                      <span>Реабилитация зависимых</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button class="services-menu__cat" type="button" data-services-cat="5">
-                      <img class="services-menu__cat-icon" src="assets/icons/users.svg" alt="" width="16" height="16" decoding="async">
-                      <span>Психиатрическая помощь</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button class="services-menu__cat" type="button" data-services-cat="6">
-                      <img class="services-menu__cat-icon" src="assets/icons/chat-circle.svg" alt="" width="16" height="16" decoding="async">
-                      <span>Психотерапия и психология</span>
-                    </button>
-                  </li>
-        </ul>
-        <div class="services-menu__panels">
-                <div class="services-menu__panel is-active" data-services-panel="0">
-                  <ul class="services-menu__panel-list" role="list">
-                    <li><a href="uslugi/narkolog-na-dom/">Нарколог на дом</a></li>
-                    <li><a href="#prices">Консультация нарколога</a></li>
-                    <li><a href="#prices">Приём психиатра-нарколога</a></li>
-                    <li><a href="#prices">Онлайн-консультация психиатра-нарколога</a></li>
-                    <li><a href="#prices">Наркологический стационар</a></li>
-                    <li><a href="#prices">Госпитализация в стационар</a></li>
-                    <li><a href="#prices">Частный вытрезвитель</a></li>
-                    <li><a href="#prices">Срочная наркологическая помощь</a></li>
-                  </ul>
-                </div>
-                <div class="services-menu__panel" data-services-panel="1">
-                  <ul class="services-menu__panel-list" role="list">
-                    <li><a href="#prices">Лечение алкоголизма на дому</a></li>
-                    <li><a href="#prices">Лечение алкоголизма в стационаре</a></li>
-                    <li><a href="#prices">Амбулаторное лечение алкоголизма</a></li>
-                    <li><a href="#prices">Лечение женского алкоголизма</a></li>
-                    <li><a href="#prices">Лечение мужского алкоголизма</a></li>
-                    <li><a href="#prices">Лечение пивного алкоголизма</a></li>
-                    <li><a href="#prices">Лечение хронического алкоголизма</a></li>
-                    <li><a href="#prices">Лечение алкоголизма у пожилых</a></li>
-                    <li><a href="#prices">Лечение алкоголизма без кодирования</a></li>
-                    <li><a href="#prices">Лечение подросткового алкоголизма</a></li>
-                    <li><a href="#prices">Помощь при алкогольном делирии</a></li>
-                    <li><a href="#prices">Вывод из запоя</a></li>
-                    <li><a href="#prices">Капельницы и детокс</a></li>
-                    <li><a href="#prices">Кодирование от алкоголизма</a></li>
-                    <li><a href="#prices">Алкогольная детоксикация</a></li>
-                    <li><a href="#prices">Алкогольная интоксикация</a></li>
-                    <li><a href="#prices">Алкогольный абстинентный синдром</a></li>
-                    <li><a href="#prices">Вшивание / подшивка</a></li>
-                    <li><a href="#prices">Вывод из запоя + дальнейшее лечение</a></li>
-                    <li><a href="#prices">Вывод из запоя в стационаре</a></li>
-                    <li><a href="#prices">Вывод из запоя на дому</a></li>
-                    <li><a href="#prices">Двойной блок</a></li>
-                    <li><a href="#prices">Капельница на дому</a></li>
-                    <li><a href="#prices">Капельница от алкоголя</a></li>
-                    <li><a href="#prices">Капельница от запоя</a></li>
-                    <li><a href="#prices">Капельница от похмелья</a></li>
-                    <li><a href="#prices">Кодирование в клинике</a></li>
-                    <li><a href="#prices">Кодирование гипнозом</a></li>
-                    <li><a href="#prices">Кодирование на дому</a></li>
-                    <li><a href="#prices">Кодирование по методу Довженко</a></li>
-                    <li><a href="#prices">Кодирование с провокацией</a></li>
-                    <li><a href="#prices">Кодирование уколом</a></li>
-                    <li><a href="#prices">Кодирование: Аквилонг</a></li>
-                    <li><a href="#prices">Кодирование: Алгоминал</a></li>
-                    <li><a href="#prices">Кодирование: Вивитрол</a></li>
-                    <li><a href="#prices">Кодирование: Дисульфирам</a></li>
-                    <li><a href="#prices">Кодирование: Налтрексон</a></li>
-                    <li><a href="#prices">Кодирование: Торпедо</a></li>
-                    <li><a href="#prices">Кодирование: Эспераль</a></li>
-                    <li><a href="#prices">Медикаментозное кодирование</a></li>
-                    <li><a href="#prices">Препараты для кодирования</a></li>
-                    <li><a href="#prices">Раскодирование</a></li>
-                  </ul>
-                </div>
-                <div class="services-menu__panel" data-services-panel="2">
-                  <ul class="services-menu__panel-list" role="list">
-                    <li><a href="#prices">Лечение наркомании в стационаре</a></li>
-                    <li><a href="#prices">Лечение наркомании на дому</a></li>
-                    <li><a href="#prices">Амбулаторное лечение наркомании</a></li>
-                    <li><a href="#prices">Медикаментозное лечение наркомании</a></li>
-                    <li><a href="#prices">Снятие ломки</a></li>
-                    <li><a href="#prices">Детоксикация от наркотиков</a></li>
-                    <li><a href="#prices">Лечение наркомании по городам МО</a></li>
-                    <li><a href="#prices">Лечение героиновой зависимости</a></li>
-                    <li><a href="#prices">Лечение метадоновой зависимости</a></li>
-                    <li><a href="#prices">Лечение мефедроновой зависимости</a></li>
-                    <li><a href="#prices">Лечение кокаиновой зависимости</a></li>
-                    <li><a href="#prices">Лечение амфетаминовой зависимости</a></li>
-                    <li><a href="#prices">Лечение метамфетаминовой зависимости</a></li>
-                    <li><a href="#prices">Лечение зависимости от спайса</a></li>
-                    <li><a href="#prices">Лечение зависимости от гашиша</a></li>
-                    <li><a href="#prices">Лечение зависимости от марихуаны</a></li>
-                    <li><a href="#prices">Лечение зависимости от солей</a></li>
-                    <li><a href="#prices">Лечение зависимости от Альфа-PVP</a></li>
-                    <li><a href="#prices">Лечение зависимости от бутирата</a></li>
-                    <li><a href="#prices">Капельница при наркотической интоксикации</a></li>
-                    <li><a href="#prices">Снятие ломки в стационаре</a></li>
-                    <li><a href="#prices">Снятие ломки на дому</a></li>
-                    <li><a href="#prices">УБОД</a></li>
-                  </ul>
-                </div>
-                <div class="services-menu__panel" data-services-panel="3">
-                  <ul class="services-menu__panel-list" role="list">
-                    <li><a href="#prices">Игромания / лудомания</a></li>
-                    <li><a href="#prices">Зависимость от ставок</a></li>
-                    <li><a href="#prices">Компьютерная зависимость</a></li>
-                    <li><a href="#prices">Интернет-зависимость</a></li>
-                    <li><a href="#prices">Никотиновая зависимость</a></li>
-                    <li><a href="#prices">Токсикомания</a></li>
-                    <li><a href="#prices">Лекарственная зависимость</a></li>
-                    <li><a href="#prices">Антидепрессанты: сопровождение отмены</a></li>
-                    <li><a href="#prices">Бензодиазепины</a></li>
-                    <li><a href="#prices">Габапентин</a></li>
-                    <li><a href="#prices">Кодеин</a></li>
-                    <li><a href="#prices">Прегабалин / Лирика</a></li>
-                    <li><a href="#prices">Трамадол</a></li>
-                    <li><a href="#prices">Феназепам</a></li>
-                  </ul>
-                </div>
-                <div class="services-menu__panel" data-services-panel="4">
-                  <ul class="services-menu__panel-list" role="list">
-                    <li><a href="#prices">Реабилитация при алкоголизме</a></li>
-                    <li><a href="#prices">Реабилитация при наркомании</a></li>
-                    <li><a href="#prices">Реабилитация при игромании</a></li>
-                    <li><a href="#prices">Медико-социальная реабилитация</a></li>
-                    <li><a href="#prices">Программа «12 шагов»</a></li>
-                    <li><a href="#prices">Метод Шичко</a></li>
-                    <li><a href="#prices">Ресоциализация</a></li>
-                    <li><a href="#prices">Реабилитация по городам МО</a></li>
-                  </ul>
-                </div>
-                <div class="services-menu__panel" data-services-panel="5">
-                  <ul class="services-menu__panel-list" role="list">
-                    <li><a href="#prices">Консультация психиатра</a></li>
-                    <li><a href="#prices">Психиатр на дом</a></li>
-                    <li><a href="#prices">Онлайн-консультация психиатра</a></li>
-                    <li><a href="#prices">Психиатрический стационар</a></li>
-                    <li><a href="#prices">Тревожные и стрессовые расстройства</a></li>
-                    <li><a href="#prices">Расстройства настроения</a></li>
-                    <li><a href="#prices">Психотические расстройства</a></li>
-                    <li><a href="#prices">Расстройства личности и поведения</a></li>
-                    <li><a href="#prices">Расстройства пищевого поведения</a></li>
-                    <li><a href="#prices">Когнитивные и органические расстройства</a></li>
-                    <li><a href="#prices">Расстройства сна</a></li>
-                    <li><a href="#prices">Агорафобия</a></li>
-                    <li><a href="#prices">Бессонница</a></li>
-                    <li><a href="#prices">Биполярное расстройство</a></li>
-                    <li><a href="#prices">Болезнь Альцгеймера</a></li>
-                    <li><a href="#prices">Бредовое расстройство</a></li>
-                    <li><a href="#prices">Генерализованное тревожное расстройство</a></li>
-                    <li><a href="#prices">Деменция</a></li>
-                    <li><a href="#prices">Депрессия</a></li>
-                    <li><a href="#prices">Дистимия</a></li>
-                    <li><a href="#prices">Зависимое расстройство личности</a></li>
-                    <li><a href="#prices">Избегающее расстройство личности</a></li>
-                    <li><a href="#prices">Компульсивное переедание</a></li>
-                    <li><a href="#prices">Лунатизм</a></li>
-                    <li><a href="#prices">Нарколепсия</a></li>
-                    <li><a href="#prices">Нарциссическое расстройство личности</a></li>
-                    <li><a href="#prices">Неврозы</a></li>
-                    <li><a href="#prices">Нервная анорексия</a></li>
-                    <li><a href="#prices">Нервная булимия</a></li>
-                    <li><a href="#prices">ОКР</a></li>
-                    <li><a href="#prices">ПТСР</a></li>
-                    <li><a href="#prices">Паническое расстройство и панические атаки</a></li>
-                    <li><a href="#prices">Параноидное расстройство личности</a></li>
-                    <li><a href="#prices">Пограничное расстройство личности</a></li>
-                    <li><a href="#prices">Послеродовая депрессия</a></li>
-                    <li><a href="#prices">Психоз</a></li>
-                    <li><a href="#prices">Сосудистая деменция</a></li>
-                    <li><a href="#prices">Социофобия</a></li>
-                    <li><a href="#prices">Фобии</a></li>
-                    <li><a href="#prices">Шизоаффективное расстройство</a></li>
-                    <li><a href="#prices">Шизоидное расстройство личности</a></li>
-                    <li><a href="#prices">Шизотипическое расстройство</a></li>
-                    <li><a href="#prices">Шизофрения</a></li>
-                  </ul>
-                </div>
-                <div class="services-menu__panel" data-services-panel="6">
-                  <ul class="services-menu__panel-list" role="list">
-                    <li><a href="#prices">Консультация психотерапевта</a></li>
-                    <li><a href="#prices">Индивидуальная психотерапия</a></li>
-                    <li><a href="#prices">Семейная психотерапия</a></li>
-                    <li><a href="#prices">Консультация психолога</a></li>
-                    <li><a href="#prices">Семейный психолог</a></li>
-                  </ul>
-                </div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="mobile-menu"
-      id="mobile-menu"
-      data-mobile-menu
-      hidden
-      aria-hidden="true"
-    >
-      <button
-        class="mobile-menu__backdrop"
-        type="button"
-        data-menu-close
-        aria-label="Закрыть меню"
-      ></button>
-      <div class="mobile-menu__panel" data-mobile-menu-panel role="dialog" aria-modal="true" aria-label="Мобильное меню">
-        <div class="mobile-menu__top">
-          <a class="mobile-menu__logo" href="#top" aria-label="Нова клиник — на главную" data-menu-close>
-            <img src="assets/images/logo-mark.png" alt="Нова клиник" width="64" height="64" decoding="async">
-          </a>
-          <p class="mobile-menu__org">Нова клиник</p>
-          <button class="mobile-menu__close" type="button" data-menu-close aria-label="Закрыть меню">
-            <img src="assets/icons/x.svg" alt="" width="20" height="20" decoding="async">
-          </button>
-        </div>
-
-        <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
-          <div class="mobile-menu__accordion" data-mobile-accordion>
-            <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
-              О клинике
-            </button>
-            <div class="mobile-menu__accordion-panel">
-              <a href="#about" data-menu-close>О клинике</a>
-              <a class="mobile-menu__about-link" href="#about-team" data-menu-close>
-                <img class="mobile-menu__about-icon" src="assets/icons/users.svg" alt="" width="20" height="20" decoding="async">
-                <span>Врачи</span>
-              </a>
-              <a class="mobile-menu__about-link" href="#about" data-menu-close>
-                <img class="mobile-menu__about-icon" src="assets/icons/hospital.svg" alt="" width="20" height="20" decoding="async">
-                <span>Клиника</span>
-              </a>
-              <a class="mobile-menu__about-link" href="#licenses" data-menu-close>
-                <img class="mobile-menu__about-icon" src="assets/icons/shield-check.svg" alt="" width="20" height="20" decoding="async">
-                <span>Лицензия</span>
-              </a>
-              <a class="mobile-menu__about-link" href="#perks" data-menu-close>
-                <img class="mobile-menu__about-icon" src="assets/icons/seal-check.svg" alt="" width="20" height="20" decoding="async">
-                <span>Гарантия</span>
-              </a>
-              <a class="mobile-menu__about-link" href="#contact" data-menu-close>
-                <img class="mobile-menu__about-icon" src="assets/icons/lock.svg" alt="" width="20" height="20" decoding="async">
-                <span>Договор</span>
-              </a>
-              <a class="mobile-menu__about-link" href="#about" data-menu-close>
-                <img class="mobile-menu__about-icon" src="assets/icons/sun.svg" alt="" width="20" height="20" decoding="async">
-                <span>Фотогалерея</span>
-              </a>
-              <a class="mobile-menu__about-link" href="#reviews" data-menu-close>
-                <img class="mobile-menu__about-icon" src="assets/icons/star.svg" alt="" width="20" height="20" decoding="async">
-                <span>Кейсы</span>
-              </a>
-              <a class="mobile-menu__about-link" href="#faq" data-menu-close>
-                <img class="mobile-menu__about-icon" src="assets/icons/chat-circle.svg" alt="" width="20" height="20" decoding="async">
-                <span>ЧаВо</span>
-              </a>
-            </div>
-          </div>
-
-          <div data-services-menu-mobile>
-          <div class="mobile-menu__accordion mobile-menu__accordion--services" data-mobile-accordion>
-            <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
-              Услуги
-            </button>
-            <div class="mobile-menu__accordion-panel mobile-menu__accordion-panel--services">
-            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
-              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
-                Наркологическая помощь
-              </button>
-              <div class="mobile-menu__accordion-panel">
-                <a href="#prices" data-menu-close>Все услуги раздела</a>
-                <a href="uslugi/narkolog-na-dom/" data-menu-close>Нарколог на дом</a>
-                <a href="#prices" data-menu-close>Консультация нарколога</a>
-                <a href="#prices" data-menu-close>Приём психиатра-нарколога</a>
-                <a href="#prices" data-menu-close>Онлайн-консультация психиатра-нарколога</a>
-                <a href="#prices" data-menu-close>Наркологический стационар</a>
-                <a href="#prices" data-menu-close>Госпитализация в стационар</a>
-                <a href="#prices" data-menu-close>Частный вытрезвитель</a>
-                <a href="#prices" data-menu-close>Срочная наркологическая помощь</a>
-              </div>
-            </div>
-            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
-              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
-                Лечение алкоголизма
-              </button>
-              <div class="mobile-menu__accordion-panel">
-                <a href="#prices" data-menu-close>Все услуги раздела</a>
-                <a href="#prices" data-menu-close>Лечение алкоголизма на дому</a>
-                <a href="#prices" data-menu-close>Лечение алкоголизма в стационаре</a>
-                <a href="#prices" data-menu-close>Амбулаторное лечение алкоголизма</a>
-                <a href="#prices" data-menu-close>Лечение женского алкоголизма</a>
-                <a href="#prices" data-menu-close>Лечение мужского алкоголизма</a>
-                <a href="#prices" data-menu-close>Лечение пивного алкоголизма</a>
-                <a href="#prices" data-menu-close>Лечение хронического алкоголизма</a>
-                <a href="#prices" data-menu-close>Лечение алкоголизма у пожилых</a>
-                <a href="#prices" data-menu-close>Лечение алкоголизма без кодирования</a>
-                <a href="#prices" data-menu-close>Лечение подросткового алкоголизма</a>
-                <a href="#prices" data-menu-close>Помощь при алкогольном делирии</a>
-                <a href="#prices" data-menu-close>Вывод из запоя</a>
-                <a href="#prices" data-menu-close>Капельницы и детокс</a>
-                <a href="#prices" data-menu-close>Кодирование от алкоголизма</a>
-                <a href="#prices" data-menu-close>Алкогольная детоксикация</a>
-                <a href="#prices" data-menu-close>Алкогольная интоксикация</a>
-                <a href="#prices" data-menu-close>Алкогольный абстинентный синдром</a>
-                <a href="#prices" data-menu-close>Вшивание / подшивка</a>
-                <a href="#prices" data-menu-close>Вывод из запоя + дальнейшее лечение</a>
-                <a href="#prices" data-menu-close>Вывод из запоя в стационаре</a>
-                <a href="#prices" data-menu-close>Вывод из запоя на дому</a>
-                <a href="#prices" data-menu-close>Двойной блок</a>
-                <a href="#prices" data-menu-close>Капельница на дому</a>
-                <a href="#prices" data-menu-close>Капельница от алкоголя</a>
-                <a href="#prices" data-menu-close>Капельница от запоя</a>
-                <a href="#prices" data-menu-close>Капельница от похмелья</a>
-                <a href="#prices" data-menu-close>Кодирование в клинике</a>
-                <a href="#prices" data-menu-close>Кодирование гипнозом</a>
-                <a href="#prices" data-menu-close>Кодирование на дому</a>
-                <a href="#prices" data-menu-close>Кодирование по методу Довженко</a>
-                <a href="#prices" data-menu-close>Кодирование с провокацией</a>
-                <a href="#prices" data-menu-close>Кодирование уколом</a>
-                <a href="#prices" data-menu-close>Кодирование: Аквилонг</a>
-                <a href="#prices" data-menu-close>Кодирование: Алгоминал</a>
-                <a href="#prices" data-menu-close>Кодирование: Вивитрол</a>
-                <a href="#prices" data-menu-close>Кодирование: Дисульфирам</a>
-                <a href="#prices" data-menu-close>Кодирование: Налтрексон</a>
-                <a href="#prices" data-menu-close>Кодирование: Торпедо</a>
-                <a href="#prices" data-menu-close>Кодирование: Эспераль</a>
-                <a href="#prices" data-menu-close>Медикаментозное кодирование</a>
-                <a href="#prices" data-menu-close>Препараты для кодирования</a>
-                <a href="#prices" data-menu-close>Раскодирование</a>
-              </div>
-            </div>
-            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
-              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
-                Лечение наркомании
-              </button>
-              <div class="mobile-menu__accordion-panel">
-                <a href="#prices" data-menu-close>Все услуги раздела</a>
-                <a href="#prices" data-menu-close>Лечение наркомании в стационаре</a>
-                <a href="#prices" data-menu-close>Лечение наркомании на дому</a>
-                <a href="#prices" data-menu-close>Амбулаторное лечение наркомании</a>
-                <a href="#prices" data-menu-close>Медикаментозное лечение наркомании</a>
-                <a href="#prices" data-menu-close>Снятие ломки</a>
-                <a href="#prices" data-menu-close>Детоксикация от наркотиков</a>
-                <a href="#prices" data-menu-close>Лечение наркомании по городам МО</a>
-                <a href="#prices" data-menu-close>Лечение героиновой зависимости</a>
-                <a href="#prices" data-menu-close>Лечение метадоновой зависимости</a>
-                <a href="#prices" data-menu-close>Лечение мефедроновой зависимости</a>
-                <a href="#prices" data-menu-close>Лечение кокаиновой зависимости</a>
-                <a href="#prices" data-menu-close>Лечение амфетаминовой зависимости</a>
-                <a href="#prices" data-menu-close>Лечение метамфетаминовой зависимости</a>
-                <a href="#prices" data-menu-close>Лечение зависимости от спайса</a>
-                <a href="#prices" data-menu-close>Лечение зависимости от гашиша</a>
-                <a href="#prices" data-menu-close>Лечение зависимости от марихуаны</a>
-                <a href="#prices" data-menu-close>Лечение зависимости от солей</a>
-                <a href="#prices" data-menu-close>Лечение зависимости от Альфа-PVP</a>
-                <a href="#prices" data-menu-close>Лечение зависимости от бутирата</a>
-                <a href="#prices" data-menu-close>Капельница при наркотической интоксикации</a>
-                <a href="#prices" data-menu-close>Снятие ломки в стационаре</a>
-                <a href="#prices" data-menu-close>Снятие ломки на дому</a>
-                <a href="#prices" data-menu-close>УБОД</a>
-              </div>
-            </div>
-            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
-              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
-                Другие зависимости
-              </button>
-              <div class="mobile-menu__accordion-panel">
-                <a href="#prices" data-menu-close>Все услуги раздела</a>
-                <a href="#prices" data-menu-close>Игромания / лудомания</a>
-                <a href="#prices" data-menu-close>Зависимость от ставок</a>
-                <a href="#prices" data-menu-close>Компьютерная зависимость</a>
-                <a href="#prices" data-menu-close>Интернет-зависимость</a>
-                <a href="#prices" data-menu-close>Никотиновая зависимость</a>
-                <a href="#prices" data-menu-close>Токсикомания</a>
-                <a href="#prices" data-menu-close>Лекарственная зависимость</a>
-                <a href="#prices" data-menu-close>Антидепрессанты: сопровождение отмены</a>
-                <a href="#prices" data-menu-close>Бензодиазепины</a>
-                <a href="#prices" data-menu-close>Габапентин</a>
-                <a href="#prices" data-menu-close>Кодеин</a>
-                <a href="#prices" data-menu-close>Прегабалин / Лирика</a>
-                <a href="#prices" data-menu-close>Трамадол</a>
-                <a href="#prices" data-menu-close>Феназепам</a>
-              </div>
-            </div>
-            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
-              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
-                Реабилитация зависимых
-              </button>
-              <div class="mobile-menu__accordion-panel">
-                <a href="#prices" data-menu-close>Все услуги раздела</a>
-                <a href="#prices" data-menu-close>Реабилитация при алкоголизме</a>
-                <a href="#prices" data-menu-close>Реабилитация при наркомании</a>
-                <a href="#prices" data-menu-close>Реабилитация при игромании</a>
-                <a href="#prices" data-menu-close>Медико-социальная реабилитация</a>
-                <a href="#prices" data-menu-close>Программа «12 шагов»</a>
-                <a href="#prices" data-menu-close>Метод Шичко</a>
-                <a href="#prices" data-menu-close>Ресоциализация</a>
-                <a href="#prices" data-menu-close>Реабилитация по городам МО</a>
-              </div>
-            </div>
-            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
-              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
-                Психиатрическая помощь
-              </button>
-              <div class="mobile-menu__accordion-panel">
-                <a href="#prices" data-menu-close>Все услуги раздела</a>
-                <a href="#prices" data-menu-close>Консультация психиатра</a>
-                <a href="#prices" data-menu-close>Психиатр на дом</a>
-                <a href="#prices" data-menu-close>Онлайн-консультация психиатра</a>
-                <a href="#prices" data-menu-close>Психиатрический стационар</a>
-                <a href="#prices" data-menu-close>Тревожные и стрессовые расстройства</a>
-                <a href="#prices" data-menu-close>Расстройства настроения</a>
-                <a href="#prices" data-menu-close>Психотические расстройства</a>
-                <a href="#prices" data-menu-close>Расстройства личности и поведения</a>
-                <a href="#prices" data-menu-close>Расстройства пищевого поведения</a>
-                <a href="#prices" data-menu-close>Когнитивные и органические расстройства</a>
-                <a href="#prices" data-menu-close>Расстройства сна</a>
-                <a href="#prices" data-menu-close>Агорафобия</a>
-                <a href="#prices" data-menu-close>Бессонница</a>
-                <a href="#prices" data-menu-close>Биполярное расстройство</a>
-                <a href="#prices" data-menu-close>Болезнь Альцгеймера</a>
-                <a href="#prices" data-menu-close>Бредовое расстройство</a>
-                <a href="#prices" data-menu-close>Генерализованное тревожное расстройство</a>
-                <a href="#prices" data-menu-close>Деменция</a>
-                <a href="#prices" data-menu-close>Депрессия</a>
-                <a href="#prices" data-menu-close>Дистимия</a>
-                <a href="#prices" data-menu-close>Зависимое расстройство личности</a>
-                <a href="#prices" data-menu-close>Избегающее расстройство личности</a>
-                <a href="#prices" data-menu-close>Компульсивное переедание</a>
-                <a href="#prices" data-menu-close>Лунатизм</a>
-                <a href="#prices" data-menu-close>Нарколепсия</a>
-                <a href="#prices" data-menu-close>Нарциссическое расстройство личности</a>
-                <a href="#prices" data-menu-close>Неврозы</a>
-                <a href="#prices" data-menu-close>Нервная анорексия</a>
-                <a href="#prices" data-menu-close>Нервная булимия</a>
-                <a href="#prices" data-menu-close>ОКР</a>
-                <a href="#prices" data-menu-close>ПТСР</a>
-                <a href="#prices" data-menu-close>Паническое расстройство и панические атаки</a>
-                <a href="#prices" data-menu-close>Параноидное расстройство личности</a>
-                <a href="#prices" data-menu-close>Пограничное расстройство личности</a>
-                <a href="#prices" data-menu-close>Послеродовая депрессия</a>
-                <a href="#prices" data-menu-close>Психоз</a>
-                <a href="#prices" data-menu-close>Сосудистая деменция</a>
-                <a href="#prices" data-menu-close>Социофобия</a>
-                <a href="#prices" data-menu-close>Фобии</a>
-                <a href="#prices" data-menu-close>Шизоаффективное расстройство</a>
-                <a href="#prices" data-menu-close>Шизоидное расстройство личности</a>
-                <a href="#prices" data-menu-close>Шизотипическое расстройство</a>
-                <a href="#prices" data-menu-close>Шизофрения</a>
-              </div>
-            </div>
-            <div class="mobile-menu__accordion mobile-menu__accordion--nested" data-mobile-accordion>
-              <button class="mobile-menu__accordion-btn" type="button" data-mobile-accordion-btn aria-expanded="false">
-                Психотерапия и психология
-              </button>
-              <div class="mobile-menu__accordion-panel">
-                <a href="#prices" data-menu-close>Все услуги раздела</a>
-                <a href="#prices" data-menu-close>Консультация психотерапевта</a>
-                <a href="#prices" data-menu-close>Индивидуальная психотерапия</a>
-                <a href="#prices" data-menu-close>Семейная психотерапия</a>
-                <a href="#prices" data-menu-close>Консультация психолога</a>
-                <a href="#prices" data-menu-close>Семейный психолог</a>
-              </div>
-            </div>
-            </div>
-          </div>
-          </div>
-
-          <ul class="mobile-menu__list" role="list">
-            <li><a class="mobile-menu__link" href="#prices" data-menu-close>Цены</a></li>
-            <li><a class="mobile-menu__link" href="#reviews" data-menu-close>Отзывы</a></li>
-            <li><a class="mobile-menu__link" href="#blog" data-menu-close>Блог</a></li>
-            <li><a class="mobile-menu__link" href="#contact" data-menu-close>Контакты</a></li>
-          </ul>
-        </nav>
-
-        <div class="mobile-menu__footer">
-          <div class="mobile-menu__details">
-            <p class="mobile-menu__detail">г. Москва, ул. Профсоюзная, 56</p>
-            <p class="mobile-menu__detail">Круглосуточно 24/7</p>
-          </div>
-          <div class="mobile-menu__contacts">
-            <a class="mobile-menu__phone" href="tel:+74951204567">+7 (495) 120-45-67</a>
-            <div class="mobile-menu__socials">
-              <a class="mobile-menu__social" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-                <img class="mobile-menu__social-icon" src="assets/icons/messengers/telegram.svg" alt="" width="16" height="16" decoding="async">
-              </a>
-              <a class="mobile-menu__social" href="https://wa.me/74951204567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                <img class="mobile-menu__social-icon" src="assets/icons/messengers/whatsapp.png" alt="" width="16" height="16" decoding="async">
-              </a>
-              <a class="mobile-menu__social" href="https://max.ru/" target="_blank" rel="noopener noreferrer" aria-label="MAX">
-                <img class="mobile-menu__social-icon" src="assets/icons/messengers/max.png" alt="" width="16" height="16" decoding="async">
-              </a>
-              <a class="mobile-menu__social" href="https://vk.com/" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
-                <img class="mobile-menu__social-icon" src="assets/icons/messengers/vk.png" alt="" width="16" height="16" decoding="async">
-              </a>
-              <a class="mobile-menu__social" href="mailto:info@nova-clinic.ru" aria-label="Написать на почту">
-                <img class="mobile-menu__social-icon" src="assets/icons/envelope.svg" alt="" width="16" height="16" decoding="async">
-              </a>
-            </div>
-          </div>
-          <div class="mobile-menu__cta">
-            <a class="button button--primary" href="tel:+74951204567">
-              <img class="button__icon" src="assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
-              Позвонить в «Нова клиник»
-            </a>
-            <a class="button button--outline" href="#contact" data-menu-close>
-              <img class="button__icon" src="assets/icons/paper-plane-tilt.svg" alt="" width="16" height="16" decoding="async">
-              Оставить заявку
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
+{% block content %}
     <main id="top">
       <section class="hero" aria-label="Главный экран клиники Нова клиник">
         <div class="hero__inner">
@@ -963,7 +12,7 @@
             <div class="hero__logo-frame">
               <img
                 class="hero__logo"
-                src="assets/images/logo.png"
+                src="/assets/images/logo.png"
                 alt="Нова клиник — наркологическая клиника"
                 width="1024"
                 height="1011"
@@ -983,7 +32,7 @@
             <li class="hero__signal">
               <img
                 class="hero__signal-icon"
-                src="assets/icons/clock.svg"
+                src="/assets/icons/clock.svg"
                 alt=""
                 width="22"
                 height="22"
@@ -998,7 +47,7 @@
             <li class="hero__signal">
               <img
                 class="hero__signal-icon"
-                src="assets/icons/lock.svg"
+                src="/assets/icons/lock.svg"
                 alt=""
                 width="22"
                 height="22"
@@ -1013,7 +62,7 @@
             <li class="hero__signal">
               <img
                 class="hero__signal-icon"
-                src="assets/icons/shield-check.svg"
+                src="/assets/icons/shield-check.svg"
                 alt=""
                 width="22"
                 height="22"
@@ -1029,11 +78,11 @@
 
           <div class="hero__actions">
             <a class="button button--warm" href="tel:+74951204567">
-              <img class="button__icon" src="assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
+              <img class="button__icon" src="/assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
               Вызвать нарколога
             </a>
-            <a class="button button--outline" href="#prices">
-              <img class="button__icon" src="assets/icons/currency-rub.svg" alt="" width="16" height="16" decoding="async">
+            <a class="button button--outline" href="/#prices">
+              <img class="button__icon" src="/assets/icons/currency-rub.svg" alt="" width="16" height="16" decoding="async">
               Узнать стоимость
             </a>
           </div>
@@ -1046,7 +95,7 @@
             <p class="specialist-quiz__eyebrow">
               <img
                 class="specialist-quiz__eyebrow-icon"
-                src="assets/icons/stethoscope.svg"
+                src="/assets/icons/stethoscope.svg"
                 alt=""
                 width="18"
                 height="18"
@@ -1064,16 +113,16 @@
               <p class="specialist-quiz__intro-text">Расскажите, какая помощь вам нужна. Мы учтём ваш запрос, удобный формат и пожелания по дате.</p>
               <div class="specialist-quiz__intro-actions">
                 <button class="button specialist-quiz__primary" type="button" data-action="start">
-                  <img class="button__icon" src="assets/icons/stethoscope.svg" alt="" width="16" height="16" decoding="async" aria-hidden="true">
+                  <img class="button__icon" src="/assets/icons/stethoscope.svg" alt="" width="16" height="16" decoding="async" aria-hidden="true">
                   Подобрать специалиста
-                  <img class="button__icon" src="assets/icons/arrow-right.svg" alt="" width="16" height="16" decoding="async" aria-hidden="true">
+                  <img class="button__icon" src="/assets/icons/arrow-right.svg" alt="" width="16" height="16" decoding="async" aria-hidden="true">
                 </button>
               </div>
             </div>
             <div class="specialist-quiz__intro-visual">
               <div class="specialist-quiz__portrait-stack" aria-hidden="true">
-                <img class="specialist-quiz__intro-portrait specialist-quiz__intro-portrait--back" src="assets/images/specialists/specialist-05.webp" alt="" width="480" height="640" loading="lazy" decoding="async">
-                <img class="specialist-quiz__intro-portrait specialist-quiz__intro-portrait--front" src="assets/images/specialists/specialist-01.webp" alt="" width="480" height="640" loading="lazy" decoding="async">
+                <img class="specialist-quiz__intro-portrait specialist-quiz__intro-portrait--back" src="/assets/images/specialists/specialist-05.webp" alt="" width="480" height="640" loading="lazy" decoding="async">
+                <img class="specialist-quiz__intro-portrait specialist-quiz__intro-portrait--front" src="/assets/images/specialists/specialist-01.webp" alt="" width="480" height="640" loading="lazy" decoding="async">
               </div>
             </div>
           </div>
@@ -1143,7 +192,7 @@
                     <div class="about-dept__media">
                       <img
                         class="about-dept__photo"
-                        src="assets/images/about/outpatient-department.webp"
+                        src="/assets/images/about/outpatient-department.webp"
                         alt="Амбулаторная и психологическая помощь на первом этаже клиники «Нова клиник»"
                         width="1152"
                         height="864"
@@ -1168,28 +217,28 @@
 
                       <ul class="about-dept__traits" role="list">
                         <li class="about-dept__trait">
-                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/chat-circle-dots.svg" alt="" width="22" height="22" decoding="async">
+                          <img class="about-dept__trait-icon" src="/assets/icons/phosphor/chat-circle-dots.svg" alt="" width="22" height="22" decoding="async">
                           <div>
                             <span class="about-dept__trait-title">Психологическая помощь</span>
                             <p class="about-dept__trait-text">Консультации и сопровождение при эмоциональных трудностях и запросах, связанных с лечением.</p>
                           </div>
                         </li>
                         <li class="about-dept__trait">
-                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/calendar-check.svg" alt="" width="22" height="22" decoding="async">
+                          <img class="about-dept__trait-icon" src="/assets/icons/phosphor/calendar-check.svg" alt="" width="22" height="22" decoding="async">
                           <div>
                             <span class="about-dept__trait-title">Амбулаторный приём</span>
                             <p class="about-dept__trait-text">Приём специалистов без размещения в стационаре — в удобном для пациента формате.</p>
                           </div>
                         </li>
                         <li class="about-dept__trait">
-                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/users-three.svg" alt="" width="22" height="22" decoding="async">
+                          <img class="about-dept__trait-icon" src="/assets/icons/phosphor/users-three.svg" alt="" width="22" height="22" decoding="async">
                           <div>
                             <span class="about-dept__trait-title">Приём родственников</span>
                             <p class="about-dept__trait-text">Разъяснение ситуации близким, порядок дальнейших действий и поддержка семьи.</p>
                           </div>
                         </li>
                         <li class="about-dept__trait">
-                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/clipboard-text.svg" alt="" width="22" height="22" decoding="async">
+                          <img class="about-dept__trait-icon" src="/assets/icons/phosphor/clipboard-text.svg" alt="" width="22" height="22" decoding="async">
                           <div>
                             <span class="about-dept__trait-title">Понятный следующий шаг</span>
                             <p class="about-dept__trait-text">После консультации специалист помогает определить дальнейший маршрут помощи в клинике.</p>
@@ -1198,8 +247,8 @@
                       </ul>
 
                       <div class="about-dept__actions">
-                        <a class="button button--primary" href="#contact">
-                          <img class="button__icon" src="assets/icons/calendar-check.svg" alt="" width="16" height="16" decoding="async" aria-hidden="true">
+                        <a class="button button--primary" href="/#contact">
+                          <img class="button__icon" src="/assets/icons/calendar-check.svg" alt="" width="16" height="16" decoding="async" aria-hidden="true">
                           Записаться на приём
                         </a>
                       </div>
@@ -1219,7 +268,7 @@
                     <div class="about-dept__media">
                       <img
                         class="about-dept__photo"
-                        src="assets/images/about/narcology-department.webp"
+                        src="/assets/images/about/narcology-department.webp"
                         alt="Наркологическое отделение клиники «Нова клиник»"
                         width="1152"
                         height="864"
@@ -1243,28 +292,28 @@
 
                       <ul class="about-dept__traits" role="list">
                         <li class="about-dept__trait">
-                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/first-aid.svg" alt="" width="22" height="22" decoding="async">
+                          <img class="about-dept__trait-icon" src="/assets/icons/phosphor/first-aid.svg" alt="" width="22" height="22" decoding="async">
                           <div>
                             <span class="about-dept__trait-title">Помощь при острых состояниях</span>
                             <p class="about-dept__trait-text">Оценка состояния, медицинская помощь и определение дальнейшей тактики.</p>
                           </div>
                         </li>
                         <li class="about-dept__trait">
-                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/hospital.svg" alt="" width="22" height="22" decoding="async">
+                          <img class="about-dept__trait-icon" src="/assets/icons/phosphor/hospital.svg" alt="" width="22" height="22" decoding="async">
                           <div>
                             <span class="about-dept__trait-title">Лечение в стационаре</span>
                             <p class="about-dept__trait-text">Наблюдение и медицинская помощь в условиях наркологического отделения.</p>
                           </div>
                         </li>
                         <li class="about-dept__trait">
-                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/house-line.svg" alt="" width="22" height="22" decoding="async">
+                          <img class="about-dept__trait-icon" src="/assets/icons/phosphor/house-line.svg" alt="" width="22" height="22" decoding="async">
                           <div>
                             <span class="about-dept__trait-title">Выезд на дом</span>
                             <p class="about-dept__trait-text">Возможность вызвать профильного специалиста по адресу пациента.</p>
                           </div>
                         </li>
                         <li class="about-dept__trait">
-                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/clipboard-text.svg" alt="" width="22" height="22" decoding="async">
+                          <img class="about-dept__trait-icon" src="/assets/icons/phosphor/clipboard-text.svg" alt="" width="22" height="22" decoding="async">
                           <div>
                             <span class="about-dept__trait-title">Дальнейшее лечение</span>
                             <p class="about-dept__trait-text">После стабилизации определяется следующий этап помощи и наблюдения.</p>
@@ -1280,7 +329,7 @@
                       <li class="about__team-item">
                         <img
                           class="about__team-photo"
-                          src="assets/images/about/team/about-doctor-1.png"
+                          src="/assets/images/about/team/about-doctor-1.png"
                           alt="Соколов Андрей Викторович — психиатр-нарколог"
                           width="768"
                           height="1024"
@@ -1300,13 +349,13 @@
                               <dd>РНИМУ им. Н.&nbsp;И.&nbsp;Пирогова</dd>
                             </div>
                           </dl>
-                          <a class="button button--primary about__doctor-cta" href="#contact">Записаться к врачу</a>
+                          <a class="button button--primary about__doctor-cta" href="/#contact">Записаться к врачу</a>
                         </div>
                       </li>
                       <li class="about__team-item">
                         <img
                           class="about__team-photo"
-                          src="assets/images/about/team/about-doctor-2.png"
+                          src="/assets/images/about/team/about-doctor-2.png"
                           alt="Морозов Дмитрий Сергеевич — врач-нарколог"
                           width="768"
                           height="1024"
@@ -1326,13 +375,13 @@
                               <dd>Первый МГМУ им. И.&nbsp;М.&nbsp;Сеченова</dd>
                             </div>
                           </dl>
-                          <a class="button button--primary about__doctor-cta" href="#contact">Записаться к врачу</a>
+                          <a class="button button--primary about__doctor-cta" href="/#contact">Записаться к врачу</a>
                         </div>
                       </li>
                       <li class="about__team-item">
                         <img
                           class="about__team-photo"
-                          src="assets/images/about/team/about-doctor-4.png"
+                          src="/assets/images/about/team/about-doctor-4.png"
                           alt="Орлов Алексей Николаевич — психиатр-нарколог"
                           width="768"
                           height="1024"
@@ -1352,7 +401,7 @@
                               <dd>РУДН, медицинский факультет</dd>
                             </div>
                           </dl>
-                          <a class="button button--primary about__doctor-cta" href="#contact">Записаться к врачу</a>
+                          <a class="button button--primary about__doctor-cta" href="/#contact">Записаться к врачу</a>
                         </div>
                       </li>
                     </ul>
@@ -1371,7 +420,7 @@
                     <div class="about-dept__media">
                       <img
                         class="about-dept__photo"
-                        src="assets/images/about/psychiatry-department.webp"
+                        src="/assets/images/about/psychiatry-department.webp"
                         alt="Психиатрическое отделение клиники «Нова клиник»"
                         width="1152"
                         height="864"
@@ -1400,28 +449,28 @@
 
                       <ul class="about-dept__traits" role="list">
                         <li class="about-dept__trait">
-                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/brain.svg" alt="" width="22" height="22" decoding="async">
+                          <img class="about-dept__trait-icon" src="/assets/icons/phosphor/brain.svg" alt="" width="22" height="22" decoding="async">
                           <div>
                             <span class="about-dept__trait-title">Психиатрическая помощь</span>
                             <p class="about-dept__trait-text">Консультация, оценка состояния и подбор дальнейшей тактики.</p>
                           </div>
                         </li>
                         <li class="about-dept__trait">
-                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/chat-circle-dots.svg" alt="" width="22" height="22" decoding="async">
+                          <img class="about-dept__trait-icon" src="/assets/icons/phosphor/chat-circle-dots.svg" alt="" width="22" height="22" decoding="async">
                           <div>
                             <span class="about-dept__trait-title">Индивидуальная работа</span>
                             <p class="about-dept__trait-text">Тактика лечения определяется по состоянию конкретного пациента.</p>
                           </div>
                         </li>
                         <li class="about-dept__trait">
-                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/calendar-check.svg" alt="" width="22" height="22" decoding="async">
+                          <img class="about-dept__trait-icon" src="/assets/icons/phosphor/calendar-check.svg" alt="" width="22" height="22" decoding="async">
                           <div>
                             <span class="about-dept__trait-title">Наблюдение в динамике</span>
                             <p class="about-dept__trait-text">Врач оценивает изменения состояния и корректирует дальнейший план.</p>
                           </div>
                         </li>
                         <li class="about-dept__trait">
-                          <img class="about-dept__trait-icon" src="assets/icons/phosphor/users-three.svg" alt="" width="22" height="22" decoding="async">
+                          <img class="about-dept__trait-icon" src="/assets/icons/phosphor/users-three.svg" alt="" width="22" height="22" decoding="async">
                           <div>
                             <span class="about-dept__trait-title">Работа с близкими</span>
                             <p class="about-dept__trait-text">При необходимости специалист объясняет родственникам порядок дальнейших действий.</p>
@@ -1437,7 +486,7 @@
                       <li class="about__team-item">
                         <img
                           class="about__team-photo"
-                          src="assets/images/about/team/about-doctor-3.png"
+                          src="/assets/images/about/team/about-doctor-3.png"
                           alt="Кузнецов Иван Павлович — врач-психиатр"
                           width="768"
                           height="1024"
@@ -1457,13 +506,13 @@
                               <dd>МГМСУ им. А.&nbsp;И.&nbsp;Евдокимова</dd>
                             </div>
                           </dl>
-                          <a class="button button--primary about__doctor-cta" href="#contact">Записаться к врачу</a>
+                          <a class="button button--primary about__doctor-cta" href="/#contact">Записаться к врачу</a>
                         </div>
                       </li>
                       <li class="about__team-item">
                         <img
                           class="about__team-photo"
-                          src="assets/images/about/team/about-doctor-5.png"
+                          src="/assets/images/about/team/about-doctor-5.png"
                           alt="Белов Сергей Михайлович — врач-психиатр"
                           width="768"
                           height="1024"
@@ -1483,13 +532,13 @@
                               <dd>Первый СПбГМУ им. И.&nbsp;П.&nbsp;Павлова</dd>
                             </div>
                           </dl>
-                          <a class="button button--primary about__doctor-cta" href="#contact">Записаться к врачу</a>
+                          <a class="button button--primary about__doctor-cta" href="/#contact">Записаться к врачу</a>
                         </div>
                       </li>
                       <li class="about__team-item">
                         <img
                           class="about__team-photo"
-                          src="assets/images/about/team/about-doctor-6.png"
+                          src="/assets/images/about/team/about-doctor-6.png"
                           alt="Волков Никита Андреевич — врач-психиатр"
                           width="768"
                           height="1024"
@@ -1509,7 +558,7 @@
                               <dd>РНИМУ им. Н.&nbsp;И.&nbsp;Пирогова</dd>
                             </div>
                           </dl>
-                          <a class="button button--primary about__doctor-cta" href="#contact">Записаться к врачу</a>
+                          <a class="button button--primary about__doctor-cta" href="/#contact">Записаться к врачу</a>
                         </div>
                       </li>
                     </ul>
@@ -1557,7 +606,7 @@
               aria-controls="clinic-gallery-panel-clinic"
               data-gallery-tab
             >
-              <img class="clinic-gallery__tab-icon" src="assets/icons/hospital.svg" alt="" width="18" height="18" decoding="async">
+              <img class="clinic-gallery__tab-icon" src="/assets/icons/hospital.svg" alt="" width="18" height="18" decoding="async">
               Наркологическая клиника
             </button>
             <button
@@ -1570,7 +619,7 @@
               tabindex="-1"
               data-gallery-tab
             >
-              <img class="clinic-gallery__tab-icon" src="assets/icons/house.svg" alt="" width="18" height="18" decoding="async">
+              <img class="clinic-gallery__tab-icon" src="/assets/icons/house.svg" alt="" width="18" height="18" decoding="async">
               Загородный реабилитационный центр
             </button>
           </div>
@@ -1585,50 +634,50 @@
             <ul class="clinic-gallery__bento" role="list">
               <li class="clinic-gallery__cell clinic-gallery__cell--lead">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Ресепшен">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-reception.webp" alt="Ресепшен наркологической клиники: светлый холл с диванами и стойкой администратора" width="864" height="1152" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/clinic-reception.webp" alt="Ресепшен наркологической клиники: светлый холл с диванами и стойкой администратора" width="864" height="1152" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
               <li class="clinic-gallery__cell">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Одноместная палата">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-room-blue.webp" alt="Одноместная палата со светло-голубыми стенами и серым бельём" width="1152" height="864" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/clinic-room-blue.webp" alt="Одноместная палата со светло-голубыми стенами и серым бельём" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
               <li class="clinic-gallery__cell">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Двухместная палата">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-room-table.webp" alt="Двухместная палата с круглым столом и полосатым бельём" width="1152" height="864" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/clinic-room-table.webp" alt="Двухместная палата с круглым столом и полосатым бельём" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
               <li class="clinic-gallery__cell">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Палата">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-room-wood.webp" alt="Палата с деревянным изголовьем и двумя креслами" width="1152" height="864" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/clinic-room-wood.webp" alt="Палата с деревянным изголовьем и двумя креслами" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
               <li class="clinic-gallery__cell">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Диагностический кабинет">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-procedure.webp" alt="Диагностический кабинет с аппаратом УЗИ и медицинской кушеткой" width="1152" height="864" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/clinic-procedure.webp" alt="Диагностический кабинет с аппаратом УЗИ и медицинской кушеткой" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
               <li class="clinic-gallery__cell clinic-gallery__cell--wide">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Стационар">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-ward.webp" alt="Стационарная палата с двумя кроватями и прикроватными мониторами" width="1280" height="720" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/clinic-ward.webp" alt="Стационарная палата с двумя кроватями и прикроватными мониторами" width="1280" height="720" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
               <li class="clinic-gallery__cell">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Процедурный кабинет">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-exam.webp" alt="Процедурный кабинет с синей кушеткой и шкафом для расходных материалов" width="1152" height="864" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/clinic-exam.webp" alt="Процедурный кабинет с синей кушеткой и шкафом для расходных материалов" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
               <li class="clinic-gallery__cell">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Зал ЛФК">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/clinic-gym.webp" alt="Небольшой зал лечебной физкультуры с гантелями и беговой дорожкой" width="1152" height="864" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/clinic-gym.webp" alt="Небольшой зал лечебной физкультуры с гантелями и беговой дорожкой" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
             </ul>
@@ -1645,50 +694,50 @@
             <ul class="clinic-gallery__bento" role="list">
               <li class="clinic-gallery__cell clinic-gallery__cell--lead">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Холл">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-hall.webp" alt="Холл загородного реабилитационного центра с окнами в сад" width="864" height="1152" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/rehab-hall.webp" alt="Холл загородного реабилитационного центра с окнами в сад" width="864" height="1152" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
               <li class="clinic-gallery__cell">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Спальня">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-bedroom.webp" alt="Спальня реабилитационного центра с видом на берёзы" width="1152" height="864" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/rehab-bedroom.webp" alt="Спальня реабилитационного центра с видом на берёзы" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
               <li class="clinic-gallery__cell">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Гостиная">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-living.webp" alt="Гостиная с камином и диванами" width="1152" height="864" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/rehab-living.webp" alt="Гостиная с камином и диванами" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
               <li class="clinic-gallery__cell">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Зал для занятий">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-circle.webp" alt="Зал для групповых занятий со стульями по кругу" width="1152" height="864" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/rehab-circle.webp" alt="Зал для групповых занятий со стульями по кругу" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
               <li class="clinic-gallery__cell">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Столовая">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-dining.webp" alt="Столовая с длинным деревянным столом и окнами в сад" width="1152" height="864" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/rehab-dining.webp" alt="Столовая с длинным деревянным столом и окнами в сад" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
               <li class="clinic-gallery__cell clinic-gallery__cell--wide">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Терраса">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-terrace.webp" alt="Деревянная терраса с видом на лужайку и лес" width="1280" height="720" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/rehab-terrace.webp" alt="Деревянная терраса с видом на лужайку и лес" width="1280" height="720" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
               <li class="clinic-gallery__cell">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Зал для нагрузки">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-fitness.webp" alt="Зал для физической нагрузки с беговой дорожкой и гантелями" width="1152" height="864" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/rehab-fitness.webp" alt="Зал для физической нагрузки с беговой дорожкой и гантелями" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
               <li class="clinic-gallery__cell">
                 <button class="clinic-gallery__shot" type="button" data-gallery-open data-gallery-caption="Сад">
-                  <img class="clinic-gallery__photo" src="assets/images/clinic-gallery/rehab-garden.webp" alt="Сад реабилитационного центра: гравийная дорожка, берёзы и скамейка" width="1152" height="864" loading="lazy" decoding="async">
-                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
+                  <img class="clinic-gallery__photo" src="/assets/images/clinic-gallery/rehab-garden.webp" alt="Сад реабилитационного центра: гравийная дорожка, берёзы и скамейка" width="1152" height="864" loading="lazy" decoding="async">
+                  <span class="clinic-gallery__zoom" aria-hidden="true"><img src="/assets/icons/magnifying-glass.svg" alt="" width="18" height="18"></span>
                 </button>
               </li>
             </ul>
@@ -1699,13 +748,13 @@
           <div class="clinic-gallery__lightbox-frame">
             <img class="clinic-gallery__lightbox-image" src="" alt="" data-gallery-lightbox-image>
             <button class="clinic-gallery__nav clinic-gallery__nav--prev" type="button" aria-label="Предыдущее фото" data-gallery-prev>
-              <img src="assets/icons/caret-left.svg" alt="" width="20" height="20">
+              <img src="/assets/icons/caret-left.svg" alt="" width="20" height="20">
             </button>
             <button class="clinic-gallery__nav clinic-gallery__nav--next" type="button" aria-label="Следующее фото" data-gallery-next>
-              <img src="assets/icons/caret-right.svg" alt="" width="20" height="20">
+              <img src="/assets/icons/caret-right.svg" alt="" width="20" height="20">
             </button>
             <button class="clinic-gallery__lightbox-close" type="button" aria-label="Закрыть фото" data-gallery-close>
-              <img src="assets/icons/x.svg" alt="" width="20" height="20">
+              <img src="/assets/icons/x.svg" alt="" width="20" height="20">
             </button>
           </div>
           <p class="clinic-gallery__lightbox-caption" data-gallery-lightbox-caption role="status"></p>
@@ -1731,15 +780,15 @@
 
           <ul class="licenses__scopes" role="list" aria-label="Направления медицинской деятельности по лицензии">
             <li class="licenses__scope">
-              <img class="licenses__scope-icon" src="assets/icons/phosphor/brain.svg" alt="" width="22" height="22" decoding="async">
+              <img class="licenses__scope-icon" src="/assets/icons/phosphor/brain.svg" alt="" width="22" height="22" decoding="async">
               <span class="licenses__scope-title">Психиатрия</span>
             </li>
             <li class="licenses__scope">
-              <img class="licenses__scope-icon" src="assets/icons/phosphor/stethoscope.svg" alt="" width="22" height="22" decoding="async">
+              <img class="licenses__scope-icon" src="/assets/icons/phosphor/stethoscope.svg" alt="" width="22" height="22" decoding="async">
               <span class="licenses__scope-title">Психиатрия-наркология</span>
             </li>
             <li class="licenses__scope">
-              <img class="licenses__scope-icon" src="assets/icons/phosphor/ambulance.svg" alt="" width="22" height="22" decoding="async">
+              <img class="licenses__scope-icon" src="/assets/icons/phosphor/ambulance.svg" alt="" width="22" height="22" decoding="async">
               <span class="licenses__scope-title">Скорая медицинская помощь</span>
             </li>
           </ul>
@@ -1764,7 +813,7 @@
                 >
                   <img
                     class="license-card__image"
-                    src="assets/images/licenses/license-register-page-1.png"
+                    src="/assets/images/licenses/license-register-page-1.png"
                     alt=""
                     width="1024"
                     height="1536"
@@ -1772,7 +821,7 @@
                     decoding="async"
                   >
                   <span class="license-card__zoom" aria-hidden="true">
-                    <img src="assets/icons/magnifying-glass.svg" alt="" width="22" height="22">
+                    <img src="/assets/icons/magnifying-glass.svg" alt="" width="22" height="22">
                   </span>
                 </button>
                 <div class="license-card__body">
@@ -1781,7 +830,7 @@
                     <p class="license-card__meta">Страница 1 из 2</p>
                   </div>
                   <button class="button button--outline license-card__download" type="button" data-license-download>
-                    <img class="button__icon" src="assets/icons/file-text.svg" alt="" width="16" height="16" aria-hidden="true">
+                    <img class="button__icon" src="/assets/icons/file-text.svg" alt="" width="16" height="16" aria-hidden="true">
                     Скачать
                   </button>
                 </div>
@@ -1800,7 +849,7 @@
                 >
                   <img
                     class="license-card__image"
-                    src="assets/images/licenses/license-register-page-2.png"
+                    src="/assets/images/licenses/license-register-page-2.png"
                     alt=""
                     width="1024"
                     height="1536"
@@ -1808,7 +857,7 @@
                     decoding="async"
                   >
                   <span class="license-card__zoom" aria-hidden="true">
-                    <img src="assets/icons/magnifying-glass.svg" alt="" width="22" height="22">
+                    <img src="/assets/icons/magnifying-glass.svg" alt="" width="22" height="22">
                   </span>
                 </button>
                 <div class="license-card__body">
@@ -1817,7 +866,7 @@
                     <p class="license-card__meta">Страница 2 из 2</p>
                   </div>
                   <button class="button button--outline license-card__download" type="button" data-license-download>
-                    <img class="button__icon" src="assets/icons/file-text.svg" alt="" width="16" height="16" aria-hidden="true">
+                    <img class="button__icon" src="/assets/icons/file-text.svg" alt="" width="16" height="16" aria-hidden="true">
                     Скачать
                   </button>
                 </div>
@@ -1836,7 +885,7 @@
                 >
                   <img
                     class="license-card__image"
-                    src="assets/images/licenses/sanitary-conclusion.png"
+                    src="/assets/images/licenses/sanitary-conclusion.png"
                     alt=""
                     width="1024"
                     height="1536"
@@ -1844,7 +893,7 @@
                     decoding="async"
                   >
                   <span class="license-card__zoom" aria-hidden="true">
-                    <img src="assets/icons/magnifying-glass.svg" alt="" width="22" height="22">
+                    <img src="/assets/icons/magnifying-glass.svg" alt="" width="22" height="22">
                   </span>
                 </button>
                 <div class="license-card__body">
@@ -1852,7 +901,7 @@
                     <span class="license-card__title">Санитарное заключение</span>
                   </div>
                   <button class="button button--outline license-card__download" type="button" data-license-download>
-                    <img class="button__icon" src="assets/icons/file-text.svg" alt="" width="16" height="16" aria-hidden="true">
+                    <img class="button__icon" src="/assets/icons/file-text.svg" alt="" width="16" height="16" aria-hidden="true">
                     Скачать
                   </button>
                 </div>
@@ -1866,7 +915,7 @@
         <dialog class="license-viewer" data-license-dialog aria-label="Просмотр документа">
           <div class="license-viewer__bar">
             <button class="license-viewer__close" type="button" aria-label="Закрыть просмотр" data-license-close>
-              <img src="assets/icons/x.svg" alt="" width="24" height="24" aria-hidden="true">
+              <img src="/assets/icons/x.svg" alt="" width="24" height="24" aria-hidden="true">
             </button>
           </div>
           <div class="license-viewer__stage">
@@ -1885,7 +934,7 @@
             <article class="perks__tile perks__tile--note perks__tile--note-a">
               <img
                 class="perks__tile-icon"
-                src="assets/icons/seal-check.svg"
+                src="/assets/icons/seal-check.svg"
                 alt=""
                 width="48"
                 height="48"
@@ -1902,7 +951,7 @@
             <article class="perks__tile perks__tile--note perks__tile--note-b">
               <img
                 class="perks__tile-icon"
-                src="assets/icons/checks.svg"
+                src="/assets/icons/checks.svg"
                 alt=""
                 width="48"
                 height="48"
@@ -1927,7 +976,7 @@
               </div>
               <img
                 class="perks__stat-visual"
-                src="assets/images/perks/bento/perk-bento-support-3d.png"
+                src="/assets/images/perks/bento/perk-bento-support-3d.png"
                 alt=""
                 width="1024"
                 height="768"
@@ -1948,7 +997,7 @@
               </div>
               <img
                 class="perks__protect-visual"
-                src="assets/images/perks/bento/perk-bento-guard-3d.png"
+                src="/assets/images/perks/bento/perk-bento-guard-3d.png"
                 alt=""
                 width="1024"
                 height="1024"
@@ -1960,7 +1009,7 @@
             <article class="perks__tile perks__tile--wide">
               <img
                 class="perks__wide-bg"
-                src="assets/images/perks/bento/perk-bento-wide-bg.png"
+                src="/assets/images/perks/bento/perk-bento-wide-bg.png"
                 alt=""
                 width="1376"
                 height="768"
@@ -1975,8 +1024,8 @@
                   Разберём ситуацию и объясним, что разумнее: помощь дома,
                   обследование, стационар или плановая консультация.
                 </p>
-                <a class="button button--warm" href="#contact">
-                  <img class="button__icon" src="assets/icons/chat-circle.svg" alt="" width="16" height="16" decoding="async">
+                <a class="button button--warm" href="/#contact">
+                  <img class="button__icon" src="/assets/icons/chat-circle.svg" alt="" width="16" height="16" decoding="async">
                   Разобрать ситуацию
                 </a>
               </div>
@@ -1998,7 +1047,7 @@
           <ul class="prices__geo" role="list">
             <li class="prices__geo-item">
               <span class="prices__geo-icon" aria-hidden="true">
-                <img src="assets/icons/map-pin.svg" alt="" width="22" height="22" decoding="async">
+                <img src="/assets/icons/map-pin.svg" alt="" width="22" height="22" decoding="async">
               </span>
               <span>
                 <strong class="prices__geo-value">Выезд по Москве и области</strong>
@@ -2007,7 +1056,7 @@
             </li>
             <li class="prices__geo-item">
               <span class="prices__geo-icon" aria-hidden="true">
-                <img src="assets/icons/clock.svg" alt="" width="22" height="22" decoding="async">
+                <img src="/assets/icons/clock.svg" alt="" width="22" height="22" decoding="async">
               </span>
               <span>
                 <strong class="prices__geo-value">Срочный выезд — от 40 минут</strong>
@@ -2034,7 +1083,7 @@
                     <span class="prices__service">
                       <img
                         class="prices__service-icon"
-                        src="assets/images/prices/price-visit-3d.png"
+                        src="/assets/images/prices/price-visit-3d.png"
                         alt=""
                         width="256"
                         height="256"
@@ -2057,7 +1106,7 @@
                     <span class="prices__service">
                       <img
                         class="prices__service-icon"
-                        src="assets/images/prices/price-drip-3d.png"
+                        src="/assets/images/prices/price-drip-3d.png"
                         alt=""
                         width="256"
                         height="256"
@@ -2080,7 +1129,7 @@
                     <span class="prices__service">
                       <img
                         class="prices__service-icon"
-                        src="assets/images/prices/price-home-3d.png"
+                        src="/assets/images/prices/price-home-3d.png"
                         alt=""
                         width="256"
                         height="256"
@@ -2103,7 +1152,7 @@
                     <span class="prices__service">
                       <img
                         class="prices__service-icon"
-                        src="assets/images/prices/price-consult-3d.png"
+                        src="/assets/images/prices/price-consult-3d.png"
                         alt=""
                         width="256"
                         height="256"
@@ -2126,7 +1175,7 @@
                     <span class="prices__service">
                       <img
                         class="prices__service-icon"
-                        src="assets/images/prices/price-psychiatry-3d.png"
+                        src="/assets/images/prices/price-psychiatry-3d.png"
                         alt=""
                         width="256"
                         height="256"
@@ -2149,7 +1198,7 @@
                     <span class="prices__service">
                       <img
                         class="prices__service-icon"
-                        src="assets/images/prices/price-psychiatry-3d.png"
+                        src="/assets/images/prices/price-psychiatry-3d.png"
                         alt=""
                         width="256"
                         height="256"
@@ -2172,7 +1221,7 @@
                     <span class="prices__service">
                       <img
                         class="prices__service-icon"
-                        src="assets/images/prices/price-coding-3d.png"
+                        src="/assets/images/prices/price-coding-3d.png"
                         alt=""
                         width="256"
                         height="256"
@@ -2195,7 +1244,7 @@
                     <span class="prices__service">
                       <img
                         class="prices__service-icon"
-                        src="assets/images/services/service-hospital-3d.png"
+                        src="/assets/images/services/service-hospital-3d.png"
                         alt=""
                         width="256"
                         height="256"
@@ -2218,7 +1267,7 @@
                     <span class="prices__service">
                       <img
                         class="prices__service-icon"
-                        src="assets/images/prices/price-support-3d.png"
+                        src="/assets/images/prices/price-support-3d.png"
                         alt=""
                         width="256"
                         height="256"
@@ -2306,15 +1355,15 @@
             <h2 class="reviews__title" id="reviews-title">Отзывы о клинике «Нова клиник»</h2>
             <div class="reviews__filters" role="tablist" aria-label="Источники отзывов">
               <label class="reviews__filter" for="reviews-tab-yandex" data-reviews-filter="yandex">
-                <img class="reviews__filter-icon" src="assets/icons/reviews/yandex.webp" alt="" width="16" height="16" decoding="async">
+                <img class="reviews__filter-icon" src="/assets/icons/reviews/yandex.webp" alt="" width="16" height="16" decoding="async">
                 <span>Яндекс Карты</span>
               </label>
               <label class="reviews__filter" for="reviews-tab-2gis" data-reviews-filter="2gis">
-                <img class="reviews__filter-icon" src="assets/icons/reviews/2gis.webp" alt="" width="16" height="16" decoding="async">
+                <img class="reviews__filter-icon" src="/assets/icons/reviews/2gis.webp" alt="" width="16" height="16" decoding="async">
                 <span>2ГИС</span>
               </label>
               <label class="reviews__filter" for="reviews-tab-google" data-reviews-filter="google">
-                <img class="reviews__filter-icon" src="assets/icons/reviews/google.webp" alt="" width="16" height="16" decoding="async">
+                <img class="reviews__filter-icon" src="/assets/icons/reviews/google.webp" alt="" width="16" height="16" decoding="async">
                 <span>Гугл Карты</span>
               </label>
             </div>
@@ -2329,7 +1378,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-01.png"
+                        src="/assets/images/reviews/review-avatar-01.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2354,7 +1403,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-02.png"
+                        src="/assets/images/reviews/review-avatar-02.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2379,7 +1428,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-03.png"
+                        src="/assets/images/reviews/review-avatar-03.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2404,7 +1453,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-04.png"
+                        src="/assets/images/reviews/review-avatar-04.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2429,7 +1478,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-05.png"
+                        src="/assets/images/reviews/review-avatar-05.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2454,7 +1503,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-06.png"
+                        src="/assets/images/reviews/review-avatar-06.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2479,7 +1528,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-07.png"
+                        src="/assets/images/reviews/review-avatar-07.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2504,7 +1553,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-08.png"
+                        src="/assets/images/reviews/review-avatar-08.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2529,7 +1578,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-09.png"
+                        src="/assets/images/reviews/review-avatar-09.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2554,7 +1603,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-10.png"
+                        src="/assets/images/reviews/review-avatar-10.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2594,7 +1643,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-11.png"
+                        src="/assets/images/reviews/review-avatar-11.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2619,7 +1668,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-12.png"
+                        src="/assets/images/reviews/review-avatar-12.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2644,7 +1693,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-13.png"
+                        src="/assets/images/reviews/review-avatar-13.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2669,7 +1718,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-14.png"
+                        src="/assets/images/reviews/review-avatar-14.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2694,7 +1743,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-15.png"
+                        src="/assets/images/reviews/review-avatar-15.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2719,7 +1768,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-16.png"
+                        src="/assets/images/reviews/review-avatar-16.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2744,7 +1793,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-17.png"
+                        src="/assets/images/reviews/review-avatar-17.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2769,7 +1818,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-18.png"
+                        src="/assets/images/reviews/review-avatar-18.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2794,7 +1843,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-19.png"
+                        src="/assets/images/reviews/review-avatar-19.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2819,7 +1868,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-20.png"
+                        src="/assets/images/reviews/review-avatar-20.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2859,7 +1908,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-21.png"
+                        src="/assets/images/reviews/review-avatar-21.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2884,7 +1933,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-22.png"
+                        src="/assets/images/reviews/review-avatar-22.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2909,7 +1958,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-23.png"
+                        src="/assets/images/reviews/review-avatar-23.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2934,7 +1983,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-24.png"
+                        src="/assets/images/reviews/review-avatar-24.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2959,7 +2008,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-25.png"
+                        src="/assets/images/reviews/review-avatar-25.png"
                         alt=""
                         width="80"
                         height="80"
@@ -2984,7 +2033,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-26.png"
+                        src="/assets/images/reviews/review-avatar-26.png"
                         alt=""
                         width="80"
                         height="80"
@@ -3009,7 +2058,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-27.png"
+                        src="/assets/images/reviews/review-avatar-27.png"
                         alt=""
                         width="80"
                         height="80"
@@ -3034,7 +2083,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-28.png"
+                        src="/assets/images/reviews/review-avatar-28.png"
                         alt=""
                         width="80"
                         height="80"
@@ -3059,7 +2108,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-29.png"
+                        src="/assets/images/reviews/review-avatar-29.png"
                         alt=""
                         width="80"
                         height="80"
@@ -3084,7 +2133,7 @@
                     <div class="reviews__card-top">
                       <img
                         class="reviews__avatar reviews__avatar--image"
-                        src="assets/images/reviews/review-avatar-30.png"
+                        src="/assets/images/reviews/review-avatar-30.png"
                         alt=""
                         width="80"
                         height="80"
@@ -3129,7 +2178,7 @@
               <details class="faq__item" data-faq-item>
                 <summary class="faq__question">
                   <span class="faq__question-text">Можно обратиться за помощью за родственника, если он сам не звонит?</span>
-                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                  <img class="faq__icon" src="/assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
                 </summary>
                 <div class="faq__answer">
                   <div class="faq__answer-inner">
@@ -3140,7 +2189,7 @@
               <details class="faq__item" data-faq-item>
                 <summary class="faq__question">
                   <span class="faq__question-text">Что делать, если мы не понимаем, нужен врач на дом или стационар?</span>
-                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                  <img class="faq__icon" src="/assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
                 </summary>
                 <div class="faq__answer">
                   <div class="faq__answer-inner">
@@ -3151,7 +2200,7 @@
               <details class="faq__item" data-faq-item>
                 <summary class="faq__question">
                   <span class="faq__question-text">Может ли стоимость измениться после приезда врача?</span>
-                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                  <img class="faq__icon" src="/assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
                 </summary>
                 <div class="faq__answer">
                   <div class="faq__answer-inner">
@@ -3162,7 +2211,7 @@
               <details class="faq__item" data-faq-item>
                 <summary class="faq__question">
                   <span class="faq__question-text">Что будет, если пациент откажется от лечения?</span>
-                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                  <img class="faq__icon" src="/assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
                 </summary>
                 <div class="faq__answer">
                   <div class="faq__answer-inner">
@@ -3173,7 +2222,7 @@
               <details class="faq__item" data-faq-item>
                 <summary class="faq__question">
                   <span class="faq__question-text">Можно ли вызвать специалиста, если пациент сейчас пьян или находится под действием веществ?</span>
-                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                  <img class="faq__icon" src="/assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
                 </summary>
                 <div class="faq__answer">
                   <div class="faq__answer-inner">
@@ -3186,7 +2235,7 @@
               <details class="faq__item" data-faq-item>
                 <summary class="faq__question">
                   <span class="faq__question-text">А если на месте выяснится, что состояние серьёзнее, чем мы думали?</span>
-                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                  <img class="faq__icon" src="/assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
                 </summary>
                 <div class="faq__answer">
                   <div class="faq__answer-inner">
@@ -3197,7 +2246,7 @@
               <details class="faq__item" data-faq-item>
                 <summary class="faq__question">
                   <span class="faq__question-text">Нужно ли заранее готовить документы, анализы или медицинскую карту?</span>
-                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                  <img class="faq__icon" src="/assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
                 </summary>
                 <div class="faq__answer">
                   <div class="faq__answer-inner">
@@ -3208,7 +2257,7 @@
               <details class="faq__item" data-faq-item>
                 <summary class="faq__question">
                   <span class="faq__question-text">Можно ли обсуждать лечение отдельно от пациента?</span>
-                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                  <img class="faq__icon" src="/assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
                 </summary>
                 <div class="faq__answer">
                   <div class="faq__answer-inner">
@@ -3219,7 +2268,7 @@
               <details class="faq__item" data-faq-item>
                 <summary class="faq__question">
                   <span class="faq__question-text">Что происходит, если после помощи состояние снова ухудшилось?</span>
-                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                  <img class="faq__icon" src="/assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
                 </summary>
                 <div class="faq__answer">
                   <div class="faq__answer-inner">
@@ -3230,7 +2279,7 @@
               <details class="faq__item" data-faq-item>
                 <summary class="faq__question">
                   <span class="faq__question-text">Можно сначала просто обсудить ситуацию, не оформляя вызов?</span>
-                  <img class="faq__icon" src="assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
+                  <img class="faq__icon" src="/assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async">
                 </summary>
                 <div class="faq__answer">
                   <div class="faq__answer-inner">
@@ -3315,7 +2364,7 @@
                 <label class="request-form__field request-form__field--icon" for="request-phone">
                   <span class="visually-hidden">Телефон</span>
                   <span class="request-form__field-icon" aria-hidden="true">
-                    <img src="assets/icons/contact/phone.svg" alt="" width="16" height="16" decoding="async">
+                    <img src="/assets/icons/contact/phone.svg" alt="" width="16" height="16" decoding="async">
                   </span>
                   <input
                     id="request-phone"
@@ -3333,7 +2382,7 @@
                 <label class="request-form__field request-form__field--icon" for="request-email">
                   <span class="visually-hidden">Электронная почта</span>
                   <span class="request-form__field-icon" aria-hidden="true">
-                    <img src="assets/icons/contact/envelope.svg" alt="" width="16" height="16" decoding="async">
+                    <img src="/assets/icons/contact/envelope.svg" alt="" width="16" height="16" decoding="async">
                   </span>
                   <input
                     id="request-email"
@@ -3380,7 +2429,7 @@
               </label>
 
               <button class="request-form__button" type="submit">
-                <img class="request-form__button-icon" src="assets/icons/paper-plane-tilt.svg" alt="" width="16" height="16" decoding="async">
+                <img class="request-form__button-icon" src="/assets/icons/paper-plane-tilt.svg" alt="" width="16" height="16" decoding="async">
                 Отправить заявку
               </button>
             </form>
@@ -3428,7 +2477,7 @@
                         >
                           <img
                             class="contact-info__messenger-icon"
-                            src="assets/icons/messengers/telegram.svg"
+                            src="/assets/icons/messengers/telegram.svg"
                             alt=""
                             width="18"
                             height="18"
@@ -3446,7 +2495,7 @@
                         >
                           <img
                             class="contact-info__messenger-icon"
-                            src="assets/icons/messengers/whatsapp.png"
+                            src="/assets/icons/messengers/whatsapp.png"
                             alt=""
                             width="18"
                             height="18"
@@ -3464,7 +2513,7 @@
                         >
                           <img
                             class="contact-info__messenger-icon"
-                            src="assets/icons/messengers/max.png"
+                            src="/assets/icons/messengers/max.png"
                             alt=""
                             width="18"
                             height="18"
@@ -3482,7 +2531,7 @@
                         >
                           <img
                             class="contact-info__messenger-icon"
-                            src="assets/icons/messengers/vk.png"
+                            src="/assets/icons/messengers/vk.png"
                             alt=""
                             width="18"
                             height="18"
@@ -3511,177 +2560,4 @@
       </section>
 
     </main>
-
-    <footer class="site-footer" data-site-footer>
-      <div class="site-footer__frame">
-      <div class="site-footer__inner">
-        <div class="site-footer__brand">
-          <a class="site-footer__logo" href="#top" aria-label="Нова клиник — на главную">
-            <img
-              src="assets/images/logo.png"
-              alt="Нова клиник"
-              width="280"
-              height="156"
-              loading="lazy"
-              decoding="async"
-            >
-          </a>
-          <p class="site-footer__brand-name">Нова клиник</p>
-          <p class="site-footer__description">
-            Наркологическая клиника: выезд врача на дом, детоксикация, стационар
-            и сопровождение восстановления. Работаем круглосуточно и конфиденциально.
-          </p>
-          <div class="site-footer__socials">
-            <a class="site-footer__social" href="https://t.me/" aria-label="Телеграм" target="_blank" rel="noopener noreferrer">
-              <img class="site-footer__social-icon" src="assets/icons/messengers/telegram.svg" alt="" width="16" height="16" decoding="async">
-            </a>
-            <a class="site-footer__social" href="https://wa.me/74951204567" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-              <img class="site-footer__social-icon" src="assets/icons/messengers/whatsapp.png" alt="" width="16" height="16" decoding="async">
-            </a>
-            <a class="site-footer__social" href="https://max.ru/" aria-label="MAX" target="_blank" rel="noopener noreferrer">
-              <img class="site-footer__social-icon" src="assets/icons/messengers/max.png" alt="" width="16" height="16" decoding="async">
-            </a>
-            <a class="site-footer__social" href="https://vk.com/" aria-label="ВКонтакте" target="_blank" rel="noopener noreferrer">
-              <img class="site-footer__social-icon" src="assets/icons/messengers/vk.png" alt="" width="16" height="16" decoding="async">
-            </a>
-          </div>
-        </div>
-
-        <nav class="site-footer__column" aria-label="Услуги">
-          <span class="site-footer__title"><a href="#prices">Услуги</a></span>
-          <ul class="site-footer__list" role="list">
-            <li><a href="#prices">Наркологическая помощь</a></li>
-            <li><a href="#prices">Лечение алкоголизма</a></li>
-            <li><a href="#prices">Лечение наркомании</a></li>
-            <li><a href="#prices">Другие зависимости</a></li>
-            <li><a href="#prices">Реабилитация зависимых</a></li>
-            <li><a href="#prices">Психиатрическая помощь</a></li>
-            <li><a href="#prices">Психотерапия и психология</a></li>
-            <li><a href="#prices">Помощь родственникам зависимого</a></li>
-            <li><a href="#prices">Диагностика</a></li>
-            <li><a href="#prices">Восстановительная терапия</a></li>
-          </ul>
-        </nav>
-
-        <nav class="site-footer__column" aria-label="О клинике">
-          <span class="site-footer__title"><a href="#about">О клинике</a></span>
-          <ul class="site-footer__list" role="list">
-            <li><a href="#about-team">Врачи</a></li>
-            <li><a href="#about">Клиника</a></li>
-            <li><a href="#licenses">Лицензия</a></li>
-            <li><a href="#perks">Гарантия</a></li>
-            <li><a href="#contact">Договор</a></li>
-            <li><a href="#about">Фотогалерея</a></li>
-            <li><a href="#reviews">Кейсы</a></li>
-            <li><a href="#reviews">Отзывы</a></li>
-            <li><a href="#blog">Блог</a></li>
-          </ul>
-        </nav>
-
-        <div class="site-footer__column" aria-label="Контакты">
-          <span class="site-footer__title"><a href="#contact">Контакты</a></span>
-          <ul class="site-footer__list site-footer__list--contacts" role="list">
-            <li>
-              <span class="site-footer__contact-label">Время работы:</span>
-              <span class="site-footer__contact-value">Круглосуточно 24/7</span>
-            </li>
-            <li>
-              <span class="site-footer__contact-label">Адрес:</span>
-              <span class="site-footer__contact-value">г. Москва, ул. Профсоюзная, 56</span>
-            </li>
-            <li>
-              <a href="tel:+74951204567">+7 (495) 120-45-67</a>
-            </li>
-            <li>
-              <a href="mailto:info@nova-clinic.ru">info@nova-clinic.ru</a>
-            </li>
-            <li>
-              <span class="site-footer__contact-label">ИНН:</span>
-              <span class="site-footer__contact-value">7726481935</span>
-            </li>
-            <li>
-              <span class="site-footer__contact-label">ОГРН:</span>
-              <span class="site-footer__contact-value">1227703846197</span>
-            </li>
-            <li>
-              <span class="site-footer__contact-label">Лицензия:</span>
-              <span class="site-footer__contact-value">Л041-63827-41/00729518</span>
-            </li>
-          </ul>
-          <a class="button button--primary site-footer__cta" href="#contact">
-            <img class="button__icon" src="assets/icons/paper-plane-tilt.svg" alt="" width="16" height="16" decoding="async">
-            Оставить заявку
-          </a>
-        </div>
-      </div>
-
-      <div class="site-footer__bottom">
-        <p class="site-footer__copyright">© 2026 ООО «Нова клиник»</p>
-        <div class="site-footer__legal">
-          <a href="#">Политика конфиденциальности</a>
-          <a href="#">Согласие на обработку персональных данных</a>
-        </div>
-      </div>
-      </div>
-    </footer>
-
-    <script src="assets/js/modules/menu.js" defer></script>
-    <script src="assets/js/modules/services-menu.js" defer></script>
-    <script src="assets/js/modules/contact-form.js" defer></script>
-    <script src="assets/js/modules/reviews.js" defer></script>
-    <script src="assets/js/modules/licenses.js" defer></script>
-    <script src="assets/js/modules/clinic-gallery.js" defer></script>
-    <script src="assets/js/modules/about-slider.js" defer></script>
-    <script src="assets/js/data/specialist-directions.js" defer></script>
-    <script src="assets/js/data/specialist-questions.js" defer></script>
-    <script src="assets/js/data/specialists.js" defer></script>
-    <script src="assets/js/modules/specialist-matching.js" defer></script>
-    <script src="assets/js/modules/specialist-views.js" defer></script>
-    <script src="assets/js/modules/specialist-dialog.js" defer></script>
-    <script src="assets/js/modules/specialist-quiz.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
-    <script>
-      (function () {
-        function initExclusiveFaq() {
-          var root = document.querySelector("[data-faq]");
-          if (!root || root.dataset.faqReady === "true") {
-            return;
-          }
-
-          root.dataset.faqReady = "true";
-          var items = root.querySelectorAll("details[data-faq-item]");
-
-          root.addEventListener("click", function (event) {
-            var summary = event.target.closest("summary.faq__question");
-            if (!summary || !root.contains(summary)) {
-              return;
-            }
-
-            var details = summary.closest("details[data-faq-item]");
-            if (!details) {
-              return;
-            }
-
-            event.preventDefault();
-
-            var willOpen = !details.open;
-
-            for (var i = 0; i < items.length; i += 1) {
-              items[i].open = false;
-            }
-
-            if (willOpen) {
-              details.open = true;
-            }
-          });
-        }
-
-        if (document.readyState === "loading") {
-          document.addEventListener("DOMContentLoaded", initExclusiveFaq);
-        } else {
-          initExclusiveFaq();
-        }
-      })();
-    </script>
-  </body>
-</html>
+{% endblock %}
