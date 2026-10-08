@@ -1,5 +1,5 @@
 (function (global) {
-  var ns = (global.GarmonicaSpecialist = global.GarmonicaSpecialist || {});
+  var ns = (global.NovaClinicSpecialist = global.NovaClinicSpecialist || {});
 
   var iconArrowRight = '<img class="button__icon" src="assets/icons/arrow-right.svg" alt="" width="16" height="16" decoding="async" aria-hidden="true">';
   var iconCaretLeft = '<img class="specialist-quiz__nav-icon" src="assets/icons/caret-left.svg" alt="" width="14" height="14" decoding="async" aria-hidden="true">';

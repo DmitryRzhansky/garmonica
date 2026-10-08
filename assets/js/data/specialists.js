@@ -1,5 +1,5 @@
 (function (global) {
-  var ns = (global.GarmonicaSpecialist = global.GarmonicaSpecialist || {});
+  var ns = (global.NovaClinicSpecialist = global.NovaClinicSpecialist || {});
 
   var profiles = [
     ['Луговцев Андрей Викторович', 'Андрею Викторовичу Луговцеву', 'Медицинское сопровождение детоксикации', 14],

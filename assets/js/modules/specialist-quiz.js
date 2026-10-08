@@ -1,5 +1,5 @@
 (function (global) {
-  var ns = (global.GarmonicaSpecialist = global.GarmonicaSpecialist || {});
+  var ns = (global.NovaClinicSpecialist = global.NovaClinicSpecialist || {});
 
   function initSpecialistQuiz() {
     var root = document.querySelector('[data-specialist-quiz]');

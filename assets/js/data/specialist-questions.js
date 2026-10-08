@@ -1,5 +1,5 @@
 (function (global) {
-  var ns = (global.GarmonicaSpecialist = global.GarmonicaSpecialist || {});
+  var ns = (global.NovaClinicSpecialist = global.NovaClinicSpecialist || {});
 
   ns.questions = [
     { title: 'Какой специалист вам нужен?', hint: 'Выберите одно направление. Если сомневаетесь, мы поможем сориентироваться.' },

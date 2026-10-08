@@ -1,5 +1,5 @@
 (function (global) {
-  var ns = (global.GarmonicaSpecialist = global.GarmonicaSpecialist || {});
+  var ns = (global.NovaClinicSpecialist = global.NovaClinicSpecialist || {});
 
   ns.directions = [
     { id: 'narcology', title: 'Наркология', role: 'Врач-психиатр-нарколог', description: 'Алкогольная или наркотическая зависимость, запой, абстинентный синдром, детоксикация, кодирование.', icon: '01', problems: ['Алкогольная зависимость', 'Наркотическая зависимость', 'Длительный запой', 'Абстинентный синдром', 'Требуется детоксикация', 'Кодирование', 'Срыв после лечения', 'Нужна программа лечения зависимости', 'Помощь родственнику', 'Другое'] },

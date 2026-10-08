@@ -6,7 +6,7 @@ function safeInit(label, fn) {
   try {
     fn();
   } catch (error) {
-    console.error(`[garmonica] ${label} failed:`, error);
+    console.error(`[nova-clinic] ${label} failed:`, error);
   }
 }
 
