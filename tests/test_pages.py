@@ -93,6 +93,35 @@ def test_service_pages_share_layout_blocks(client):
             assert marker in html, f"{marker} missing on {url}"
 
 
+def test_service_facility_on_clinic_and_hubs_not_on_home(client):
+    with_facility = [
+        "/uslugi/lechenie-alkogolizma/",
+        "/uslugi/lechenie-alkogolizma/v-stacionare/",
+        "/uslugi/kodirovanie/v-klinike/",
+        "/uslugi/narkologicheskaya-pomosh/stacionar/",
+        "/uslugi/narkologicheskaya-pomosh/",
+        "/uslugi/psihiatriya/stacionar/",
+    ]
+    without_facility = [
+        "/uslugi/narkolog-na-dom/",
+        "/uslugi/vyvod-iz-zapoya/na-domu/",
+        "/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/",
+        "/uslugi/reabilitaciya/",
+        "/uslugi/psihiatriya/psihiatr-na-dom/",
+    ]
+
+    for url in with_facility:
+        html = client.get(url).get_data(as_text=True)
+        assert 'id="service-facility-title"' in html, f"facility missing on {url}"
+        assert "Где будет находиться пациент" in html
+        assert "Люблинская" in html
+        assert 'id="field-service-title"' in html
+
+    for url in without_facility:
+        html = client.get(url).get_data(as_text=True)
+        assert 'id="service-facility-title"' not in html, f"facility should be absent on {url}"
+
+
 def test_geo_pages_change_heading_and_keep_doctor(client):
     metro = client.get("/uslugi/narkolog-na-dom/aeroport/")
     city = client.get("/uslugi/narkolog-na-dom/moskovskaya-oblast/balashiha/")
