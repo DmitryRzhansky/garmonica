@@ -129,25 +129,6 @@
   line-height: 1.5;
 }
 
-.service-hero__lead-call {
-  display: block;
-  margin-top: 0.4em;
-  color: var(--color-text-dark);
-  white-space: nowrap;
-}
-
-.service-hero__lead-phone {
-  color: inherit;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
-  white-space: nowrap;
-}
-
-.service-hero__lead-phone:hover {
-  color: var(--color-accent-hover);
-}
-
 .service-hero__features {
   display: grid;
   grid-template-columns: 1fr;
