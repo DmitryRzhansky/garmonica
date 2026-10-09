@@ -1,4 +1,4 @@
-<section class="reviews" id="service-reviews" data-reviews aria-labelledby="service-reviews-title">
+<section class="reviews reviews--service" id="service-reviews" data-reviews aria-labelledby="service-reviews-title">
   {% for source in review_sources %}
   <input
     class="reviews__tab-input"
@@ -13,21 +13,93 @@
   <div class="reviews__inner">
     <div class="reviews__header">
       <h2 class="reviews__title" id="service-reviews-title">Отзывы наших клиентов</h2>
-      <div class="reviews__filters" role="tablist" aria-label="Источники отзывов">
-        {% for source in review_sources %}
-        <label class="reviews__filter" for="reviews-tab-{{ source.id }}" data-reviews-filter="{{ source.id }}">
-          <img
-            class="reviews__filter-icon"
-            src="{{ source.icon }}"
-            alt=""
-            width="16"
-            height="16"
-            decoding="async"
+
+      {% if review_stats %}
+      <div class="reviews-stats" aria-label="Сводка оценок">
+        <div class="reviews-stats__summary">
+          <div class="reviews-stats__score">
+            <div class="reviews-stats__score-row">
+              <p class="reviews-stats__score-value">{{ review_stats.score }}</p>
+              <p class="reviews-stats__stars" aria-hidden="true">★★★★★</p>
+            </div>
+            <p class="reviews-stats__meta-label">{{ review_stats.score_label }} {{ review_stats.score_note }}</p>
+          </div>
+
+          <div class="reviews-stats__divider" aria-hidden="true"></div>
+
+          <div class="reviews-stats__total">
+            <p class="reviews-stats__total-value">{{ review_stats.reviews_total }}</p>
+            <p class="reviews-stats__meta-label">отзывов на {{ review_stats.platforms_count }} площадках</p>
+          </div>
+
+          <div class="reviews-stats__divider" aria-hidden="true"></div>
+
+          <div class="reviews-stats__award">
+            <div class="reviews-stats__award-card">
+              <img
+                class="reviews-stats__award-icon"
+                src="{{ review_stats.award_icon }}"
+                alt=""
+                width="28"
+                height="28"
+                decoding="async"
+              >
+              <div class="reviews-stats__award-body">
+                <p class="reviews-stats__award-title">{{ review_stats.award }}</p>
+                <p class="reviews-stats__award-meta">
+                  <span>{{ review_stats.award_source }}</span>
+                  <span class="reviews-stats__award-year">{{ review_stats.award_year }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-stats__platforms" role="tablist" aria-label="Площадки с отзывами">
+          {% for platform in review_stats.platforms %}
+          <label
+            class="reviews-stats__platform"
+            for="reviews-tab-{{ platform.id }}"
+            data-reviews-filter="{{ platform.id }}"
           >
-          <span>{{ source.label }}</span>
-        </label>
-        {% endfor %}
+            <span class="reviews-stats__platform-head">
+              <img
+                class="reviews-stats__platform-icon"
+                src="{{ platform.icon }}"
+                alt=""
+                width="16"
+                height="16"
+                decoding="async"
+              >
+              <span class="reviews-stats__platform-label">{{ platform.label }}</span>
+            </span>
+            <span class="reviews-stats__platform-rating">
+              <strong class="reviews-stats__platform-score">{{ platform.score_label }}</strong>
+              <span class="reviews-stats__platform-star" aria-hidden="true">★</span>
+            </span>
+            <span class="reviews-stats__platform-count">
+              <strong class="reviews-stats__platform-count-value">{{ platform.count }}</strong>
+              <span class="reviews-stats__platform-count-label">отзывов</span>
+            </span>
+          </label>
+          {% endfor %}
+        </div>
+
+        <ul class="reviews-stats__aspects" role="list">
+          {% for aspect in review_stats.aspects %}
+          <li class="reviews-stats__aspect">
+            <div class="reviews-stats__aspect-top">
+              <span class="reviews-stats__aspect-label">{{ aspect.label }}</span>
+              <strong class="reviews-stats__aspect-value">{{ aspect.value }}%</strong>
+            </div>
+            <div class="reviews-stats__aspect-bar" role="presentation" aria-hidden="true">
+              <span class="reviews-stats__aspect-fill" style="--aspect-value: {{ aspect.value }}"></span>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
+      {% endif %}
     </div>
 
     <div class="reviews__slider" data-reviews-slider>

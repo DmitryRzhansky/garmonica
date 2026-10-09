@@ -136,14 +136,44 @@ function initReviews() {
     updatePanel(panel);
   }
 
+  function scrollPlatformsStrip(activeLabel) {
+    const strip = root.querySelector(".reviews-stats__platforms");
+
+    if (!strip || !activeLabel || !strip.contains(activeLabel)) {
+      return;
+    }
+
+    const labelLeft = activeLabel.offsetLeft;
+    const labelWidth = activeLabel.offsetWidth;
+    const stripWidth = strip.clientWidth;
+    const maxScroll = Math.max(0, strip.scrollWidth - stripWidth);
+
+    // Чуть сдвигаем вправо, чтобы справа выглядывала следующая площадка
+    const target = Math.min(
+      maxScroll,
+      Math.max(0, labelLeft - 12 + labelWidth * 0.35)
+    );
+
+    if (typeof strip.scrollTo === "function") {
+      strip.scrollTo({ left: target, behavior: "smooth" });
+    } else {
+      strip.scrollLeft = target;
+    }
+  }
+
   function onTabChange() {
     const panel = getActivePanel();
+    const checked = root.querySelector(".reviews__tab-input:checked");
+    const activeLabel = checked
+      ? root.querySelector(`label[for="${CSS.escape(checked.id)}"]`)
+      : null;
 
     if (!panel) {
       return;
     }
 
     panelState.set(panel, { index: 0 });
+    scrollPlatformsStrip(activeLabel);
     requestAnimationFrame(() => {
       updatePanel(panel);
     });
@@ -151,6 +181,32 @@ function initReviews() {
 
   tabs.forEach((tab) => {
     tab.addEventListener("change", onTabChange);
+  });
+
+  // Клик по label не должен скроллить к скрытому radio вверху секции
+  root.querySelectorAll("label[for^='reviews-tab-']").forEach((label) => {
+    label.addEventListener("click", (event) => {
+      const inputId = label.getAttribute("for");
+      const input = inputId ? root.querySelector(`#${CSS.escape(inputId)}`) : null;
+
+      if (!input || input.disabled) {
+        return;
+      }
+
+      event.preventDefault();
+
+      if (!input.checked) {
+        input.checked = true;
+        input.dispatchEvent(new Event("change", { bubbles: true }));
+      } else {
+        // Повторный тап по активной — тоже подлистнуть ряд площадок
+        scrollPlatformsStrip(label);
+      }
+
+      if (typeof input.focus === "function") {
+        input.focus({ preventScroll: true });
+      }
+    });
   });
 
   panels.forEach((panel) => {

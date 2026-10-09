@@ -28,6 +28,12 @@ Full guide: `DESIGN.md`. Source of tokens: `app/static/css/base/root.css`.
 - Brand favicons (reviews, messengers) stay outside Phosphor.
 - Tint monochrome Phosphor `<img>` via selectors in `icons.css`.
 
-## After CSS edits
+## Section spacing
 
-Bump `?v=` on `main.css` in `app/templates/base.html`.
+- Between blocks on service pages: only `margin-bottom: var(--section-fade)` (~36–56px).
+- Do not stack `padding-block: var(--section-fade)` on a block that already follows another `--section-fade` margin (double gap).
+- Match `.service-price` / `.service-payment` / `.service-diff` / `.reviews--service`.
+
+## After CSS / JS edits
+
+Bump `?v=` on `main.css` in `app/templates/base.html`. For JS modules without hash, hard-refresh or add `?v=` if caching bites.

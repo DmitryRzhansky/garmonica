@@ -1,6 +1,6 @@
 from flask import Blueprint, abort, render_template, request
 
-from app.data.service_reviews import get_service_reviews
+from app.data.service_reviews import get_service_review_stats, get_service_reviews
 from app.services.catalog import get_catalog, has_banned_segment, normalize_url
 
 services_bp = Blueprint("services", __name__)
@@ -22,4 +22,5 @@ def page(page_path):
         meta_description=view.meta_description,
         canonical=request.host_url.rstrip("/") + view.url,
         review_sources=get_service_reviews(),
+        review_stats=get_service_review_stats(),
     )

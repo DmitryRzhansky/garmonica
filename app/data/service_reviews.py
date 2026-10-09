@@ -1,67 +1,62 @@
 """Отзывы для страниц услуг."""
 
-SERVICE_REVIEW_STATS = {
-    "score": "4,9",
-    "score_source": "Яндекс Карты",
-    "score_icon": "/assets/icons/reviews/yandex.webp",
-    "reviews_total": 847,
-    "award": "Хорошее место",
-    "award_note": "2025",
-    "platforms": [
-        {"id": "yandex", "label": "Яндекс", "icon": "/assets/icons/reviews/yandex.webp", "score": "4,9", "count": 312},
-        {"id": "2gis", "label": "2ГИС", "icon": "/assets/icons/reviews/2gis.webp", "score": "4,8", "count": 186},
-        {"id": "google", "label": "Google", "icon": "/assets/icons/reviews/google.webp", "score": "4,9", "count": 141},
-        {"id": "doctu", "label": "DOCTU", "icon": "/assets/icons/reviews/doctu.webp", "score": "4,8", "count": 74},
-        {"id": "zoon", "label": "Zoon", "icon": "/assets/icons/reviews/zoon.webp", "score": "4,9", "count": 58},
-        {"id": "napopravku", "label": "НаПоправку", "icon": "/assets/icons/reviews/napopravku.webp", "score": "4,8", "count": 42},
-        {"id": "prodoctorov", "label": "ПроДокторов", "icon": "/assets/icons/reviews/prodoctorov.webp", "score": "4,9", "count": 34},
-    ],
-    # Атрибуты как в Яндекс Картах: доля положительных упоминаний
-    "aspects": [
-        {"label": "Качество лечения", "value": 99},
-        {"label": "Время ожидания", "value": 100},
-        {"label": "Сервис", "value": 98},
-        {"label": "Персонал", "value": 97},
-        {"label": "Рекомендуют", "value": 96},
-    ],
-}
+SERVICE_REVIEW_PLATFORMS = [
+    {"id": "yandex", "label": "Яндекс", "icon": "/assets/icons/reviews/yandex.webp", "score": 4.9, "count": 312},
+    {"id": "2gis", "label": "2ГИС", "icon": "/assets/icons/reviews/2gis.webp", "score": 4.8, "count": 186},
+    {"id": "google", "label": "Google", "icon": "/assets/icons/reviews/google.webp", "score": 4.9, "count": 141},
+    {"id": "doctu", "label": "DOCTU", "icon": "/assets/icons/reviews/doctu.webp", "score": 4.8, "count": 74},
+    {"id": "zoon", "label": "Zoon", "icon": "/assets/icons/reviews/zoon.webp", "score": 4.9, "count": 58},
+    {"id": "napopravku", "label": "НаПоправку", "icon": "/assets/icons/reviews/napopravku.webp", "score": 4.8, "count": 42},
+    {"id": "prodoctorov", "label": "ПроДокторов", "icon": "/assets/icons/reviews/prodoctorov.webp", "score": 4.9, "count": 34},
+]
+
+SERVICE_REVIEW_ASPECTS = [
+    {"label": "Качество лечения", "value": 99},
+    {"label": "Время ожидания", "value": 100},
+    {"label": "Сервис", "value": 98},
+    {"label": "Персонал", "value": 97},
+    {"label": "Рекомендуют", "value": 96},
+]
+
+
+def _format_score(value: float) -> str:
+    return f"{value:.1f}".replace(".", ",")
+
+
+def build_service_review_stats():
+    """Общая статистика: средневзвешенный рейтинг и сумма отзывов по площадкам."""
+    total = sum(item["count"] for item in SERVICE_REVIEW_PLATFORMS)
+    weighted = sum(item["score"] * item["count"] for item in SERVICE_REVIEW_PLATFORMS)
+    avg = round(weighted / total, 1) if total else 0.0
+
+    platforms = [
+        {
+            **item,
+            "score_label": _format_score(item["score"]),
+        }
+        for item in SERVICE_REVIEW_PLATFORMS
+    ]
+
+    return {
+        "score": _format_score(avg),
+        "score_label": "средняя оценка",
+        "score_note": "по всем площадкам",
+        "reviews_total": total,
+        "platforms_count": len(platforms),
+        "award": "Хорошее место",
+        "award_source": "Яндекс Карты",
+        "award_year": "2026",
+        "award_icon": "/assets/icons/reviews/yandex.webp",
+        "platforms": platforms,
+        "aspects": SERVICE_REVIEW_ASPECTS,
+    }
+
+
+SERVICE_REVIEW_STATS = build_service_review_stats()
 
 SERVICE_REVIEW_SOURCES = [
-    {
-        "id": "yandex",
-        "label": "Яндекс Карты",
-        "icon": "/assets/icons/reviews/yandex.webp",
-    },
-    {
-        "id": "2gis",
-        "label": "2ГИС",
-        "icon": "/assets/icons/reviews/2gis.webp",
-    },
-    {
-        "id": "google",
-        "label": "Гугл Карты",
-        "icon": "/assets/icons/reviews/google.webp",
-    },
-    {
-        "id": "doctu",
-        "label": "DOCTU",
-        "icon": "/assets/icons/reviews/doctu.webp",
-    },
-    {
-        "id": "zoon",
-        "label": "Zoon",
-        "icon": "/assets/icons/reviews/zoon.webp",
-    },
-    {
-        "id": "napopravku",
-        "label": "НаПоправку",
-        "icon": "/assets/icons/reviews/napopravku.webp",
-    },
-    {
-        "id": "prodoctorov",
-        "label": "ПроДокторов",
-        "icon": "/assets/icons/reviews/prodoctorov.webp",
-    },
+    {"id": item["id"], "label": item["label"], "icon": item["icon"]}
+    for item in SERVICE_REVIEW_PLATFORMS
 ]
 
 # name formats mixed: nick / FIO / F+I / F+O / I
