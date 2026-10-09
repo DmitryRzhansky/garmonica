@@ -152,6 +152,47 @@ window.initFieldService = function initFieldService() {
     }
   }
 
+  // Горизонтальный подскролл ряда вкладок (как площадки в отзывах)
+  function scrollTabStrip(activeLabel) {
+    if (!activeLabel) {
+      return;
+    }
+
+    const strip = activeLabel.closest(
+      ".field-service__tabs, .field-equip__tabs, .field-service__fleet-car-tabs"
+    );
+
+    if (!strip || !strip.contains(activeLabel)) {
+      return;
+    }
+
+    // Только когда ряд реально переполнен (мобилка / узкая ширина)
+    if (strip.scrollWidth <= strip.clientWidth + 1) {
+      return;
+    }
+
+    const labelLeft = activeLabel.offsetLeft;
+    const labelWidth = activeLabel.offsetWidth;
+    const stripWidth = strip.clientWidth;
+    const maxScroll = Math.max(0, strip.scrollWidth - stripWidth);
+    const visibleLeft = strip.scrollLeft;
+    // Вдвое слабее формулы отзывов (там было labelWidth * 0.35)
+    const target = Math.min(
+      maxScroll,
+      Math.max(0, labelLeft - 12 + labelWidth * 0.175)
+    );
+
+    if (Math.abs(target - visibleLeft) < 4) {
+      return;
+    }
+
+    if (typeof strip.scrollTo === "function") {
+      strip.scrollTo({ left: target, behavior: "smooth" });
+    } else {
+      strip.scrollLeft = target;
+    }
+  }
+
   // Клик по label не должен скроллить к скрытому radio (как в отзывах)
   function bindLabelClicksWithoutScroll(scope) {
     scope.querySelectorAll("label[for]").forEach((label) => {
@@ -169,6 +210,8 @@ window.initFieldService = function initFieldService() {
           input.checked = true;
           input.dispatchEvent(new Event("change", { bubbles: true }));
         }
+
+        scrollTabStrip(label);
 
         if (typeof input.focus === "function") {
           input.focus({ preventScroll: true });
