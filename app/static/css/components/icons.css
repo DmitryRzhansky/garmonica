@@ -14,8 +14,9 @@
 .service-price__icon img,
 .service-payment__icon img,
 .service-payment__note-icon img,
-.service-payment__contract-icon img {
-  filter: invert(55%) sepia(35%) saturate(700%) hue-rotate(170deg) brightness(95%) contrast(90%);
+.service-payment__contract-icon img,
+.service-diff__circle img {
+  filter: invert(45%) sepia(18%) saturate(650%) hue-rotate(170deg) brightness(90%) contrast(95%);
 }
 
 .hero-header__phone:hover .hero-header__phone-icon,
