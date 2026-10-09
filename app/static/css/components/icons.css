@@ -23,7 +23,11 @@
 .doctors-card__meta-icon,
 .doctors-card__list-icon,
 .doctors-card__badge-icon,
-.doctors__note-icon img {
+.doctors__note-icon img,
+.license-doc__preview-icon,
+.service-licenses__seal-icon,
+.guideline-card__icon img,
+.guideline-card__action-icon {
   filter: brightness(0) saturate(100%) invert(61%) sepia(42%) saturate(612%) hue-rotate(170deg) brightness(94%) contrast(88%);
 }
 
