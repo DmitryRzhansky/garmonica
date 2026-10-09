@@ -293,7 +293,7 @@
         {% for member in fs.team %}
         <li class="field-service__doctor-item">
           <article class="field-service__doctor">
-            <a class="field-service__doctor-photo" href="{{ member.url }}">
+            <figure class="field-service__doctor-photo">
               <img
                 src="{{ member.photo }}"
                 alt="{{ member.name }}"
@@ -302,15 +302,13 @@
                 loading="lazy"
                 decoding="async"
               >
-            </a>
+            </figure>
             <div class="field-service__doctor-body">
               <p class="field-service__doctor-duty">
                 <img class="field-service__doctor-duty-icon" src="{{ member.icon }}" alt="" width="14" height="14" decoding="async" aria-hidden="true">
                 <span>{{ member.duty }}</span>
               </p>
-              <p class="field-service__doctor-name">
-                <a href="{{ member.url }}">{{ member.name }}</a>
-              </p>
+              <p class="field-service__doctor-name">{{ member.name }}</p>
               {% if member.experience %}
               <p class="field-service__doctor-exp">Опыт: {{ member.experience }}</p>
               {% endif %}
@@ -327,17 +325,13 @@
                 {% endfor %}
               </ul>
               {% endif %}
-              <a class="field-service__doctor-more" href="{{ member.url }}">
-                <span>Подробнее о специалисте</span>
-                <img class="field-service__doctor-more-icon" src="/assets/icons/arrow-right.svg" alt="" width="14" height="14" decoding="async" aria-hidden="true">
-              </a>
             </div>
           </article>
         </li>
         {% endfor %}
       </ul>
       <div class="field-service__more">
-        <a class="button button--outline field-service__all" href="{{ fs.doctors_anchor }}">
+        <a class="button button--primary field-service__all" href="{{ fs.doctors_url }}">
           <img class="button__icon" src="/assets/icons/users.svg" alt="" width="16" height="16" decoding="async">
           Все специалисты
         </a>

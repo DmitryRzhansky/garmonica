@@ -296,7 +296,6 @@ FIELD_SERVICE_TEAM = [
         "icon": "/assets/icons/syringe.svg",
         "experience": "14 лет",
         "photo": "/assets/images/field-service/team/team-morozov.webp",
-        "url": "#service-doctors",
         "lead": "Основной специалист на типовом вызове: осмотр, капельница и контроль состояния на месте.",
         "duties": [
             "Проводит первичный осмотр и готовит пациента к инфузии",
@@ -311,7 +310,6 @@ FIELD_SERVICE_TEAM = [
         "icon": "/assets/icons/ambulance.svg",
         "experience": "18 лет",
         "photo": "/assets/images/field-service/team/team-kuznetsov.webp",
-        "url": "#service-doctors",
         "lead": "Выезжает на острые и нестабильные случаи, когда нужна быстрая стабилизация.",
         "duties": [
             "Оказывает неотложную помощь при резком ухудшении состояния",
@@ -326,7 +324,6 @@ FIELD_SERVICE_TEAM = [
         "icon": "/assets/icons/first-aid-kit.svg",
         "experience": "22 года",
         "photo": "/assets/images/field-service/team/team-belov.webp",
-        "url": "#service-doctors",
         "lead": "Подключается к тяжёлым интоксикациям и случаям, где нужен контроль жизненных функций.",
         "duties": [
             "Оценивает дыхание, гемодинамику и риск декомпенсации на адресе",
@@ -341,7 +338,6 @@ FIELD_SERVICE_TEAM = [
         "icon": "/assets/icons/stethoscope.svg",
         "experience": "9 лет",
         "photo": "/assets/images/field-service/team/team-orlov.webp",
-        "url": "#service-doctors",
         "lead": "Работает в паре с врачом на бригадных выездах и при подготовке к госпитализации.",
         "duties": [
             "Готовит системы, катетеры и расходники до начала инфузии",
@@ -461,5 +457,5 @@ def get_field_service_context(service_base: str = "/uslugi/narkolog-na-dom/") ->
         "fleet": FIELD_SERVICE_FLEET,
         "team": FIELD_SERVICE_TEAM,
         "steps": FIELD_SERVICE_STEPS,
-        "doctors_anchor": "#service-doctors",
+        "doctors_url": "/vrachi/",
     }

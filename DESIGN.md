@@ -64,8 +64,7 @@
 
 Правила:
 
-- Primary-кнопки и активные табы — `--color-accent`
-- Главный телефонный / срочный CTA — `button--warm`
+- Кнопки и активные табы — `--color-accent`
 - Не вводить новый «фирменный» цвет без переменной в `:root`
 - Не красить текст акцентом целыми абзацами — только акценты в заголовках, ссылках, иконках, CTA
 
@@ -75,21 +74,32 @@
 
 Базовый класс: `.button` (`app/static/css/components/button.css`).
 
+### Цвет — всегда акцент
+
+**Все action-кнопки по умолчанию — `.button--primary`** (заливка `--color-accent`).
+
+Запрещено для обычных CTA в секциях:
+
+- `.button--outline` / `.button--ghost` как основная кнопка блока («Все специалисты», «Смотреть ещё», ссылки-кнопки)
+- Серые / нейтральные «контурные» кнопки вместо акцента
+- Новые модификаторы цвета без записи в дизайн-систему
+
+Исключение: `.button--warm` — только срочный телефонный CTA в hero / шапке, когда явно нужен тёплый акцент (`tel:`). Не использовать warm для обычных ссылок и вторичных кнопок.
+
 Модификаторы:
 
-- `.button--primary` — синий акцент
-- `.button--warm` — тёплый срочный CTA
-- `.button--outline` — контур
-- `.button--ghost` — мягкий фон
+- `.button--primary` — **дефолт для всех CTA**
+- `.button--warm` — только urgent `tel:` CTA
+- `.button--outline` / `.button--ghost` — не для основных кнопок секций (избегать)
 
 ### Иконки в кнопках — обязательно
 
 У каждой кнопки с действием желательна иконка слева (или справа для «далее»):
 
 ```html
-<a class="button button--warm" href="tel:+74951204567">
-  <img class="button__icon" src="/assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
-  Вызвать нарколога на дом
+<a class="button button--primary" href="/vrachi/">
+  <img class="button__icon" src="/assets/icons/users.svg" alt="" width="16" height="16" decoding="async">
+  Все специалисты
 </a>
 ```
 
@@ -181,6 +191,7 @@
 
 - [ ] H2 секции: Montserrat, weight 600, `var(--font-size-h2)`
 - [ ] Акцентные цвета только из `:root`
+- [ ] CTA-кнопки: `.button--primary` (не outline/ghost)
 - [ ] CTA-кнопки с `.button__icon`
 - [ ] UI-иконки из Phosphor (кроме брендовых фавиконов)
 - [ ] Новый селектор иконки добавлен в tint `icons.css`, если нужен цвет

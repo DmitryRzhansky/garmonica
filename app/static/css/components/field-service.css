@@ -802,6 +802,7 @@ ul.field-service__geo-list a:hover {
   display: block;
   align-self: start;
   width: 100%;
+  margin: 0;
   aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: calc(var(--radius-sm) - 0.2rem);
@@ -1135,6 +1136,12 @@ ul.field-service__geo-list a:hover {
     gap: 1.25rem 1.5rem;
     align-items: start;
     padding: 1.35rem;
+  }
+
+  .field-service__fleet-car-body {
+    position: sticky;
+    top: calc(var(--header-offset) + 1rem);
+    align-self: start;
   }
 
   .field-service__fleet-car-facts {

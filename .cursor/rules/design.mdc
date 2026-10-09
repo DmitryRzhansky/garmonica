@@ -23,6 +23,8 @@ Full guide: `DESIGN.md`. Source of tokens: `app/static/css/base/root.css`.
 
 ## Buttons + icons
 
+- Action buttons are always `.button--primary` (accent fill). Do not use `.button--outline` / `.button--ghost` as section CTAs.
+- `.button--warm` only for urgent `tel:` CTA in hero/header — not for ordinary links.
 - Every action button should include `<img class="button__icon" … width="16" height="16">`.
 - UI icons: Phosphor from `app/static/icons/phosphor/` (usually 22×22 in cards, 16×16 in buttons).
 - Brand favicons (reviews, messengers) stay outside Phosphor.
