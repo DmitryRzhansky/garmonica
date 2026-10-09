@@ -215,7 +215,7 @@ def rebuild_menu(menu: list[dict]) -> list[dict]:
         for child in coding["child"]:
             for slug, name in DRUGS:
                 if child["link"] == f"/uslugi/kodirovanie/preparaty/{slug}/":
-                    child["title"] = f"Кодирование от {name}"
+                    child["title"] = f"Кодирование {name}"
         mo_code = {
             "title": "Кодирование на дому в Московской области",
             "link": "/uslugi/kodirovanie/na-domu/moskovskaya-oblast/",
