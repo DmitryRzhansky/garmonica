@@ -54,7 +54,7 @@ def test_narkolog_keeps_written_hero(client):
 
     assert response.status_code == 200
     html = response.get_data(as_text=True)
-    assert "<title>Вызов нарколога на дом в Москве — НОВА</title>" in html
+    assert "<title>Вызов нарколога на дом в Москве — Нова</title>" in html
     assert "Вызов нарколога на дом в" in html
     assert "Москве и области" in html
     assert "Врач приедет на адрес" in html
@@ -211,7 +211,7 @@ def test_prices_page(client):
     assert "Сосудистая терапия" in html
     assert "Анализы для госпитализации" in html
     assert "Информированное сопровождение" in html
-    assert "НОВА" in html
+    assert "Нова" in html
 
 
 def test_remaining_site_pages(client):

@@ -8,9 +8,9 @@ from app.services.info_pages import INFO_PAGES
 
 main_bp = Blueprint("main", __name__)
 
-HOME_TITLE = "НОВА — наркологическая клиника | Помощь 24/7"
+HOME_TITLE = "Нова — наркологическая клиника | Помощь 24/7"
 HOME_DESCRIPTION = (
-    "Наркологическая клиника «НОВА»: вызов врача на дом, детоксикация, "
+    "Наркологическая клиника «Нова»: вызов врача на дом, детоксикация, "
     "стационар и сопровождение восстановления. Круглосуточно, конфиденциально, "
     "с понятной стоимостью до начала помощи."
 )
@@ -32,12 +32,12 @@ def info_page(slug):
     if page is None:
         return render_template(
             "errors/404.html",
-            meta_title="Страница не найдена — НОВА",
-            meta_description="Запрошенной страницы нет на сайте НОВА.",
+            meta_title="Страница не найдена — Нова",
+            meta_description="Запрошенной страницы нет на сайте Нова.",
             canonical=None,
         ), 404
 
-    meta_title = f"{page['title']} — НОВА"
+    meta_title = f"{page['title']} — Нова"
     meta_description = page["description"]
     canonical = _canonical(f"/{slug}/")
 
