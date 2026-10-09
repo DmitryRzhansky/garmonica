@@ -107,5 +107,8 @@
       {% include "components/service-doctors.html" %}
       {% include "components/service-licenses.html" %}
       {% include "components/service-guidelines.html" %}
+      {% if field_service %}
+      {% include "components/service-field-service.html" %}
+      {% endif %}
     </main>
 {% endblock %}

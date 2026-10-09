@@ -27,7 +27,19 @@
 .license-doc__preview-icon,
 .service-licenses__seal-icon,
 .guideline-card__icon img,
-.guideline-card__action-icon {
+.guideline-card__action-icon,
+.field-service__tab-icon,
+.field-service__fleet-car-tab-icon,
+.field-equip__tab-icon,
+.field-equip__picker-icon,
+.field-service__rings-pin,
+.field-service__geo-icon,
+.field-service__geo-caret,
+.field-service__fleet-car-fact-icon,
+.field-service__doctor-duty-icon,
+.field-service__doctor-duty-check,
+.field-service__doctor-more-icon,
+.field-service__step-icon {
   filter: brightness(0) saturate(100%) invert(61%) sepia(42%) saturate(612%) hue-rotate(170deg) brightness(94%) contrast(88%);
 }
 

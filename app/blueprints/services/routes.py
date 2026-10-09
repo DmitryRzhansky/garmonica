@@ -1,5 +1,6 @@
 from flask import Blueprint, abort, render_template, request
 
+from app.data.field_service import get_field_service_context
 from app.data.service_doctors import get_service_doctors
 from app.data.service_reviews import get_service_review_stats, get_service_reviews
 from app.services.catalog import get_catalog, has_banned_segment, normalize_url
@@ -16,6 +17,10 @@ def page(page_path):
     view = get_catalog().view(url)
     if view is None:
         abort(404)
+    field_service = None
+    if view.url.startswith("/uslugi/narkolog-na-dom"):
+        field_service = get_field_service_context("/uslugi/narkolog-na-dom/")
+
     return render_template(
         "pages/service.html",
         page=view,
@@ -25,4 +30,5 @@ def page(page_path):
         review_sources=get_service_reviews(),
         review_stats=get_service_review_stats(),
         service_doctors=get_service_doctors(),
+        field_service=field_service,
     )

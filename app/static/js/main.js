@@ -29,6 +29,7 @@ function initApp() {
   safeInit("clinic-gallery", window.initClinicGallery);
   safeInit("about-slider", window.initAboutSlider);
   safeInit("specialist-quiz", window.initSpecialistQuiz);
+  safeInit("field-service", window.initFieldService);
 }
 
 if (document.readyState === "loading") {

@@ -1,0 +1,1132 @@
+.field-service {
+  width: var(--page-shell-width);
+  margin: 0 auto var(--section-fade);
+  color: var(--color-text-dark);
+}
+
+.field-service__tab-input,
+.field-equip__tab-input,
+.field-service__car-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.field-service__inner {
+  display: grid;
+  gap: clamp(1.25rem, 2.2vw, 1.75rem);
+}
+
+.field-service__inner > * {
+  min-width: 0;
+}
+
+.field-service__head {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.field-service__title {
+  margin: 0;
+  max-width: 16em;
+  font-family: var(--font-headline);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-h2);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  color: var(--color-text-dark);
+}
+
+.field-service__tabs,
+.field-service__fleet-car-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.field-service__tabs::-webkit-scrollbar,
+.field-service__fleet-car-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.field-service__tab,
+.field-service__fleet-car-tab,
+.field-equip__tab {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.85rem;
+  font-family: var(--font-text);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.3;
+  white-space: nowrap;
+  color: var(--color-text-dark);
+  background-color: transparent;
+  border: 1px solid rgba(26, 42, 58, 0.22);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.field-service__tab:hover,
+.field-service__fleet-car-tab:hover,
+.field-equip__tab:hover {
+  border-color: var(--color-accent);
+}
+
+.field-service__tab.is-active,
+.field-service__fleet-car-tab.is-active,
+.field-equip__tab.is-active {
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.field-service__tab:focus-visible,
+.field-service__fleet-car-tab:focus-visible,
+.field-equip__tab:focus-visible,
+.field-equip__select:focus-visible,
+.field-service__doctor-name a:focus-visible,
+.field-service__doctor-more:focus-visible,
+.field-service__all:focus-visible,
+.field-service__geo-summary:focus-visible,
+.field-service__geo-list a:focus-visible {
+  outline: 0.1875rem solid var(--color-accent);
+  outline-offset: 0.15rem;
+}
+
+.field-service__tab-icon,
+.field-service__fleet-car-tab-icon,
+.field-equip__tab-icon {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+}
+
+.field-service__tab.is-active .field-service__tab-icon,
+.field-service__fleet-car-tab.is-active .field-service__fleet-car-tab-icon,
+.field-equip__tab.is-active .field-equip__tab-icon {
+  filter: brightness(0) invert(1);
+}
+
+.field-service__panel {
+  display: none;
+  min-width: 0;
+}
+
+.field-service__panel.is-active {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.field-service__panel[hidden] {
+  display: none !important;
+}
+
+/* Equipment (photos only) */
+.field-equip__shell {
+  display: grid;
+  min-width: 0;
+}
+
+.field-equip__picker {
+  position: relative;
+  display: block;
+  margin: 0 0 1.25rem;
+}
+
+.field-equip__select {
+  display: block;
+  width: 100%;
+  appearance: none;
+  margin: 0;
+  padding: 0.9rem 2.75rem 0.9rem 1rem;
+  font-family: var(--font-text);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-text-dark);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.field-equip__picker-icon {
+  position: absolute;
+  top: 50%;
+  right: 0.95rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.field-equip__tabs {
+  display: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 0 0 1.25rem;
+}
+
+.field-equip__tab {
+  width: 100%;
+  justify-content: flex-start;
+  background: var(--color-white);
+}
+
+.field-equip__tab span {
+  min-width: 0;
+  white-space: normal;
+}
+
+.field-equip__panels {
+  display: grid;
+}
+
+.field-equip__panel {
+  display: none;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.field-equip__panel.is-active {
+  display: grid;
+}
+
+.field-equip__panel[hidden] {
+  display: none !important;
+}
+
+.field-equip__photo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--color-cutout);
+  aspect-ratio: 4 / 5;
+}
+
+.field-equip__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.field-equip__facts {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1.25rem 1.2rem 1.35rem;
+  background: var(--color-cutout);
+  border-radius: var(--radius-md);
+}
+
+.field-equip__facts-title {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: clamp(1.5rem, 1.25rem + 0.8vw, 2rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text-dark);
+}
+
+.field-equip__facts-list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+}
+
+.field-equip__fact {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.field-equip__fact dt,
+.field-equip__badge-label {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.field-equip__fact dd {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: 0.975rem;
+  line-height: 1.45;
+  color: var(--color-text-dark);
+}
+
+.field-equip__badge {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.15rem 0 0;
+}
+
+.field-equip__badge-value {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.45rem 0.85rem;
+  font-family: var(--font-text);
+  font-size: 0.875rem;
+  line-height: 1.3;
+  color: var(--color-white);
+  background: var(--color-accent);
+  border-radius: 999px;
+}
+
+/* Coverage */
+.field-service__radius {
+  display: grid;
+  gap: 1.5rem;
+  min-width: 0;
+  padding: 1.35rem 1.2rem 1.4rem;
+  background-color: var(--color-cutout);
+  border-radius: var(--radius-md);
+}
+
+.field-service__radius-head {
+  display: grid;
+  gap: 1.15rem;
+  align-items: center;
+}
+
+.field-service__radius-copy {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 52rem;
+  min-width: 0;
+}
+
+.field-service__radius-title,
+.field-service__chart-zone,
+.field-service__geo-title,
+.field-service__fleet-title,
+.field-service__fleet-car-name,
+.field-service__step-title {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text-dark);
+}
+
+.field-service__radius-title {
+  font-size: clamp(1.5rem, 1.25rem + 0.9vw, 2rem);
+  line-height: 1.15;
+}
+
+.field-service__rings {
+  position: relative;
+  width: 8.5rem;
+  height: 8.5rem;
+  justify-self: start;
+}
+
+.field-service__ring {
+  position: absolute;
+  inset: calc((var(--ring) - 1) * 12%);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
+  border-radius: 50%;
+}
+
+.field-service__ring:nth-child(1) {
+  background-color: color-mix(in srgb, var(--color-accent) 12%, transparent);
+}
+
+.field-service__rings-pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  transform: translate(-50%, -50%);
+}
+
+.field-service__chart {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.field-service__chart-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(8.5rem, auto);
+  grid-template-areas:
+    "meta eta"
+    "bar bar";
+  gap: 0.45rem 1rem;
+  align-items: start;
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.field-service__chart-row:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.field-service__chart-row:last-child {
+  padding-bottom: 0;
+}
+
+.field-service__chart-meta {
+  grid-area: meta;
+  min-width: 0;
+}
+
+.field-service__chart-zone {
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.field-service__chart-bar {
+  grid-area: bar;
+  height: 0.65rem;
+  overflow: hidden;
+  background-color: var(--color-accent-light);
+  border-radius: 999px;
+}
+
+.field-service__chart-fill {
+  display: block;
+  height: 100%;
+  max-width: 100%;
+  background: linear-gradient(90deg, var(--color-accent-soft) 0%, var(--color-accent) 100%);
+  border-radius: inherit;
+}
+
+.field-service__chart-eta {
+  grid-area: eta;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 0.3rem;
+  margin: 0;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.field-service__chart-value {
+  font-family: var(--font-headline);
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.7rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--color-accent);
+}
+
+.field-service__chart-unit,
+.field-service__radius-foot {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.field-service__radius-foot {
+  max-width: 52rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.field-service__geo {
+  display: grid;
+  gap: 1.35rem;
+  min-width: 0;
+}
+
+.field-service__geo-title {
+  padding-bottom: 0.95rem;
+  font-size: clamp(1.2rem, 1.05rem + 0.5vw, 1.45rem);
+  line-height: 1.2;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.field-service__geo-groups {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.field-service__geo-group {
+  min-width: 0;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.field-service__geo-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.95rem 1.25rem;
+  font-family: var(--font-text);
+  font-size: 1rem;
+  line-height: 1.3;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  list-style: none;
+}
+
+.field-service__geo-summary::-webkit-details-marker {
+  display: none;
+}
+
+.field-service__geo-summary::marker {
+  content: "";
+}
+
+.field-service__geo-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.field-service__geo-icon,
+.field-service__geo-caret {
+  flex-shrink: 0;
+}
+
+.field-service__geo-label {
+  font-family: var(--font-headline);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.field-service__geo-meta {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.field-service__geo-count {
+  min-width: 2rem;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--color-accent);
+  background-color: var(--color-accent-light);
+  border-radius: var(--radius-md);
+}
+
+.field-service__geo-group[open] > .field-service__geo-summary .field-service__geo-caret {
+  transform: rotate(180deg);
+}
+
+.field-service__geo-caret {
+  transition: transform var(--transition-base);
+}
+
+ul.field-service__geo-list[role="list"] {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem 1.25rem;
+  margin: 0;
+  padding: 1.15rem 1.25rem 1.35rem;
+  list-style: none;
+  border-top: 1px solid var(--color-border-light);
+}
+
+ul.field-service__geo-list a {
+  display: block;
+  padding: 0.2rem 0;
+  font-family: var(--font-text);
+  font-size: 0.9375rem;
+  line-height: 1.35;
+  color: var(--color-text-dark);
+  text-decoration: none;
+}
+
+ul.field-service__geo-list a:hover {
+  color: var(--color-accent);
+}
+
+/* Fleet */
+.field-service__fleet {
+  display: grid;
+  gap: 1.5rem;
+  min-width: 0;
+  padding: 1.5rem 1.25rem 1.6rem;
+  background-color: var(--color-cutout);
+  border-radius: var(--radius-md);
+}
+
+.field-service__fleet-intro {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+}
+
+.field-service__fleet-count {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: clamp(3.5rem, 2.8rem + 3vw, 5.5rem);
+  font-weight: 600;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  color: var(--color-accent);
+}
+
+.field-service__fleet-copy {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 40rem;
+}
+
+.field-service__fleet-title {
+  font-size: clamp(1.4rem, 1.2rem + 0.7vw, 1.9rem);
+  line-height: 1.15;
+}
+
+.field-service__fleet-lead,
+.field-service__fleet-car-text,
+.field-service__doctor-lead,
+.field-service__step-text {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--color-text-dark);
+}
+
+.field-service__fleet-cars {
+  display: grid;
+  min-width: 0;
+}
+
+.field-service__fleet-cars-inner {
+  display: grid;
+  gap: 1.15rem;
+  min-width: 0;
+}
+
+.field-service__fleet-car-tab {
+  background-color: var(--color-white);
+}
+
+.field-service__fleet-car {
+  display: none;
+  gap: 1.15rem;
+  min-width: 0;
+  padding: 1.15rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.field-service__fleet-car.is-active {
+  display: grid;
+}
+
+.field-service__fleet-car[hidden] {
+  display: none !important;
+}
+
+.field-service__fleet-bento {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.field-service__fleet-bento-item {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: calc(var(--radius-md) - 2px);
+  background-color: #101820;
+}
+
+.field-service__fleet-bento-item--wide {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 9;
+}
+
+.field-service__fleet-bento-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.field-service__fleet-bento-label {
+  position: absolute;
+  z-index: 1;
+  left: 0.45rem;
+  bottom: 0.45rem;
+  margin: 0;
+  padding: 0.2rem 0.45rem;
+  border-radius: var(--radius-sm);
+  background: rgba(16, 24, 32, 0.72);
+  color: #fff;
+  font-family: var(--font-text);
+  font-size: 0.6875rem;
+  line-height: 1.25;
+  pointer-events: none;
+}
+
+.field-service__fleet-car-body {
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.field-service__fleet-car-name {
+  font-size: clamp(1.35rem, 1.15rem + 0.6vw, 1.75rem);
+  line-height: 1.15;
+}
+
+.field-service__fleet-car-role {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--color-accent);
+}
+
+.field-service__fleet-car-facts {
+  display: grid;
+  gap: 0;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-border);
+}
+
+.field-service__fleet-car-fact {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.field-service__fleet-car-fact:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.field-service__fleet-car-fact-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-text);
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  color: var(--color-text-muted);
+}
+
+.field-service__fleet-car-fact-icon {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+}
+
+.field-service__fleet-car-fact-value {
+  font-family: var(--font-headline);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--color-text-dark);
+}
+
+/* Doctors */
+.field-service__doctors {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: start;
+}
+
+.field-service__doctor {
+  display: grid;
+  grid-template-columns: 5.25rem minmax(0, 1fr);
+  gap: 0.85rem;
+  width: 100%;
+  padding: 0.85rem;
+  box-sizing: border-box;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.field-service__doctor-photo {
+  position: relative;
+  display: block;
+  align-self: start;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: calc(var(--radius-sm) - 0.2rem);
+  background: var(--color-cutout);
+}
+
+.field-service__doctor-photo img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.field-service__doctor-body {
+  display: grid;
+  gap: 0.45rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.field-service__doctor-duty {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  width: fit-content;
+  margin: 0;
+  padding: 0.15rem 0.45rem;
+  font-family: var(--font-text);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  border-radius: 999px;
+}
+
+.field-service__doctor-duty-icon {
+  flex-shrink: 0;
+}
+
+.field-service__doctor-name {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.field-service__doctor-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.field-service__doctor-name a:hover,
+.field-service__doctor-more:hover {
+  color: var(--color-accent);
+}
+
+.field-service__doctor-exp {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--color-text-muted);
+}
+
+.field-service__doctor-lead {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.field-service__doctor-duties {
+  display: grid;
+  gap: 0.28rem;
+  margin: 0.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.field-service__doctor-duties li {
+  display: grid;
+  grid-template-columns: 0.85rem minmax(0, 1fr);
+  gap: 0.35rem;
+  align-items: start;
+  font-family: var(--font-text);
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: var(--color-text-muted);
+}
+
+.field-service__doctor-duty-check {
+  margin-top: 0.12rem;
+}
+
+.field-service__doctor-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.15rem;
+  font-family: var(--font-text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text-dark);
+  text-decoration: none;
+}
+
+.field-service__more {
+  display: flex;
+  justify-content: center;
+}
+
+.field-service__all {
+  width: 100%;
+  min-height: 3rem;
+  box-sizing: border-box;
+}
+
+/* Process */
+.field-service__route {
+  --route-rail: 2.75rem;
+  display: grid;
+  gap: 0;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-white);
+}
+
+.field-service__route::before {
+  content: "";
+  position: absolute;
+  top: 1.1rem;
+  bottom: 1.1rem;
+  left: calc(var(--route-rail) / 2);
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    color-mix(in srgb, var(--color-accent) 55%, transparent) 8%,
+    color-mix(in srgb, var(--color-accent) 55%, transparent) 92%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.field-service__step {
+  display: grid;
+  grid-template-columns: var(--route-rail) minmax(0, 1fr) 6rem;
+  gap: 0.3rem 0.55rem;
+  position: relative;
+  align-items: center;
+  padding: 0.65rem 0.65rem 0.65rem 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.field-service__step:last-child {
+  border-bottom: 0;
+}
+
+.field-service__step-index {
+  display: grid;
+  justify-items: center;
+  gap: 0.15rem;
+  position: relative;
+  z-index: 1;
+}
+
+.field-service__step-num {
+  display: grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-accent);
+  font-family: var(--font-headline);
+  font-size: 0.625rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-accent);
+}
+
+.field-service__step-icon {
+  width: 0.8rem;
+  height: 0.8rem;
+  opacity: 0.75;
+}
+
+.field-service__step-main {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.field-service__step-title {
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.field-service__step-text {
+  max-width: 40rem;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.field-service__step-thumb {
+  width: 6rem;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: calc(var(--radius-md) - 2px);
+  background-color: #101820;
+  justify-self: end;
+}
+
+.field-service__step-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 48rem) {
+  .field-equip__picker {
+    display: none;
+  }
+
+  .field-equip__tabs {
+    display: grid;
+  }
+
+  .field-equip__panel.is-active {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .field-equip__photo {
+    aspect-ratio: 4 / 5;
+  }
+
+  .field-service__doctors {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .field-service__doctor {
+    grid-template-columns: 5.75rem minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .field-service__radius-head {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.5rem 2rem;
+  }
+
+  .field-service__rings {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .field-service__chart-row {
+    grid-template-columns: minmax(14rem, 1.15fr) minmax(10rem, 0.7fr) minmax(11.5rem, auto);
+    grid-template-areas: "meta bar eta";
+    column-gap: 2.25rem;
+    align-items: center;
+    padding: 1.35rem 0;
+  }
+
+  .field-service__chart-bar {
+    height: 0.85rem;
+    max-width: 18rem;
+  }
+
+  ul.field-service__geo-list[role="list"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .field-service__tabs {
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+
+  .field-equip__tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  ul.field-service__geo-list[role="list"] {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .field-service__fleet-intro {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1.5rem 2rem;
+    align-items: end;
+  }
+
+  .field-service__fleet-car.is-active {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 1.25rem 1.5rem;
+    align-items: start;
+    padding: 1.35rem;
+  }
+
+  .field-service__fleet-car-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.25rem;
+  }
+
+  .field-service__route {
+    --route-rail: 3.25rem;
+  }
+
+  .field-service__step {
+    grid-template-columns: var(--route-rail) minmax(0, 1fr) 8.5rem;
+    gap: 0.35rem 1rem;
+    padding: 0.85rem 1rem 0.85rem 0;
+  }
+
+  .field-service__step-thumb {
+    width: 8.5rem;
+  }
+
+  .field-service__all {
+    width: auto;
+  }
+}

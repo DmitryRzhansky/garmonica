@@ -1,0 +1,376 @@
+<section class="field-service" id="field-service" aria-labelledby="field-service-title" data-field-service>
+  {% set fs = field_service %}
+  {% set first_tab = fs.tabs[0].key %}
+  {% set first_car = fs.fleet.cars[0].id if fs.fleet.cars else '' %}
+  {% set first_equip = fs.equipment[0].slug if fs.equipment else '' %}
+
+  {% for tab in fs.tabs %}
+  <input
+    class="field-service__tab-input"
+    type="radio"
+    name="field-service-tab"
+    id="field-service-tab-{{ tab.key }}"
+    data-field-service-tab="{{ tab.key }}"
+    {% if tab.key == first_tab %}checked{% endif %}
+  >
+  {% endfor %}
+
+  <div class="field-service__inner">
+    <div class="field-service__head">
+      <h2 class="field-service__title" id="field-service-title">{{ fs.title }}</h2>
+      <div class="field-service__tabs" aria-label="Разделы выездной службы">
+        {% for tab in fs.tabs %}
+        <label class="field-service__tab" for="field-service-tab-{{ tab.key }}" data-field-service-filter="{{ tab.key }}">
+          <img class="field-service__tab-icon" src="{{ tab.icon }}" alt="" width="16" height="16" decoding="async" aria-hidden="true">
+          <span>{{ tab.label }}</span>
+        </label>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="field-service__panel" data-field-service-panel="equipment">
+      <div class="field-equip" data-field-equip>
+        {% for item in fs.equipment %}
+        <input
+          class="field-equip__tab-input"
+          type="radio"
+          name="field-equip-tab"
+          id="field-equip-tab-{{ item.slug }}"
+          data-field-equip-tab="{{ item.slug }}"
+          {% if item.slug == first_equip %}checked{% endif %}
+        >
+        {% endfor %}
+
+        <div class="field-equip__shell">
+          <label class="field-equip__picker">
+            <span class="visually-hidden">Оборудование выездной службы</span>
+            <select class="field-equip__select" data-field-equip-select aria-label="Оборудование выездной службы">
+              {% for item in fs.equipment %}
+              <option value="{{ item.slug }}" {% if item.slug == first_equip %}selected{% endif %}>{{ item.tab }}</option>
+              {% endfor %}
+            </select>
+            <img class="field-equip__picker-icon" src="/assets/icons/caret-down.svg" alt="" width="18" height="18" decoding="async" aria-hidden="true">
+          </label>
+
+          <div class="field-equip__tabs" role="tablist" aria-label="Оборудование выездной службы">
+            {% for item in fs.equipment %}
+            <label class="field-equip__tab" for="field-equip-tab-{{ item.slug }}" data-field-equip-filter="{{ item.slug }}">
+              <img class="field-equip__tab-icon" src="{{ item.icon }}" alt="" width="16" height="16" decoding="async" aria-hidden="true">
+              <span>{{ item.tab }}</span>
+            </label>
+            {% endfor %}
+          </div>
+
+          <div class="field-equip__panels">
+            {% for item in fs.equipment %}
+            <article
+              class="field-equip__panel{% if item.slug == first_equip %} is-active{% endif %}"
+              data-field-equip-panel="{{ item.slug }}"
+              {% if item.slug != first_equip %}hidden{% endif %}
+            >
+              <figure class="field-equip__photo">
+                <img
+                  src="{{ item.photo }}"
+                  alt="{{ item.photo_alt }}"
+                  width="640"
+                  height="800"
+                  loading="{% if loop.first %}eager{% else %}lazy{% endif %}"
+                  decoding="async"
+                >
+              </figure>
+
+              <div class="field-equip__facts">
+                <p class="field-equip__facts-title">{{ item.title }}</p>
+                <dl class="field-equip__facts-list">
+                  {% if item.brand %}
+                  <div class="field-equip__fact">
+                    <dt>Марка</dt>
+                    <dd>{{ item.brand }}</dd>
+                  </div>
+                  {% endif %}
+                  {% if item.model %}
+                  <div class="field-equip__fact">
+                    <dt>Модель</dt>
+                    <dd>{{ item.model }}</dd>
+                  </div>
+                  {% endif %}
+                  {% if item.purpose %}
+                  <div class="field-equip__fact">
+                    <dt>Назначение</dt>
+                    <dd>{{ item.purpose }}</dd>
+                  </div>
+                  {% endif %}
+                  {% if item.measures %}
+                  <div class="field-equip__fact">
+                    <dt>Что измеряет / контролирует</dt>
+                    <dd>{{ item.measures }}</dd>
+                  </div>
+                  {% endif %}
+                  {% if item.when %}
+                  <div class="field-equip__fact">
+                    <dt>Когда используется</dt>
+                    <dd>{{ item.when }}</dd>
+                  </div>
+                  {% endif %}
+                </dl>
+                {% if item.on_every_visit %}
+                <p class="field-equip__badge">
+                  <span class="field-equip__badge-label">Есть ли на каждом выезде</span>
+                  <span class="field-equip__badge-value">{{ item.on_every_visit }}</span>
+                </p>
+                {% endif %}
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field-service__panel" data-field-service-panel="overview">
+      <section class="field-service__radius" aria-labelledby="field-service-coverage-title">
+        <div class="field-service__radius-head">
+          <div class="field-service__radius-copy">
+            <p class="field-service__radius-title" id="field-service-coverage-title">{{ fs.coverage.title }}</p>
+          </div>
+          {% if fs.coverage.rings %}
+          <div class="field-service__rings" aria-hidden="true">
+            {% for ring in fs.coverage.rings %}
+            <span class="field-service__ring" style="--ring: {{ loop.index }};"></span>
+            {% endfor %}
+            <img class="field-service__rings-pin" src="/assets/icons/map-pin.svg" alt="" width="20" height="20" decoding="async">
+          </div>
+          {% endif %}
+        </div>
+
+        <ul class="field-service__chart">
+          {% for zone in fs.coverage.zones %}
+          <li class="field-service__chart-row">
+            <div class="field-service__chart-meta">
+              <p class="field-service__chart-zone">{{ zone.zone }}</p>
+            </div>
+            <div class="field-service__chart-bar" aria-hidden="true">
+              <span class="field-service__chart-fill" style="width: {{ zone.fill }}%;"></span>
+            </div>
+            <p class="field-service__chart-eta">
+              <span class="field-service__chart-value">{{ zone.eta }}</span>
+              {% if zone.unit %}
+              <span class="field-service__chart-unit">{{ zone.unit }}</span>
+              {% endif %}
+            </p>
+          </li>
+          {% endfor %}
+        </ul>
+
+        {% if fs.geo_groups %}
+        <div class="field-service__geo">
+          <p class="field-service__geo-title">Куда выезжаем</p>
+          <div class="field-service__geo-groups">
+            {% for group in fs.geo_groups %}
+            <details class="field-service__geo-group">
+              <summary class="field-service__geo-summary">
+                <span class="field-service__geo-heading">
+                  <img class="field-service__geo-icon" src="{{ group.icon }}" alt="" width="18" height="18" decoding="async" aria-hidden="true">
+                  <span class="field-service__geo-label">{{ group.label }}</span>
+                </span>
+                <span class="field-service__geo-meta">
+                  <span class="field-service__geo-count">{{ group.links|length }}</span>
+                  <img class="field-service__geo-caret" src="/assets/icons/caret-down.svg" alt="" width="16" height="16" decoding="async" aria-hidden="true">
+                </span>
+              </summary>
+              <ul class="field-service__geo-list" role="list">
+                {% for item in group.links %}
+                <li>
+                  <a href="{{ item.url }}">{{ item.anchor }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </details>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        {% if fs.coverage.footnote %}
+        <p class="field-service__radius-foot">{{ fs.coverage.footnote }}</p>
+        {% endif %}
+      </section>
+    </div>
+
+    <div class="field-service__panel" data-field-service-panel="vehicles">
+      <section class="field-service__fleet" aria-labelledby="field-service-fleet-title">
+        <div class="field-service__fleet-intro">
+          <p class="field-service__fleet-count" aria-hidden="true">{{ fs.fleet.count }}</p>
+          <div class="field-service__fleet-copy">
+            <p class="field-service__fleet-title" id="field-service-fleet-title">
+              <span class="visually-hidden">{{ fs.fleet.count }} </span>{{ fs.fleet.title }}
+            </p>
+            {% if fs.fleet.lead %}
+            <p class="field-service__fleet-lead">{{ fs.fleet.lead }}</p>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="field-service__fleet-cars">
+          {% for car in fs.fleet.cars %}
+          <input
+            class="field-service__car-input"
+            type="radio"
+            name="field-service-car"
+            id="field-service-car-{{ car.id }}"
+            data-fleet-car="{{ car.id }}"
+            {% if car.id == first_car %}checked{% endif %}
+          >
+          {% endfor %}
+
+          <div class="field-service__fleet-cars-inner">
+            <div class="field-service__fleet-car-tabs" aria-label="Автомобили выездной службы">
+              {% for car in fs.fleet.cars %}
+              <label class="field-service__fleet-car-tab" for="field-service-car-{{ car.id }}" data-fleet-car-filter="{{ car.id }}">
+                <img class="field-service__fleet-car-tab-icon" src="/assets/icons/car.svg" alt="" width="16" height="16" decoding="async" aria-hidden="true">
+                <span>{{ car.tab }}</span>
+              </label>
+              {% endfor %}
+            </div>
+
+            {% for car in fs.fleet.cars %}
+            <article class="field-service__fleet-car" data-fleet-car-panel="{{ car.id }}">
+              {% if car.gallery %}
+              <div class="field-service__fleet-bento" aria-label="{{ car.name }}: фотографии">
+                {% for tile in car.gallery %}
+                <figure class="field-service__fleet-bento-item{% if loop.first %} field-service__fleet-bento-item--wide{% endif %}">
+                  <img
+                    src="{{ tile.file }}"
+                    alt="{{ tile.alt }}"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  {% if tile.label %}
+                  <figcaption class="field-service__fleet-bento-label">{{ tile.label }}</figcaption>
+                  {% endif %}
+                </figure>
+                {% endfor %}
+              </div>
+              {% endif %}
+
+              <div class="field-service__fleet-car-body">
+                <p class="field-service__fleet-car-name">{{ car.name }}</p>
+                {% if car.role %}
+                <p class="field-service__fleet-car-role">{{ car.role }}</p>
+                {% endif %}
+                {% if car.text %}
+                <p class="field-service__fleet-car-text">{{ car.text }}</p>
+                {% endif %}
+                {% if car.facts %}
+                <ul class="field-service__fleet-car-facts" role="list">
+                  {% for fact in car.facts %}
+                  <li class="field-service__fleet-car-fact">
+                    <span class="field-service__fleet-car-fact-label">
+                      <img class="field-service__fleet-car-fact-icon" src="{{ fact.icon }}" alt="" width="16" height="16" decoding="async" aria-hidden="true">
+                      <span>{{ fact.label }}</span>
+                    </span>
+                    <span class="field-service__fleet-car-fact-value">{{ fact.value }}</span>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="field-service__panel" data-field-service-panel="doctors">
+      <ul class="field-service__doctors" role="list">
+        {% for member in fs.team %}
+        <li class="field-service__doctor-item">
+          <article class="field-service__doctor">
+            <a class="field-service__doctor-photo" href="{{ member.url }}">
+              <img
+                src="{{ member.photo }}"
+                alt="{{ member.name }}"
+                width="160"
+                height="200"
+                loading="lazy"
+                decoding="async"
+              >
+            </a>
+            <div class="field-service__doctor-body">
+              <p class="field-service__doctor-duty">
+                <img class="field-service__doctor-duty-icon" src="{{ member.icon }}" alt="" width="14" height="14" decoding="async" aria-hidden="true">
+                <span>{{ member.duty }}</span>
+              </p>
+              <p class="field-service__doctor-name">
+                <a href="{{ member.url }}">{{ member.name }}</a>
+              </p>
+              {% if member.experience %}
+              <p class="field-service__doctor-exp">Опыт: {{ member.experience }}</p>
+              {% endif %}
+              {% if member.lead %}
+              <p class="field-service__doctor-lead">{{ member.lead }}</p>
+              {% endif %}
+              {% if member.duties %}
+              <ul class="field-service__doctor-duties" role="list">
+                {% for duty in member.duties %}
+                <li>
+                  <img class="field-service__doctor-duty-check" src="/assets/icons/check.svg" alt="" width="13" height="13" decoding="async" aria-hidden="true">
+                  <span>{{ duty }}</span>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+              <a class="field-service__doctor-more" href="{{ member.url }}">
+                <span>Подробнее о специалисте</span>
+                <img class="field-service__doctor-more-icon" src="/assets/icons/arrow-right.svg" alt="" width="14" height="14" decoding="async" aria-hidden="true">
+              </a>
+            </div>
+          </article>
+        </li>
+        {% endfor %}
+      </ul>
+      <div class="field-service__more">
+        <a class="button button--outline field-service__all" href="{{ fs.doctors_anchor }}">
+          <img class="button__icon" src="/assets/icons/users.svg" alt="" width="16" height="16" decoding="async">
+          Все специалисты
+        </a>
+      </div>
+    </div>
+
+    <div class="field-service__panel" data-field-service-panel="process">
+      <ol class="field-service__route">
+        {% for step in fs.steps %}
+        <li class="field-service__step">
+          <div class="field-service__step-index" aria-hidden="true">
+            <span class="field-service__step-num">{{ step.number }}</span>
+            <img class="field-service__step-icon" src="{{ step.icon }}" alt="" width="16" height="16" decoding="async">
+          </div>
+          <div class="field-service__step-main">
+            <p class="field-service__step-title">
+              <span class="visually-hidden">{{ step.number }}. </span>{{ step.title }}
+            </p>
+            {% if step.text %}
+            <p class="field-service__step-text">{{ step.text }}</p>
+            {% endif %}
+          </div>
+          {% if step.photo %}
+          <figure class="field-service__step-thumb">
+            <img
+              src="{{ step.photo }}"
+              alt="{{ step.alt }}"
+              width="320"
+              height="240"
+              loading="{% if loop.first %}eager{% else %}lazy{% endif %}"
+              decoding="async"
+            >
+          </figure>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</section>
