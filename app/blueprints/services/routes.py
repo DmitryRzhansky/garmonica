@@ -1,5 +1,6 @@
 from flask import Blueprint, abort, render_template, request
 
+from app.data.service_doctors import get_service_doctors
 from app.data.service_reviews import get_service_review_stats, get_service_reviews
 from app.services.catalog import get_catalog, has_banned_segment, normalize_url
 
@@ -23,4 +24,5 @@ def page(page_path):
         canonical=request.host_url.rstrip("/") + view.url,
         review_sources=get_service_reviews(),
         review_stats=get_service_review_stats(),
+        service_doctors=get_service_doctors(),
     )

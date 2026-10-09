@@ -19,6 +19,14 @@
   filter: invert(45%) sepia(18%) saturate(650%) hue-rotate(170deg) brightness(90%) contrast(95%);
 }
 
+/* Doctors: чёткий --color-accent (#5b9bd5) */
+.doctors-card__meta-icon,
+.doctors-card__list-icon,
+.doctors-card__badge-icon,
+.doctors__note-icon img {
+  filter: brightness(0) saturate(100%) invert(61%) sepia(42%) saturate(612%) hue-rotate(170deg) brightness(94%) contrast(88%);
+}
+
 .hero-header__phone:hover .hero-header__phone-icon,
 .hero-header__burger:hover .hero-header__burger-icon,
 .mobile-menu__close:hover img,
