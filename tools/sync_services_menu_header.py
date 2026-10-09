@@ -269,7 +269,7 @@ def rebuild_menu(menu: list[dict]) -> list[dict]:
             ],
         },
         {
-            "parent": "Вывод из запоя на дому",
+            "parent": "Вывод из запоя",
             "link": "/uslugi/vyvod-iz-zapoya/na-domu/",
             "child": [
                 {"title": "Вывод из запоя на дому", "link": "/uslugi/vyvod-iz-zapoya/na-domu/"},

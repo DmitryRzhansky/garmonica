@@ -14,7 +14,7 @@ export const servicesMenu = [
     ]
   },
   {
-    "parent": "Вывод из запоя на дому",
+    "parent": "Вывод из запоя",
     "link": "/uslugi/vyvod-iz-zapoya/na-domu/",
     "child": [
       {
