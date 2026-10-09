@@ -152,9 +152,35 @@ window.initFieldService = function initFieldService() {
     }
   }
 
+  // Клик по label не должен скроллить к скрытому radio (как в отзывах)
+  function bindLabelClicksWithoutScroll(scope) {
+    scope.querySelectorAll("label[for]").forEach((label) => {
+      label.addEventListener("click", (event) => {
+        const inputId = label.getAttribute("for");
+        const input = inputId ? scope.querySelector(`#${CSS.escape(inputId)}`) : null;
+
+        if (!input || input.disabled || input.type !== "radio") {
+          return;
+        }
+
+        event.preventDefault();
+
+        if (!input.checked) {
+          input.checked = true;
+          input.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+
+        if (typeof input.focus === "function") {
+          input.focus({ preventScroll: true });
+        }
+      });
+    });
+  }
+
   syncMainTabs();
   syncEquipment();
   syncFleet();
+  bindLabelClicksWithoutScroll(root);
 
   window.addEventListener("resize", () => {
     window.clearTimeout(equipResizeTimer);
