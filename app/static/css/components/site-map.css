@@ -1,0 +1,330 @@
+/* ============================================================
+   Страница «Карта сайта»
+   ============================================================ */
+
+.site-map {
+  padding-bottom: var(--section-fade);
+}
+
+.sm-head {
+  display: grid;
+  gap: 0.65rem;
+  width: var(--page-shell-width);
+  margin:
+    calc(var(--header-offset) + 0.75rem)
+    auto
+    2.25rem;
+}
+
+.sm-head__title {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-h1);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text-dark);
+}
+
+/* ---------- Sections ---------- */
+
+.sm-section {
+  width: var(--page-shell-width);
+  margin: 0 auto var(--section-fade);
+  scroll-margin-top: calc(var(--header-offset) + 1rem);
+}
+
+.sm-section__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.sm-section__icon {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+}
+
+.sm-section__icon img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
+.sm-section__title {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-h2);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text-dark);
+}
+
+/* ---------- Link cards ---------- */
+
+.sm-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 48rem) {
+  .sm-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .sm-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.sm-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3.5rem;
+  padding: 0.85rem 1rem;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  transition:
+    border-color var(--transition-base),
+    background-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.sm-card:hover,
+.sm-card:focus-visible {
+  border-color: var(--color-accent-soft);
+  background: var(--color-accent-light);
+  outline: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sm-card:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.sm-card__icon {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-cutout);
+}
+
+.sm-card__icon img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
+.sm-card__title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.sm-card__arrow {
+  flex-shrink: 0;
+}
+
+/* ---------- Service groups ---------- */
+
+.sm-groups {
+  display: grid;
+  gap: 0.85rem;
+}
+
+@media (min-width: 64rem) {
+  .sm-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+.sm-group {
+  min-width: 0;
+  padding: 1rem 1.05rem 1.1rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+.sm-group__head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.75rem;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border-light);
+  transition: color var(--transition-base);
+}
+
+.sm-group__head:hover,
+.sm-group__head:focus-visible {
+  color: var(--color-accent-hover);
+  outline: none;
+}
+
+.sm-group__icon {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+}
+
+.sm-group__icon img {
+  width: 1.2rem;
+  height: 1.2rem;
+  object-fit: contain;
+}
+
+.sm-group__title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--font-headline);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.sm-group__arrow {
+  flex-shrink: 0;
+}
+
+.sm-group__body {
+  max-height: min(18rem, 45vh);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.2rem;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent-soft) transparent;
+}
+
+.sm-group__body::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.sm-group__body::-webkit-scrollbar-thumb {
+  background: var(--color-accent-soft);
+  border-radius: 999px;
+}
+
+.sm-group__body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sm-group__list {
+  display: grid;
+  gap: 0.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sm-geo {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.sm-geo:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.sm-geo__title {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: 0 0 0.4rem;
+  padding-block: 0.15rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--color-text-dark);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.sm-group__list--geo {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48rem) {
+  .sm-group__body {
+    max-height: min(20rem, 42vh);
+  }
+
+  .sm-group__list--geo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.sm-group__link {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  padding: 0.4rem 0.2rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.sm-group__link:hover,
+.sm-group__link:focus-visible {
+  color: var(--color-accent-hover);
+  background: var(--color-accent-light);
+  outline: none;
+}
+
+.sm-group__bullet {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+/* ---------- Icon tint: --color-accent ---------- */
+
+.sm-section__icon img,
+.sm-card__icon img,
+.sm-card__arrow,
+.sm-group__icon img,
+.sm-group__arrow,
+.sm-group__bullet {
+  filter: brightness(0) saturate(100%) invert(61%) sepia(42%) saturate(612%) hue-rotate(170deg) brightness(94%) contrast(88%);
+}

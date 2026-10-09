@@ -236,6 +236,29 @@ def test_remaining_site_pages(client):
     assert 'href="/o-klinike/"' in home
     assert 'href="/blog/"' in home
     assert 'href="/soglasie/"' in home
+    assert 'href="/karta-sajta/"' in home
+
+
+def test_html_site_map_page(client):
+    response = client.get("/karta-sajta/")
+    html = response.get_data(as_text=True)
+
+    assert response.status_code == 200
+    assert '<h1 class="sm-head__title">Карта сайта</h1>' in html
+    assert "sm-jump" not in html
+    assert "Все основные разделы" not in html
+    assert "Каталог услуг" not in html
+    assert 'href="/karta-sajta/"' not in html.split("site-footer", 1)[0]
+    assert 'href="/uslugi/narkologicheskaya-pomosh/"' in html
+    assert 'href="/uslugi/narkolog-na-dom/moskovskaya-oblast/"' in html
+    assert 'href="/uslugi/narkolog-na-dom/aeroport/"' in html
+    assert 'href="/uslugi/lechenie-alkogolizma/moskovskaya-oblast/"' in html
+    assert 'href="/vrachi/"' in html
+    assert 'href="/ceny/"' in html
+    assert 'href="/soglasie/"' in html
+    assert "/assets/icons/heartbeat.svg" in html
+    assert "sm-group" in html
+    assert "sm-geo" in html
 
 
 def test_sitemap_lists_services_and_skips_removed_sections(client):
@@ -249,6 +272,7 @@ def test_sitemap_lists_services_and_skips_removed_sections(client):
     assert "http://localhost/ceny/" in body
     assert "http://localhost/kontakty/" in body
     assert "http://localhost/otzyvy/" in body
+    assert "http://localhost/karta-sajta/" in body
     assert "pomoshch-rodstvennikam" not in body
     assert "/pomoshch/" not in body
     assert "/pomosh/" not in body

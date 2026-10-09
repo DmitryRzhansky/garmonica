@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main id="top" class="site-map">
+      <header class="sm-head">
+        {% with crumbs=[{"name": "Главная", "url": "/"}, {"name": "Карта сайта"}] %}
+        {% include "components/breadcrumbs.html" %}
+        {% endwith %}
+        <h1 class="sm-head__title">Карта сайта</h1>
+      </header>
+
+      {% for section in site_map %}
+      <section class="sm-section" id="sm-{{ section.id }}" aria-labelledby="sm-{{ section.id }}-title">
+        <header class="sm-section__header">
+          <span class="sm-section__icon" aria-hidden="true">
+            <img src="{{ section.icon }}" alt="" width="22" height="22" decoding="async">
+          </span>
+          <h2 class="sm-section__title" id="sm-{{ section.id }}-title">{{ section.title }}</h2>
+        </header>
+
+        {% if section.links %}
+        <ul class="sm-grid" role="list">
+          {% for link in section.links %}
+          <li>
+            <a class="sm-card" href="{{ link.url }}">
+              <span class="sm-card__icon" aria-hidden="true">
+                <img src="{{ link.icon }}" alt="" width="22" height="22" decoding="async">
+              </span>
+              <span class="sm-card__title">{{ link.title }}</span>
+              <img
+                class="sm-card__arrow"
+                src="/assets/icons/caret-right.svg"
+                alt=""
+                width="14"
+                height="14"
+                decoding="async"
+                aria-hidden="true"
+              >
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if section.groups %}
+        <div class="sm-groups">
+          {% for group in section.groups %}
+          <article class="sm-group" aria-labelledby="sm-group-{{ loop.index }}-title">
+            <a class="sm-group__head" href="{{ group.url }}" id="sm-group-{{ loop.index }}-title">
+              <span class="sm-group__icon" aria-hidden="true">
+                <img src="{{ group.icon }}" alt="" width="22" height="22" decoding="async">
+              </span>
+              <span class="sm-group__title">{{ group.title }}</span>
+              <img
+                class="sm-group__arrow"
+                src="/assets/icons/caret-right.svg"
+                alt=""
+                width="14"
+                height="14"
+                decoding="async"
+                aria-hidden="true"
+              >
+            </a>
+            {% if group.links or group.geo_blocks %}
+            <div class="sm-group__body">
+              {% if group.links %}
+              <ul class="sm-group__list" role="list">
+                {% for link in group.links %}
+                <li>
+                  <a class="sm-group__link" href="{{ link.url }}">
+                    <img
+                      class="sm-group__bullet"
+                      src="/assets/icons/caret-right.svg"
+                      alt=""
+                      width="12"
+                      height="12"
+                      decoding="async"
+                      aria-hidden="true"
+                    >
+                    <span>{{ link.title }}</span>
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+
+              {% for geo in group.geo_blocks %}
+              <div class="sm-geo">
+                <p class="sm-geo__title">{{ geo.title }}</p>
+                <ul class="sm-group__list sm-group__list--geo" role="list">
+                  {% for link in geo.links %}
+                  <li>
+                    <a class="sm-group__link" href="{{ link.url }}">
+                      <img
+                        class="sm-group__bullet"
+                        src="{{ link.icon }}"
+                        alt=""
+                        width="12"
+                        height="12"
+                        decoding="async"
+                        aria-hidden="true"
+                      >
+                      <span>{{ link.title }}</span>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </article>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </section>
+      {% endfor %}
+    </main>
+{% endblock %}

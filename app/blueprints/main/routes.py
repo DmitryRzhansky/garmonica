@@ -5,6 +5,7 @@ from app.data.doctors import get_clinic_doctors
 from app.data.prices import get_price_groups, get_price_notes
 from app.services.catalog import get_catalog
 from app.services.info_pages import INFO_PAGES
+from app.services.site_map import get_site_map
 
 main_bp = Blueprint("main", __name__)
 
@@ -69,6 +70,16 @@ def info_page(slug):
             price_groups=get_price_groups(),
             price_notes=get_price_notes(),
             clinic_contacts=get_clinic_contacts(),
+            meta_title=meta_title,
+            meta_description=meta_description,
+            canonical=canonical,
+        )
+
+    if slug == "karta-sajta":
+        return render_template(
+            "pages/site-map.html",
+            page=page,
+            site_map=get_site_map(),
             meta_title=meta_title,
             meta_description=meta_description,
             canonical=canonical,
