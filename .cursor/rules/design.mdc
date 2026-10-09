@@ -13,6 +13,7 @@ Full guide: `DESIGN.md`. Source of tokens: `app/static/css/base/root.css`.
 - H1: `var(--font-size-h1)` + `var(--font-weight-h1)` (= 600).
 - H2: `var(--font-size-h2)` + `var(--font-weight-h2)` (= 600).
 - Do not use font-weight 300/400 on section titles.
+- Never use `h3`–`h6` unless the user explicitly asks for that heading level. Card names / inner labels → `<p>` or `<span>` + CSS.
 
 ## Colors
 
