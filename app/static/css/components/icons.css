@@ -16,12 +16,7 @@ details.faq__item > .faq__question > .faq__icon,
 .service-payment__note-icon img,
 .service-payment__contract-icon img,
 .service-diff__circle img,
-.ca-trust__fact img,
-.dp-card__avatar-icon,
-.dp-card__meta-icon,
-.dp-card__point-icon,
-.dp-card__cert-icon,
-.dp-card__format-icon {
+.ca-trust__fact img {
   filter: invert(45%) sepia(18%) saturate(650%) hue-rotate(170deg) brightness(90%) contrast(95%);
 }
 
@@ -30,6 +25,11 @@ details.faq__item > .faq__question > .faq__icon,
 .doctors-card__list-icon,
 .doctors-card__badge-icon,
 .doctors__note-icon img,
+.dp-card__avatar-icon,
+.dp-card__meta-icon,
+.dp-card__point-icon,
+.dp-card__cert-icon,
+.dp-card__format-icon,
 .license-doc__preview-icon,
 .service-licenses__seal-icon,
 .guideline-card__icon img,
