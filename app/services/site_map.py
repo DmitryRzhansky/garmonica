@@ -85,10 +85,7 @@ def _clinic_section() -> SiteMapSection:
             SiteMapLink("О клинике", "/o-klinike/", "/assets/icons/hospital.svg"),
             SiteMapLink("Врачи", "/vrachi/", "/assets/icons/users.svg"),
             SiteMapLink("Лицензия", "/licenziya/", "/assets/icons/shield-check.svg"),
-            SiteMapLink("Гарантия", "/garantiya/", "/assets/icons/seal-check.svg"),
-            SiteMapLink("Договор", "/dogovor/", "/assets/icons/lock.svg"),
             SiteMapLink("Фотогалерея", "/galereya/", "/assets/icons/sun.svg"),
-            SiteMapLink("Кейсы", "/kejsy/", "/assets/icons/star.svg"),
             SiteMapLink("Частые вопросы", "/voprosy/", "/assets/icons/chat-circle.svg"),
         ),
     )
@@ -102,7 +99,6 @@ def _info_section() -> SiteMapSection:
         links=(
             SiteMapLink("Цены", "/ceny/", "/assets/icons/currency-rub.svg"),
             SiteMapLink("Отзывы", "/otzyvy/", "/assets/icons/star.svg"),
-            SiteMapLink("Блог", "/blog/", "/assets/icons/article.svg"),
             SiteMapLink("Контакты", "/kontakty/", "/assets/icons/map-pin.svg"),
         ),
     )

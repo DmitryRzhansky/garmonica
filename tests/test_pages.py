@@ -240,8 +240,6 @@ def test_prices_page(client):
 def test_remaining_site_pages(client):
     pages = {
         "/otzyvy/": "Отзывы",
-        "/kejsy/": "Кейсы",
-        "/blog/": "Блог",
         "/kontakty/": "Контакты",
         "/politika-konfidencialnosti/": "Политика конфиденциальности",
         "/soglasie/": "Согласие на обработку персональных данных",
@@ -252,32 +250,44 @@ def test_remaining_site_pages(client):
         assert response.status_code == 200
         assert f"<h1 class=\"info-page__title\">{title}</h1>" in response.get_data(as_text=True)
 
+    for removed in ("/blog/", "/kejsy/", "/dogovor/", "/garantiya/"):
+        assert client.get(removed).status_code == 404
+
     home = client.get("/").get_data(as_text=True)
     assert 'href="/ceny/"' in home
     assert 'href="/otzyvy/"' in home
     assert 'href="/kontakty/"' in home
     assert 'href="/o-klinike/"' in home
-    assert 'href="/blog/"' in home
+    assert 'href="/blog/"' not in home
+    assert 'href="/kejsy/"' not in home
+    assert 'href="/dogovor/"' not in home
+    assert 'href="/garantiya/"' not in home
     assert 'href="/soglasie/"' in home
     assert 'href="/karta-sajta/"' in home
+    assert "Карта сайта" in home
+    assert home.index('href="/karta-sajta/"') < home.index("site-footer__legal")
 
 
 def test_html_site_map_page(client):
     response = client.get("/karta-sajta/")
     html = response.get_data(as_text=True)
+    main_html = html.split("site-footer", 1)[0]
 
     assert response.status_code == 200
     assert '<h1 class="sm-head__title">Карта сайта</h1>' in html
     assert "sm-jump" not in html
     assert "Все основные разделы" not in html
     assert "Каталог услуг" not in html
-    assert 'href="/karta-sajta/"' not in html.split("site-footer", 1)[0]
+    assert 'href="/blog/"' not in html
+    assert 'href="/kejsy/"' not in html
+    assert 'href="/dogovor/"' not in html
+    assert 'href="/garantiya/"' not in html
     assert 'href="/uslugi/narkologicheskaya-pomosh/"' in html
     assert 'href="/uslugi/narkolog-na-dom/moskovskaya-oblast/"' in html
     assert 'href="/uslugi/narkolog-na-dom/aeroport/"' in html
     assert 'href="/uslugi/lechenie-alkogolizma/moskovskaya-oblast/"' in html
-    assert 'href="/vrachi/"' in html
-    assert 'href="/ceny/"' in html
+    assert 'href="/vrachi/"' in main_html
+    assert 'href="/ceny/"' in main_html
     assert 'href="/soglasie/"' in html
     assert "/assets/icons/heartbeat.svg" in html
     assert "sm-group" in html
