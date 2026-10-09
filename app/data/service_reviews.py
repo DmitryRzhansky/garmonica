@@ -1,5 +1,31 @@
 """Отзывы для страниц услуг."""
 
+SERVICE_REVIEW_STATS = {
+    "score": "4,9",
+    "score_source": "Яндекс Карты",
+    "score_icon": "/assets/icons/reviews/yandex.webp",
+    "reviews_total": 847,
+    "award": "Хорошее место",
+    "award_note": "2025",
+    "platforms": [
+        {"id": "yandex", "label": "Яндекс", "icon": "/assets/icons/reviews/yandex.webp", "score": "4,9", "count": 312},
+        {"id": "2gis", "label": "2ГИС", "icon": "/assets/icons/reviews/2gis.webp", "score": "4,8", "count": 186},
+        {"id": "google", "label": "Google", "icon": "/assets/icons/reviews/google.webp", "score": "4,9", "count": 141},
+        {"id": "doctu", "label": "DOCTU", "icon": "/assets/icons/reviews/doctu.webp", "score": "4,8", "count": 74},
+        {"id": "zoon", "label": "Zoon", "icon": "/assets/icons/reviews/zoon.webp", "score": "4,9", "count": 58},
+        {"id": "napopravku", "label": "НаПоправку", "icon": "/assets/icons/reviews/napopravku.webp", "score": "4,8", "count": 42},
+        {"id": "prodoctorov", "label": "ПроДокторов", "icon": "/assets/icons/reviews/prodoctorov.webp", "score": "4,9", "count": 34},
+    ],
+    # Атрибуты как в Яндекс Картах: доля положительных упоминаний
+    "aspects": [
+        {"label": "Качество лечения", "value": 99},
+        {"label": "Время ожидания", "value": 100},
+        {"label": "Сервис", "value": 98},
+        {"label": "Персонал", "value": 97},
+        {"label": "Рекомендуют", "value": 96},
+    ],
+}
+
 SERVICE_REVIEW_SOURCES = [
     {
         "id": "yandex",
@@ -554,3 +580,7 @@ def get_service_reviews():
         reviews = SERVICE_REVIEWS.get(source["id"], [])
         sources.append({**source, "reviews": reviews})
     return sources
+
+
+def get_service_review_stats():
+    return SERVICE_REVIEW_STATS

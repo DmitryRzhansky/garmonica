@@ -32,7 +32,7 @@
   margin: 0;
   font-family: var(--font-headline);
   font-size: var(--font-size-h2);
-  font-weight: 400;
+  font-weight: var(--font-weight-h2);
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--color-text-dark);

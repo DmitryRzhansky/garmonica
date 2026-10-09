@@ -1,0 +1,33 @@
+---
+description: Visual design system — headings, Phosphor icons, buttons, accent colors
+alwaysApply: true
+---
+
+# Design system (garmonica)
+
+Full guide: `DESIGN.md`. Source of tokens: `app/static/css/base/root.css`.
+
+## Headings
+
+- H1/H2 sections use `var(--font-headline)` (Montserrat), never Manrope.
+- H1: `var(--font-size-h1)` + `var(--font-weight-h1)` (= 600).
+- H2: `var(--font-size-h2)` + `var(--font-weight-h2)` (= 600).
+- Do not use font-weight 300/400 on section titles.
+
+## Colors
+
+- Accent blue: `--color-accent` / `--color-accent-hover` / `--color-accent-light`.
+- Urgent CTA: `--color-warm` via `.button--warm`.
+- Text: `--color-text-dark` / `--color-text-muted`.
+- No new brand colors without a `:root` variable.
+
+## Buttons + icons
+
+- Every action button should include `<img class="button__icon" … width="16" height="16">`.
+- UI icons: Phosphor from `app/static/icons/phosphor/` (usually 22×22 in cards, 16×16 in buttons).
+- Brand favicons (reviews, messengers) stay outside Phosphor.
+- Tint monochrome Phosphor `<img>` via selectors in `icons.css`.
+
+## After CSS edits
+
+Bump `?v=` on `main.css` in `app/templates/base.html`.
