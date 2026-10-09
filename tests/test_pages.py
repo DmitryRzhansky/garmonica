@@ -58,8 +58,39 @@ def test_narkolog_keeps_written_hero(client):
     assert "Вызов нарколога на дом в" in html
     assert "Москве и области" in html
     assert "Врач приедет на адрес" in html
-    assert "Солнцев Роман Викторович" in html
+    assert "Воронов Павел Игоревич" in html
     assert "от 5&nbsp;000&nbsp;₽" in html
+
+
+def test_service_pages_share_layout_blocks(client):
+    urls = [
+        "/uslugi/narkolog-na-dom/",
+        "/uslugi/vyvod-iz-zapoya/na-domu/",
+        "/uslugi/kodirovanie/",
+        "/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/",
+        "/uslugi/narkologicheskaya-pomosh/",
+    ]
+    markers = (
+        'id="service-price-title"',
+        'id="service-payment-title"',
+        'id="service-diff-title"',
+        'id="service-reviews-title"',
+        'id="service-doctors-title"',
+        'id="service-licenses-title"',
+        'id="guidelines-title"',
+        'id="field-service-title"',
+        'id="service-faq-title"',
+        'id="service-request-title"',
+        "service-legal",
+        "article-credits",
+    )
+
+    for url in urls:
+        response = client.get(url)
+        assert response.status_code == 200
+        html = response.get_data(as_text=True)
+        for marker in markers:
+            assert marker in html, f"{marker} missing on {url}"
 
 
 def test_geo_pages_change_heading_and_keep_doctor(client):
@@ -72,8 +103,8 @@ def test_geo_pages_change_heading_and_keep_doctor(client):
     city_html = city.get_data(as_text=True)
     assert "метро Аэропорт" in metro_html
     assert "Балашиха" in city_html
-    assert "Солнцев Роман Викторович" in metro_html
-    assert "Солнцев Роман Викторович" in city_html
+    assert "Воронов Павел Игоревич" in metro_html
+    assert "Воронов Павел Игоревич" in city_html
     assert 'rel="canonical" href="http://localhost/uslugi/narkolog-na-dom/aeroport/"' in metro_html
 
 

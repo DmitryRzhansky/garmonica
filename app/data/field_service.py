@@ -447,7 +447,24 @@ def get_field_service_geo_groups(service_base: str = "/uslugi/narkolog-na-dom/")
     return groups
 
 
-def get_field_service_context(service_base: str = "/uslugi/narkolog-na-dom/") -> dict:
+DEFAULT_FIELD_SERVICE_BASE = "/uslugi/narkolog-na-dom/"
+_CATALOG_ROOT = "/uslugi/"
+
+
+def resolve_field_service_base(url: str) -> str:
+    """Ближайший предок URL с geo-страницами; иначе база «Нарколог на дом»."""
+    current = url if url.endswith("/") else f"{url}/"
+    while current and current not in {"/", _CATALOG_ROOT}:
+        if get_field_service_geo_groups(current):
+            return current
+        parts = [part for part in current.strip("/").split("/") if part]
+        if len(parts) <= 1:
+            break
+        current = "/" + "/".join(parts[:-1]) + "/"
+    return DEFAULT_FIELD_SERVICE_BASE
+
+
+def get_field_service_context(service_base: str = DEFAULT_FIELD_SERVICE_BASE) -> dict:
     return {
         "title": FIELD_SERVICE_TITLE,
         "tabs": FIELD_SERVICE_TABS,
