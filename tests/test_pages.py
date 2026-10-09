@@ -147,6 +147,29 @@ def test_geo_pages_change_heading_and_keep_doctor(client):
     assert 'rel="canonical" href="http://localhost/uslugi/narkolog-na-dom/aeroport/"' in metro_html
 
 
+def test_geo_hub_uses_v_moskovskoy_oblasti_wording(client):
+    response = client.get("/uslugi/narkolog-na-dom/moskovskaya-oblast/")
+    html = response.get_data(as_text=True)
+
+    assert response.status_code == 200
+    assert "<title>Нарколог на дом в Московской области — Нова</title>" in html
+    assert "Нарколог на дом в" in html
+    assert "Московской области" in html
+    assert "Нарколог на дом — Московская область" not in html
+    assert "Московская область" not in html.split("site-footer", 1)[0]
+
+    catalog = get_catalog()
+    for page in catalog.pages:
+        if page["kind"] != "geo-hub":
+            continue
+        assert page["name"].endswith(" в Московской области")
+        assert "— Московская область" not in page["name"]
+        view = catalog.view(page["url"])
+        assert view is not None
+        assert view.h1_before.endswith(" в")
+        assert view.h1_accent == "Московской области"
+
+
 def test_removed_and_help_sections_are_missing(client):
     assert client.get("/uslugi/pomoshch-rodstvennikam/").status_code == 404
     assert client.get("/uslugi/diagnostika/").status_code == 404

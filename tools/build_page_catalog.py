@@ -36,9 +36,28 @@ def load_csv(path: Path) -> list[dict]:
         return list(csv.DictReader(handle))
 
 
+GEO_HUB_OLD_SUFFIX = " — Московская область"
+GEO_HUB_NEW_SUFFIX = " в Московской области"
+
+
+def normalize_geo_hub_name(name: str) -> str:
+    if name.endswith(GEO_HUB_OLD_SUFFIX):
+        return name[: -len(GEO_HUB_OLD_SUFFIX)] + GEO_HUB_NEW_SUFFIX
+    return name
+
+
+def geo_hub_service_from_name(name: str) -> str:
+    for suffix in (GEO_HUB_NEW_SUFFIX, GEO_HUB_OLD_SUFFIX):
+        if name.endswith(suffix):
+            return name[: -len(suffix)]
+    if " — " in name:
+        return name.split(" — ", 1)[0]
+    return name
+
+
 def service_heading(page: dict, by_url: dict[str, dict]) -> str:
     if page["kind"] == "geo-hub":
-        return page["name"].split(" — ")[0]
+        return geo_hub_service_from_name(page["name"])
     if not page["geo_type"]:
         return page["name"]
     parent = by_url.get(parent_url(page["url"]))
@@ -64,13 +83,17 @@ def build_pages(source: Path) -> list[dict]:
         if row["silo"] in EXCLUDED_SILOS or banned(url):
             continue
         geo = geo_by_url.get(url, {})
+        kind = row["entity_type"]
+        name = row["page"]
+        if kind == "geo-hub":
+            name = normalize_geo_hub_name(name)
         pages.append(
             {
                 "url": url,
-                "name": row["page"],
-                "kind": row["entity_type"],
+                "name": name,
+                "kind": kind,
                 "silo": row["silo"],
-                "service_name": geo.get("service_name") or row["page"],
+                "service_name": geo.get("service_name") or name,
                 "geo_name": geo.get("geo_name") or "",
                 "geo_type": geo.get("geo_type") or "",
             }

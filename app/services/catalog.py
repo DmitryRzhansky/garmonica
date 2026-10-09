@@ -118,6 +118,18 @@ class PageCatalog:
 
 
 def build_copy(page: dict) -> dict:
+    if page.get("kind") == "geo-hub":
+        service = geo_hub_service_name(page)
+        title = f"{service} в Московской области — Нова"
+        lead = f"{service} в Московской области. Текст страницы будет дополнен."
+        return {
+            "h1_before": f"{service} в",
+            "h1_accent": "Московской области",
+            "meta_title": title,
+            "meta_description": lead,
+            "lead": lead,
+        }
+
     accent = geo_accent(page)
     heading = page["service_name"] if accent else page["name"]
     if accent:
@@ -135,6 +147,17 @@ def build_copy(page: dict) -> dict:
     }
 
 
+def geo_hub_service_name(page: dict) -> str:
+    service = (page.get("service_name") or "").strip()
+    if service:
+        return service
+    name = page.get("name") or ""
+    for suffix in (" в Московской области", " — Московская область"):
+        if name.endswith(suffix):
+            return name[: -len(suffix)]
+    return name
+
+
 def geo_accent(page: dict) -> str:
     geo_type = page.get("geo_type") or ""
     geo_name = page.get("geo_name") or ""
@@ -142,8 +165,6 @@ def geo_accent(page: dict) -> str:
         return f"метро {geo_name}"
     if geo_type in {"okrug", "mo", "city"} and geo_name:
         return geo_name
-    if page.get("kind") == "geo-hub":
-        return "Московская область"
     return ""
 
 
