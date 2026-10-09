@@ -1,5 +1,6 @@
 from flask import Blueprint, Response, render_template, request
 
+from app.data.clinic_contacts import get_clinic_contacts
 from app.services.catalog import get_catalog
 from app.services.info_pages import INFO_PAGES
 
@@ -33,12 +34,27 @@ def info_page(slug):
             meta_description="Запрошенной страницы нет на сайте Нова клиник.",
             canonical=None,
         ), 404
+
+    meta_title = f"{page['title']} — Нова клиник"
+    meta_description = page["description"]
+    canonical = _canonical(f"/{slug}/")
+
+    if slug == "o-klinike":
+        return render_template(
+            "pages/about-clinic.html",
+            page=page,
+            clinic_contacts=get_clinic_contacts(),
+            meta_title=meta_title,
+            meta_description=meta_description,
+            canonical=canonical,
+        )
+
     return render_template(
         "pages/info.html",
         page=page,
-        meta_title=f"{page['title']} — Нова клиник",
-        meta_description=page["description"],
-        canonical=_canonical(f"/{slug}/"),
+        meta_title=meta_title,
+        meta_description=meta_description,
+        canonical=canonical,
     )
 
 

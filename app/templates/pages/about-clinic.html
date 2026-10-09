@@ -1,0 +1,355 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main id="top" class="clinic-about">
+      <section class="clinic-about-hero" aria-labelledby="clinic-about-hero-title">
+        <img
+          class="clinic-about-hero__bg"
+          src="/assets/images/clinic-gallery/clinic-ward.webp"
+          alt=""
+          width="1600"
+          height="900"
+          decoding="async"
+          fetchpriority="high"
+          aria-hidden="true"
+        >
+        <div class="clinic-about-hero__veil" aria-hidden="true"></div>
+
+        <div class="clinic-about-hero__inner">
+          <nav class="clinic-about-hero__breadcrumbs" aria-label="Навигация по разделам">
+            <ol class="clinic-about-hero__crumbs">
+              <li class="clinic-about-hero__crumb">
+                <a class="clinic-about-hero__crumb-link" href="/">Главная</a>
+              </li>
+              <li class="clinic-about-hero__crumb">
+                <span class="clinic-about-hero__crumb-current">О клинике</span>
+              </li>
+            </ol>
+          </nav>
+
+          <h1 class="clinic-about-hero__title" id="clinic-about-hero-title">
+            Клиника, где сначала
+            <span class="clinic-about-hero__title-accent">разбираются</span>,
+            а потом лечат
+          </h1>
+
+          <p class="clinic-about-hero__lead">
+            «Нова клиник» — лицензированный стационар и амбулаторный приём.
+            Помогаем при острых и хронических состояниях психиатрического
+            и наркологического профиля: без морали, без лозунгов и без обещаний «навсегда».
+          </p>
+
+          <ul class="clinic-about-hero__signals" role="list">
+            <li class="clinic-about-hero__signal">
+              <img src="/assets/icons/phosphor/shield-check.svg" alt="" width="20" height="20" decoding="async" aria-hidden="true">
+              <span>Анонимно, без постановки на учёт</span>
+            </li>
+            <li class="clinic-about-hero__signal">
+              <img src="/assets/icons/clock.svg" alt="" width="20" height="20" decoding="async" aria-hidden="true">
+              <span>Круглосуточно, 24/7</span>
+            </li>
+            <li class="clinic-about-hero__signal">
+              <img src="/assets/icons/phosphor/map-pin.svg" alt="" width="20" height="20" decoding="async" aria-hidden="true">
+              <span>{{ clinic_contacts.address }}</span>
+            </li>
+          </ul>
+
+          <div class="clinic-about-hero__actions">
+            <a class="button button--warm" href="tel:{{ clinic_contacts.phone_tel }}">
+              <img class="button__icon" src="/assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
+              Позвонить в клинику
+            </a>
+            <a class="button button--primary" href="/vrachi/">
+              <img class="button__icon" src="/assets/icons/users.svg" alt="" width="16" height="16" decoding="async">
+              Смотреть врачей
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="clinic-mission" aria-labelledby="clinic-mission-title">
+        <img
+          class="clinic-mission__bg"
+          src="/assets/images/clinic-gallery/clinic-room-blue.webp"
+          alt=""
+          width="1600"
+          height="900"
+          loading="lazy"
+          decoding="async"
+          aria-hidden="true"
+        >
+        <div class="clinic-mission__veil" aria-hidden="true"></div>
+        <div class="clinic-mission__inner">
+          <p class="clinic-mission__label">Наша позиция</p>
+          <h2 class="clinic-mission__title" id="clinic-mission-title">
+            Не уговорить «бросить».
+            <span class="clinic-mission__accent">Помочь стабилизироваться</span>
+            и понять следующий шаг.
+          </h2>
+          <p class="clinic-mission__text">
+            Когда человеку плохо, ему нужна медицинская оценка — а не лозунг.
+            Мы смотрим на состояние, объясняем варианты пациенту и близким
+            и только потом предлагаем маршрут: консультация или стационар.
+            Без давления «вы обязаны» и без пустых гарантий.
+          </p>
+        </div>
+      </section>
+
+      <section class="clinic-values" aria-labelledby="clinic-values-title">
+        <div class="clinic-values__intro">
+          <h2 class="clinic-values__title" id="clinic-values-title">
+            На чём держится работа клиники
+          </h2>
+          <p class="clinic-values__lead">
+            Не «ценности с плаката», а правила, по которым реально принимают решения
+            на приёме и в стационаре.
+          </p>
+        </div>
+
+        <div class="clinic-values__mosaic">
+          <article class="clinic-values__feature">
+            <span class="clinic-values__index" aria-hidden="true">01</span>
+            <img
+              class="clinic-values__icon"
+              src="/assets/icons/phosphor/clipboard-text.svg"
+              alt=""
+              width="28"
+              height="28"
+              decoding="async"
+            >
+            <p class="clinic-values__name">Ясность вместо обещаний</p>
+            <p class="clinic-values__text">
+              Сначала говорим, что можем сделать сегодня: осмотр, стабилизация,
+              госпитализация или отказ по профилю. Стоимость и формат называют
+              до начала помощи — без «пакета сюрпризов» по ходу.
+            </p>
+          </article>
+
+          <article class="clinic-values__tile clinic-values__tile--privacy">
+            <span class="clinic-values__index" aria-hidden="true">02</span>
+            <img
+              class="clinic-values__icon"
+              src="/assets/icons/lock.svg"
+              alt=""
+              width="24"
+              height="24"
+              decoding="async"
+            >
+            <p class="clinic-values__name">Анонимность как правило</p>
+            <p class="clinic-values__text">
+              Данные не раскрываем третьим лицам без законного основания.
+              Для многих семей это условие, без которого обращение не начинается.
+            </p>
+          </article>
+
+          <article class="clinic-values__tile clinic-values__tile--family">
+            <span class="clinic-values__index" aria-hidden="true">03</span>
+            <img
+              class="clinic-values__icon"
+              src="/assets/icons/phosphor/users-three.svg"
+              alt=""
+              width="24"
+              height="24"
+              decoding="async"
+            >
+            <p class="clinic-values__name">Родственники в контуре</p>
+            <p class="clinic-values__text">
+              Часто звонят близкие. Объясняем ситуацию спокойно, помогаем
+              с мотивацией и держим связь по динамике — когда это уместно.
+            </p>
+          </article>
+
+          <article class="clinic-values__wide">
+            <div class="clinic-values__wide-copy">
+              <span class="clinic-values__index" aria-hidden="true">04</span>
+              <p class="clinic-values__name">Честность про границы</p>
+              <p class="clinic-values__text">
+                Не берём случаи вне профиля и тяжёлую соматику, которую нельзя
+                вести в наших условиях. В части отделений — ограничения
+                на телефоны и посещения ради безопасности.
+              </p>
+            </div>
+            <img
+              class="clinic-values__wide-photo"
+              src="/assets/images/service-facility/ward-single.webp"
+              alt=""
+              width="800"
+              height="560"
+              loading="lazy"
+              decoding="async"
+              aria-hidden="true"
+            >
+          </article>
+        </div>
+      </section>
+
+      <section class="clinic-formats" aria-labelledby="clinic-formats-title">
+        <div class="clinic-formats__intro">
+          <h2 class="clinic-formats__title" id="clinic-formats-title">
+            Как устроена помощь
+          </h2>
+          <p class="clinic-formats__lead">
+            Один адрес — два основных формата. Маршрут выбирают по состоянию,
+            а не по самому дорогому прайсу.
+          </p>
+        </div>
+
+        <div class="clinic-formats__split">
+          <article class="clinic-formats__panel clinic-formats__panel--out">
+            <img
+              class="clinic-formats__photo"
+              src="/assets/images/clinic-gallery/clinic-reception.webp"
+              alt="Амбулаторный приём в клинике «Нова клиник»"
+              width="1200"
+              height="800"
+              loading="lazy"
+              decoding="async"
+            >
+            <div class="clinic-formats__panel-veil" aria-hidden="true"></div>
+            <div class="clinic-formats__panel-body">
+              <p class="clinic-formats__tag">
+                <img src="/assets/icons/phosphor/stethoscope.svg" alt="" width="18" height="18" decoding="async" aria-hidden="true">
+                Амбулаторно
+              </p>
+              <p class="clinic-formats__name">Приём и психологическая помощь</p>
+              <p class="clinic-formats__text">
+                Консультации психиатра, психиатра-нарколога и психолога без размещения
+                в стационаре. Разбор состояния, диагноз, коррекция терапии.
+              </p>
+            </div>
+          </article>
+
+          <article class="clinic-formats__panel clinic-formats__panel--in">
+            <img
+              class="clinic-formats__photo"
+              src="/assets/images/clinic-gallery/clinic-room-wood.webp"
+              alt="Стационар клиники «Нова клиник»"
+              width="1200"
+              height="800"
+              loading="lazy"
+              decoding="async"
+            >
+            <div class="clinic-formats__panel-veil" aria-hidden="true"></div>
+            <div class="clinic-formats__panel-body">
+              <p class="clinic-formats__tag">
+                <img src="/assets/icons/phosphor/hospital.svg" alt="" width="18" height="18" decoding="async" aria-hidden="true">
+                Стационар
+              </p>
+              <p class="clinic-formats__name">Круглосуточное наблюдение</p>
+              <p class="clinic-formats__text">
+                Палаты от многоместных до VIP, питание, дежурный врач и медперсонал.
+                Срок обычно от 3 до 21 дня — по плану и состоянию.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="clinic-honest" aria-labelledby="clinic-honest-title">
+        <img
+          class="clinic-honest__bg"
+          src="/assets/images/clinic-gallery/clinic-room-blue.webp"
+          alt=""
+          width="1600"
+          height="900"
+          loading="lazy"
+          decoding="async"
+          aria-hidden="true"
+        >
+        <div class="clinic-honest__veil" aria-hidden="true"></div>
+
+        <div class="clinic-honest__top">
+          <p class="clinic-honest__label">Как мы говорим о себе</p>
+          <h2 class="clinic-honest__title" id="clinic-honest-title">
+            Работаем
+            <span class="clinic-honest__accent">открыто и честно</span>
+          </h2>
+          <p class="clinic-honest__text">
+            Не продаём «чудо-курс». Есть лицензия, договор, понятный маршрут
+            и специалисты с многолетним стационарным опытом — в том числе
+            с учёной степенью. Если ситуация не по профилю, скажем прямо.
+          </p>
+        </div>
+
+        <ul class="clinic-honest__rail" role="list">
+          <li class="clinic-honest__rail-item">
+            <span class="clinic-honest__rail-name">Лицензия</span>
+            <span class="clinic-honest__rail-value">Л041-01137-77/01838787</span>
+          </li>
+          <li class="clinic-honest__rail-item">
+            <span class="clinic-honest__rail-name">Возраст</span>
+            <span class="clinic-honest__rail-value">от 14 до 85 лет</span>
+          </li>
+          <li class="clinic-honest__rail-item">
+            <span class="clinic-honest__rail-name">Стационар</span>
+            <span class="clinic-honest__rail-value">до 32 мест · 24/7</span>
+          </li>
+          <li class="clinic-honest__rail-item">
+            <span class="clinic-honest__rail-name">Юрлицо</span>
+            <span class="clinic-honest__rail-value">{{ clinic_contacts.legal_name }}</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="clinic-path" aria-labelledby="clinic-path-title">
+        <div class="clinic-path__inner">
+          <header class="clinic-path__header">
+            <h2 class="clinic-path__title" id="clinic-path-title">От звонка до плана дальше</h2>
+            <p class="clinic-path__lead">
+              Типичный маршрут без театральности: разговор → осмотр → решение.
+            </p>
+          </header>
+
+          <ol class="clinic-path__track">
+            <li class="clinic-path__step">
+              <span class="clinic-path__dot" aria-hidden="true"></span>
+              <span class="clinic-path__num">01</span>
+              <span class="clinic-path__name">Звонок</span>
+              <p class="clinic-path__text">Диспетчерская отвечает за несколько минут и уточняет, что происходит.</p>
+            </li>
+            <li class="clinic-path__step">
+              <span class="clinic-path__dot" aria-hidden="true"></span>
+              <span class="clinic-path__num">02</span>
+              <span class="clinic-path__name">Формат</span>
+              <p class="clinic-path__text">Приём в клинике или стационар — по состоянию, не «по умолчанию».</p>
+            </li>
+            <li class="clinic-path__step">
+              <span class="clinic-path__dot" aria-hidden="true"></span>
+              <span class="clinic-path__num">03</span>
+              <span class="clinic-path__name">Осмотр</span>
+              <p class="clinic-path__text">Психиатр или психиатр-нарколог оценивает риски и возможный план.</p>
+            </li>
+            <li class="clinic-path__step">
+              <span class="clinic-path__dot" aria-hidden="true"></span>
+              <span class="clinic-path__num">04</span>
+              <span class="clinic-path__name">Договор</span>
+              <p class="clinic-path__text">Условия, срок и стоимость понятны до начала лечения.</p>
+            </li>
+            <li class="clinic-path__step">
+              <span class="clinic-path__dot" aria-hidden="true"></span>
+              <span class="clinic-path__num">05</span>
+              <span class="clinic-path__name">Дальше</span>
+              <p class="clinic-path__text">Наблюдение, кодирование, реабилитация или сопровождение семьи.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="clinic-about-cta" aria-labelledby="clinic-about-cta-title">
+        <div class="clinic-about-cta__shell">
+          <div class="clinic-about-cta__copy">
+            <h2 class="clinic-about-cta__title" id="clinic-about-cta-title">
+              Нужна помощь сейчас — или просто понять, с чего начать?
+            </h2>
+            <p class="clinic-about-cta__text">
+              Позвоните в диспетчерскую: сориентируем по формату и срочности.
+            </p>
+          </div>
+          <a class="button button--warm clinic-about-cta__phone" href="tel:{{ clinic_contacts.phone_tel }}">
+            <img class="button__icon" src="/assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
+            {{ clinic_contacts.phone_display }}
+          </a>
+        </div>
+      </section>
+    </main>
+{% endblock %}

@@ -15,7 +15,9 @@ details.faq__item > .faq__question > .faq__icon,
 .service-payment__icon img,
 .service-payment__note-icon img,
 .service-payment__contract-icon img,
-.service-diff__circle img {
+.service-diff__circle img,
+.clinic-values__tile .clinic-values__icon,
+.clinic-values__wide .clinic-values__icon {
   filter: invert(45%) sepia(18%) saturate(650%) hue-rotate(170deg) brightness(90%) contrast(95%);
 }
 

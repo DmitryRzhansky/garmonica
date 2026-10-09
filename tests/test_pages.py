@@ -162,9 +162,19 @@ def test_info_page(client):
     assert "<h1 class=\"info-page__title\">Лицензия</h1>" in response.get_data(as_text=True)
 
 
+def test_about_clinic_page(client):
+    response = client.get("/o-klinike/")
+    html = response.get_data(as_text=True)
+
+    assert response.status_code == 200
+    assert "clinic-about-hero__title" in html
+    assert "Наша позиция" in html
+    assert "На чём держится работа клиники" in html
+    assert "Люблинская" in html
+
+
 def test_remaining_site_pages(client):
     pages = {
-        "/o-klinike/": "Клиника",
         "/ceny/": "Цены",
         "/otzyvy/": "Отзывы",
         "/kejsy/": "Кейсы",
