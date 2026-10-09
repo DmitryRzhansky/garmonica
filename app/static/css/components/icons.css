@@ -11,7 +11,10 @@
 .about-dept__trait-icon,
 .licenses__scope-icon,
 .service-hero__badge-icon,
-.service-price__icon img {
+.service-price__icon img,
+.service-payment__icon img,
+.service-payment__note-icon img,
+.service-payment__contract-icon img {
   filter: invert(55%) sepia(35%) saturate(700%) hue-rotate(170deg) brightness(95%) contrast(90%);
 }
 

@@ -17,10 +17,10 @@
   margin: 0 0 1.15rem;
   max-width: 22em;
   font-family: var(--font-headline);
-  font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.75rem);
+  font-size: var(--font-size-h2);
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.015em;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   color: var(--color-text-dark);
 }
 

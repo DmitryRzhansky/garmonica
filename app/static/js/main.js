@@ -10,11 +10,20 @@ function safeInit(label, fn) {
   }
 }
 
+function initContractStub() {
+  document.querySelectorAll("[data-contract-stub]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+    });
+  });
+}
+
 function initApp() {
   safeInit("menu", window.initMenu);
   safeInit("services-menu", window.initServicesMenu);
   safeInit("contact-form", window.initContactForm);
   safeInit("service-call-form", window.initServiceCallForm);
+  safeInit("contract-stub", initContractStub);
   safeInit("reviews", window.initReviews);
   safeInit("licenses", window.initLicenses);
   safeInit("clinic-gallery", window.initClinicGallery);
