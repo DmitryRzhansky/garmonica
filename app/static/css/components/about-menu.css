@@ -1,14 +1,18 @@
-.hero-header__nav-item--about {
+.hero-header__nav-item--about,
+.hero-header__nav-item--dropdown {
   position: relative;
 }
 
 .hero-header__nav-item--about:hover > .hero-header__nav-link,
-.hero-header__nav-item--about:focus-within > .hero-header__nav-link {
+.hero-header__nav-item--about:focus-within > .hero-header__nav-link,
+.hero-header__nav-item--dropdown:hover > .hero-header__nav-link,
+.hero-header__nav-item--dropdown:focus-within > .hero-header__nav-link {
   color: var(--color-text-hover);
   background-color: var(--color-white);
 }
 
-.about-menu {
+.about-menu,
+.nav-dropdown {
   position: absolute;
   z-index: 90;
   top: calc(100% + var(--header-dropdown-gap, 0.5rem));
@@ -28,7 +32,14 @@
     transform var(--transition-base);
 }
 
-.about-menu::before {
+.nav-dropdown {
+  min-width: 18.5rem;
+  max-height: min(70vh, 28rem);
+  overflow-y: auto;
+}
+
+.about-menu::before,
+.nav-dropdown::before {
   content: "";
   position: absolute;
   left: 0;
@@ -38,14 +49,19 @@
 }
 
 .hero-header__nav-item--about:hover .about-menu,
-.hero-header__nav-item--about:focus-within .about-menu {
+.hero-header__nav-item--about:focus-within .about-menu,
+.hero-header__nav-item--dropdown:hover .nav-dropdown,
+.hero-header__nav-item--dropdown:focus-within .nav-dropdown,
+.hero-header__nav-item--dropdown:hover .about-menu,
+.hero-header__nav-item--dropdown:focus-within .about-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateY(0);
 }
 
-.about-menu__list {
+.about-menu__list,
+.nav-dropdown__list {
   display: grid;
   gap: 0.125rem;
   margin: 0;
@@ -53,7 +69,8 @@
   list-style: none;
 }
 
-.about-menu__link {
+.about-menu__link,
+.nav-dropdown__link {
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -69,12 +86,14 @@
     color var(--transition-base);
 }
 
-.about-menu__link:hover {
+.about-menu__link:hover,
+.nav-dropdown__link:hover {
   color: var(--color-accent);
   background-color: var(--color-accent-light);
 }
 
-.about-menu__link:focus-visible {
+.about-menu__link:focus-visible,
+.nav-dropdown__link:focus-visible {
   outline: 0.125rem solid var(--color-accent);
   outline-offset: 0.125rem;
 }
@@ -88,7 +107,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .about-menu {
+  .about-menu,
+  .nav-dropdown {
     transition: none;
   }
 }

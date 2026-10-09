@@ -1,36 +1,45 @@
 const HEADER_DROPDOWN_GAP_PX = 8;
 
-function syncAboutMenuOffset() {
+function syncNavDropdownOffsets() {
   const header = document.querySelector("[data-header]");
-  const item = document.querySelector(".hero-header__nav-item--about");
-  const aboutPanel = item?.querySelector(".about-menu");
 
-  if (!header || !item || !aboutPanel) {
+  if (!header) {
     return;
   }
 
-  const gap = Math.round(
-    header.getBoundingClientRect().bottom -
-      item.getBoundingClientRect().bottom +
-      HEADER_DROPDOWN_GAP_PX
-  );
-  const safeGap = Math.max(gap, HEADER_DROPDOWN_GAP_PX);
+  document.querySelectorAll("[data-nav-dropdown]").forEach((item) => {
+    const panel = item.querySelector(".nav-dropdown, .about-menu");
 
-  aboutPanel.style.top = `calc(100% + ${safeGap}px)`;
-  aboutPanel.style.setProperty("--about-menu-bridge", `${safeGap}px`);
+    if (!panel) {
+      return;
+    }
+
+    const gap = Math.round(
+      header.getBoundingClientRect().bottom -
+        item.getBoundingClientRect().bottom +
+        HEADER_DROPDOWN_GAP_PX
+    );
+    const safeGap = Math.max(gap, HEADER_DROPDOWN_GAP_PX);
+
+    panel.style.top = `calc(100% + ${safeGap}px)`;
+    panel.style.setProperty("--about-menu-bridge", `${safeGap}px`);
+  });
 }
 
-function initAboutMenu() {
-  const item = document.querySelector(".hero-header__nav-item--about");
+function initNavDropdowns() {
+  const items = document.querySelectorAll("[data-nav-dropdown]");
 
-  if (!item) {
+  if (!items.length) {
     return;
   }
 
-  const sync = () => syncAboutMenuOffset();
+  const sync = () => syncNavDropdownOffsets();
 
-  item.addEventListener("mouseenter", sync);
-  item.addEventListener("focusin", sync);
+  items.forEach((item) => {
+    item.addEventListener("mouseenter", sync);
+    item.addEventListener("focusin", sync);
+  });
+
   window.addEventListener("resize", sync, { passive: true });
   document.addEventListener("scroll", sync, { passive: true, capture: true });
   sync();
@@ -41,7 +50,7 @@ function initMenu() {
   const menu = document.querySelector("[data-mobile-menu]");
   const header = document.querySelector("[data-header]");
 
-  initAboutMenu();
+  initNavDropdowns();
 
   if (header) {
     const onScroll = () => {

@@ -231,7 +231,9 @@
 
 .hero-header__nav-item.is-open .hero-header__nav-chevron,
 .hero-header__nav-item--about:hover .hero-header__nav-chevron,
-.hero-header__nav-item--about:focus-within .hero-header__nav-chevron {
+.hero-header__nav-item--about:focus-within .hero-header__nav-chevron,
+.hero-header__nav-item--dropdown:hover .hero-header__nav-chevron,
+.hero-header__nav-item--dropdown:focus-within .hero-header__nav-chevron {
   transform: rotate(180deg);
 }
 

@@ -13,7 +13,10 @@ MENU_ALIASES = {
     "Капельница от алкоголя": "/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/",
     "Капельница от запоя": "/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/",
     "Лечение наркомании по городам МО": "/uslugi/lechenie-narkomanii/moskovskaya-oblast/",
+    "Лечение наркомании в Московской области": "/uslugi/lechenie-narkomanii/moskovskaya-oblast/",
+    "Лечение алкоголизма в Московской области": "/uslugi/lechenie-alkogolizma/moskovskaya-oblast/",
     "Реабилитация по городам МО": "/uslugi/reabilitaciya/moskovskaya-oblast/",
+    "Реабилитация зависимых в Московской области": "/uslugi/reabilitaciya/moskovskaya-oblast/",
     "Медико-социальная реабилитация": "/uslugi/reabilitaciya/",
     "Метод Шичко": "/uslugi/reabilitaciya/",
 }

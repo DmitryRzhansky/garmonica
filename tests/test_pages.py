@@ -15,7 +15,7 @@ def test_catalog_keeps_service_urls_and_drops_removed_sections():
     catalog = get_catalog()
     urls = set(catalog.public_urls())
 
-    assert len(urls) == 1420
+    assert len(urls) == 1501
     assert "/uslugi/narkolog-na-dom/" in urls
     assert "/uslugi/narkolog-na-dom/aeroport/" in urls
     assert "/uslugi/narkolog-na-dom/moskovskaya-oblast/balashiha/" in urls

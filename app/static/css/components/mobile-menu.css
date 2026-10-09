@@ -249,6 +249,15 @@
   list-style: none;
 }
 
+.mobile-menu__list--priority {
+  margin-bottom: 0.5rem;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.mobile-menu__list--priority .mobile-menu__link {
+  color: var(--color-accent);
+}
+
 .mobile-menu__list li {
   border-bottom: 1px solid var(--color-border-light);
 }

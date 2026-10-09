@@ -1,12 +1,164 @@
 export const servicesMenu = [
   {
-    "parent": "Наркологическая помощь",
-    "link": "/uslugi/narkologicheskaya-pomosh/",
+    "parent": "Нарколог на дом",
+    "link": "/uslugi/narkolog-na-dom/",
     "child": [
       {
         "title": "Нарколог на дом",
         "link": "/uslugi/narkolog-na-dom/"
       },
+      {
+        "title": "Нарколог на дом в Московской области",
+        "link": "/uslugi/narkolog-na-dom/moskovskaya-oblast/"
+      }
+    ]
+  },
+  {
+    "parent": "Вывод из запоя на дому",
+    "link": "/uslugi/vyvod-iz-zapoya/na-domu/",
+    "child": [
+      {
+        "title": "Вывод из запоя на дому",
+        "link": "/uslugi/vyvod-iz-zapoya/na-domu/"
+      },
+      {
+        "title": "Вывод из запоя на дому в Московской области",
+        "link": "/uslugi/vyvod-iz-zapoya/na-domu/moskovskaya-oblast/"
+      },
+      {
+        "title": "Вывод из запоя",
+        "link": "/uslugi/vyvod-iz-zapoya/"
+      },
+      {
+        "title": "Вывод из запоя в стационаре",
+        "link": "/uslugi/vyvod-iz-zapoya/v-stacionare/"
+      }
+    ]
+  },
+  {
+    "parent": "Кодирование",
+    "link": "/uslugi/kodirovanie/",
+    "child": [
+      {
+        "title": "Кодирование от алкоголизма",
+        "link": "/uslugi/kodirovanie/"
+      },
+      {
+        "title": "Вшивание / подшивка",
+        "link": "/uslugi/kodirovanie/vshivanie/"
+      },
+      {
+        "title": "Двойной блок",
+        "link": "/uslugi/kodirovanie/dvojnoj-blok/"
+      },
+      {
+        "title": "Кодирование в клинике",
+        "link": "/uslugi/kodirovanie/v-klinike/"
+      },
+      {
+        "title": "Кодирование гипнозом",
+        "link": "/uslugi/kodirovanie/gipnoz/"
+      },
+      {
+        "title": "Кодирование на дому",
+        "link": "/uslugi/kodirovanie/na-domu/"
+      },
+      {
+        "title": "Кодирование на дому в Московской области",
+        "link": "/uslugi/kodirovanie/na-domu/moskovskaya-oblast/"
+      },
+      {
+        "title": "Кодирование по методу Довженко",
+        "link": "/uslugi/kodirovanie/metod-dovzhenko/"
+      },
+      {
+        "title": "Кодирование с провокацией",
+        "link": "/uslugi/kodirovanie/s-provokaciej/"
+      },
+      {
+        "title": "Кодирование уколом",
+        "link": "/uslugi/kodirovanie/ukol/"
+      },
+      {
+        "title": "Кодирование от Аквилонг",
+        "link": "/uslugi/kodirovanie/preparaty/akvilong/"
+      },
+      {
+        "title": "Кодирование от Алгоминал",
+        "link": "/uslugi/kodirovanie/preparaty/algominal/"
+      },
+      {
+        "title": "Кодирование от Вивитрол",
+        "link": "/uslugi/kodirovanie/preparaty/vivitrol/"
+      },
+      {
+        "title": "Кодирование от Дисульфирам",
+        "link": "/uslugi/kodirovanie/preparaty/disulfiram/"
+      },
+      {
+        "title": "Кодирование от Налтрексон",
+        "link": "/uslugi/kodirovanie/preparaty/naltrekson/"
+      },
+      {
+        "title": "Кодирование от Торпедо",
+        "link": "/uslugi/kodirovanie/preparaty/torpedo/"
+      },
+      {
+        "title": "Кодирование от Эспераль",
+        "link": "/uslugi/kodirovanie/preparaty/esperal/"
+      },
+      {
+        "title": "Медикаментозное кодирование",
+        "link": "/uslugi/kodirovanie/medikamentoznoe/"
+      },
+      {
+        "title": "Препараты для кодирования",
+        "link": "/uslugi/kodirovanie/preparaty/"
+      }
+    ]
+  },
+  {
+    "parent": "Раскодирование",
+    "link": "/uslugi/kodirovanie/raskodirovanie/",
+    "child": [
+      {
+        "title": "Раскодирование",
+        "link": "/uslugi/kodirovanie/raskodirovanie/"
+      },
+      {
+        "title": "Раскодирование от Эспераль",
+        "link": "/uslugi/kodirovanie/raskodirovanie/esperal/"
+      },
+      {
+        "title": "Раскодирование от Аквилонг",
+        "link": "/uslugi/kodirovanie/raskodirovanie/akvilong/"
+      },
+      {
+        "title": "Раскодирование от Алгоминал",
+        "link": "/uslugi/kodirovanie/raskodirovanie/algominal/"
+      },
+      {
+        "title": "Раскодирование от Дисульфирам",
+        "link": "/uslugi/kodirovanie/raskodirovanie/disulfiram/"
+      },
+      {
+        "title": "Раскодирование от Налтрексон",
+        "link": "/uslugi/kodirovanie/raskodirovanie/naltrekson/"
+      },
+      {
+        "title": "Раскодирование от Вивитрол",
+        "link": "/uslugi/kodirovanie/raskodirovanie/vivitrol/"
+      },
+      {
+        "title": "Раскодирование от Торпедо",
+        "link": "/uslugi/kodirovanie/raskodirovanie/torpedo/"
+      }
+    ]
+  },
+  {
+    "parent": "Наркологическая помощь",
+    "link": "/uslugi/narkologicheskaya-pomosh/",
+    "child": [
       {
         "title": "Консультация нарколога",
         "link": "/uslugi/narkologicheskaya-pomosh/konsultaciya-narkologa/"
@@ -41,6 +193,10 @@ export const servicesMenu = [
     "parent": "Лечение алкоголизма",
     "link": "/uslugi/lechenie-alkogolizma/",
     "child": [
+      {
+        "title": "Лечение алкоголизма в Московской области",
+        "link": "/uslugi/lechenie-alkogolizma/moskovskaya-oblast/"
+      },
       {
         "title": "Лечение алкоголизма на дому",
         "link": "/uslugi/lechenie-alkogolizma/na-domu/"
@@ -84,22 +240,6 @@ export const servicesMenu = [
       {
         "title": "Помощь при алкогольном делирии",
         "link": "/uslugi/lechenie-alkogolizma/alkogolnyj-delirij/"
-      },
-      {
-        "title": "Вывод из запоя",
-        "link": "/uslugi/vyvod-iz-zapoya/"
-      },
-      {
-        "title": "Вывод из запоя + дальнейшее лечение",
-        "link": "/uslugi/vyvod-iz-zapoya/s-dalnejshim-lecheniem/"
-      },
-      {
-        "title": "Вывод из запоя в стационаре",
-        "link": "/uslugi/vyvod-iz-zapoya/v-stacionare/"
-      },
-      {
-        "title": "Вывод из запоя на дому",
-        "link": "/uslugi/vyvod-iz-zapoya/na-domu/"
       }
     ]
   },
@@ -136,96 +276,12 @@ export const servicesMenu = [
         "link": "/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/"
       },
       {
+        "title": "Капельница на дому в Московской области",
+        "link": "/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/moskovskaya-oblast/"
+      },
+      {
         "title": "Капельница от похмелья",
         "link": "/uslugi/kapelnitsy/ot-pohmelya/"
-      }
-    ]
-  },
-  {
-    "parent": "Кодирование",
-    "link": "/uslugi/kodirovanie/",
-    "child": [
-      {
-        "title": "Кодирование от алкоголизма",
-        "link": "/uslugi/kodirovanie/"
-      },
-      {
-        "title": "Вшивание / подшивка",
-        "link": "/uslugi/kodirovanie/vshivanie/"
-      },
-      {
-        "title": "Двойной блок",
-        "link": "/uslugi/kodirovanie/dvojnoj-blok/"
-      },
-      {
-        "title": "Кодирование в клинике",
-        "link": "/uslugi/kodirovanie/v-klinike/"
-      },
-      {
-        "title": "Кодирование гипнозом",
-        "link": "/uslugi/kodirovanie/gipnoz/"
-      },
-      {
-        "title": "Кодирование на дому",
-        "link": "/uslugi/kodirovanie/na-domu/"
-      },
-      {
-        "title": "Кодирование по методу Довженко",
-        "link": "/uslugi/kodirovanie/metod-dovzhenko/"
-      },
-      {
-        "title": "Кодирование с провокацией",
-        "link": "/uslugi/kodirovanie/s-provokaciej/"
-      },
-      {
-        "title": "Кодирование уколом",
-        "link": "/uslugi/kodirovanie/ukol/"
-      },
-      {
-        "title": "Кодирование: Аквилонг",
-        "link": "/uslugi/kodirovanie/preparaty/akvilong/"
-      },
-      {
-        "title": "Кодирование: Алгоминал",
-        "link": "/uslugi/kodirovanie/preparaty/algominal/"
-      },
-      {
-        "title": "Кодирование: Вивитрол",
-        "link": "/uslugi/kodirovanie/preparaty/vivitrol/"
-      },
-      {
-        "title": "Кодирование: Дисульфирам",
-        "link": "/uslugi/kodirovanie/preparaty/disulfiram/"
-      },
-      {
-        "title": "Кодирование: Налтрексон",
-        "link": "/uslugi/kodirovanie/preparaty/naltrekson/"
-      },
-      {
-        "title": "Кодирование: Торпедо",
-        "link": "/uslugi/kodirovanie/preparaty/torpedo/"
-      },
-      {
-        "title": "Кодирование: Эспераль",
-        "link": "/uslugi/kodirovanie/preparaty/esperal/"
-      },
-      {
-        "title": "Медикаментозное кодирование",
-        "link": "/uslugi/kodirovanie/medikamentoznoe/"
-      },
-      {
-        "title": "Препараты для кодирования",
-        "link": "/uslugi/kodirovanie/preparaty/"
-      }
-    ]
-  },
-  {
-    "parent": "Раскодирование",
-    "link": "/uslugi/kodirovanie/raskodirovanie/",
-    "child": [
-      {
-        "title": "Раскодирование",
-        "link": "/uslugi/kodirovanie/raskodirovanie/"
       }
     ]
   },
@@ -233,6 +289,10 @@ export const servicesMenu = [
     "parent": "Лечение наркомании",
     "link": "/uslugi/lechenie-narkomanii/",
     "child": [
+      {
+        "title": "Лечение наркомании в Московской области",
+        "link": "/uslugi/lechenie-narkomanii/moskovskaya-oblast/"
+      },
       {
         "title": "Лечение наркомании в стационаре",
         "link": "/uslugi/lechenie-narkomanii/v-stacionare/"
@@ -256,10 +316,6 @@ export const servicesMenu = [
       {
         "title": "Детоксикация от наркотиков",
         "link": "/uslugi/lechenie-narkomanii/detoksikaciya/"
-      },
-      {
-        "title": "Лечение наркомании по городам МО",
-        "link": "/uslugi/lechenie-narkomanii/moskovskaya-oblast/"
       },
       {
         "title": "Лечение героиновой зависимости",
@@ -394,6 +450,10 @@ export const servicesMenu = [
     "link": "/uslugi/reabilitaciya/",
     "child": [
       {
+        "title": "Реабилитация зависимых в Московской области",
+        "link": "/uslugi/reabilitaciya/moskovskaya-oblast/"
+      },
+      {
         "title": "Реабилитация при алкоголизме",
         "link": "/uslugi/reabilitaciya/alkogolizm/"
       },
@@ -420,10 +480,6 @@ export const servicesMenu = [
       {
         "title": "Ресоциализация",
         "link": "/uslugi/reabilitaciya/resocializaciya/"
-      },
-      {
-        "title": "Реабилитация по городам МО",
-        "link": "/uslugi/reabilitaciya/moskovskaya-oblast/"
       }
     ]
   },
