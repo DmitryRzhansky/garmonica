@@ -74,7 +74,11 @@
 
 #reviews-tab-yandex:checked ~ .reviews__inner label[for="reviews-tab-yandex"],
 #reviews-tab-2gis:checked ~ .reviews__inner label[for="reviews-tab-2gis"],
-#reviews-tab-google:checked ~ .reviews__inner label[for="reviews-tab-google"] {
+#reviews-tab-google:checked ~ .reviews__inner label[for="reviews-tab-google"],
+#reviews-tab-doctu:checked ~ .reviews__inner label[for="reviews-tab-doctu"],
+#reviews-tab-zoon:checked ~ .reviews__inner label[for="reviews-tab-zoon"],
+#reviews-tab-napopravku:checked ~ .reviews__inner label[for="reviews-tab-napopravku"],
+#reviews-tab-prodoctorov:checked ~ .reviews__inner label[for="reviews-tab-prodoctorov"] {
   color: var(--color-white);
   background-color: var(--color-accent);
   border-color: var(--color-accent);
@@ -104,7 +108,11 @@
 
 #reviews-tab-yandex:checked ~ .reviews__inner [data-reviews-panel="yandex"],
 #reviews-tab-2gis:checked ~ .reviews__inner [data-reviews-panel="2gis"],
-#reviews-tab-google:checked ~ .reviews__inner [data-reviews-panel="google"] {
+#reviews-tab-google:checked ~ .reviews__inner [data-reviews-panel="google"],
+#reviews-tab-doctu:checked ~ .reviews__inner [data-reviews-panel="doctu"],
+#reviews-tab-zoon:checked ~ .reviews__inner [data-reviews-panel="zoon"],
+#reviews-tab-napopravku:checked ~ .reviews__inner [data-reviews-panel="napopravku"],
+#reviews-tab-prodoctorov:checked ~ .reviews__inner [data-reviews-panel="prodoctorov"] {
   display: grid;
 }
 
@@ -175,10 +183,22 @@
 }
 
 .reviews__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
   background-color: var(--color-cutout);
+  color: var(--color-text-muted);
+}
+
+.reviews__avatar-icon {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+  opacity: 0.72;
 }
 
 .reviews__avatar--image {
@@ -423,7 +443,8 @@
   .reviews__filters {
     flex-direction: row;
     flex-wrap: wrap;
-    width: auto;
+    justify-content: flex-end;
+    width: min(100%, 36rem);
   }
 
   .reviews__filter {

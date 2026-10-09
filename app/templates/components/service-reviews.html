@@ -1,0 +1,97 @@
+<section class="reviews" id="service-reviews" data-reviews aria-labelledby="service-reviews-title">
+  {% for source in review_sources %}
+  <input
+    class="reviews__tab-input"
+    type="radio"
+    name="service-reviews-tab"
+    id="reviews-tab-{{ source.id }}"
+    data-reviews-tab="{{ source.id }}"
+    {% if loop.first %}checked{% endif %}
+  >
+  {% endfor %}
+
+  <div class="reviews__inner">
+    <div class="reviews__header">
+      <h2 class="reviews__title" id="service-reviews-title">Отзывы наших клиентов</h2>
+      <div class="reviews__filters" role="tablist" aria-label="Источники отзывов">
+        {% for source in review_sources %}
+        <label class="reviews__filter" for="reviews-tab-{{ source.id }}" data-reviews-filter="{{ source.id }}">
+          <img
+            class="reviews__filter-icon"
+            src="{{ source.icon }}"
+            alt=""
+            width="16"
+            height="16"
+            decoding="async"
+          >
+          <span>{{ source.label }}</span>
+        </label>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="reviews__slider" data-reviews-slider>
+      {% for source in review_sources %}
+      <div class="reviews__panel" data-reviews-panel="{{ source.id }}" role="tabpanel">
+        <div class="reviews__viewport">
+          <ul class="reviews__track" role="list" data-reviews-track>
+            {% for review in source.reviews %}
+            <li class="reviews__slide">
+              <article class="reviews__card">
+                <div class="reviews__card-top">
+                  <span class="reviews__avatar" aria-hidden="true">
+                    <img
+                      class="reviews__avatar-icon"
+                      src="/assets/icons/user.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                      decoding="async"
+                    >
+                  </span>
+                  <div class="reviews__person">
+                    <p class="reviews__name">{{ review.name }}</p>
+                    <p class="reviews__meta">{{ review.meta }}</p>
+                  </div>
+                </div>
+                <div class="reviews__rating">
+                  <p class="reviews__stars" aria-label="Оценка {{ review.rating }} из 5">
+                    {% for _ in range(review.rating) %}★{% endfor %}{% for _ in range(5 - review.rating) %}☆{% endfor %}
+                  </p>
+                  <p class="reviews__date">{{ review.date }}</p>
+                </div>
+                <p class="reviews__text">{{ review.text }}</p>
+              </article>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="reviews__controls">
+          <button
+            class="reviews__nav reviews__nav--prev reviews__nav--hidden"
+            type="button"
+            data-reviews-prev
+            aria-label="Предыдущие отзывы"
+            disabled
+            aria-hidden="true"
+          >
+            <svg class="reviews__nav-icon" width="16" height="16" viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+            </svg>
+          </button>
+          <button
+            class="reviews__nav reviews__nav--next"
+            type="button"
+            data-reviews-next
+            aria-label="Следующие отзывы"
+          >
+            <svg class="reviews__nav-icon" width="16" height="16" viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
