@@ -34,50 +34,6 @@
   gap: 1.15rem;
 }
 
-.service-hero__breadcrumbs {
-  margin: 0;
-}
-
-.service-hero__breadcrumbs-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem 0.5rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  color: var(--color-text-muted);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  line-height: 1.3;
-}
-
-.service-hero__breadcrumbs-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.service-hero__breadcrumbs-item:not(:last-child)::after {
-  content: "→";
-  opacity: 0.55;
-}
-
-.service-hero__breadcrumbs-link {
-  color: inherit;
-  text-decoration: none;
-}
-
-.service-hero__breadcrumbs-link:hover {
-  color: var(--color-accent-hover);
-  text-decoration: underline;
-  text-underline-offset: 0.12em;
-}
-
-.service-hero__breadcrumbs-current {
-  color: var(--color-text-dark);
-}
-
 .service-hero__badge {
   display: inline-flex;
   align-items: center;

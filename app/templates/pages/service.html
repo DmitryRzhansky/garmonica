@@ -5,19 +5,9 @@
       <section class="service-hero" aria-labelledby="service-hero-title">
         <div class="service-hero__layout">
           <div class="service-hero__content">
-            <nav class="service-hero__breadcrumbs" aria-label="Навигация по разделам">
-              <ol class="service-hero__breadcrumbs-list">
-                {% for crumb in page.breadcrumbs %}
-                <li class="service-hero__breadcrumbs-item">
-                  {% if loop.last %}
-                  <span class="service-hero__breadcrumbs-current">{{ crumb.name }}</span>
-                  {% else %}
-                  <a class="service-hero__breadcrumbs-link" href="{{ crumb.url }}">{{ crumb.name }}</a>
-                  {% endif %}
-                </li>
-                {% endfor %}
-              </ol>
-            </nav>
+            {% with crumbs=page.breadcrumbs %}
+            {% include "components/breadcrumbs.html" %}
+            {% endwith %}
 
             <p class="service-hero__badge">
               <img

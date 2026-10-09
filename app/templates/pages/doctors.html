@@ -3,16 +3,9 @@
 {% block content %}
     <main id="top" class="doctors-page">
       <header class="dp-head">
-        <nav class="dp-head__breadcrumbs" aria-label="Навигация по разделам">
-          <ol class="dp-head__crumbs">
-            <li class="dp-head__crumb">
-              <a class="dp-head__crumb-link" href="/">Главная</a>
-            </li>
-            <li class="dp-head__crumb">
-              <span class="dp-head__crumb-current">Наши врачи</span>
-            </li>
-          </ol>
-        </nav>
+        {% with crumbs=[{"name": "Главная", "url": "/"}, {"name": "Наши врачи"}] %}
+        {% include "components/breadcrumbs.html" %}
+        {% endwith %}
         <h1 class="dp-head__title" id="doctors-page-title">Наши врачи</h1>
       </header>
 

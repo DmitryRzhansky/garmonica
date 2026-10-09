@@ -16,16 +16,9 @@
         <div class="ca-hero__veil" aria-hidden="true"></div>
 
         <div class="ca-hero__copy">
-          <nav class="ca-hero__breadcrumbs" aria-label="Навигация по разделам">
-            <ol class="ca-hero__crumbs">
-              <li class="ca-hero__crumb">
-                <a class="ca-hero__crumb-link" href="/">Главная</a>
-              </li>
-              <li class="ca-hero__crumb">
-                <span class="ca-hero__crumb-current">О клинике</span>
-              </li>
-            </ol>
-          </nav>
+          {% with crumbs=[{"name": "Главная", "url": "/"}, {"name": "О клинике"}], modifier="on-dark" %}
+          {% include "components/breadcrumbs.html" %}
+          {% endwith %}
 
           <h1 class="ca-hero__title" id="clinic-about-hero-title">О клинике</h1>
           <p class="ca-hero__lead">

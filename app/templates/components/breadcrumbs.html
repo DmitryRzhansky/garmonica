@@ -1,0 +1,17 @@
+{#
+  crumbs: list of {name, url?} — last item is current (no url or url ignored)
+  modifier: optional BEM modifier, e.g. "on-dark"
+#}
+<nav class="breadcrumbs{% if modifier %} breadcrumbs--{{ modifier }}{% endif %}" aria-label="Навигация по разделам">
+  <ol class="breadcrumbs__list">
+    {% for crumb in crumbs %}
+    <li class="breadcrumbs__item">
+      {% if loop.last or not crumb.url %}
+      <span class="breadcrumbs__current">{{ crumb.name }}</span>
+      {% else %}
+      <a class="breadcrumbs__link" href="{{ crumb.url }}">{{ crumb.name }}</a>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</nav>
