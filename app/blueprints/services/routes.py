@@ -34,7 +34,11 @@ def page(page_path):
         review_sources=get_service_reviews(),
         review_stats=get_service_review_stats(),
         service_doctors=get_service_doctors(),
-        field_service=get_field_service_context(resolve_field_service_base(view.url)),
+        field_service=(
+            None
+            if show_facility
+            else get_field_service_context(resolve_field_service_base(view.url))
+        ),
         service_facility=get_service_facility() if show_facility else None,
         service_faq=get_service_faq(),
         clinic_contacts=get_clinic_contacts(),

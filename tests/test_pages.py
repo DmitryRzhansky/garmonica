@@ -78,12 +78,16 @@ def test_service_pages_share_layout_blocks(client):
         'id="service-doctors-title"',
         'id="service-licenses-title"',
         'id="guidelines-title"',
-        'id="field-service-title"',
         'id="service-faq-title"',
         'id="service-request-title"',
         "service-legal",
         "article-credits",
     )
+    field_service_urls = {
+        "/uslugi/narkolog-na-dom/",
+        "/uslugi/vyvod-iz-zapoya/na-domu/",
+        "/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/",
+    }
 
     for url in urls:
         response = client.get(url)
@@ -91,6 +95,10 @@ def test_service_pages_share_layout_blocks(client):
         html = response.get_data(as_text=True)
         for marker in markers:
             assert marker in html, f"{marker} missing on {url}"
+        if url in field_service_urls:
+            assert 'id="field-service-title"' in html, f"field service missing on {url}"
+        else:
+            assert 'id="field-service-title"' not in html, f"field service should be absent on {url}"
 
 
 def test_service_facility_on_clinic_and_hubs_not_on_home(client):
@@ -115,11 +123,13 @@ def test_service_facility_on_clinic_and_hubs_not_on_home(client):
         assert 'id="service-facility-title"' in html, f"facility missing on {url}"
         assert "Где будет находиться пациент" in html
         assert "Люблинская" in html
-        assert 'id="field-service-title"' in html
+        assert 'id="field-service-title"' not in html, f"field service should be absent on {url}"
 
     for url in without_facility:
         html = client.get(url).get_data(as_text=True)
         assert 'id="service-facility-title"' not in html, f"facility should be absent on {url}"
+        if url != "/uslugi/reabilitaciya/":
+            assert 'id="field-service-title"' in html, f"field service missing on {url}"
 
 
 def test_geo_pages_change_heading_and_keep_doctor(client):
