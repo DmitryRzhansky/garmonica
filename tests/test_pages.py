@@ -167,10 +167,12 @@ def test_about_clinic_page(client):
     html = response.get_data(as_text=True)
 
     assert response.status_code == 200
-    assert "clinic-about-hero__title" in html
-    assert "Наша позиция" in html
-    assert "На чём держится работа клиники" in html
-    assert "Люблинская" in html
+    assert "ca-hero__title" in html
+    assert "О клинике" in html
+    assert "Стационар и амбулаторный приём" in html
+    assert "Анонимность и конфиденциальность" in html
+    assert "Врачи с опытом стационарной работы" in html
+    assert "Л041-01137-77/01838787" in html
 
 
 def test_remaining_site_pages(client):
