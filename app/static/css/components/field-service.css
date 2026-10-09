@@ -1039,6 +1039,8 @@ ul.field-service__geo-list a:hover {
 
   .field-equip__photo {
     aspect-ratio: 4 / 5;
+    width: 100%;
+    max-height: var(--field-equip-photo-max, none);
   }
 
   .field-service__doctors {

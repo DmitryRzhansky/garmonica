@@ -4,6 +4,38 @@ window.initFieldService = function initFieldService() {
     return;
   }
 
+  const equip = root.querySelector("[data-field-equip]");
+  let equipResizeTimer = 0;
+
+  function fitEquipPhotoHeight() {
+    if (!equip) {
+      return;
+    }
+
+    const desktop = window.matchMedia("(min-width: 48rem)").matches;
+    const panels = Array.from(equip.querySelectorAll("[data-field-equip-panel]"));
+
+    panels.forEach((panel) => {
+      const photo = panel.querySelector(".field-equip__photo");
+      const facts = panel.querySelector(".field-equip__facts");
+      if (!photo) {
+        return;
+      }
+
+      if (!desktop || !facts || panel.hidden) {
+        photo.style.removeProperty("--field-equip-photo-max");
+        return;
+      }
+
+      // Cap photo frame to facts height — shorten image, never stretch the text block.
+      photo.style.removeProperty("--field-equip-photo-max");
+      const factsHeight = Math.round(facts.getBoundingClientRect().height);
+      if (factsHeight > 0) {
+        photo.style.setProperty("--field-equip-photo-max", `${factsHeight}px`);
+      }
+    });
+  }
+
   function syncMainTabs() {
     const inputs = Array.from(root.querySelectorAll(".field-service__tab-input"));
     const panels = Array.from(root.querySelectorAll("[data-field-service-panel]"));
@@ -18,6 +50,9 @@ window.initFieldService = function initFieldService() {
       filters.forEach((chip) => {
         chip.classList.toggle("is-active", chip.getAttribute("data-field-service-filter") === slug);
       });
+      if (slug === "equipment") {
+        requestAnimationFrame(fitEquipPhotoHeight);
+      }
     }
 
     inputs.forEach((input) => {
@@ -35,7 +70,6 @@ window.initFieldService = function initFieldService() {
   }
 
   function syncEquipment() {
-    const equip = root.querySelector("[data-field-equip]");
     if (!equip) {
       return;
     }
@@ -60,6 +94,7 @@ window.initFieldService = function initFieldService() {
       if (select && select.value !== slug) {
         select.value = slug;
       }
+      requestAnimationFrame(fitEquipPhotoHeight);
     }
 
     inputs.forEach((input) => {
@@ -120,4 +155,9 @@ window.initFieldService = function initFieldService() {
   syncMainTabs();
   syncEquipment();
   syncFleet();
+
+  window.addEventListener("resize", () => {
+    window.clearTimeout(equipResizeTimer);
+    equipResizeTimer = window.setTimeout(fitEquipPhotoHeight, 100);
+  });
 };
