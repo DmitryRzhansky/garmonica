@@ -764,6 +764,16 @@ ul.field-service__geo-list a:hover {
   color: var(--color-text-dark);
 }
 
+.field-service__fleet-source {
+  margin: 0 auto;
+  max-width: 48rem;
+  font-family: var(--font-text);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
 /* Doctors */
 .field-service__doctors {
   display: grid;

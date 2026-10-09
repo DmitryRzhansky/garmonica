@@ -281,6 +281,10 @@
             {% endfor %}
           </div>
         </div>
+
+        {% if fs.fleet.source %}
+        <p class="field-service__fleet-source">{{ fs.fleet.source }}</p>
+        {% endif %}
       </section>
     </div>
 
