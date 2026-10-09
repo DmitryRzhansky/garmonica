@@ -133,10 +133,13 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.75rem;
-  width: min(100%, 40rem);
+  width: 100%;
+  max-width: 40rem;
   margin: 0;
+  margin-inline: 0;
   padding: 0;
   list-style: none;
+  align-self: stretch;
 }
 
 .service-hero__feature {
@@ -183,6 +186,8 @@
 }
 
 .service-hero__feature-text {
+  display: grid;
+  gap: 0.15rem;
   color: var(--color-text-dark);
   font-size: 0.8125rem;
   font-weight: 550;
@@ -190,17 +195,40 @@
   letter-spacing: 0.02em;
 }
 
+.service-hero__feature-title {
+  display: block;
+}
+
+.service-hero__feature-note {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
 .service-hero__meta {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem 1.5rem;
-  width: min(100%, 28rem);
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0;
+  margin-inline: 0;
+  padding: 0;
+  justify-items: start;
+  text-align: left;
+  align-self: stretch;
 }
 
 .service-hero__meta-item {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
 .service-hero__meta-label {
@@ -231,6 +259,8 @@ a.service-hero__meta-value:hover {
   flex-direction: column;
   gap: 0.75rem;
   width: 100%;
+  margin-top: 0.35rem;
+  padding-bottom: 0.5rem;
 }
 
 .service-hero__actions .button {
@@ -243,7 +273,8 @@ a.service-hero__meta-value:hover {
     padding: 1.5rem 1.35rem 1.75rem;
   }
 
-  .service-hero__features {
+  .service-hero__features,
+  .service-hero__meta {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.65rem;
   }
@@ -254,10 +285,6 @@ a.service-hero__meta-value:hover {
     gap: 0.65rem;
     min-height: 100%;
     padding: 0.9rem;
-  }
-
-  .service-hero__meta {
-    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -295,8 +322,9 @@ a.service-hero__meta-value:hover {
     padding-bottom: 0;
   }
 
-  .service-hero__features {
-    width: min(100%, 34rem);
+  .service-hero__features,
+  .service-hero__meta {
+    max-width: 34rem;
   }
 }
 
@@ -305,7 +333,8 @@ a.service-hero__meta-value:hover {
     padding-inline: 3rem;
   }
 
-  .service-hero__features {
-    width: min(100%, 38rem);
+  .service-hero__features,
+  .service-hero__meta {
+    max-width: 38rem;
   }
 }
