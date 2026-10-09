@@ -192,18 +192,20 @@
       </div>
 
       <div class="service-call-form__doctor">
-        <img
-          class="service-call-form__doctor-photo"
-          src="/assets/images/doctors/doctor-call-form.webp"
-          alt="Алексей Викторович Орлов"
-          width="96"
-          height="96"
-          loading="lazy"
-          decoding="async"
-        >
+        <span class="service-call-form__doctor-avatar" aria-hidden="true">
+          <img
+            class="service-call-form__doctor-icon"
+            src="{{ call_form_doctor.icon }}"
+            alt=""
+            width="28"
+            height="28"
+            loading="lazy"
+            decoding="async"
+          >
+        </span>
         <div class="service-call-form__doctor-meta">
-          <span class="service-call-form__doctor-name">Алексей Викторович Орлов</span>
-          <span class="service-call-form__doctor-role">Психиатр-нарколог</span>
+          <span class="service-call-form__doctor-name">{{ call_form_doctor.name }}</span>
+          <span class="service-call-form__doctor-role">{{ call_form_doctor.role }}</span>
         </div>
         <p class="service-call-form__online" aria-label="Врач онлайн">
           <span class="service-call-form__online-dot" aria-hidden="true"></span>

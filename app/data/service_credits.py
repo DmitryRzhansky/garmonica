@@ -4,32 +4,25 @@ from __future__ import annotations
 
 from datetime import date
 
-from app.data.service_doctors import SERVICE_DOCTORS
-
-
-def _doctor_by_slug(slug: str) -> dict:
-    for doctor in SERVICE_DOCTORS:
-        if doctor["slug"] == slug:
-            return doctor
-    raise KeyError(f"Doctor not found: {slug}")
+from app.data.doctors import get_doctor_by_slug
 
 
 def get_service_credits() -> dict:
-    author = _doctor_by_slug("saveliev-igor-nikolaevich")
-    reviewer = _doctor_by_slug("voronov-pavel-igorevich")
+    author = get_doctor_by_slug("sychev-artemiy-valerevich")
+    reviewer = get_doctor_by_slug("antipov-dmitriy-evgenevich")
     today = date.today()
 
     return {
         "author": {
             "name": author["name"],
             "role": author["role"],
-            "photo": author["photo"],
+            "icon": author["icon"],
             "slug": author["slug"],
         },
         "reviewer": {
             "name": reviewer["name"],
             "role": reviewer["role"],
-            "photo": reviewer["photo"],
+            "icon": reviewer["icon"],
             "slug": reviewer["slug"],
         },
         "updated_iso": today.isoformat(),

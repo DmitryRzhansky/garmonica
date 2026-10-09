@@ -4,15 +4,17 @@
     <ul class="article-credits__list" role="list">
       <li class="article-credits__item">
         <div class="article-credits__doctor">
-          <img
-            class="article-credits__avatar"
-            src="{{ service_credits.author.photo }}"
-            alt=""
-            width="48"
-            height="48"
-            loading="lazy"
-            decoding="async"
-          >
+          <span class="article-credits__avatar" aria-hidden="true">
+            <img
+              class="article-credits__avatar-icon"
+              src="{{ service_credits.author.icon }}"
+              alt=""
+              width="24"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            >
+          </span>
           <span class="article-credits__body">
             <span class="article-credits__label">Автор</span>
             <span class="article-credits__value">{{ service_credits.author.name }}</span>
@@ -59,15 +61,17 @@
 
       <li class="article-credits__item">
         <div class="article-credits__doctor">
-          <img
-            class="article-credits__avatar"
-            src="{{ service_credits.reviewer.photo }}"
-            alt=""
-            width="48"
-            height="48"
-            loading="lazy"
-            decoding="async"
-          >
+          <span class="article-credits__avatar" aria-hidden="true">
+            <img
+              class="article-credits__avatar-icon"
+              src="{{ service_credits.reviewer.icon }}"
+              alt=""
+              width="24"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            >
+          </span>
           <span class="article-credits__body">
             <span class="article-credits__label">Проверено врачом</span>
             <span class="article-credits__value">{{ service_credits.reviewer.name }}</span>

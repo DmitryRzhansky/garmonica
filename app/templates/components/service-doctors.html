@@ -10,13 +10,13 @@
           {% for doctor in service_doctors %}
           <li class="doctors__slide">
             <article class="doctors-card">
-              <figure class="doctors-card__media">
+              <figure class="doctors-card__media" aria-hidden="true">
                 <img
-                  class="doctors-card__image"
-                  src="{{ doctor.photo }}"
-                  alt="{{ doctor.name }} — {{ doctor.role }}"
-                  width="512"
-                  height="512"
+                  class="doctors-card__icon"
+                  src="{{ doctor.icon }}"
+                  alt=""
+                  width="72"
+                  height="72"
                   loading="lazy"
                   decoding="async"
                 >
@@ -24,6 +24,7 @@
 
               <div class="doctors-card__body">
                 <p class="doctors-card__name">{{ doctor.name }}</p>
+                <p class="doctors-card__role">{{ doctor.role }}</p>
 
                 <div class="doctors-card__meta">
                   {% if doctor.specialty %}
@@ -81,11 +82,11 @@
                   {% endif %}
                 </div>
 
-                {% if doctor.skills %}
+                {% if doctor.focus %}
                 <div class="doctors-card__section">
-                  <p class="doctors-card__section-title">Профессиональные навыки</p>
+                  <p class="doctors-card__section-title">Чем занимается</p>
                   <ul class="doctors-card__list" role="list">
-                    {% for skill in doctor.skills %}
+                    {% for item in doctor.focus %}
                     <li class="doctors-card__list-item">
                       <img
                         class="doctors-card__list-icon"
@@ -96,29 +97,29 @@
                         decoding="async"
                         aria-hidden="true"
                       >
-                      <span>{{ skill }}</span>
+                      <span>{{ item }}</span>
                     </li>
                     {% endfor %}
                   </ul>
                 </div>
                 {% endif %}
 
-                {% if doctor.services %}
+                {% if doctor.certificates %}
                 <div class="doctors-card__section">
-                  <p class="doctors-card__section-title">Какие услуги оказывает</p>
+                  <p class="doctors-card__section-title">Сертификаты</p>
                   <ul class="doctors-card__list" role="list">
-                    {% for service in doctor.services %}
+                    {% for cert in doctor.certificates %}
                     <li class="doctors-card__list-item">
                       <img
                         class="doctors-card__list-icon"
-                        src="{{ service.icon }}"
+                        src="/assets/icons/certificate.svg"
                         alt=""
                         width="14"
                         height="14"
                         decoding="async"
                         aria-hidden="true"
                       >
-                      <span>{{ service.title }}</span>
+                      <span>{{ cert }}</span>
                     </li>
                     {% endfor %}
                   </ul>
@@ -136,27 +137,9 @@
                       decoding="async"
                       aria-hidden="true"
                     >
-                    <span>Дипломы</span>
-                    {% if doctor.diplomas_count %}
-                    <span class="doctors-card__badge-count">{{ doctor.diplomas_count }}</span>
-                    {% endif %}
+                    <span>Сертификаты</span>
+                    <span class="doctors-card__badge-count">{{ doctor.certificates|length }}</span>
                   </span>
-
-                  {% if doctor.articles_count %}
-                  <span class="doctors-card__badge">
-                    <img
-                      class="doctors-card__badge-icon"
-                      src="/assets/icons/file-text.svg"
-                      alt=""
-                      width="16"
-                      height="16"
-                      decoding="async"
-                      aria-hidden="true"
-                    >
-                    <span>Статьи</span>
-                    <span class="doctors-card__badge-count">{{ doctor.articles_count }}</span>
-                  </span>
-                  {% endif %}
                 </div>
               </div>
             </article>

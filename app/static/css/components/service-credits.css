@@ -48,8 +48,7 @@
   height: 1.125rem;
 }
 
-.article-credits__logo,
-.article-credits__avatar {
+.article-credits__logo {
   display: block;
   width: 2.75rem;
   height: 2.75rem;
@@ -59,8 +58,18 @@
 }
 
 .article-credits__avatar {
-  object-fit: cover;
-  object-position: center top;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: var(--color-accent-light);
+  border-radius: var(--radius-sm);
+}
+
+.article-credits__avatar-icon {
+  display: block;
+  width: 1.35rem;
+  height: 1.35rem;
 }
 
 .article-credits__body {

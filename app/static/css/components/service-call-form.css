@@ -328,13 +328,19 @@
   color: #f5f7fa;
 }
 
-.service-call-form__doctor-photo {
+.service-call-form__doctor-avatar {
+  display: grid;
+  place-items: center;
   width: 2.75rem;
   height: 2.75rem;
-  object-fit: cover;
-  object-position: center top;
   border-radius: 50%;
-  background: #ffffff;
+  background: var(--color-accent-light);
+}
+
+.service-call-form__doctor-icon {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .service-call-form__doctor-meta {

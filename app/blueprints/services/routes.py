@@ -1,6 +1,7 @@
 from flask import Blueprint, abort, render_template, request
 
 from app.data.clinic_contacts import get_clinic_contacts
+from app.data.doctors import get_doctor_by_slug
 from app.data.field_service import get_field_service_context, resolve_field_service_base
 from app.data.service_credits import get_service_credits
 from app.data.service_doctors import get_service_doctors
@@ -34,6 +35,7 @@ def page(page_path):
         review_sources=get_service_reviews(),
         review_stats=get_service_review_stats(),
         service_doctors=get_service_doctors(),
+        call_form_doctor=get_doctor_by_slug("antipov-dmitriy-evgenevich"),
         field_service=(
             None
             if show_facility

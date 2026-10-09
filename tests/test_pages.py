@@ -58,7 +58,7 @@ def test_narkolog_keeps_written_hero(client):
     assert "Вызов нарколога на дом в" in html
     assert "Москве и области" in html
     assert "Врач приедет на адрес" in html
-    assert "Воронов Павел Игоревич" in html
+    assert "Антипов Дмитрий Евгеньевич" in html
     assert "от 5&nbsp;000&nbsp;₽" in html
 
 
@@ -142,8 +142,8 @@ def test_geo_pages_change_heading_and_keep_doctor(client):
     city_html = city.get_data(as_text=True)
     assert "метро Аэропорт" in metro_html
     assert "Балашиха" in city_html
-    assert "Воронов Павел Игоревич" in metro_html
-    assert "Воронов Павел Игоревич" in city_html
+    assert "Антипов Дмитрий Евгеньевич" in metro_html
+    assert "Антипов Дмитрий Евгеньевич" in city_html
     assert 'rel="canonical" href="http://localhost/uslugi/narkolog-na-dom/aeroport/"' in metro_html
 
 

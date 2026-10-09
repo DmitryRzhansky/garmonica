@@ -47,12 +47,10 @@
   background-color: var(--color-accent-light);
 }
 
-.doctors-card__image {
+.doctors-card__icon {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  width: 4.5rem;
+  height: 4.5rem;
 }
 
 .doctors-card__body {
@@ -71,6 +69,14 @@
   font-weight: 700;
   line-height: 1.3;
   color: var(--color-text-dark);
+}
+
+.doctors-card__role {
+  margin: 0;
+  font-size: var(--font-size-body-sm);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-accent-hover);
 }
 
 .doctors-card__meta {

@@ -123,23 +123,6 @@
                 </ul>
               </div>
 
-              <div class="dp-card__formats" aria-label="Форматы работы">
-                {% for fmt in doctor.formats %}
-                <span class="dp-card__format">
-                  <img
-                    class="dp-card__format-icon"
-                    src="{{ fmt.icon }}"
-                    alt=""
-                    width="16"
-                    height="16"
-                    decoding="async"
-                    aria-hidden="true"
-                  >
-                  {{ fmt.label }}
-                </span>
-                {% endfor %}
-              </div>
-
               <div class="dp-card__actions">
                 <a class="button button--primary" href="tel:{{ clinic_contacts.phone_tel }}">
                   <img class="button__icon" src="/assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">

@@ -1,4 +1,4 @@
-"""Врачи клиники для страницы «Наши врачи» (BUSINESS-INFO.MD §9)."""
+"""Врачи клиники (BUSINESS-INFO.MD §9) — единый источник для сайта."""
 
 from __future__ import annotations
 
@@ -27,11 +27,6 @@ CLINIC_DOCTORS = [
             "Психиатрия-наркология",
             "Терапия",
         ],
-        "formats": [
-            {"label": "Стационар", "icon": "/assets/icons/phosphor/hospital.svg"},
-            {"label": "Амбулаторно", "icon": "/assets/icons/phosphor/clipboard-text.svg"},
-            {"label": "Консультация", "icon": "/assets/icons/phosphor/chat-circle-dots.svg"},
-        ],
     },
     {
         "slug": "sychev-artemiy-valerevich",
@@ -56,11 +51,6 @@ CLINIC_DOCTORS = [
             "Психиатрия-наркология",
             "Психотерапия",
         ],
-        "formats": [
-            {"label": "Стационар", "icon": "/assets/icons/phosphor/hospital.svg"},
-            {"label": "Амбулаторно", "icon": "/assets/icons/phosphor/clipboard-text.svg"},
-            {"label": "Психотерапия", "icon": "/assets/icons/phosphor/brain.svg"},
-        ],
     },
     {
         "slug": "mishcherekova-kristina-dmitrievna",
@@ -84,11 +74,6 @@ CLINIC_DOCTORS = [
         "certificates": [
             "Психиатрия",
             "Организация здравоохранения",
-        ],
-        "formats": [
-            {"label": "Стационар", "icon": "/assets/icons/phosphor/hospital.svg"},
-            {"label": "Амбулаторно", "icon": "/assets/icons/phosphor/clipboard-text.svg"},
-            {"label": "Наблюдение", "icon": "/assets/icons/phosphor/first-aid.svg"},
         ],
     },
     {
@@ -116,14 +101,16 @@ CLINIC_DOCTORS = [
             "Психиатрия",
             "Психотерапия",
         ],
-        "formats": [
-            {"label": "Стационар", "icon": "/assets/icons/phosphor/hospital.svg"},
-            {"label": "Амбулаторно", "icon": "/assets/icons/phosphor/clipboard-text.svg"},
-            {"label": "Психотерапия", "icon": "/assets/icons/phosphor/brain.svg"},
-        ],
     },
 ]
 
 
 def get_clinic_doctors() -> list[dict]:
     return list(CLINIC_DOCTORS)
+
+
+def get_doctor_by_slug(slug: str) -> dict:
+    for doctor in CLINIC_DOCTORS:
+        if doctor["slug"] == slug:
+            return doctor
+    raise KeyError(f"Doctor not found: {slug}")
