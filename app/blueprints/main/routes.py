@@ -1,6 +1,7 @@
 from flask import Blueprint, Response, render_template, request
 
 from app.data.clinic_contacts import get_clinic_contacts
+from app.data.doctors import get_clinic_doctors
 from app.services.catalog import get_catalog
 from app.services.info_pages import INFO_PAGES
 
@@ -43,6 +44,17 @@ def info_page(slug):
         return render_template(
             "pages/about-clinic.html",
             page=page,
+            clinic_contacts=get_clinic_contacts(),
+            meta_title=meta_title,
+            meta_description=meta_description,
+            canonical=canonical,
+        )
+
+    if slug == "vrachi":
+        return render_template(
+            "pages/doctors.html",
+            page=page,
+            doctors=get_clinic_doctors(),
             clinic_contacts=get_clinic_contacts(),
             meta_title=meta_title,
             meta_description=meta_description,

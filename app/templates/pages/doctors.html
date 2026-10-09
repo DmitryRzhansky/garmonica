@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main id="top" class="doctors-page">
+      <header class="dp-head">
+        <nav class="dp-head__breadcrumbs" aria-label="Навигация по разделам">
+          <ol class="dp-head__crumbs">
+            <li class="dp-head__crumb">
+              <a class="dp-head__crumb-link" href="/">Главная</a>
+            </li>
+            <li class="dp-head__crumb">
+              <span class="dp-head__crumb-current">Наши врачи</span>
+            </li>
+          </ol>
+        </nav>
+        <h1 class="dp-head__title" id="doctors-page-title">Наши врачи</h1>
+      </header>
+
+      <section class="dp-list" aria-labelledby="doctors-page-title">
+        <ul class="dp-grid" role="list">
+          {% for doctor in doctors %}
+          <li class="dp-grid__item">
+            <article class="dp-card" id="{{ doctor.slug }}">
+              <header class="dp-card__header">
+                <span class="dp-card__avatar" aria-hidden="true">
+                  <img
+                    class="dp-card__avatar-icon"
+                    src="{{ doctor.icon }}"
+                    alt=""
+                    width="40"
+                    height="40"
+                    decoding="async"
+                  >
+                </span>
+                <div class="dp-card__identity">
+                  <p class="dp-card__name">{{ doctor.name }}</p>
+                  <p class="dp-card__role">{{ doctor.role }}</p>
+                </div>
+              </header>
+
+              <p class="dp-card__lead">{{ doctor.lead }}</p>
+
+              <dl class="dp-card__meta">
+                <div class="dp-card__meta-row">
+                  <dt class="dp-card__meta-label">
+                    <img
+                      class="dp-card__meta-icon"
+                      src="/assets/icons/phosphor/stethoscope.svg"
+                      alt=""
+                      width="18"
+                      height="18"
+                      decoding="async"
+                      aria-hidden="true"
+                    >
+                    Специализация
+                  </dt>
+                  <dd class="dp-card__meta-value">{{ doctor.specialty }}</dd>
+                </div>
+                <div class="dp-card__meta-row">
+                  <dt class="dp-card__meta-label">
+                    <img
+                      class="dp-card__meta-icon"
+                      src="/assets/icons/phosphor/briefcase.svg"
+                      alt=""
+                      width="18"
+                      height="18"
+                      decoding="async"
+                      aria-hidden="true"
+                    >
+                    Стаж
+                  </dt>
+                  <dd class="dp-card__meta-value">{{ doctor.experience }}</dd>
+                </div>
+                {% if doctor.degree %}
+                <div class="dp-card__meta-row">
+                  <dt class="dp-card__meta-label">
+                    <img
+                      class="dp-card__meta-icon"
+                      src="/assets/icons/phosphor/certificate.svg"
+                      alt=""
+                      width="18"
+                      height="18"
+                      decoding="async"
+                      aria-hidden="true"
+                    >
+                    Степень
+                  </dt>
+                  <dd class="dp-card__meta-value">{{ doctor.degree }}</dd>
+                </div>
+                {% endif %}
+              </dl>
+
+              <div class="dp-card__section">
+                <p class="dp-card__section-title">Чем занимается</p>
+                <ul class="dp-card__points" role="list">
+                  {% for item in doctor.focus %}
+                  <li class="dp-card__point">
+                    <img
+                      class="dp-card__point-icon"
+                      src="/assets/icons/check.svg"
+                      alt=""
+                      width="14"
+                      height="14"
+                      decoding="async"
+                      aria-hidden="true"
+                    >
+                    <span>{{ item }}</span>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+
+              <div class="dp-card__section">
+                <p class="dp-card__section-title">Сертификаты</p>
+                <ul class="dp-card__certs" role="list">
+                  {% for cert in doctor.certificates %}
+                  <li class="dp-card__cert">
+                    <img
+                      class="dp-card__cert-icon"
+                      src="/assets/icons/phosphor/certificate.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                      decoding="async"
+                      aria-hidden="true"
+                    >
+                    {{ cert }}
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+
+              <div class="dp-card__formats" aria-label="Форматы работы">
+                {% for fmt in doctor.formats %}
+                <span class="dp-card__format">
+                  <img
+                    class="dp-card__format-icon"
+                    src="{{ fmt.icon }}"
+                    alt=""
+                    width="16"
+                    height="16"
+                    decoding="async"
+                    aria-hidden="true"
+                  >
+                  {{ fmt.label }}
+                </span>
+                {% endfor %}
+              </div>
+
+              <div class="dp-card__actions">
+                <a class="button button--primary" href="tel:{{ clinic_contacts.phone_tel }}">
+                  <img class="button__icon" src="/assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
+                  Записаться
+                </a>
+              </div>
+            </article>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </main>
+{% endblock %}

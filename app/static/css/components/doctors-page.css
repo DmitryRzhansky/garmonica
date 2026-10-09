@@ -1,0 +1,274 @@
+/* ============================================================
+   Страница «Наши врачи»
+   ============================================================ */
+
+.doctors-page {
+  padding-bottom: var(--section-fade);
+}
+
+/* ---------- Head: breadcrumbs + h1 ---------- */
+
+.dp-head {
+  display: grid;
+  gap: 0.65rem;
+  width: var(--page-shell-width);
+  margin:
+    calc(var(--header-offset) + 0.75rem)
+    auto
+    1.25rem;
+}
+
+.dp-head__crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.dp-head__crumb:not(:last-child)::after {
+  content: "/";
+  margin-left: 0.5rem;
+  opacity: 0.5;
+}
+
+.dp-head__crumb-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dp-head__crumb-link:hover {
+  color: var(--color-accent-hover);
+}
+
+.dp-head__crumb-current {
+  color: var(--color-text-dark);
+}
+
+.dp-head__title {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-h1);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text-dark);
+}
+
+/* ---------- Cards grid ---------- */
+
+.dp-list {
+  width: var(--page-shell-width);
+  margin: 0 auto;
+}
+
+.dp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dp-grid__item {
+  min-width: 0;
+}
+
+@media (min-width: 48rem) {
+  .dp-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.15rem;
+  }
+}
+
+/* ---------- Card ---------- */
+
+.dp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  min-width: 0;
+  padding: 1.35rem 1.25rem 1.4rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+.dp-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.dp-card__avatar {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1.1rem;
+  background: var(--color-accent-light);
+}
+
+.dp-card__avatar-icon {
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.dp-card__identity {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.dp-card__name {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--color-text-dark);
+  text-wrap: balance;
+}
+
+.dp-card__role {
+  margin: 0;
+  font-size: var(--font-size-body-sm);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-accent-hover);
+}
+
+.dp-card__lead {
+  margin: 0;
+  font-size: var(--font-size-body-sm);
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.dp-card__meta {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0.85rem 0.9rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-cutout);
+}
+
+.dp-card__meta-row {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.dp-card__meta-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.dp-card__meta-icon {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.dp-card__meta-value {
+  margin: 0;
+  padding-left: 1.4rem;
+  font-size: var(--font-size-body-sm);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-text-dark);
+}
+
+.dp-card__section {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.dp-card__section-title {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-text-dark);
+}
+
+.dp-card__points,
+.dp-card__certs {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dp-card__point,
+.dp-card__cert {
+  display: grid;
+  grid-template-columns: 1rem minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: start;
+  font-size: var(--font-size-body-sm);
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.dp-card__point-icon,
+.dp-card__cert-icon {
+  display: block;
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-top: 0.2rem;
+}
+
+.dp-card__formats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+}
+
+.dp-card__format {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-md);
+  background: var(--color-accent-light);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-text-dark);
+}
+
+.dp-card__format-icon {
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  flex-shrink: 0;
+}
+
+.dp-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.15rem;
+}

@@ -175,6 +175,22 @@ def test_about_clinic_page(client):
     assert "Л041-01137-77/01838787" in html
 
 
+def test_doctors_page(client):
+    response = client.get("/vrachi/")
+    html = response.get_data(as_text=True)
+
+    assert response.status_code == 200
+    assert "dp-head__title" in html
+    assert "Наши врачи" in html
+    assert "Антипов Дмитрий Евгеньевич" in html
+    assert "Сычев Артемий Валерьевич" in html
+    assert "Мищерекова Кристина Дмитриевна" in html
+    assert "Поплевченков Константин Николаевич" in html
+    assert "Доктор медицинских наук" in html
+    assert "dp-card__avatar-icon" in html
+    assert "/assets/icons/phosphor/" in html
+
+
 def test_remaining_site_pages(client):
     pages = {
         "/ceny/": "Цены",
