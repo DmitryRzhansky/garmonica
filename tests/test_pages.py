@@ -92,6 +92,32 @@ def test_info_page(client):
     assert "<h1 class=\"info-page__title\">Лицензия</h1>" in response.get_data(as_text=True)
 
 
+def test_remaining_site_pages(client):
+    pages = {
+        "/o-klinike/": "Клиника",
+        "/ceny/": "Цены",
+        "/otzyvy/": "Отзывы",
+        "/kejsy/": "Кейсы",
+        "/blog/": "Блог",
+        "/kontakty/": "Контакты",
+        "/politika-konfidencialnosti/": "Политика конфиденциальности",
+        "/soglasie/": "Согласие на обработку персональных данных",
+    }
+
+    for path, title in pages.items():
+        response = client.get(path)
+        assert response.status_code == 200
+        assert f"<h1 class=\"info-page__title\">{title}</h1>" in response.get_data(as_text=True)
+
+    home = client.get("/").get_data(as_text=True)
+    assert 'href="/ceny/"' in home
+    assert 'href="/otzyvy/"' in home
+    assert 'href="/kontakty/"' in home
+    assert 'href="/o-klinike/"' in home
+    assert 'href="/blog/"' in home
+    assert 'href="/soglasie/"' in home
+
+
 def test_sitemap_lists_services_and_skips_removed_sections(client):
     response = client.get("/sitemap.xml")
     body = response.get_data(as_text=True)
@@ -100,6 +126,9 @@ def test_sitemap_lists_services_and_skips_removed_sections(client):
     assert response.mimetype == "application/xml"
     assert "http://localhost/uslugi/narkolog-na-dom/" in body
     assert "http://localhost/vrachi/" in body
+    assert "http://localhost/ceny/" in body
+    assert "http://localhost/kontakty/" in body
+    assert "http://localhost/otzyvy/" in body
     assert "pomoshch-rodstvennikam" not in body
     assert "/pomoshch/" not in body
     assert "/pomosh/" not in body

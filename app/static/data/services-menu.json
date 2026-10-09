@@ -1,615 +1,633 @@
 [
   {
     "parent": "Наркологическая помощь",
-    "link": "#prices",
+    "link": "/uslugi/narkologicheskaya-pomosh/",
     "child": [
       {
         "title": "Нарколог на дом",
-        "link": "uslugi/narkolog-na-dom/"
+        "link": "/uslugi/narkolog-na-dom/"
       },
       {
         "title": "Консультация нарколога",
-        "link": "#prices"
+        "link": "/uslugi/narkologicheskaya-pomosh/konsultaciya-narkologa/"
       },
       {
         "title": "Приём психиатра-нарколога",
-        "link": "#prices"
+        "link": "/uslugi/narkologicheskaya-pomosh/psihiatr-narkolog/"
       },
       {
         "title": "Онлайн-консультация психиатра-нарколога",
-        "link": "#prices"
+        "link": "/uslugi/narkologicheskaya-pomosh/onlajn-konsultaciya/"
       },
       {
         "title": "Наркологический стационар",
-        "link": "#prices"
+        "link": "/uslugi/narkologicheskaya-pomosh/stacionar/"
       },
       {
         "title": "Госпитализация в стационар",
-        "link": "#prices"
+        "link": "/uslugi/narkologicheskaya-pomosh/gospitalizaciya/"
       },
       {
         "title": "Частный вытрезвитель",
-        "link": "#prices"
+        "link": "/uslugi/narkologicheskaya-pomosh/chastnyj-vytrezvitel/"
       },
       {
         "title": "Срочная наркологическая помощь",
-        "link": "#prices"
+        "link": "/uslugi/narkologicheskaya-pomosh/srochnaya-pomosh/"
       }
     ]
   },
   {
     "parent": "Лечение алкоголизма",
-    "link": "#prices",
+    "link": "/uslugi/lechenie-alkogolizma/",
     "child": [
       {
         "title": "Лечение алкоголизма на дому",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-alkogolizma/na-domu/"
       },
       {
         "title": "Лечение алкоголизма в стационаре",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-alkogolizma/v-stacionare/"
       },
       {
         "title": "Амбулаторное лечение алкоголизма",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-alkogolizma/ambulatorno/"
       },
       {
         "title": "Лечение женского алкоголизма",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-alkogolizma/zhenskij-alkogolizm/"
       },
       {
         "title": "Лечение мужского алкоголизма",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-alkogolizma/muzhskoj-alkogolizm/"
       },
       {
         "title": "Лечение пивного алкоголизма",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-alkogolizma/pivnoj-alkogolizm/"
       },
       {
         "title": "Лечение хронического алкоголизма",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-alkogolizma/hronicheskij-alkogolizm/"
       },
       {
         "title": "Лечение алкоголизма у пожилых",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-alkogolizma/u-pozhilyh/"
       },
       {
         "title": "Лечение алкоголизма без кодирования",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-alkogolizma/bez-kodirovaniya/"
       },
       {
         "title": "Лечение подросткового алкоголизма",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-alkogolizma/podrostkovyj/"
       },
       {
         "title": "Помощь при алкогольном делирии",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-alkogolizma/alkogolnyj-delirij/"
       },
       {
         "title": "Вывод из запоя",
-        "link": "#prices"
-      },
-      {
-        "title": "Капельницы и детокс",
-        "link": "#prices"
-      },
-      {
-        "title": "Кодирование от алкоголизма",
-        "link": "#prices"
-      },
-      {
-        "title": "Алкогольная детоксикация",
-        "link": "#prices"
-      },
-      {
-        "title": "Алкогольная интоксикация",
-        "link": "#prices"
-      },
-      {
-        "title": "Алкогольный абстинентный синдром",
-        "link": "#prices"
-      },
-      {
-        "title": "Вшивание / подшивка",
-        "link": "#prices"
+        "link": "/uslugi/vyvod-iz-zapoya/"
       },
       {
         "title": "Вывод из запоя + дальнейшее лечение",
-        "link": "#prices"
+        "link": "/uslugi/vyvod-iz-zapoya/s-dalnejshim-lecheniem/"
       },
       {
         "title": "Вывод из запоя в стационаре",
-        "link": "#prices"
+        "link": "/uslugi/vyvod-iz-zapoya/v-stacionare/"
       },
       {
         "title": "Вывод из запоя на дому",
-        "link": "#prices"
+        "link": "/uslugi/vyvod-iz-zapoya/na-domu/"
+      }
+    ]
+  },
+  {
+    "parent": "Капельницы",
+    "link": "/uslugi/kapelnitsy/",
+    "child": [
+      {
+        "title": "Капельницы и детокс",
+        "link": "/uslugi/kapelnitsy/"
       },
       {
-        "title": "Двойной блок",
-        "link": "#prices"
+        "title": "Алкогольная детоксикация",
+        "link": "/uslugi/kapelnitsy/detoksikaciya/"
+      },
+      {
+        "title": "Алкогольная интоксикация",
+        "link": "/uslugi/kapelnitsy/alkogolnaya-intoksikaciya/"
+      },
+      {
+        "title": "Алкогольный абстинентный синдром",
+        "link": "/uslugi/kapelnitsy/abstinentnyj-sindrom/"
       },
       {
         "title": "Капельница на дому",
-        "link": "#prices"
+        "link": "/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/"
       },
       {
         "title": "Капельница от алкоголя",
-        "link": "#prices"
+        "link": "/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/"
       },
       {
         "title": "Капельница от запоя",
-        "link": "#prices"
+        "link": "/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/"
       },
       {
         "title": "Капельница от похмелья",
-        "link": "#prices"
+        "link": "/uslugi/kapelnitsy/ot-pohmelya/"
+      }
+    ]
+  },
+  {
+    "parent": "Кодирование",
+    "link": "/uslugi/kodirovanie/",
+    "child": [
+      {
+        "title": "Кодирование от алкоголизма",
+        "link": "/uslugi/kodirovanie/"
+      },
+      {
+        "title": "Вшивание / подшивка",
+        "link": "/uslugi/kodirovanie/vshivanie/"
+      },
+      {
+        "title": "Двойной блок",
+        "link": "/uslugi/kodirovanie/dvojnoj-blok/"
       },
       {
         "title": "Кодирование в клинике",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/v-klinike/"
       },
       {
         "title": "Кодирование гипнозом",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/gipnoz/"
       },
       {
         "title": "Кодирование на дому",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/na-domu/"
       },
       {
         "title": "Кодирование по методу Довженко",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/metod-dovzhenko/"
       },
       {
         "title": "Кодирование с провокацией",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/s-provokaciej/"
       },
       {
         "title": "Кодирование уколом",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/ukol/"
       },
       {
         "title": "Кодирование: Аквилонг",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/preparaty/akvilong/"
       },
       {
         "title": "Кодирование: Алгоминал",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/preparaty/algominal/"
       },
       {
         "title": "Кодирование: Вивитрол",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/preparaty/vivitrol/"
       },
       {
         "title": "Кодирование: Дисульфирам",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/preparaty/disulfiram/"
       },
       {
         "title": "Кодирование: Налтрексон",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/preparaty/naltrekson/"
       },
       {
         "title": "Кодирование: Торпедо",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/preparaty/torpedo/"
       },
       {
         "title": "Кодирование: Эспераль",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/preparaty/esperal/"
       },
       {
         "title": "Медикаментозное кодирование",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/medikamentoznoe/"
       },
       {
         "title": "Препараты для кодирования",
-        "link": "#prices"
-      },
+        "link": "/uslugi/kodirovanie/preparaty/"
+      }
+    ]
+  },
+  {
+    "parent": "Раскодирование",
+    "link": "/uslugi/kodirovanie/raskodirovanie/",
+    "child": [
       {
         "title": "Раскодирование",
-        "link": "#prices"
+        "link": "/uslugi/kodirovanie/raskodirovanie/"
       }
     ]
   },
   {
     "parent": "Лечение наркомании",
-    "link": "#prices",
+    "link": "/uslugi/lechenie-narkomanii/",
     "child": [
       {
         "title": "Лечение наркомании в стационаре",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/v-stacionare/"
       },
       {
         "title": "Лечение наркомании на дому",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/na-domu/"
       },
       {
         "title": "Амбулаторное лечение наркомании",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/ambulatorno/"
       },
       {
         "title": "Медикаментозное лечение наркомании",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/medikamentoznoe/"
       },
       {
         "title": "Снятие ломки",
-        "link": "#prices"
+        "link": "/uslugi/snyatie-lomki/"
       },
       {
         "title": "Детоксикация от наркотиков",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/detoksikaciya/"
       },
       {
         "title": "Лечение наркомании по городам МО",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/moskovskaya-oblast/"
       },
       {
         "title": "Лечение героиновой зависимости",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/geroin/"
       },
       {
         "title": "Лечение метадоновой зависимости",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/metadon/"
       },
       {
         "title": "Лечение мефедроновой зависимости",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/mefedron/"
       },
       {
         "title": "Лечение кокаиновой зависимости",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/kokain/"
       },
       {
         "title": "Лечение амфетаминовой зависимости",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/amfetamin/"
       },
       {
         "title": "Лечение метамфетаминовой зависимости",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/metamfetamin/"
       },
       {
         "title": "Лечение зависимости от спайса",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/spajs/"
       },
       {
         "title": "Лечение зависимости от гашиша",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/gashish/"
       },
       {
         "title": "Лечение зависимости от марихуаны",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/marihuana/"
       },
       {
         "title": "Лечение зависимости от солей",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/soli/"
       },
       {
         "title": "Лечение зависимости от Альфа-PVP",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/alfa-pvp/"
       },
       {
         "title": "Лечение зависимости от бутирата",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/butirat/"
       },
       {
         "title": "Капельница при наркотической интоксикации",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/detoksikaciya/kapelnica/"
       },
       {
         "title": "Снятие ломки в стационаре",
-        "link": "#prices"
+        "link": "/uslugi/snyatie-lomki/v-stacionare/"
       },
       {
         "title": "Снятие ломки на дому",
-        "link": "#prices"
+        "link": "/uslugi/snyatie-lomki/na-domu/"
       },
       {
         "title": "УБОД",
-        "link": "#prices"
+        "link": "/uslugi/lechenie-narkomanii/detoksikaciya/ubod/"
       }
     ]
   },
   {
     "parent": "Другие зависимости",
-    "link": "#prices",
+    "link": "/uslugi/drugie-zavisimosti/",
     "child": [
       {
         "title": "Игромания / лудомания",
-        "link": "#prices"
+        "link": "/uslugi/drugie-zavisimosti/igromaniya/"
       },
       {
         "title": "Зависимость от ставок",
-        "link": "#prices"
+        "link": "/uslugi/drugie-zavisimosti/stavki/"
       },
       {
         "title": "Компьютерная зависимость",
-        "link": "#prices"
+        "link": "/uslugi/drugie-zavisimosti/kompyuternaya/"
       },
       {
         "title": "Интернет-зависимость",
-        "link": "#prices"
+        "link": "/uslugi/drugie-zavisimosti/internet/"
       },
       {
         "title": "Никотиновая зависимость",
-        "link": "#prices"
+        "link": "/uslugi/drugie-zavisimosti/nikotinovaya/"
       },
       {
         "title": "Токсикомания",
-        "link": "#prices"
+        "link": "/uslugi/drugie-zavisimosti/toksikomaniya/"
       },
       {
         "title": "Лекарственная зависимость",
-        "link": "#prices"
+        "link": "/uslugi/drugie-zavisimosti/lekarstvennaya/"
       },
       {
         "title": "Антидепрессанты: сопровождение отмены",
-        "link": "#prices"
+        "link": "/uslugi/drugie-zavisimosti/lekarstvennaya/antidepressanty/"
       },
       {
         "title": "Бензодиазепины",
-        "link": "#prices"
+        "link": "/uslugi/drugie-zavisimosti/lekarstvennaya/benzodiazepiny/"
       },
       {
         "title": "Габапентин",
-        "link": "#prices"
+        "link": "/uslugi/drugie-zavisimosti/lekarstvennaya/gabapentin/"
       },
       {
         "title": "Кодеин",
-        "link": "#prices"
+        "link": "/uslugi/drugie-zavisimosti/lekarstvennaya/kodein/"
       },
       {
         "title": "Прегабалин / Лирика",
-        "link": "#prices"
+        "link": "/uslugi/drugie-zavisimosti/lekarstvennaya/pregabalin/"
       },
       {
         "title": "Трамадол",
-        "link": "#prices"
+        "link": "/uslugi/drugie-zavisimosti/lekarstvennaya/tramadol/"
       },
       {
         "title": "Феназепам",
-        "link": "#prices"
+        "link": "/uslugi/drugie-zavisimosti/lekarstvennaya/fenazepam/"
       }
     ]
   },
   {
     "parent": "Реабилитация зависимых",
-    "link": "#prices",
+    "link": "/uslugi/reabilitaciya/",
     "child": [
       {
         "title": "Реабилитация при алкоголизме",
-        "link": "#prices"
+        "link": "/uslugi/reabilitaciya/alkogolizm/"
       },
       {
         "title": "Реабилитация при наркомании",
-        "link": "#prices"
+        "link": "/uslugi/reabilitaciya/narkomaniya/"
       },
       {
         "title": "Реабилитация при игромании",
-        "link": "#prices"
+        "link": "/uslugi/reabilitaciya/igromaniya/"
       },
       {
         "title": "Медико-социальная реабилитация",
-        "link": "#prices"
+        "link": "/uslugi/reabilitaciya/"
       },
       {
         "title": "Программа «12 шагов»",
-        "link": "#prices"
+        "link": "/uslugi/reabilitaciya/12-shagov/"
       },
       {
         "title": "Метод Шичко",
-        "link": "#prices"
+        "link": "/uslugi/reabilitaciya/"
       },
       {
         "title": "Ресоциализация",
-        "link": "#prices"
+        "link": "/uslugi/reabilitaciya/resocializaciya/"
       },
       {
         "title": "Реабилитация по городам МО",
-        "link": "#prices"
+        "link": "/uslugi/reabilitaciya/moskovskaya-oblast/"
       }
     ]
   },
   {
     "parent": "Психиатрическая помощь",
-    "link": "#prices",
+    "link": "/uslugi/psihiatriya/",
     "child": [
       {
         "title": "Консультация психиатра",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/konsultaciya/"
       },
       {
         "title": "Психиатр на дом",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/psihiatr-na-dom/"
       },
       {
         "title": "Онлайн-консультация психиатра",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/onlajn/"
       },
       {
         "title": "Психиатрический стационар",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/stacionar/"
       },
       {
         "title": "Тревожные и стрессовые расстройства",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/"
       },
       {
         "title": "Расстройства настроения",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-nastroeniya/"
       },
       {
         "title": "Психотические расстройства",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/psihoticheskie-rasstrojstva/"
       },
       {
         "title": "Расстройства личности и поведения",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/"
       },
       {
         "title": "Расстройства пищевого поведения",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/"
       },
       {
         "title": "Когнитивные и органические расстройства",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/kognitivnye-i-organicheskie/"
       },
       {
         "title": "Расстройства сна",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-sna/"
       },
       {
         "title": "Агорафобия",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/agorafobiya/"
       },
       {
         "title": "Бессонница",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-sna/bessonnica/"
       },
       {
         "title": "Биполярное расстройство",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-nastroeniya/bipolyarnoe/"
       },
       {
         "title": "Болезнь Альцгеймера",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/kognitivnye-i-organicheskie/alcgejmer/"
       },
       {
         "title": "Бредовое расстройство",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/psihoticheskie-rasstrojstva/bredovoe/"
       },
       {
         "title": "Генерализованное тревожное расстройство",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/generalizovannoe-trevozhnoe/"
       },
       {
         "title": "Деменция",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/kognitivnye-i-organicheskie/demenciya/"
       },
       {
         "title": "Депрессия",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-nastroeniya/depressiya/"
       },
       {
         "title": "Дистимия",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-nastroeniya/distimiya/"
       },
       {
         "title": "Зависимое расстройство личности",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/zavisimoe/"
       },
       {
         "title": "Избегающее расстройство личности",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/izbegayushchee/"
       },
       {
         "title": "Компульсивное переедание",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/kompulsivnoe-pereedanie/"
       },
       {
         "title": "Лунатизм",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-sna/lunatizm/"
       },
       {
         "title": "Нарколепсия",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-sna/narkolepsiya/"
       },
       {
         "title": "Нарциссическое расстройство личности",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/narcissicheskoe/"
       },
       {
         "title": "Неврозы",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/nevroz/"
       },
       {
         "title": "Нервная анорексия",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/anoreksiya/"
       },
       {
         "title": "Нервная булимия",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/bulimiya/"
       },
       {
         "title": "ОКР",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/okr/"
       },
       {
         "title": "ПТСР",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/ptsr/"
       },
       {
         "title": "Паническое расстройство и панические атаки",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/panicheskoe/"
       },
       {
         "title": "Параноидное расстройство личности",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/paranoidnoe/"
       },
       {
         "title": "Пограничное расстройство личности",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/pogranichnoe/"
       },
       {
         "title": "Послеродовая депрессия",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-nastroeniya/poslerodovaya-depressiya/"
       },
       {
         "title": "Психоз",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/psihoticheskie-rasstrojstva/psihoz/"
       },
       {
         "title": "Сосудистая деменция",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/kognitivnye-i-organicheskie/sosudistaya-demenciya/"
       },
       {
         "title": "Социофобия",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/sociofobiya/"
       },
       {
         "title": "Фобии",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/trevozhnye-i-stressovye-rasstrojstva/fobii/"
       },
       {
         "title": "Шизоаффективное расстройство",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/psihoticheskie-rasstrojstva/shizoaffektivnoe/"
       },
       {
         "title": "Шизоидное расстройство личности",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/rasstrojstva-lichnosti-i-povedeniya/shizoidnoe/"
       },
       {
         "title": "Шизотипическое расстройство",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/psihoticheskie-rasstrojstva/shizotipicheskoe/"
       },
       {
         "title": "Шизофрения",
-        "link": "#prices"
+        "link": "/uslugi/psihiatriya/psihoticheskie-rasstrojstva/shizofreniya/"
       }
     ]
   },
   {
     "parent": "Психотерапия и психология",
-    "link": "#prices",
+    "link": "/uslugi/psihoterapiya-i-psihologiya/",
     "child": [
       {
         "title": "Консультация психотерапевта",
-        "link": "#prices"
+        "link": "/uslugi/psihoterapiya-i-psihologiya/psihoterapevt/"
       },
       {
         "title": "Индивидуальная психотерапия",
-        "link": "#prices"
+        "link": "/uslugi/psihoterapiya-i-psihologiya/individualnaya/"
       },
       {
         "title": "Семейная психотерапия",
-        "link": "#prices"
+        "link": "/uslugi/psihoterapiya-i-psihologiya/semejnaya/"
       },
       {
         "title": "Консультация психолога",
-        "link": "#prices"
+        "link": "/uslugi/psihoterapiya-i-psihologiya/psiholog/"
       },
       {
         "title": "Семейный психолог",
-        "link": "#prices"
+        "link": "/uslugi/psihoterapiya-i-psihologiya/semejnyj-psiholog/"
       }
     ]
   }

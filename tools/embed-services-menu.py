@@ -12,6 +12,9 @@ MENU = json.loads((ROOT / "assets" / "data" / "services-menu.json").read_text(en
 CAT_ICONS = [
     ("нарколог", "ambulance.svg"),
     ("алкогол", "first-aid.svg"),
+    ("капельниц", "first-aid-kit.svg"),
+    ("раскодир", "lock.svg"),
+    ("кодирован", "syringe.svg"),
     ("наркоман", "syringe.svg"),
     ("зависимост", "heartbeat.svg"),
     ("реабилит", "leaf.svg"),
