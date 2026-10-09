@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 CLINIC_CONTACTS = {
-    "brand": "Нова клиник",
+    "brand": "НОВА",
     "legal_name": "ООО «НикаПроМЕД»",
     "inn": "9715492100",
     "ogrn": "1247700585186",
@@ -13,7 +13,7 @@ CLINIC_CONTACTS = {
     "phone_display": "+7 (495) 120-45-67",
     "phone_tel": "+74951204567",
     "email": "novaklinika111@yandex.ru",
-    "map_title": "Нова клиник на карте — ул. Люблинская, д. 46",
+    "map_title": "НОВА на карте — ул. Люблинская, д. 46",
     "map_embed": (
         "https://yandex.ru/map-widget/v1/"
         "?ll=37.7365%2C55.6709"

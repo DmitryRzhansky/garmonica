@@ -24,7 +24,7 @@ MENU_ALIASES = {
 NARKOLOG_COPY = {
     "h1_before": "Вызов нарколога на дом в",
     "h1_accent": "Москве и области",
-    "meta_title": "Вызов нарколога на дом в Москве — Нова клиник",
+    "meta_title": "Вызов нарколога на дом в Москве — НОВА",
     "meta_description": (
         "Вызов нарколога на дом в Москве и области: осмотр, оценка состояния, "
         "помощь при запое и интоксикации. Круглосуточно, анонимно, стоимость от 5 000 ₽."
@@ -121,10 +121,10 @@ def build_copy(page: dict) -> dict:
     accent = geo_accent(page)
     heading = page["service_name"] if accent else page["name"]
     if accent:
-        title = f"{heading} — {accent} — Нова клиник"
+        title = f"{heading} — {accent} — НОВА"
         lead = f"{heading}: {accent}. Текст страницы будет дополнен."
     else:
-        title = f"{heading} — Нова клиник"
+        title = f"{heading} — НОВА"
         lead = f"{heading}. Текст страницы будет дополнен."
     return {
         "h1_before": heading,

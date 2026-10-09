@@ -2,14 +2,15 @@ from flask import Blueprint, Response, render_template, request
 
 from app.data.clinic_contacts import get_clinic_contacts
 from app.data.doctors import get_clinic_doctors
+from app.data.prices import get_price_groups, get_price_notes
 from app.services.catalog import get_catalog
 from app.services.info_pages import INFO_PAGES
 
 main_bp = Blueprint("main", __name__)
 
-HOME_TITLE = "Нова клиник — наркологическая клиника | Помощь 24/7"
+HOME_TITLE = "НОВА — наркологическая клиника | Помощь 24/7"
 HOME_DESCRIPTION = (
-    "Наркологическая клиника «Нова клиник»: вызов врача на дом, детоксикация, "
+    "Наркологическая клиника «НОВА»: вызов врача на дом, детоксикация, "
     "стационар и сопровождение восстановления. Круглосуточно, конфиденциально, "
     "с понятной стоимостью до начала помощи."
 )
@@ -31,12 +32,12 @@ def info_page(slug):
     if page is None:
         return render_template(
             "errors/404.html",
-            meta_title="Страница не найдена — Нова клиник",
-            meta_description="Запрошенной страницы нет на сайте Нова клиник.",
+            meta_title="Страница не найдена — НОВА",
+            meta_description="Запрошенной страницы нет на сайте НОВА.",
             canonical=None,
         ), 404
 
-    meta_title = f"{page['title']} — Нова клиник"
+    meta_title = f"{page['title']} — НОВА"
     meta_description = page["description"]
     canonical = _canonical(f"/{slug}/")
 
@@ -55,6 +56,18 @@ def info_page(slug):
             "pages/doctors.html",
             page=page,
             doctors=get_clinic_doctors(),
+            clinic_contacts=get_clinic_contacts(),
+            meta_title=meta_title,
+            meta_description=meta_description,
+            canonical=canonical,
+        )
+
+    if slug == "ceny":
+        return render_template(
+            "pages/prices.html",
+            page=page,
+            price_groups=get_price_groups(),
+            price_notes=get_price_notes(),
             clinic_contacts=get_clinic_contacts(),
             meta_title=meta_title,
             meta_description=meta_description,

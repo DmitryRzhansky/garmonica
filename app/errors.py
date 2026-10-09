@@ -7,8 +7,8 @@ def register_error_handlers(app):
         return (
             render_template(
                 "errors/404.html",
-                meta_title="Страница не найдена — Нова клиник",
-                meta_description="Запрошенной страницы нет на сайте Нова клиник.",
+                meta_title="Страница не найдена — НОВА",
+                meta_description="Запрошенной страницы нет на сайте НОВА.",
                 canonical=None,
             ),
             404,

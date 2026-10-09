@@ -110,6 +110,21 @@
   gap: 0.85rem;
 }
 
+.prices__service-icon-wrap {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+}
+
+.prices__service-icon-wrap .prices__service-icon {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
 .prices__service-icon {
   width: 3.25rem;
   height: 3.25rem;
@@ -120,7 +135,7 @@
 .prices__service-name {
   font-family: var(--font-headline);
   font-size: 1.05rem;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--color-text-dark);
   line-height: 1.3;
 }
@@ -135,7 +150,7 @@
   display: inline-block;
   font-family: var(--font-headline);
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--color-accent);
   line-height: 1.2;
 }
@@ -149,6 +164,11 @@
     width: 3.75rem;
     height: 3.75rem;
   }
+
+  .prices__service-icon-wrap .prices__service-icon {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
 }
 
 @media (min-width: 64rem) {
@@ -158,22 +178,24 @@
 
   .prices__table thead th {
     padding: 1rem 1.15rem;
-    background: linear-gradient(180deg, #eef5fa 0%, #e2edf5 100%);
-    border-bottom: 1px solid var(--color-border);
+    background: var(--color-accent);
+    border-bottom: 0;
     font-family: var(--font-headline);
     font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--color-text-dark);
+    font-weight: 600;
+    color: var(--color-white);
     text-align: center;
     white-space: nowrap;
   }
 
   .prices__table thead th:first-child {
     width: 28%;
+    text-align: left;
   }
 
   .prices__table thead th:last-child {
     width: 18%;
+    text-align: right;
   }
 
   .prices__table tbody tr {
@@ -213,7 +235,165 @@
     height: 3.5rem;
   }
 
+  .prices__service-icon-wrap .prices__service-icon {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+
   .prices__cost {
     font-size: 1.125rem;
   }
+}
+
+/* ============================================================
+   Страница /ceny/
+   ============================================================ */
+
+.prices-page {
+  padding-bottom: var(--section-fade);
+}
+
+.pp-head {
+  display: grid;
+  gap: 0.65rem;
+  width: var(--page-shell-width);
+  margin:
+    calc(var(--header-offset) + 0.75rem)
+    auto
+    1.25rem;
+}
+
+.pp-head__title {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-h1);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text-dark);
+}
+
+.pp-notes {
+  display: grid;
+  gap: 0;
+  width: var(--page-shell-width);
+  margin: 0 auto var(--section-fade);
+  padding: 0;
+  list-style: none;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.pp-notes__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  min-width: 0;
+  padding: 1.05rem 1.15rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.pp-notes__item:last-child {
+  border-bottom: 0;
+}
+
+.pp-notes__icon {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+}
+
+.pp-notes__icon img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
+.pp-notes__text {
+  margin: 0;
+  min-width: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body-sm);
+  line-height: 1.5;
+}
+
+.pp-group {
+  width: var(--page-shell-width);
+  margin: 0 auto var(--section-fade);
+}
+
+.pp-group__header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.pp-group__icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+}
+
+.pp-group__icon img {
+  width: 1.375rem;
+  height: 1.375rem;
+  object-fit: contain;
+}
+
+.pp-group__title {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-h2);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text-dark);
+}
+
+.pp-group .prices__table-wrap {
+  margin-top: 0;
+}
+
+.pp-cta {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+  width: var(--page-shell-width);
+  margin: 0 auto;
+  padding: 1.35rem 1.25rem;
+  border: 1px solid rgba(91, 155, 213, 0.18);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, 0.98) 0%, rgba(232, 244, 251, 0.94) 100%);
+  box-shadow: var(--shadow-soft);
+}
+
+.pp-cta__title {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-h2);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text-dark);
+}
+
+.pp-cta__text {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body-sm);
+  line-height: 1.45;
 }

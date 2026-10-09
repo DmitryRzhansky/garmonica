@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main id="top" class="prices-page">
+      <header class="pp-head">
+        {% with crumbs=[{"name": "Главная", "url": "/"}, {"name": "Цены"}] %}
+        {% include "components/breadcrumbs.html" %}
+        {% endwith %}
+        <h1 class="pp-head__title" id="prices-page-title">Цены</h1>
+      </header>
+
+      <ul class="pp-notes" role="list" aria-label="Как формируется стоимость">
+        {% for note in price_notes %}
+        <li class="pp-notes__item">
+          <span class="pp-notes__icon" aria-hidden="true">
+            <img src="{{ note.icon }}" alt="" width="22" height="22" decoding="async">
+          </span>
+          <p class="pp-notes__text">{{ note.text }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+
+      {% for group in price_groups %}
+      <section class="pp-group" id="{{ group.id }}" aria-labelledby="pp-{{ group.id }}-title">
+        <header class="pp-group__header">
+          <span class="pp-group__icon" aria-hidden="true">
+            <img src="{{ group.icon }}" alt="" width="22" height="22" decoding="async">
+          </span>
+          <h2 class="pp-group__title" id="pp-{{ group.id }}-title">{{ group.title }}</h2>
+        </header>
+
+        <div class="prices__table-wrap">
+          <table class="prices__table">
+            <caption class="visually-hidden">{{ group.title }} — прайс «{{ clinic_contacts.brand }}»</caption>
+            <thead>
+              <tr>
+                <th scope="col">Услуга</th>
+                <th scope="col">Что входит</th>
+                <th scope="col">Стоимость</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in group.rows %}
+              <tr>
+                <th scope="row">
+                  <span class="prices__service">
+                    <span class="prices__service-icon-wrap" aria-hidden="true">
+                      <img
+                        class="prices__service-icon"
+                        src="{{ row.icon }}"
+                        alt=""
+                        width="22"
+                        height="22"
+                        decoding="async"
+                      >
+                    </span>
+                    <span class="prices__service-name">{{ row.name }}</span>
+                  </span>
+                </th>
+                <td data-label="Что входит">{{ row.includes }}</td>
+                <td data-label="Стоимость">
+                  <span class="prices__cost">{{ row.price }}{% if row.unit %}/{{ row.unit }}{% endif %}</span>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+      {% endfor %}
+
+      <section class="pp-cta" aria-labelledby="pp-cta-title">
+        <h2 class="pp-cta__title" id="pp-cta-title">Нужна точная сумма?</h2>
+        <p class="pp-cta__text">
+          Назовите ситуацию по телефону — подскажем ориентир по прайсу и что входит
+          в выбранный формат помощи.
+        </p>
+        <a class="button button--warm" href="tel:{{ clinic_contacts.phone_tel }}">
+          <img class="button__icon" src="/assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
+          {{ clinic_contacts.phone_display }}
+        </a>
+      </section>
+    </main>
+{% endblock %}

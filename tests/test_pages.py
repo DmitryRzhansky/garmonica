@@ -54,7 +54,7 @@ def test_narkolog_keeps_written_hero(client):
 
     assert response.status_code == 200
     html = response.get_data(as_text=True)
-    assert "<title>Вызов нарколога на дом в Москве — Нова клиник</title>" in html
+    assert "<title>Вызов нарколога на дом в Москве — НОВА</title>" in html
     assert "Вызов нарколога на дом в" in html
     assert "Москве и области" in html
     assert "Врач приедет на адрес" in html
@@ -191,9 +191,31 @@ def test_doctors_page(client):
     assert "/assets/icons/phosphor/" in html
 
 
+def test_prices_page(client):
+    response = client.get("/ceny/")
+    html = response.get_data(as_text=True)
+
+    assert response.status_code == 200
+    assert "pp-head__title" in html
+    assert "Цены" in html
+    assert "pp-head__lead" not in html
+    assert "pp-head__actions" not in html
+    assert "Стоимость называют до начала помощи" in html
+    assert "Способы оплаты: СБП" in html
+    assert "Стационар" in html
+    assert "4-местная палата" in html
+    assert "от 12" in html
+    assert "VIP-палата" in html
+    assert "prices__service-icon-wrap" in html
+    assert "Консультация психиатра" in html
+    assert "Сосудистая терапия" in html
+    assert "Анализы для госпитализации" in html
+    assert "Информированное сопровождение" in html
+    assert "НОВА" in html
+
+
 def test_remaining_site_pages(client):
     pages = {
-        "/ceny/": "Цены",
         "/otzyvy/": "Отзывы",
         "/kejsy/": "Кейсы",
         "/blog/": "Блог",
