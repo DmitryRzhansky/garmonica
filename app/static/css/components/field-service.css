@@ -1064,17 +1064,25 @@ ul.field-service__geo-list a:hover {
     height: 10rem;
   }
 
-  .field-service__chart-row {
-    grid-template-columns: minmax(14rem, 1.15fr) minmax(10rem, 0.7fr) minmax(11.5rem, auto);
-    grid-template-areas: "meta bar eta";
+  .field-service__chart {
+    grid-template-columns: minmax(16rem, 1.2fr) minmax(12rem, 1fr) max-content;
     column-gap: 2.25rem;
+  }
+
+  .field-service__chart-row {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+    grid-template-areas: "meta bar eta";
     align-items: center;
     padding: 1.35rem 0;
   }
 
   .field-service__chart-bar {
     height: 0.85rem;
-    max-width: 18rem;
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
   }
 
   ul.field-service__geo-list[role="list"] {
