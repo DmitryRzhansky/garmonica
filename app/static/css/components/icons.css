@@ -41,7 +41,8 @@ details.faq__item > .faq__question > .faq__icon,
 .field-service__doctor-more-icon,
 .field-service__step-icon,
 .contact-section--service .contact-section__details-icon,
-.article-credits__icon {
+.article-credits__icon,
+.service-legal__clip {
   filter: brightness(0) saturate(100%) invert(61%) sepia(42%) saturate(612%) hue-rotate(170deg) brightness(94%) contrast(88%);
 }
 
