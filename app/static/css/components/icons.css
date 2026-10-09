@@ -6,7 +6,7 @@
 .perks__tile-icon,
 .prices__geo-icon img,
 .contact__info-icon,
-.faq__icon,
+details.faq__item > .faq__question > .faq__icon,
 .about__route-icon,
 .about-dept__trait-icon,
 .licenses__scope-icon,

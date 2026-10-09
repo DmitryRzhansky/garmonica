@@ -1,0 +1,78 @@
+{% if service_faq and service_faq.questions %}
+<section class="faq faq--service" id="faq" aria-labelledby="service-faq-title" data-faq data-faq-mode="accordion">
+  <div class="faq__inner">
+    <h2 class="faq__title" id="service-faq-title">{{ service_faq.title }}</h2>
+
+    <div class="faq__columns">
+      {% for item in service_faq.questions %}
+      <div class="faq__item" data-faq-item>
+        <span class="faq__heading">
+          <button
+            class="faq__trigger"
+            type="button"
+            aria-expanded="false"
+            aria-controls="service-faq-panel-{{ loop.index }}"
+            id="service-faq-trigger-{{ loop.index }}"
+            data-faq-trigger
+          >
+            <span class="faq__question">{{ item.ask }}</span>
+            <span class="faq__icon" aria-hidden="true">
+              <img
+                class="faq__icon-glyph faq__icon-glyph--plus"
+                src="/assets/icons/plus.svg"
+                alt=""
+                width="16"
+                height="16"
+                decoding="async"
+              >
+              <img
+                class="faq__icon-glyph faq__icon-glyph--minus"
+                src="/assets/icons/minus.svg"
+                alt=""
+                width="16"
+                height="16"
+                decoding="async"
+              >
+            </span>
+          </button>
+        </span>
+        <div
+          class="faq__panel"
+          id="service-faq-panel-{{ loop.index }}"
+          role="region"
+          aria-labelledby="service-faq-trigger-{{ loop.index }}"
+          aria-hidden="true"
+          inert
+          data-faq-panel
+        >
+          <div class="faq__panel-inner">
+            <div class="faq__answer">
+              <p>{{ item.answer }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in service_faq.questions %}
+    {
+      "@type": "Question",
+      "name": {{ item.ask | tojson }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.answer | tojson }}
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
