@@ -10,7 +10,8 @@
 .about__route-icon,
 .about-dept__trait-icon,
 .licenses__scope-icon,
-.service-hero__badge-icon {
+.service-hero__badge-icon,
+.service-price__icon img {
   filter: invert(55%) sepia(35%) saturate(700%) hue-rotate(170deg) brightness(95%) contrast(90%);
 }
 

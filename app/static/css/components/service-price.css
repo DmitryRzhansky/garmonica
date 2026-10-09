@@ -1,0 +1,155 @@
+.service-price {
+  width: var(--page-shell-width);
+  margin: 0 auto var(--section-fade);
+}
+
+.service-price__inner {
+  width: 100%;
+  padding: 1.35rem 1.15rem 1.4rem;
+  border: 1px solid rgba(91, 155, 213, 0.18);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, 0.98) 0%, rgba(232, 244, 251, 0.94) 100%);
+  box-shadow: var(--shadow-soft);
+}
+
+.service-price__title {
+  margin: 0 0 1.15rem;
+  max-width: 22em;
+  font-family: var(--font-headline);
+  font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--color-text-dark);
+}
+
+.service-price__list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-price__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "icon body"
+    "cost cost"
+    "order order";
+  gap: 0.55rem 0.85rem;
+  align-items: start;
+  padding: 0.95rem 0.9rem;
+  border: 1px solid rgba(91, 155, 213, 0.16);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.service-price__icon {
+  grid-area: icon;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+}
+
+.service-price__icon img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
+.service-price__body {
+  grid-area: body;
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+  padding-top: 0.15rem;
+}
+
+.service-price__name {
+  color: var(--color-text-dark);
+  font-family: var(--font-headline);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.service-price__note {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.service-price__cost {
+  grid-area: cost;
+  color: var(--color-accent-hover);
+  font-family: var(--font-headline);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.service-price__order {
+  grid-area: order;
+  justify-self: stretch;
+  width: 100%;
+  min-height: 2.5rem;
+  padding-block: 0.65rem;
+  font-size: 0.875rem;
+}
+
+.service-price__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.15rem;
+}
+
+.service-price__pricelist {
+  width: 100%;
+  max-width: 18rem;
+  justify-content: center;
+}
+
+@media (min-width: 40rem) {
+  .service-price__inner {
+    padding: 1.6rem 1.45rem 1.55rem;
+  }
+
+  .service-price__item {
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    grid-template-areas: "icon body cost order";
+    align-items: center;
+    gap: 0.85rem 1rem;
+    padding: 1rem 1.05rem;
+  }
+
+  .service-price__order {
+    width: auto;
+    min-width: 7.5rem;
+    justify-self: end;
+  }
+}
+
+@media (min-width: 64rem) {
+  .service-price__list {
+    gap: 0.85rem;
+  }
+
+  .service-price__name {
+    font-size: 1rem;
+  }
+
+  .service-price__note {
+    font-size: 0.875rem;
+  }
+
+  .service-price__cost {
+    font-size: 1.125rem;
+  }
+}
