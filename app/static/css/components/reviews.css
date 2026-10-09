@@ -114,7 +114,8 @@
 #reviews-tab-prodoctorov:checked ~ .reviews__inner label.reviews-stats__platform[for="reviews-tab-prodoctorov"] {
   border-color: var(--color-accent);
   background-color: var(--color-accent-light);
-  box-shadow: 0 0 0 1px var(--color-accent);
+  /* Без outer box-shadow: overflow-x у ряда обрезал левый край первой вкладки */
+  box-shadow: none;
 }
 
 .reviews__filter-icon {
@@ -270,10 +271,13 @@
   grid-auto-columns: minmax(9.5rem, 1fr);
   gap: 0.55rem;
   margin: 0;
-  padding: 0.15rem 0;
+  /* Запас под border и focus-outline, чтобы первая/последняя вкладка не обрезались */
+  padding: 0.25rem;
   overflow-x: auto;
+  overflow-y: visible;
   scroll-behavior: smooth;
   scroll-snap-type: x proximity;
+  scroll-padding-inline: 0.25rem;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
 }

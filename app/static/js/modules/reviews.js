@@ -143,16 +143,30 @@ function initReviews() {
       return;
     }
 
-    const labelLeft = activeLabel.offsetLeft;
-    const labelWidth = activeLabel.offsetWidth;
-    const stripWidth = strip.clientWidth;
-    const maxScroll = Math.max(0, strip.scrollWidth - stripWidth);
-
-    // Чуть сдвигаем вправо, чтобы справа выглядывала следующая площадка
-    const target = Math.min(
-      maxScroll,
-      Math.max(0, labelLeft - 12 + labelWidth * 0.35)
+    const platforms = Array.from(
+      strip.querySelectorAll(".reviews-stats__platform")
     );
+    const index = platforms.indexOf(activeLabel);
+    const maxScroll = Math.max(0, strip.scrollWidth - strip.clientWidth);
+
+    // Первую вкладку не сдвигаем — иначе обрезается левая граница
+    let target = 0;
+
+    if (index > 0) {
+      const stripRect = strip.getBoundingClientRect();
+      const labelRect = activeLabel.getBoundingClientRect();
+      const pad = 8;
+      // Держим активную карточку целиком в зоне видимости
+      let nextLeft = strip.scrollLeft;
+
+      if (labelRect.left < stripRect.left + pad) {
+        nextLeft -= stripRect.left + pad - labelRect.left;
+      } else if (labelRect.right > stripRect.right - pad) {
+        nextLeft += labelRect.right - (stripRect.right - pad);
+      }
+
+      target = Math.min(maxScroll, Math.max(0, nextLeft));
+    }
 
     if (typeof strip.scrollTo === "function") {
       strip.scrollTo({ left: target, behavior: "smooth" });
