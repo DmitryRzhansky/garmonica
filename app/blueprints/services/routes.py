@@ -2,6 +2,7 @@ from flask import Blueprint, abort, render_template, request
 
 from app.data.clinic_contacts import get_clinic_contacts
 from app.data.field_service import get_field_service_context
+from app.data.service_credits import get_service_credits
 from app.data.service_doctors import get_service_doctors
 from app.data.service_faq import get_service_faq
 from app.data.service_reviews import get_service_review_stats, get_service_reviews
@@ -22,10 +23,12 @@ def page(page_path):
     field_service = None
     service_faq = None
     clinic_contacts = None
+    service_credits = None
     if view.url.startswith("/uslugi/narkolog-na-dom"):
         field_service = get_field_service_context("/uslugi/narkolog-na-dom/")
         service_faq = get_service_faq()
         clinic_contacts = get_clinic_contacts()
+        service_credits = get_service_credits()
 
     return render_template(
         "pages/service.html",
@@ -39,4 +42,5 @@ def page(page_path):
         field_service=field_service,
         service_faq=service_faq,
         clinic_contacts=clinic_contacts,
+        service_credits=service_credits,
     )

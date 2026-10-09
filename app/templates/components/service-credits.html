@@ -1,0 +1,81 @@
+{% if service_credits %}
+<section class="service-credits" aria-label="Сведения о материале">
+  <div class="service-credits__inner">
+    <ul class="article-credits__list" role="list">
+      <li class="article-credits__item">
+        <div class="article-credits__doctor">
+          <img
+            class="article-credits__avatar"
+            src="{{ service_credits.author.photo }}"
+            alt=""
+            width="48"
+            height="48"
+            loading="lazy"
+            decoding="async"
+          >
+          <span class="article-credits__body">
+            <span class="article-credits__label">Автор</span>
+            <span class="article-credits__value">{{ service_credits.author.name }}</span>
+            <span class="article-credits__note">{{ service_credits.author.role }}</span>
+          </span>
+        </div>
+      </li>
+
+      <li class="article-credits__item">
+        <img
+          class="article-credits__icon"
+          src="/assets/icons/calendar-check.svg"
+          alt=""
+          width="18"
+          height="18"
+          decoding="async"
+          aria-hidden="true"
+        >
+        <span class="article-credits__body">
+          <span class="article-credits__label">Дата обновления</span>
+          <time class="article-credits__value" datetime="{{ service_credits.updated_iso }}">
+            {{ service_credits.updated_label }}
+          </time>
+        </span>
+      </li>
+
+      <li class="article-credits__item">
+        <div class="article-credits__service">
+          <img
+            class="article-credits__logo"
+            src="{{ service_credits.service.icon }}"
+            alt=""
+            width="48"
+            height="48"
+            loading="lazy"
+            decoding="async"
+          >
+          <span class="article-credits__body">
+            <span class="article-credits__label">Проверено сервисом</span>
+            <span class="article-credits__value">{{ service_credits.service.title }}</span>
+          </span>
+        </div>
+      </li>
+
+      <li class="article-credits__item">
+        <div class="article-credits__doctor">
+          <img
+            class="article-credits__avatar"
+            src="{{ service_credits.reviewer.photo }}"
+            alt=""
+            width="48"
+            height="48"
+            loading="lazy"
+            decoding="async"
+          >
+          <span class="article-credits__body">
+            <span class="article-credits__label">Проверено врачом</span>
+            <span class="article-credits__value">{{ service_credits.reviewer.name }}</span>
+            <span class="article-credits__note">{{ service_credits.reviewer.role }}</span>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+{% endif %}
