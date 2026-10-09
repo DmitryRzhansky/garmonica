@@ -1,5 +1,6 @@
 from flask import Blueprint, abort, render_template, request
 
+from app.data.clinic_contacts import get_clinic_contacts
 from app.data.field_service import get_field_service_context
 from app.data.service_doctors import get_service_doctors
 from app.data.service_faq import get_service_faq
@@ -20,9 +21,11 @@ def page(page_path):
         abort(404)
     field_service = None
     service_faq = None
+    clinic_contacts = None
     if view.url.startswith("/uslugi/narkolog-na-dom"):
         field_service = get_field_service_context("/uslugi/narkolog-na-dom/")
         service_faq = get_service_faq()
+        clinic_contacts = get_clinic_contacts()
 
     return render_template(
         "pages/service.html",
@@ -35,4 +38,5 @@ def page(page_path):
         service_doctors=get_service_doctors(),
         field_service=field_service,
         service_faq=service_faq,
+        clinic_contacts=clinic_contacts,
     )

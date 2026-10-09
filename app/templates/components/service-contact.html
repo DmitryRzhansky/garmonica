@@ -1,0 +1,219 @@
+{% set contacts = clinic_contacts %}
+<section
+  class="contact-section contact-section--service"
+  id="contact"
+  aria-labelledby="service-request-title"
+>
+  <div class="contact-section__inner">
+    <form
+      class="contact-section__form"
+      id="service-request-form"
+      data-request-form
+      action="#"
+      method="post"
+      novalidate
+      aria-labelledby="service-request-title"
+    >
+      <div class="contact-section__form-copy">
+        <span class="contact-section__form-title" id="service-request-title">
+          Оставить заявку
+        </span>
+        <p class="contact-section__form-text">
+          Оставьте заявку — оператор свяжется и согласует помощь. Работаем круглосуточно, анонимно.
+        </p>
+      </div>
+
+      <div
+        class="contact-section__form-error"
+        data-form-error-summary
+        role="alert"
+        tabindex="-1"
+        hidden
+      ></div>
+
+      <div
+        class="contact-section__form-success"
+        data-form-success
+        role="status"
+        tabindex="-1"
+        hidden
+      ></div>
+
+      <div class="contact-section__form-body">
+        <label class="contact-section__field" for="service-request-name">
+          <span class="visually-hidden">Имя</span>
+          <input
+            id="service-request-name"
+            name="name"
+            type="text"
+            placeholder="Имя"
+            autocomplete="given-name"
+            data-required
+            data-label="Имя"
+          >
+          <span class="contact-section__field-error" data-field-error hidden></span>
+        </label>
+
+        <label class="contact-section__field contact-section__field--phone" for="service-request-phone">
+          <span class="visually-hidden">Телефон</span>
+          <span class="contact-section__field-icon" aria-hidden="true">
+            <img src="/assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
+          </span>
+          <input
+            id="service-request-phone"
+            name="phone"
+            type="tel"
+            placeholder="Ваш телефон"
+            autocomplete="tel"
+            inputmode="tel"
+            data-required
+            data-label="Телефон"
+          >
+          <span class="contact-section__field-error" data-field-error hidden></span>
+        </label>
+
+        <button class="contact-section__submit" type="submit">
+          <img
+            class="contact-section__submit-icon"
+            src="/assets/icons/paper-plane-tilt.svg"
+            alt=""
+            width="16"
+            height="16"
+            decoding="async"
+          >
+          <span>Отправить заявку</span>
+        </button>
+      </div>
+
+      <div class="contact-section__honeypot" aria-hidden="true">
+        <label for="service-request-website">Сайт</label>
+        <input
+          id="service-request-website"
+          name="website"
+          type="text"
+          tabindex="-1"
+          autocomplete="off"
+        >
+      </div>
+
+      <label class="contact-section__consent" for="service-request-consent">
+        <input id="service-request-consent" name="consent" type="checkbox" required>
+        <span>
+          Даю согласие на
+          <a href="/soglasie/">обработку персональных данных</a>
+        </span>
+      </label>
+    </form>
+
+    <div class="contact-section__bottom">
+      <div class="contact-section__details">
+        <span class="contact-section__details-title">Контакты</span>
+
+        <div class="contact-section__details-grid">
+          <div class="contact-section__details-col">
+            <div class="contact-section__details-item">
+              <span class="contact-section__details-label">
+                <img
+                  class="contact-section__details-icon"
+                  src="/assets/icons/map-pin.svg"
+                  alt=""
+                  width="16"
+                  height="16"
+                  decoding="async"
+                >
+                Адрес
+              </span>
+              <address class="contact-section__details-value">
+                {{ contacts.address_full }}
+              </address>
+            </div>
+
+            <div class="contact-section__details-item">
+              <span class="contact-section__details-label">
+                <img
+                  class="contact-section__details-icon"
+                  src="/assets/icons/clock.svg"
+                  alt=""
+                  width="16"
+                  height="16"
+                  decoding="async"
+                >
+                Часы работы
+              </span>
+              <p class="contact-section__details-value">{{ contacts.hours }}</p>
+            </div>
+          </div>
+
+          <div class="contact-section__details-col">
+            <div class="contact-section__details-item">
+              <span class="contact-section__details-label">
+                <img
+                  class="contact-section__details-icon"
+                  src="/assets/icons/phone.svg"
+                  alt=""
+                  width="16"
+                  height="16"
+                  decoding="async"
+                >
+                Телефон и почта
+              </span>
+              <p class="contact-section__details-value">
+                <a href="tel:{{ contacts.phone_tel }}">{{ contacts.phone_display }}</a>
+              </p>
+              <p class="contact-section__details-value">
+                <a href="mailto:{{ contacts.email }}">{{ contacts.email }}</a>
+              </p>
+            </div>
+
+            <div class="contact-section__details-item">
+              <span class="contact-section__details-label">
+                <img
+                  class="contact-section__details-icon"
+                  src="/assets/icons/chat-circle.svg"
+                  alt=""
+                  width="16"
+                  height="16"
+                  decoding="async"
+                >
+                Мессенджеры
+              </span>
+              <ul class="contact-section__messengers" role="list">
+                {% for messenger in contacts.messengers %}
+                <li>
+                  <a
+                    href="{{ messenger.href }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="{{ messenger.icon }}"
+                      alt=""
+                      width="18"
+                      height="18"
+                      decoding="async"
+                    >
+                    {{ messenger.label }}
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-section__map">
+        <iframe
+          class="contact-section__map-frame"
+          title="{{ contacts.map_title }}"
+          src="{{ contacts.map_embed }}"
+          width="100%"
+          height="320"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>

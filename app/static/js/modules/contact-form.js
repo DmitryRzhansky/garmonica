@@ -115,57 +115,59 @@ function initContactForm() {
     return { isValid, messages };
   }
 
-  const form = document.querySelector("[data-request-form]");
+  function initForm(form) {
+    if (!form || form.dataset.contactReady === "true") {
+      return;
+    }
 
-  if (!form || form.dataset.contactReady === "true") {
-    return;
+    form.dataset.contactReady = "true";
+    initPhoneMask(form);
+
+    const summary = form.querySelector("[data-form-error-summary]");
+    const status = form.querySelector("[data-form-success]");
+
+    form.querySelectorAll("[data-required]").forEach((field) => {
+      field.addEventListener("input", () => clearFieldError(field));
+      field.addEventListener("change", () => clearFieldError(field));
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (status) {
+        status.hidden = true;
+      }
+
+      const honeypot = form.querySelector('input[name="website"]');
+      if (honeypot instanceof HTMLInputElement && honeypot.value.trim()) {
+        return;
+      }
+
+      const { isValid, messages } = validateForm(form);
+
+      if (!isValid) {
+        if (summary) {
+          summary.hidden = false;
+          summary.textContent = messages[0] || "Проверьте поля формы";
+          summary.focus();
+        }
+        return;
+      }
+
+      if (summary) {
+        summary.hidden = true;
+      }
+
+      if (status) {
+        status.hidden = false;
+        status.textContent =
+          "Форма заполнена. Отправка на сервер не подключена — позвоните в клинику «Нова клиник».";
+        status.focus();
+      }
+    });
   }
 
-  form.dataset.contactReady = "true";
-  initPhoneMask(form);
-
-  const summary = form.querySelector("[data-form-error-summary]");
-  const status = form.querySelector("[data-form-success]");
-
-  form.querySelectorAll("[data-required]").forEach((field) => {
-    field.addEventListener("input", () => clearFieldError(field));
-    field.addEventListener("change", () => clearFieldError(field));
-  });
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if (status) {
-      status.hidden = true;
-    }
-
-    const honeypot = form.querySelector('input[name="website"]');
-    if (honeypot instanceof HTMLInputElement && honeypot.value.trim()) {
-      return;
-    }
-
-    const { isValid, messages } = validateForm(form);
-
-    if (!isValid) {
-      if (summary) {
-        summary.hidden = false;
-        summary.textContent = messages[0] || "Проверьте поля формы";
-        summary.focus();
-      }
-      return;
-    }
-
-    if (summary) {
-      summary.hidden = true;
-    }
-
-    if (status) {
-      status.hidden = false;
-      status.textContent =
-        "Форма заполнена. Отправка на сервер не подключена — позвоните в клинику «Нова клиник».";
-      status.focus();
-    }
-  });
+  document.querySelectorAll("[data-request-form]").forEach(initForm);
 }
 
 window.initContactForm = initContactForm;
