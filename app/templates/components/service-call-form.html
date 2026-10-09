@@ -1,0 +1,215 @@
+<aside class="service-hero__form-panel">
+  <form
+    class="service-call-form"
+    data-service-call-form
+    action="#"
+    method="post"
+    novalidate
+    aria-label="Вызвать врача на дом"
+  >
+    <span class="service-call-form__title">
+      Вызвать врача на дом
+    </span>
+
+    <div
+      class="service-call-form__error-summary"
+      data-form-error-summary
+      role="alert"
+      tabindex="-1"
+      hidden
+    ></div>
+
+    <div
+      class="service-call-form__success"
+      data-form-success
+      role="status"
+      tabindex="-1"
+      hidden
+    ></div>
+
+    <div class="service-call-form__fields">
+      <label class="service-call-form__field" for="service-call-name">
+        <span class="service-call-form__label">Имя</span>
+        <input
+          id="service-call-name"
+          name="name"
+          type="text"
+          autocomplete="given-name"
+          inputmode="text"
+          maxlength="40"
+          placeholder="Как к вам обращаться"
+          data-required
+          data-label="Имя"
+          data-name-mask
+        >
+        <span class="service-call-form__error" data-field-error hidden></span>
+      </label>
+
+      <label class="service-call-form__field" for="service-call-phone">
+        <span class="service-call-form__label">Телефон</span>
+        <input
+          id="service-call-phone"
+          name="phone"
+          type="tel"
+          autocomplete="tel"
+          inputmode="tel"
+          maxlength="18"
+          placeholder="+7 (___) ___-__-__"
+          data-required
+          data-label="Телефон"
+          data-phone-mask
+        >
+        <span class="service-call-form__error" data-field-error hidden></span>
+      </label>
+
+      <fieldset class="service-call-form__fieldset">
+        <legend class="service-call-form__label">Кому нужна помощь?</legend>
+        <div class="service-call-form__choices" role="radiogroup" aria-label="Кому нужна помощь?">
+          <label class="service-call-form__choice">
+            <input
+              type="radio"
+              name="help_for"
+              value="self"
+              checked
+              data-required
+              data-label="Кому нужна помощь"
+            >
+            <span>Мне</span>
+          </label>
+          <label class="service-call-form__choice">
+            <input type="radio" name="help_for" value="relative">
+            <span>Близкому человеку</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <label class="service-call-form__field" for="service-call-address">
+        <span class="service-call-form__label">
+          Адрес выезда
+          <span class="service-call-form__optional">(необязательно)</span>
+        </span>
+        <input
+          id="service-call-address"
+          name="address"
+          type="text"
+          autocomplete="street-address"
+          maxlength="120"
+          placeholder="Город, улица, дом"
+        >
+      </label>
+
+      <label class="service-call-form__field service-call-form__field--select" for="service-call-disease">
+        <span class="service-call-form__label">
+          Заболевания для врача
+          <span class="service-call-form__optional">(необязательно)</span>
+        </span>
+        <select id="service-call-disease" name="disease">
+          <option value="">Не выбрано</option>
+          <option value="none">Нет известных заболеваний</option>
+          <option value="diabetes">Сахарный диабет</option>
+          <option value="hypertension">Гипертоническая болезнь</option>
+          <option value="heart">Заболевания сердца</option>
+          <option value="epilepsy">Эпилепсия / судороги</option>
+          <option value="asthma">Бронхиальная астма</option>
+          <option value="liver">Заболевания печени</option>
+          <option value="kidney">Заболевания почек</option>
+          <option value="allergy">Аллергия на лекарства</option>
+          <option value="other">Другое</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="service-call-form__honeypot" aria-hidden="true">
+      <label for="service-call-website">Сайт</label>
+      <input
+        id="service-call-website"
+        name="website"
+        type="text"
+        tabindex="-1"
+        autocomplete="off"
+      >
+    </div>
+
+    <label class="service-call-form__consent" for="service-call-consent">
+      <input
+        id="service-call-consent"
+        name="consent"
+        type="checkbox"
+        checked
+        required
+      >
+      <span class="service-call-form__consent-text">
+        Даю согласие на
+        <a class="service-call-form__consent-link" href="/soglasie/">
+          обработку персональных данных
+        </a>
+      </span>
+    </label>
+
+    <button class="service-call-form__submit button button--warm" type="submit">
+      <img class="button__icon" src="/assets/icons/ambulance.svg" alt="" width="16" height="16" decoding="async">
+      Вызвать врача
+    </button>
+
+    <div class="service-call-form__direct">
+      <div class="service-call-form__direct-top">
+        <p class="service-call-form__direct-label">Или свяжитесь напрямую</p>
+        <ul class="service-call-form__favicons" role="list">
+          <li>
+            <a
+              class="service-call-form__favicon"
+              href="https://t.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Написать в Telegram"
+            >
+              <img src="/assets/icons/messengers/telegram.png" alt="" width="22" height="22" decoding="async">
+            </a>
+          </li>
+          <li>
+            <a
+              class="service-call-form__favicon"
+              href="https://wa.me/74951204567"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Написать в WhatsApp"
+            >
+              <img src="/assets/icons/messengers/whatsapp.png" alt="" width="22" height="22" decoding="async">
+            </a>
+          </li>
+          <li>
+            <a
+              class="service-call-form__favicon"
+              href="https://max.ru/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Написать в MAX"
+            >
+              <img src="/assets/icons/messengers/max.png" alt="" width="22" height="22" decoding="async">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="service-call-form__doctor">
+        <img
+          class="service-call-form__doctor-photo"
+          src="/assets/images/doctors/doctor-call-form.webp"
+          alt="Алексей Викторович Орлов"
+          width="96"
+          height="96"
+          loading="lazy"
+          decoding="async"
+        >
+        <div class="service-call-form__doctor-meta">
+          <span class="service-call-form__doctor-name">Алексей Викторович Орлов</span>
+          <span class="service-call-form__doctor-role">Психиатр-нарколог</span>
+        </div>
+        <p class="service-call-form__online" aria-label="Врач онлайн">
+          <span class="service-call-form__online-dot" aria-hidden="true"></span>
+          <span class="service-call-form__online-text">Онлайн</span>
+        </p>
+      </div>
+    </div>
+  </form>
+</aside>

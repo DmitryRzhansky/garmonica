@@ -238,67 +238,6 @@ a.service-hero__meta-value:hover {
   justify-content: center;
 }
 
-.service-hero__person {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-}
-
-.service-hero__photo {
-  display: none;
-}
-
-.service-hero__doctor-card {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.35rem 0.9rem;
-  align-items: center;
-  width: 100%;
-  padding: 1rem 1.1rem;
-  border-radius: var(--radius-xl);
-  background: var(--color-surface);
-  color: var(--color-text-dark);
-  box-shadow: var(--shadow-soft);
-  border: 1px solid var(--color-border-light);
-}
-
-.service-hero__doctor-photo {
-  grid-row: span 3;
-  width: 4.25rem;
-  height: 4.25rem;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: var(--radius-lg);
-  background: var(--color-accent-light);
-}
-
-.service-hero__doctor-name {
-  display: block;
-  margin: 0;
-  font-family: var(--font-headline);
-  font-size: 1.05rem;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.service-hero__doctor-line {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin: 0;
-  font-size: 0.875rem;
-  line-height: 1.35;
-  color: var(--color-text-muted);
-}
-
-.service-hero__doctor-mark {
-  width: 0.7rem;
-  height: 0.7rem;
-  flex-shrink: 0;
-  color: var(--color-accent);
-  transform: rotate(-90deg);
-}
-
 @media (min-width: 40rem) {
   .service-hero {
     padding: 1.5rem 1.35rem 1.75rem;
@@ -345,57 +284,19 @@ a.service-hero__meta-value:hover {
   }
 
   .service-hero__layout {
-    grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.9fr);
-    align-items: end;
+    grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 26rem);
+    align-items: start;
     gap: 1.5rem;
-    min-height: 34rem;
+    min-height: 0;
   }
 
   .service-hero__content {
-    gap: 1.35rem;
-    padding-bottom: 1.25rem;
+    gap: 1.15rem;
+    padding-bottom: 0;
   }
 
   .service-hero__features {
     width: min(100%, 34rem);
-  }
-
-  .service-hero__person {
-    min-height: 34rem;
-    justify-content: flex-end;
-  }
-
-  .service-hero__photo {
-    display: block;
-    position: absolute;
-    z-index: 0;
-    left: 50%;
-    bottom: 0;
-    width: auto;
-    height: 100%;
-    max-width: none;
-    transform: translateX(-42%);
-    object-fit: contain;
-    object-position: bottom center;
-    pointer-events: none;
-    user-select: none;
-  }
-
-  .service-hero__doctor-card {
-    position: relative;
-    z-index: 1;
-    grid-template-columns: 1fr;
-    width: min(100%, 24rem);
-    margin-left: auto;
-    padding: 1.5rem 1.6rem;
-  }
-
-  .service-hero__doctor-photo {
-    display: none;
-  }
-
-  .service-hero__doctor-name {
-    font-size: 1.25rem;
   }
 }
 

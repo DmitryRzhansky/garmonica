@@ -14,6 +14,7 @@ function initApp() {
   safeInit("menu", window.initMenu);
   safeInit("services-menu", window.initServicesMenu);
   safeInit("contact-form", window.initContactForm);
+  safeInit("service-call-form", window.initServiceCallForm);
   safeInit("reviews", window.initReviews);
   safeInit("licenses", window.initLicenses);
   safeInit("clinic-gallery", window.initClinicGallery);

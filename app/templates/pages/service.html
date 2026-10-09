@@ -83,40 +83,7 @@
             </div>
           </div>
 
-          <div class="service-hero__person">
-            <img
-              class="service-hero__photo"
-              src="/assets/images/doctors/doctor-narkolog-hero.webp"
-              alt="Солнцев Роман Викторович — психиатр-нарколог"
-              width="864"
-              height="1152"
-              fetchpriority="high"
-              decoding="async"
-            >
-            <article class="service-hero__doctor-card">
-              <img
-                class="service-hero__doctor-photo"
-                src="/assets/images/doctors/doctor-narkolog-hero.webp"
-                alt="Солнцев Роман Викторович"
-                width="864"
-                height="1152"
-                decoding="async"
-              >
-              <span class="service-hero__doctor-name">Солнцев Роман Викторович</span>
-              <p class="service-hero__doctor-line">
-                <svg class="service-hero__doctor-mark" aria-hidden="true" width="12" height="12" viewBox="0 0 256 256" fill="currentColor">
-                  <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/>
-                </svg>
-                Психиатр-нарколог
-              </p>
-              <p class="service-hero__doctor-line">
-                <svg class="service-hero__doctor-mark" aria-hidden="true" width="12" height="12" viewBox="0 0 256 256" fill="currentColor">
-                  <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/>
-                </svg>
-                Стаж работы: 16 лет
-              </p>
-            </article>
-          </div>
+          {% include "components/service-call-form.html" %}
         </div>
       </section>
     </main>

@@ -1,0 +1,425 @@
+.service-hero__form-panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 30rem;
+  min-width: 0;
+  margin-inline: auto;
+}
+
+.service-call-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+  margin: 0;
+  padding: 1.15rem 1.1rem 1.05rem;
+  border: 1px solid rgba(91, 155, 213, 0.22);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5),
+    0 0.75rem 1.75rem rgba(26, 42, 58, 0.08);
+}
+
+.service-call-form__title {
+  display: block;
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-text-dark);
+}
+
+.service-call-form__fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+.service-call-form__field,
+.service-call-form__fieldset {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.service-call-form__fieldset,
+.service-call-form__field:nth-child(4),
+.service-call-form__field:nth-child(5) {
+  grid-column: 1 / -1;
+}
+
+.service-call-form__label {
+  color: var(--color-text-dark);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.service-call-form__optional {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.service-call-form__field input,
+.service-call-form__field select {
+  width: 100%;
+  min-width: 0;
+  height: 2.6rem;
+  padding-inline: 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-text-dark);
+  font-family: var(--font-text);
+  font-size: 0.875rem;
+  line-height: 1.2;
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.service-call-form__field input::placeholder {
+  color: #8a9aab;
+}
+
+.service-call-form__field input:focus,
+.service-call-form__field select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(91, 155, 213, 0.18);
+}
+
+.service-call-form__field input[aria-invalid="true"],
+.service-call-form__field select[aria-invalid="true"] {
+  border-color: #d14343;
+}
+
+.service-call-form__field--select {
+  position: relative;
+}
+
+.service-call-form__field--select select {
+  padding-right: 2rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 256 256' fill='%235a6b7c'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 0.7rem;
+  cursor: pointer;
+}
+
+.service-call-form__field--select select:has(option[value=""]:checked) {
+  color: #8a9aab;
+}
+
+.service-call-form__field--select select option {
+  color: var(--color-text-dark);
+}
+
+.service-call-form__choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+  margin-top: 0.2rem;
+}
+
+.service-call-form__choice {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.45rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-text-dark);
+  font-size: 0.8125rem;
+  font-weight: 550;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-base),
+    background-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.service-call-form__choice:has(input:checked) {
+  border-color: var(--color-accent);
+  background: var(--color-accent-light);
+  box-shadow: inset 0 0 0 1px rgba(91, 155, 213, 0.25);
+}
+
+.service-call-form__choice:has(input:focus-visible) {
+  outline: 0.15rem solid var(--color-accent);
+  outline-offset: 0.1rem;
+}
+
+.service-call-form__choice input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.service-call-form__error {
+  color: #d14343;
+  font-size: 0.6875rem;
+  line-height: 1.25;
+}
+
+.service-call-form__error-summary,
+.service-call-form__success {
+  margin: 0;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.service-call-form__error-summary {
+  background: #fdecec;
+  color: #9b1c1c;
+}
+
+.service-call-form__success {
+  background: #e8f8f1;
+  color: #0f6b45;
+}
+
+.service-call-form__error-summary[hidden],
+.service-call-form__success[hidden],
+.service-call-form__error[hidden] {
+  display: none;
+}
+
+.service-call-form__honeypot {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.service-call-form__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.service-call-form__consent input {
+  flex: 0 0 auto;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.1rem;
+  accent-color: var(--color-accent);
+}
+
+.service-call-form__consent-link {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.service-call-form__consent-link:hover,
+.service-call-form__consent-link:focus-visible {
+  color: var(--color-text-dark);
+}
+
+.service-call-form__submit {
+  width: 100%;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding-block: 0.75rem;
+  font-size: 0.9375rem;
+}
+
+.service-call-form__direct {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 0.15rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(26, 42, 58, 0.1);
+}
+
+.service-call-form__direct-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.55rem 0.75rem;
+}
+
+.service-call-form__direct-label {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.service-call-form__favicons {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-call-form__favicon {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(26, 42, 58, 0.04);
+  transition:
+    transform var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.service-call-form__favicon:hover {
+  background: rgba(91, 155, 213, 0.12);
+  transform: translateY(-1px);
+}
+
+.service-call-form__favicon:focus-visible {
+  outline: 0.15rem solid var(--color-accent);
+  outline-offset: 0.1rem;
+}
+
+.service-call-form__favicon img {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
+.service-call-form__doctor {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.65rem 0.75rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: var(--radius-lg);
+  background: #1a222c;
+  color: #f5f7fa;
+}
+
+.service-call-form__doctor-photo {
+  width: 2.75rem;
+  height: 2.75rem;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.service-call-form__doctor-meta {
+  display: grid;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.service-call-form__doctor-name {
+  font-family: var(--font-headline);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.service-call-form__doctor-role {
+  color: rgba(245, 247, 250, 0.62);
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+.service-call-form__online {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.service-call-form__online-dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: #3ecf9a;
+  box-shadow: 0 0 0.35rem rgba(62, 207, 154, 0.75);
+}
+
+.service-call-form__online-text {
+  font-family: var(--font-text);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  color: #3ecf9a;
+}
+
+@media (max-width: 22.5rem) {
+  .service-call-form__fields {
+    grid-template-columns: 1fr;
+  }
+
+  .service-call-form__doctor {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .service-call-form__online {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (min-width: 64rem) {
+  .service-hero__form-panel {
+    max-width: none;
+    width: 100%;
+    margin-inline: 0;
+    align-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .service-call-form__online-dot {
+    animation: service-call-online-pulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes service-call-online-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0.35rem rgba(62, 207, 154, 0.75);
+  }
+
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 0.55rem rgba(62, 207, 154, 0.95);
+  }
+}
