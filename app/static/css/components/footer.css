@@ -60,18 +60,8 @@
 
 .site-footer__logo img {
   display: block;
-  width: 7.5rem;
+  width: 9.5rem;
   height: auto;
-}
-
-.site-footer__brand-name {
-  margin: 1rem 0 0;
-  font-family: var(--font-headline);
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0.04em;
-  color: var(--color-white);
 }
 
 .site-footer__description {
