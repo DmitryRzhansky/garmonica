@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, replace
+from dataclasses import dataclass
 
 from app.services.seo.copy_text import render_copy
 from app.services.seo.faq_bank import get_faq
@@ -107,8 +107,6 @@ def build_page_seo(page: dict) -> SeoCopy:
     faq_raw = get_faq(phrase.faq_id, phrase.topic or phrase.query)
     faq_items = tuple((item["ask"], item["answer"]) for item in faq_raw)
     hero = hero_for(presentation, drip)
-    if "/psihiatr-na-dom/" in service_url:
-        hero = replace(hero, price_label="Консультация психиатра")
     return SeoCopy(
         h1_before=h1_before,
         h1_accent=h1_accent,

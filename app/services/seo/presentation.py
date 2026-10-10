@@ -106,33 +106,20 @@ def facility_title_override(url: str) -> str | None:
 
 
 def hero_for(presentation: str, drip: bool) -> HeroCopy:
-    if presentation == "home" and drip:
-        return HeroCopy(
-            badge="Выезд по Москве и области",
-            features=(
-                ("Что делают", "осмотр до процедуры"),
-                ("Процедура", "5 000 ₽"),
-                ("Куда едут", "Москва и область"),
-            ),
-            price_label="Стоимость процедуры",
-            price_value="5 000 ₽",
-            mode_label="Заявки",
-            mode_value="круглосуточно",
-            cta="Вызвать врача на дом",
-        )
+    del drip
     if presentation == "home":
         return HeroCopy(
-            badge="Выезд по Москве и области",
+            badge="Бригада в вашем районе",
             features=(
-                ("Что на месте", "осмотр и решение врача"),
-                ("Консультация", "8 000 ₽"),
-                ("Кто может позвонить", "пациент или родственник"),
+                ("Приезд специалиста", "30–45 минут"),
+                ("Оплата", "после помощи"),
+                ("Полная анонимность", "без постановки на учёт"),
             ),
-            price_label="Консультация нарколога",
-            price_value="8 000 ₽",
-            mode_label="Заявки",
-            mode_value="круглосуточно",
-            cta="Вызвать врача на дом",
+            price_label="Стоимость выезда",
+            price_value="от 5\u00a0000\u00a0₽",
+            mode_label="Выезд — круглосуточно",
+            mode_value="24/7, без выходных",
+            cta="Вызвать нарколога на дом",
         )
     if presentation == "inpatient":
         return HeroCopy(

@@ -109,6 +109,15 @@ def test_narkolog_keeps_written_hero(client):
     assert "Перед выездом по телефону" in html
     assert "Антипов Дмитрий Евгеньевич" in html
     assert "8 000 ₽" in html
+    assert "Бригада в вашем районе" in html
+    assert "Приезд специалиста" in html
+    assert "30–45 минут" in html
+    assert "Полная анонимность" in html
+    assert "без постановки на учёт" in html
+    assert "Стоимость выезда" in html
+    assert "от 5\u00a0000\u00a0₽" in html
+    assert "24/7, без выходных" in html
+    assert "Вызвать нарколога на дом" in html
 
 
 def test_service_pages_share_layout_blocks(client):
