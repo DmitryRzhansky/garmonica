@@ -47,8 +47,13 @@ def test_home(client):
     assert "/uslugi/pomoshch-rodstvennikam/" not in html
     assert "/uslugi/diagnostika/" not in html
     assert "/uslugi/vosstanovitelnaya-terapiya/" not in html
-    assert "license-extract-page-1.png" in html
-    assert "sanitary-conclusion" not in html
+    assert "license-extract-page-1.png" not in html
+    assert "Отзывы о клинике" not in html
+    assert "Запись к специалисту" not in html
+    assert "Цены на наши услуги" not in html
+    assert "Как проходит обращение" not in html
+    assert "Виды оказываемых медицинских услуг" not in html
+    assert "Наши лицензии и документы" not in html
     assert "Л041-01137-77/01838787" in html
     assert "9715492100" in html.split("site-footer", 1)[-1]
     assert 'hero-header__meta-value">г. Москва, ул. Люблинская, д. 46' in html

@@ -28,7 +28,6 @@ def home():
         meta_title=HOME_TITLE,
         meta_description=HOME_DESCRIPTION,
         canonical=_canonical("/"),
-        clinic_license=get_clinic_license(),
     )
 
 
