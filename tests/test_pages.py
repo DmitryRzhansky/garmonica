@@ -65,6 +65,9 @@ def test_home(client):
     assert "Наши врачи" in html
     assert 'id="field-service-title"' in html
     assert "Как работает наша выездная служба" in html
+    assert "field-service-tab-doctors" not in html
+    assert 'data-field-service-panel="doctors"' not in html
+    assert ">Специалисты<" not in html.split('id="field-service-title"', 1)[1].split('id="clinic-gallery-title"', 1)[0]
     assert html.index('id="about-title"') < html.index('id="service-doctors-title"')
     assert html.index('id="service-doctors-title"') < html.index('id="field-service-title"')
     assert html.index('id="field-service-title"') < html.index('id="clinic-gallery-title"')

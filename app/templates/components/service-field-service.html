@@ -288,56 +288,6 @@
       </section>
     </div>
 
-    <div class="field-service__panel" data-field-service-panel="doctors">
-      <ul class="field-service__doctors" role="list">
-        {% for member in fs.team %}
-        <li class="field-service__doctor-item">
-          <article class="field-service__doctor">
-            <figure class="field-service__doctor-photo">
-              <img
-                src="{{ member.photo }}"
-                alt="{{ member.name }}"
-                width="160"
-                height="200"
-                loading="lazy"
-                decoding="async"
-              >
-            </figure>
-            <div class="field-service__doctor-body">
-              <p class="field-service__doctor-duty">
-                <img class="field-service__doctor-duty-icon" src="{{ member.icon }}" alt="" width="14" height="14" decoding="async" aria-hidden="true">
-                <span>{{ member.duty }}</span>
-              </p>
-              <p class="field-service__doctor-name">{{ member.name }}</p>
-              {% if member.experience %}
-              <p class="field-service__doctor-exp">Опыт: {{ member.experience }}</p>
-              {% endif %}
-              {% if member.lead %}
-              <p class="field-service__doctor-lead">{{ member.lead }}</p>
-              {% endif %}
-              {% if member.duties %}
-              <ul class="field-service__doctor-duties" role="list">
-                {% for duty in member.duties %}
-                <li>
-                  <img class="field-service__doctor-duty-check" src="/assets/icons/check.svg" alt="" width="13" height="13" decoding="async" aria-hidden="true">
-                  <span>{{ duty }}</span>
-                </li>
-                {% endfor %}
-              </ul>
-              {% endif %}
-            </div>
-          </article>
-        </li>
-        {% endfor %}
-      </ul>
-      <div class="field-service__more">
-        <a class="button button--primary field-service__all" href="{{ fs.doctors_url }}">
-          <img class="button__icon" src="/assets/icons/users.svg" alt="" width="16" height="16" decoding="async">
-          Все специалисты
-        </a>
-      </div>
-    </div>
-
     <div class="field-service__panel" data-field-service-panel="process">
       <ol class="field-service__route">
         {% for step in fs.steps %}
