@@ -41,8 +41,33 @@ def test_home(client):
     assert response.status_code == 200
     html = response.get_data(as_text=True)
     assert "Психонаркологическая клиника — Нова" in html
+    assert "Наши услуги" in html
+    assert 'id="home-services-title"' in html
+    assert "Подробнее" not in html.split("home-services", 1)[-1].split("about", 1)[0]
+    assert 'class="home-services__name" href="/uslugi/narkolog-na-dom/"' in html
+    assert "arrow-up-right.svg" in html
     assert 'href="/uslugi/narkolog-na-dom/"' in html
+    assert 'href="/uslugi/vyvod-iz-zapoya/"' in html
+    assert 'href="/uslugi/kodirovanie/"' in html
+    assert 'href="/uslugi/kodirovanie/raskodirovanie/"' in html
+    assert 'href="/uslugi/narkologicheskaya-pomosh/"' in html
+    assert 'href="/uslugi/lechenie-alkogolizma/"' in html
+    assert 'href="/uslugi/kapelnitsy/"' in html
+    assert 'href="/uslugi/lechenie-narkomanii/"' in html
+    assert 'href="/uslugi/drugie-zavisimosti/"' in html
+    assert 'href="/uslugi/reabilitaciya/"' in html
+    assert 'href="/uslugi/psihiatriya/"' in html
+    assert 'href="/uslugi/psihoterapiya-i-psihologiya/"' in html
+    assert "hub-narkolog-na-dom-3d.webp" in html
     assert 'href="/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/"' in html
+    assert "Как устроена клиника" in html
+    assert 'id="service-doctors-title"' in html
+    assert "Наши врачи" in html
+    assert 'id="field-service-title"' in html
+    assert "Как работает наша выездная служба" in html
+    assert html.index('id="about-title"') < html.index('id="service-doctors-title"')
+    assert html.index('id="service-doctors-title"') < html.index('id="field-service-title"')
+    assert html.index('id="field-service-title"') < html.index('id="clinic-gallery-title"')
     assert 'href="/vrachi/"' in html
     assert "/uslugi/pomoshch-rodstvennikam/" not in html
     assert "/uslugi/diagnostika/" not in html
@@ -69,7 +94,8 @@ def test_home(client):
     assert 'mobile-menu__detail">г. Москва, ул. Люблинская, д. 46' in html
     assert 'mailto:novaklinika111@yandex.ru' in html
     assert 'mailto:info@nova-clinic.ru' not in html
-    assert "Профсоюзная" not in html
+    assert "ул. Профсоюзная" not in html
+    assert "Профсоюзная" not in html.split("hero-header", 1)[-1].split("mobile-menu", 1)[0]
 
 
 def test_narkolog_keeps_written_hero(client):

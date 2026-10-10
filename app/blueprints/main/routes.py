@@ -3,9 +3,12 @@ from flask import Blueprint, Response, render_template, request
 from app.data.clinic_contacts import get_clinic_contacts
 from app.data.doctors import get_clinic_doctors
 from app.data.faq_page import get_faq_page
+from app.data.field_service import get_field_service_context
 from app.data.gallery_page import get_gallery_page
+from app.data.home_services import get_home_service_hubs
 from app.data.license import get_clinic_license
 from app.data.prices import get_price_groups
+from app.data.service_doctors import get_service_doctors
 from app.data.service_reviews import get_service_review_stats, get_service_reviews
 from app.services.catalog import get_catalog
 from app.services.info_pages import INFO_PAGES
@@ -29,6 +32,9 @@ def home():
         meta_description=HOME_DESCRIPTION,
         canonical=_canonical("/"),
         clinic_license=get_clinic_license(),
+        home_service_hubs=get_home_service_hubs(),
+        service_doctors=get_service_doctors(),
+        field_service=get_field_service_context(),
         price_groups=get_price_groups(),
         review_sources=get_service_reviews(),
         review_stats=get_service_review_stats(),

@@ -1,0 +1,41 @@
+<section class="home-services" id="services" aria-labelledby="home-services-title">
+  <div class="home-services__inner">
+    <header class="section__header section__header--center">
+      <h2 class="section__title" id="home-services-title">Наши услуги</h2>
+    </header>
+
+    <ul class="home-services__grid" role="list">
+      {% for item in home_service_hubs %}
+      <li>
+        <article class="home-services__card">
+          <span class="home-services__corner" aria-hidden="true">
+            <img
+              class="home-services__corner-icon"
+              src="/assets/icons/arrow-up-right.svg"
+              alt=""
+              width="16"
+              height="16"
+              decoding="async"
+            >
+          </span>
+          <div class="home-services__media" aria-hidden="true">
+            <img
+              class="home-services__image"
+              src="{{ item.image }}"
+              alt=""
+              width="512"
+              height="512"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="home-services__body">
+            <a class="home-services__name" href="{{ item.url }}">{{ item.name }}</a>
+            <p class="home-services__text">{{ item.text }}</p>
+          </div>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
