@@ -32,3 +32,19 @@ def register_context_processors(app):
         from app.data.clinic_contacts import get_clinic_contacts
 
         return {"clinic_contacts": get_clinic_contacts()}
+
+    @app.context_processor
+    def inject_structured_data():
+        from flask import current_app, has_request_context, request
+
+        if not has_request_context():
+            return {"json_ld": None}
+        try:
+            from app.services.structured_data import build_json_ld
+
+            return {"json_ld": build_json_ld(request)}
+        except Exception:
+            if current_app.config.get("TESTING"):
+                raise
+            current_app.logger.exception("Failed to build JSON-LD structured data")
+            return {"json_ld": None}

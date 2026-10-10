@@ -8,6 +8,9 @@
     {% if canonical %}
     <link rel="canonical" href="{{ canonical }}">
     {% endif %}
+    {% if json_ld %}
+    <script type="application/ld+json">{{ json_ld|safe }}</script>
+    {% endif %}
     <link rel="icon" href="/assets/images/logo-mark.png" type="image/png">
     <link rel="stylesheet" href="/assets/css/main.css?v=20261010-25">
   </head>

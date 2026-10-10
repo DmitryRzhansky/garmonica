@@ -57,23 +57,4 @@
     </div>
   </div>
 </section>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {% for item in service_faq.questions %}
-    {
-      "@type": "Question",
-      "name": {{ item.ask | tojson }},
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": {{ item.answer | tojson }}
-      }
-    }{% if not loop.last %},{% endif %}
-    {% endfor %}
-  ]
-}
-</script>
 {% endif %}
