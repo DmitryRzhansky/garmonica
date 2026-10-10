@@ -80,12 +80,29 @@ def title_tail(url: str, presentation: str) -> str:
     return tails.get(presentation, "анонимно, приём в клинике, 8 000 ₽")
 
 
-def price_tab_for(url: str, presentation: str) -> str:
+ALL_PRICE_GROUP_IDS = (
+    "stationary",
+    "consultations",
+    "procedures",
+    "labs",
+    "support",
+)
+
+
+def price_groups_for(url: str, presentation: str) -> tuple[str, ...]:
     if "/kapelnitsy/" in url:
-        return "procedures"
+        return ("procedures", "consultations")
+    if presentation == "home":
+        return ("consultations", "procedures")
     if presentation == "inpatient":
-        return "stationary"
-    return "consultations"
+        return ("stationary", "consultations", "labs", "support")
+    if presentation == "catalog":
+        return ALL_PRICE_GROUP_IDS
+    return ("consultations",)
+
+
+def price_tab_for(url: str, presentation: str) -> str:
+    return price_groups_for(url, presentation)[0]
 
 
 def facility_title_override(url: str) -> str | None:

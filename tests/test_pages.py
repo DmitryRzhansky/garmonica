@@ -309,6 +309,54 @@ def test_prices_page(client):
     assert "Нова" in html
 
 
+def test_service_pages_filter_price_groups(client):
+    home = client.get("/uslugi/narkolog-na-dom/").get_data(as_text=True)
+    assert "service-prices-tab-consultations" in home
+    assert "service-prices-tab-procedures" in home
+    assert "service-prices-tab-stationary" not in home
+    assert "service-prices-tab-labs" not in home
+    assert "service-prices-tab-support" not in home
+    assert "4-местная палата" not in home
+    assert "Консультация нарколога" in home
+    assert "Сосудистая терапия" in home
+
+    drip = client.get("/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/").get_data(as_text=True)
+    assert "service-prices-tab-procedures" in drip
+    assert "service-prices-tab-consultations" in drip
+    assert "service-prices-tab-stationary" not in drip
+    assert 'id="service-prices-tab-procedures"' in drip
+    assert "checked" in drip.split('id="service-prices-tab-procedures"', 1)[1].split(">", 1)[0]
+
+    inpatient = client.get("/uslugi/lechenie-alkogolizma/v-stacionare/").get_data(as_text=True)
+    assert "service-prices-tab-stationary" in inpatient
+    assert "service-prices-tab-consultations" in inpatient
+    assert "service-prices-tab-labs" in inpatient
+    assert "service-prices-tab-support" in inpatient
+    assert "service-prices-tab-procedures" not in inpatient
+    assert "4-местная палата" in inpatient
+    assert "Сосудистая терапия" not in inpatient
+
+    coding = client.get("/uslugi/kodirovanie/").get_data(as_text=True)
+    assert "service-prices--single" in coding
+    assert "service-prices-tab-consultations" in coding
+    assert "service-prices-tab-procedures" not in coding
+    assert "service-prices-tab-stationary" not in coding
+    assert "prices__tabs" not in coding
+    assert "Консультация нарколога" in coding
+
+    clinic = client.get("/uslugi/psihiatriya/").get_data(as_text=True)
+    assert "service-prices--single" in clinic
+    assert "service-prices-tab-consultations" in clinic
+    assert "service-prices-tab-stationary" not in clinic
+
+    catalog = client.get("/uslugi/").get_data(as_text=True)
+    assert "service-prices-tab-stationary" in catalog
+    assert "service-prices-tab-consultations" in catalog
+    assert "service-prices-tab-procedures" in catalog
+    assert "service-prices-tab-labs" in catalog
+    assert "service-prices-tab-support" in catalog
+
+
 def test_faq_page(client):
     response = client.get("/voprosy/")
     html = response.get_data(as_text=True)

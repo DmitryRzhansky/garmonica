@@ -189,6 +189,9 @@ PRICE_GROUPS = [
 ]
 
 
-def get_price_groups() -> list[dict]:
-    return list(PRICE_GROUPS)
+def get_price_groups(group_ids: list[str] | tuple[str, ...] | None = None) -> list[dict]:
+    if group_ids is None:
+        return list(PRICE_GROUPS)
+    by_id = {group["id"]: group for group in PRICE_GROUPS}
+    return [by_id[group_id] for group_id in group_ids if group_id in by_id]
 

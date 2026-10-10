@@ -4,6 +4,7 @@ from app import create_app
 from app.services.catalog import get_catalog
 from app.services.seo.geo_forms import CITY_LOCATIVE
 from app.services.seo.phrases import PHRASES
+from app.services.seo.presentation import price_groups_for, price_tab_for
 
 BANNED = ("аноним", "круглосуточ", "₽", "30–60", "8 000", "12 000", "5 000", "24/7", "полная аноним")
 
@@ -107,6 +108,34 @@ def test_cluster_blocks_render(client):
     inpatient_seo = get_catalog().view("/uslugi/vyvod-iz-zapoya/v-stacionare/").seo
     assert "капельниц" not in inpatient_seo.lead.lower()
     assert "на дом" not in inpatient_seo.meta_description.lower()
+
+
+def test_price_groups_for_clusters():
+    assert price_groups_for("/uslugi/narkolog-na-dom/", "home") == (
+        "consultations",
+        "procedures",
+    )
+    assert price_tab_for("/uslugi/narkolog-na-dom/", "home") == "consultations"
+    assert price_groups_for("/uslugi/kapelnitsy/", "home") == (
+        "procedures",
+        "consultations",
+    )
+    assert price_tab_for("/uslugi/kapelnitsy/", "home") == "procedures"
+    assert price_groups_for("/uslugi/lechenie-alkogolizma/v-stacionare/", "inpatient") == (
+        "stationary",
+        "consultations",
+        "labs",
+        "support",
+    )
+    assert price_tab_for("/uslugi/lechenie-alkogolizma/v-stacionare/", "inpatient") == "stationary"
+    assert price_groups_for("/uslugi/kodirovanie/", "coding") == ("consultations",)
+    assert price_groups_for("/uslugi/", "catalog") == (
+        "stationary",
+        "consultations",
+        "procedures",
+        "labs",
+        "support",
+    )
 
 
 def test_sample_pages_return_200(client):

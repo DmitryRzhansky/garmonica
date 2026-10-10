@@ -1,4 +1,8 @@
-<section class="service-price service-prices" aria-labelledby="service-price-title" data-prices>
+<section
+  class="service-price service-prices{% if price_groups|length == 1 %} service-prices--single{% endif %}"
+  aria-labelledby="service-price-title"
+  data-prices
+>
   {% for group in price_groups %}
   <input
     class="prices__tab-input visually-hidden"
@@ -14,6 +18,7 @@
       {{ page.seo.price_title }}
     </h2>
 
+    {% if price_groups|length > 1 %}
     <div class="prices__tabs" role="tablist" aria-label="Разделы прайса">
       {% for group in price_groups %}
       <label
@@ -28,13 +33,16 @@
       </label>
       {% endfor %}
     </div>
+    {% endif %}
 
     {% for group in price_groups %}
     <div
       class="prices__panel"
       data-prices-panel="{{ group.id }}"
+      {% if price_groups|length > 1 %}
       role="tabpanel"
       aria-labelledby="service-prices-tab-label-{{ group.id }}"
+      {% endif %}
     >
       <div class="prices__table-wrap">
         <table class="prices__table">

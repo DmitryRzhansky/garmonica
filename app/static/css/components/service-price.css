@@ -17,6 +17,10 @@
   max-width: 40rem;
 }
 
+.service-prices--single .prices__panel {
+  display: block;
+}
+
 .service-price__title {
   margin: 0 0 1.15rem;
   max-width: 22em;

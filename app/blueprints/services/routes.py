@@ -15,6 +15,7 @@ from app.data.service_facility import (
 from app.data.service_legal import get_service_legal
 from app.data.service_reviews import get_service_review_stats, get_service_reviews
 from app.services.catalog import get_catalog, has_banned_segment, normalize_url
+from app.services.seo.presentation import price_groups_for
 
 services_bp = Blueprint("services", __name__)
 
@@ -56,7 +57,9 @@ def page(page_path):
             "title": view.seo.faq_title,
             "questions": [{"ask": ask, "answer": answer} for ask, answer in view.seo.faq_items],
         },
-        price_groups=get_price_groups(),
+        price_groups=get_price_groups(
+            price_groups_for(view.seo.service_url, view.seo.presentation)
+        ),
         clinic_contacts=get_clinic_contacts(),
         clinic_license=get_clinic_license(),
         service_legal=get_service_legal(),
