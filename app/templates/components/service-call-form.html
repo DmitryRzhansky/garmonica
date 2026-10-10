@@ -5,10 +5,10 @@
     action="#"
     method="post"
     novalidate
-    aria-label="Вызвать врача на дом"
+    aria-label="{{ page.seo.form.aria }}"
   >
     <span class="service-call-form__title">
-      Вызвать врача на дом
+      {{ page.seo.form.title }}
     </span>
 
     <div
@@ -83,6 +83,7 @@
         </div>
       </fieldset>
 
+      {% if page.seo.form.show_address %}
       <label class="service-call-form__field" for="service-call-address">
         <span class="service-call-form__label">
           Адрес выезда
@@ -97,6 +98,7 @@
           placeholder="Город, улица, дом"
         >
       </label>
+      {% endif %}
 
       <label class="service-call-form__field service-call-form__field--select" for="service-call-disease">
         <span class="service-call-form__label">
@@ -148,7 +150,7 @@
 
     <button class="service-call-form__submit button button--warm" type="submit">
       <img class="button__icon" src="/assets/icons/ambulance.svg" alt="" width="16" height="16" decoding="async">
-      Вызвать врача
+      {{ page.seo.form.button }}
     </button>
 
     <div class="service-call-form__direct">

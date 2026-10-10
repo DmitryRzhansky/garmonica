@@ -103,12 +103,12 @@ def test_narkolog_keeps_written_hero(client):
 
     assert response.status_code == 200
     html = response.get_data(as_text=True)
-    assert "<title>Вызов нарколога на дом в Москве — Нова</title>" in html
-    assert "Вызов нарколога на дом в" in html
-    assert "Москве и области" in html
-    assert "Врач приедет на адрес" in html
+    assert "<title>Нарколог на дом в Москве — анонимно, выезд 30–60 минут, от 8 000 ₽</title>" in html
+    assert "Нарколог на дом в" in html
+    assert "Москве" in html
+    assert "Перед выездом по телефону" in html
     assert "Антипов Дмитрий Евгеньевич" in html
-    assert "от 5&nbsp;000&nbsp;₽" in html
+    assert "8 000 ₽" in html
 
 
 def test_service_pages_share_layout_blocks(client):
@@ -201,7 +201,7 @@ def test_geo_hub_uses_v_moskovskoy_oblasti_wording(client):
     html = response.get_data(as_text=True)
 
     assert response.status_code == 200
-    assert "<title>Нарколог на дом в Московской области — Нова</title>" in html
+    assert "<title>Нарколог на дом в Московской области — анонимно, выезд 30–60 минут, от 8 000 ₽</title>" in html
     assert "Нарколог на дом в" in html
     assert "Московской области" in html
     assert "Нарколог на дом — Московская область" not in html

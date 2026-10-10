@@ -1,0 +1,81 @@
+<section class="service-price service-prices" aria-labelledby="service-price-title" data-prices>
+  {% for group in price_groups %}
+  <input
+    class="prices__tab-input visually-hidden"
+    type="radio"
+    name="service-prices-tab"
+    id="service-prices-tab-{{ group.id }}"
+    {% if group.id == page.seo.price_tab %}checked{% endif %}
+  >
+  {% endfor %}
+
+  <div class="service-price__inner">
+    <h2 class="service-price__title" id="service-price-title">
+      {{ page.seo.price_title }}
+    </h2>
+
+    <div class="prices__tabs" role="tablist" aria-label="Разделы прайса">
+      {% for group in price_groups %}
+      <label
+        class="prices__tab"
+        for="service-prices-tab-{{ group.id }}"
+        id="service-prices-tab-label-{{ group.id }}"
+      >
+        <span class="prices__tab-icon" aria-hidden="true">
+          <img src="{{ group.icon }}" alt="" width="18" height="18" decoding="async">
+        </span>
+        <span class="prices__tab-text">{{ group.title }}</span>
+      </label>
+      {% endfor %}
+    </div>
+
+    {% for group in price_groups %}
+    <div
+      class="prices__panel"
+      data-prices-panel="{{ group.id }}"
+      role="tabpanel"
+      aria-labelledby="service-prices-tab-label-{{ group.id }}"
+    >
+      <div class="prices__table-wrap">
+        <table class="prices__table">
+          <caption class="visually-hidden">
+            {{ group.title }} — прайс клиники «Нова»
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Услуга</th>
+              <th scope="col">Что входит</th>
+              <th scope="col">Стоимость</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in group.rows %}
+            <tr>
+              <th scope="row">
+                <span class="prices__service">
+                  <span class="prices__service-icon-wrap" aria-hidden="true">
+                    <img
+                      class="prices__service-icon"
+                      src="{{ row.icon }}"
+                      alt=""
+                      width="22"
+                      height="22"
+                      decoding="async"
+                    >
+                  </span>
+                  <span class="prices__service-name">{{ row.name }}</span>
+                </span>
+              </th>
+              <td data-label="Что входит">{{ row.includes }}</td>
+              <td data-label="Стоимость">
+                <span class="prices__cost">{{ row.price }}{% if row.unit %}/{{ row.unit }}{% endif %}</span>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

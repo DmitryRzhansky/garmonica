@@ -4,8 +4,9 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
+from app.services.seo.generator import SeoCopy, build_page_seo
+
 DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "pages.json"
-NARKOLOG_URL = "/uslugi/narkolog-na-dom/"
 BANNED_SEGMENTS = frozenset({"pomosh", "pomoshch"})
 
 MENU_ALIASES = {
@@ -20,22 +21,6 @@ MENU_ALIASES = {
     "Медико-социальная реабилитация": "/uslugi/reabilitaciya/",
     "Метод Шичко": "/uslugi/reabilitaciya/",
 }
-
-NARKOLOG_COPY = {
-    "h1_before": "Вызов нарколога на дом в",
-    "h1_accent": "Москве и области",
-    "meta_title": "Вызов нарколога на дом в Москве — Нова",
-    "meta_description": (
-        "Вызов нарколога на дом в Москве и области: осмотр, оценка состояния, "
-        "помощь при запое и интоксикации. Круглосуточно, анонимно, стоимость от 5 000 ₽."
-    ),
-    "lead": (
-        "Врач приедет на адрес, проведёт осмотр, оценит состояние и предложит, "
-        "какую помощь можно оказать дома. В городе обычно укладываемся примерно "
-        "в 40–60 минут после согласования адреса."
-    ),
-}
-
 
 @dataclass(frozen=True)
 class Crumb:
@@ -53,6 +38,7 @@ class PageView:
     meta_description: str
     lead: str
     breadcrumbs: tuple[Crumb, ...]
+    seo: SeoCopy
 
 
 class PageCatalog:
@@ -75,19 +61,17 @@ class PageCatalog:
         page = self.get(url)
         if page is None:
             return None
-        if page["url"] == NARKOLOG_URL:
-            copy = NARKOLOG_COPY
-        else:
-            copy = build_copy(page)
+        seo = build_page_seo(page)
         return PageView(
             url=page["url"],
             name=page["name"],
-            h1_before=copy["h1_before"],
-            h1_accent=copy["h1_accent"],
-            meta_title=copy["meta_title"],
-            meta_description=copy["meta_description"],
-            lead=copy["lead"],
+            h1_before=seo.h1_before,
+            h1_accent=seo.h1_accent,
+            meta_title=seo.meta_title,
+            meta_description=seo.meta_description,
+            lead=seo.lead,
             breadcrumbs=tuple(self.breadcrumbs(page["url"])),
+            seo=seo,
         )
 
     def breadcrumbs(self, url: str) -> list[Crumb]:
@@ -115,57 +99,6 @@ class PageCatalog:
             targets[name] = page["url"]
         targets.update(MENU_ALIASES)
         return targets
-
-
-def build_copy(page: dict) -> dict:
-    if page.get("kind") == "geo-hub":
-        service = geo_hub_service_name(page)
-        title = f"{service} в Московской области — Нова"
-        lead = f"{service} в Московской области. Текст страницы будет дополнен."
-        return {
-            "h1_before": f"{service} в",
-            "h1_accent": "Московской области",
-            "meta_title": title,
-            "meta_description": lead,
-            "lead": lead,
-        }
-
-    accent = geo_accent(page)
-    heading = page["service_name"] if accent else page["name"]
-    if accent:
-        title = f"{heading} — {accent} — Нова"
-        lead = f"{heading}: {accent}. Текст страницы будет дополнен."
-    else:
-        title = f"{heading} — Нова"
-        lead = f"{heading}. Текст страницы будет дополнен."
-    return {
-        "h1_before": heading,
-        "h1_accent": accent,
-        "meta_title": title,
-        "meta_description": lead,
-        "lead": lead,
-    }
-
-
-def geo_hub_service_name(page: dict) -> str:
-    service = (page.get("service_name") or "").strip()
-    if service:
-        return service
-    name = page.get("name") or ""
-    for suffix in (" в Московской области", " — Московская область"):
-        if name.endswith(suffix):
-            return name[: -len(suffix)]
-    return name
-
-
-def geo_accent(page: dict) -> str:
-    geo_type = page.get("geo_type") or ""
-    geo_name = page.get("geo_name") or ""
-    if geo_type == "metro" and geo_name:
-        return f"метро {geo_name}"
-    if geo_type in {"okrug", "mo", "city"} and geo_name:
-        return geo_name
-    return ""
 
 
 def normalize_url(url: str) -> str:

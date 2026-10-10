@@ -18,9 +18,9 @@
         >
         <span class="service-diff__dot" aria-hidden="true"></span>
         <span class="service-diff__heading">
-          Приезжаем
-          <span class="service-diff__accent">тихо, без сирен</span>
-          и яркой «скорой»
+          {{ page.seo.diff_cards[0].before }}
+          <span class="service-diff__accent">{{ page.seo.diff_cards[0].accent }}</span>
+          {{ page.seo.diff_cards[0].after }}
         </span>
         <div class="service-diff__circles" aria-hidden="true">
           <span class="service-diff__circle service-diff__circle--blue">
@@ -37,7 +37,7 @@
           </span>
         </div>
         <p class="service-diff__text">
-          Обычный автомобиль, без мигалок и лишнего шума у подъезда — чтобы не привлекать внимание соседей.
+          {{ page.seo.diff_cards[0].text }}
         </p>
       </li>
 
@@ -54,8 +54,9 @@
         >
         <span class="service-diff__dot" aria-hidden="true"></span>
         <span class="service-diff__heading">
-          Всё нужное
-          <span class="service-diff__accent">уже в чемодане бригады</span>
+          {{ page.seo.diff_cards[1].before }}
+          <span class="service-diff__accent">{{ page.seo.diff_cards[1].accent }}</span>
+          {{ page.seo.diff_cards[1].after }}
         </span>
         <div class="service-diff__circles" aria-hidden="true">
           <span class="service-diff__circle service-diff__circle--blue">
@@ -72,7 +73,7 @@
           </span>
         </div>
         <p class="service-diff__text">
-          Препараты, расходники и оборудование для капельницы возим с собой — не отправляем родственников в ночную аптеку.
+          {{ page.seo.diff_cards[1].text }}
         </p>
       </li>
 
@@ -89,8 +90,9 @@
         >
         <span class="service-diff__dot" aria-hidden="true"></span>
         <span class="service-diff__heading">
-          Один врач
-          <span class="service-diff__accent">ведёт случай целиком</span>
+          {{ page.seo.diff_cards[2].before }}
+          <span class="service-diff__accent">{{ page.seo.diff_cards[2].accent }}</span>
+          {{ page.seo.diff_cards[2].after }}
         </span>
         <div class="service-diff__circles" aria-hidden="true">
           <span class="service-diff__circle service-diff__circle--blue">
@@ -107,7 +109,7 @@
           </span>
         </div>
         <p class="service-diff__text">
-          Осмотр, решение по терапии и контроль состояния — у одного специалиста, без передачи «по цепочке» в первый визит.
+          {{ page.seo.diff_cards[2].text }}
         </p>
       </li>
 
@@ -124,8 +126,9 @@
         >
         <span class="service-diff__dot" aria-hidden="true"></span>
         <span class="service-diff__heading">
-          Письменный план
-          <span class="service-diff__accent">на ближайшие сутки</span>
+          {{ page.seo.diff_cards[3].before }}
+          <span class="service-diff__accent">{{ page.seo.diff_cards[3].accent }}</span>
+          {{ page.seo.diff_cards[3].after }}
         </span>
         <div class="service-diff__circles" aria-hidden="true">
           <span class="service-diff__circle service-diff__circle--blue">
@@ -142,7 +145,7 @@
           </span>
         </div>
         <p class="service-diff__text">
-          Что наблюдать, когда звонить повторно и какие признаки важны семье — оставляем понятные рекомендации после визита.
+          {{ page.seo.diff_cards[3].text }}
         </p>
       </li>
     </ul>

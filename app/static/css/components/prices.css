@@ -135,6 +135,24 @@
   display: block;
 }
 
+#service-prices-tab-stationary:checked ~ .service-price__inner label.prices__tab[for="service-prices-tab-stationary"],
+#service-prices-tab-consultations:checked ~ .service-price__inner label.prices__tab[for="service-prices-tab-consultations"],
+#service-prices-tab-procedures:checked ~ .service-price__inner label.prices__tab[for="service-prices-tab-procedures"],
+#service-prices-tab-labs:checked ~ .service-price__inner label.prices__tab[for="service-prices-tab-labs"],
+#service-prices-tab-support:checked ~ .service-price__inner label.prices__tab[for="service-prices-tab-support"] {
+  border-color: var(--color-accent);
+  background: var(--color-accent-light);
+  color: var(--color-text-dark);
+}
+
+#service-prices-tab-stationary:checked ~ .service-price__inner [data-prices-panel="stationary"],
+#service-prices-tab-consultations:checked ~ .service-price__inner [data-prices-panel="consultations"],
+#service-prices-tab-procedures:checked ~ .service-price__inner [data-prices-panel="procedures"],
+#service-prices-tab-labs:checked ~ .service-price__inner [data-prices-panel="labs"],
+#service-prices-tab-support:checked ~ .service-price__inner [data-prices-panel="support"] {
+  display: block;
+}
+
 .prices__table-wrap {
   margin-top: 0.5rem;
   overflow-x: auto;

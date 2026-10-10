@@ -13,6 +13,10 @@
   box-shadow: var(--shadow-soft);
 }
 
+.service-prices .service-price__title {
+  max-width: 40rem;
+}
+
 .service-price__title {
   margin: 0 0 1.15rem;
   max-width: 22em;

@@ -122,15 +122,11 @@ FACILITY_PATH_MARKERS = (
     "/chastnyj-vytrezvitel/",
 )
 
-FACILITY_EXCLUDE_MARKERS = (
+HOME_FACILITY_MARKERS = (
     "/na-domu/",
     "/narkolog-na-dom/",
     "/psihiatr-na-dom/",
     "/kapelnitsy/",
-    "/reabilitaciya/",
-    "/psihoterapiya-i-psihologiya/",
-    "/onlajn/",
-    "/onlajn-konsultaciya/",
 )
 
 
@@ -140,14 +136,35 @@ def normalize_service_url(url: str) -> str:
     return "/" + url.strip("/") + "/"
 
 
+def _is_rehab(url: str) -> bool:
+    return "/reabilitaciya/" in url
+
+
 def should_show_service_facility(url: str) -> bool:
-    """Показывать блок на стационаре/клинике и общих хабах, не на «на дому»."""
+    """Клиника и стационар. Выезд и реабилитация этот блок не показывают."""
     current = normalize_service_url(url)
-    if any(marker in current for marker in FACILITY_EXCLUDE_MARKERS):
+    if current == "/uslugi/":
+        return True
+    if _is_rehab(current):
         return False
+    if any(marker in current for marker in HOME_FACILITY_MARKERS):
+        return False
+    if "/psihoterapiya-i-psihologiya/" in current:
+        return True
+    if "/psihiatriya/" in current:
+        return True
+    if "/onlajn" in current:
+        return True
     if current in FACILITY_HUBS:
         return True
     return any(marker in current for marker in FACILITY_PATH_MARKERS)
+
+
+def should_show_field_service(url: str) -> bool:
+    current = normalize_service_url(url)
+    if _is_rehab(current):
+        return False
+    return not should_show_service_facility(current)
 
 
 def get_service_facility() -> dict:
