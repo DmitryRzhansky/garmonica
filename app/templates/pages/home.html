@@ -704,6 +704,8 @@
         </dialog>
       </section>
 
+      {% include "components/home-licenses.html" %}
+
       <section class="perks" id="perks" aria-labelledby="perks-title">
         <div class="perks__inner">
           <header class="section__header section__header--center">
@@ -813,6 +815,19 @@
           </div>
         </div>
       </section>
+
+      {% include "components/home-prices.html" %}
+
+      {% with
+        reviews_title="Отзывы о клинике «Нова»",
+        reviews_title_id="reviews-title",
+        reviews_section_id="reviews",
+        reviews_tab_name="home-reviews-tab",
+        reviews_show_title=true,
+        reviews_class="reviews reviews--service"
+      %}
+      {% include "components/service-reviews.html" %}
+      {% endwith %}
 
       <section class="faq" id="faq" aria-labelledby="faq-title" data-faq>
         <div class="faq__inner">

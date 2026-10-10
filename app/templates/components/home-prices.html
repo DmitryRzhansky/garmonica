@@ -1,0 +1,107 @@
+<section class="prices" id="prices" aria-labelledby="prices-title">
+  {% for group in price_groups %}
+  <input
+    class="prices__tab-input visually-hidden"
+    type="radio"
+    name="home-prices-tab"
+    id="prices-tab-{{ group.id }}"
+    {% if loop.first %}checked{% endif %}
+  >
+  {% endfor %}
+
+  <div class="prices__inner">
+    <header class="section__header">
+      <h2 class="section__title" id="prices-title">Цены на наши услуги</h2>
+    </header>
+    <p class="prices__lead">
+      Полный прайс клиники по разделам. Точную сумму подтверждаем до начала помощи
+      после оценки состояния.
+    </p>
+
+    {% if price_notes %}
+    <ul class="prices__geo" role="list">
+      {% for note in price_notes %}
+      <li class="prices__geo-item">
+        <span class="prices__geo-icon" aria-hidden="true">
+          <img src="{{ note.icon }}" alt="" width="22" height="22" decoding="async">
+        </span>
+        <span>
+          <span class="prices__geo-label">{{ note.text }}</span>
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="prices__tabs" role="tablist" aria-label="Разделы прайса">
+      {% for group in price_groups %}
+      <label
+        class="prices__tab"
+        for="prices-tab-{{ group.id }}"
+        id="prices-tab-label-{{ group.id }}"
+      >
+        <span class="prices__tab-icon" aria-hidden="true">
+          <img src="{{ group.icon }}" alt="" width="18" height="18" decoding="async">
+        </span>
+        <span class="prices__tab-text">{{ group.title }}</span>
+      </label>
+      {% endfor %}
+    </div>
+
+    {% for group in price_groups %}
+    <div
+      class="prices__panel"
+      data-prices-panel="{{ group.id }}"
+      role="tabpanel"
+      aria-labelledby="prices-tab-label-{{ group.id }}"
+    >
+      <div class="prices__table-wrap">
+        <table class="prices__table">
+          <caption class="visually-hidden">
+            {{ group.title }} — прайс клиники психиатрии и наркологии «Нова»
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Услуга</th>
+              <th scope="col">Что входит</th>
+              <th scope="col">Стоимость</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in group.rows %}
+            <tr>
+              <th scope="row">
+                <span class="prices__service">
+                  <span class="prices__service-icon-wrap" aria-hidden="true">
+                    <img
+                      class="prices__service-icon"
+                      src="{{ row.icon }}"
+                      alt=""
+                      width="22"
+                      height="22"
+                      decoding="async"
+                    >
+                  </span>
+                  <span class="prices__service-name">{{ row.name }}</span>
+                </span>
+              </th>
+              <td data-label="Что входит">{{ row.includes }}</td>
+              <td data-label="Стоимость">
+                <span class="prices__cost">{{ row.price }}{% if row.unit %}/{{ row.unit }}{% endif %}</span>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="prices__actions">
+      <a class="button button--primary" href="/ceny/">
+        <img class="button__icon" src="/assets/icons/currency-rub.svg" alt="" width="16" height="16" decoding="async">
+        Открыть страницу цен
+      </a>
+    </div>
+  </div>
+</section>

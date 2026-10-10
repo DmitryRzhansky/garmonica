@@ -219,3 +219,4 @@ def get_price_groups() -> list[dict]:
 
 def get_price_notes() -> list[dict]:
     return list(PRICE_NOTES)
+

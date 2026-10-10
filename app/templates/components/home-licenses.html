@@ -1,20 +1,33 @@
 {% set license = clinic_license %}
-<section class="licenses" id="licenses" aria-labelledby="licenses-title" data-licenses>
+<section class="licenses" id="licenses" aria-labelledby="licenses-works-title" data-licenses>
   <div class="licenses__inner">
-    <header class="licenses__scopes-header">
-      <h2 class="licenses__scopes-title" id="licenses-scopes-title">
-        Виды оказываемых медицинских услуг
+    <header class="licenses__works-header">
+      <h2 class="licenses__works-title" id="licenses-works-title">
+        Лицензия и коды услуг
       </h2>
-      <p class="licenses__scopes-intro">
-        Ознакомьтесь с направлениями медицинской деятельности, предусмотренными лицензией клиники.
+      <p class="licenses__works-intro">
+        Регистрационный номер лицензии —
+        <span class="licenses__works-number">{{ license.number }}</span>.
+        Работы и услуги по {{ license.nomenclature }}.
       </p>
     </header>
 
-    <ul class="licenses__scopes" role="list" aria-label="Направления медицинской деятельности по лицензии">
-      {% for scope in license.scopes %}
-      <li class="licenses__scope">
-        <img class="licenses__scope-icon" src="{{ scope.icon }}" alt="" width="22" height="22" decoding="async">
-        <span class="licenses__scope-title">{{ scope.title }}</span>
+    <ul class="licenses__works" role="list" aria-label="Работы и услуги по лицензии">
+      {% for group in license.work_groups %}
+      <li class="licenses__work-group">
+        <p class="licenses__work-group-title">{{ group.title }}</p>
+        <ul class="licenses__work-list" role="list">
+          {% for entry in group.entries %}
+          <li class="licenses__work-item">
+            <p class="licenses__work-condition">{{ entry.condition }}</p>
+            <ul class="licenses__work-codes" role="list">
+              {% for service in entry.services %}
+              <li class="licenses__work-code">{{ service }}</li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
       </li>
       {% endfor %}
     </ul>

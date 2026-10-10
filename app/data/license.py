@@ -10,6 +10,7 @@ LICENSE_AUTHORITY = "Департамент здравоохранения го�
 LICENSE_STATUS = "действует"
 LICENSE_ORDER_ISSUE = "№ 211-Л от 10.02.2025"
 LICENSE_ORDER_REISSUE = "№ 407-Л от 12.03.2025"
+LICENSE_NOMENCLATURE = "Приказ Минздрава России № 866н"
 LICENSE_PDF = "/assets/docs/license-L041-01137-77-01838787.pdf"
 LICENSE_REGISTRY_URL = "https://roszdravnadzor.gov.ru/services/licenses"
 
@@ -48,18 +49,95 @@ LICENSE_DOCUMENTS = [
     },
 ]
 
-LICENSE_SCOPES = [
+# Работы (услуги) из выписки — по Приказу 866н.
+LICENSE_WORK_GROUPS = [
     {
-        "title": "Психиатрия",
-        "icon": "/assets/icons/phosphor/brain.svg",
+        "title": "Первичная медико-санитарная помощь",
+        "entries": [
+            {
+                "condition": (
+                    "Первичная доврачебная медико-санитарная помощь "
+                    "в амбулаторных условиях"
+                ),
+                "services": ["Сестринское дело"],
+            },
+            {
+                "condition": (
+                    "Первичная врачебная медико-санитарная помощь "
+                    "в амбулаторных условиях"
+                ),
+                "services": ["Терапия"],
+            },
+            {
+                "condition": (
+                    "Первичная врачебная медико-санитарная помощь "
+                    "в условиях дневного стационара"
+                ),
+                "services": ["Терапия"],
+            },
+            {
+                "condition": (
+                    "Первичная специализированная медико-санитарная помощь "
+                    "в амбулаторных условиях"
+                ),
+                "services": [
+                    "Неврология",
+                    "Психиатрия-наркология",
+                    "Функциональная диагностика",
+                ],
+            },
+        ],
     },
     {
-        "title": "Психиатрия-наркология",
-        "icon": "/assets/icons/phosphor/stethoscope.svg",
+        "title": "Специализированная медицинская помощь",
+        "entries": [
+            {
+                "condition": (
+                    "Специализированная медицинская помощь "
+                    "в условиях дневного стационара"
+                ),
+                "services": ["Сестринское дело"],
+            },
+            {
+                "condition": (
+                    "Специализированная медицинская помощь "
+                    "в стационарных условиях"
+                ),
+                "services": ["Психиатрия-наркология", "Психотерапия"],
+            },
+        ],
     },
     {
         "title": "Скорая медицинская помощь",
-        "icon": "/assets/icons/phosphor/ambulance.svg",
+        "entries": [
+            {
+                "condition": "Скорая медицинская помощь вне медицинской организации",
+                "services": ["Скорая медицинская помощь"],
+            },
+            {
+                "condition": (
+                    "Скорая специализированная медицинская помощь "
+                    "вне медицинской организации"
+                ),
+                "services": ["Психиатрия", "Психиатрия-наркология"],
+            },
+        ],
+    },
+    {
+        "title": "Медицинские экспертизы и осмотры",
+        "entries": [
+            {
+                "condition": "Медицинские экспертизы",
+                "services": ["Экспертиза временной нетрудоспособности"],
+            },
+            {
+                "condition": "Медицинские осмотры",
+                "services": [
+                    "Медицинские осмотры "
+                    "(предсменные, предрейсовые, послесменные, послерейсовые)"
+                ],
+            },
+        ],
     },
 ]
 
@@ -72,6 +150,7 @@ def get_clinic_license() -> dict:
         "status": LICENSE_STATUS,
         "order_issue": LICENSE_ORDER_ISSUE,
         "order_reissue": LICENSE_ORDER_REISSUE,
+        "nomenclature": LICENSE_NOMENCLATURE,
         "pdf_url": LICENSE_PDF,
         "registry_url": LICENSE_REGISTRY_URL,
         "legal_name": CLINIC_CONTACTS["legal_name"],
@@ -80,5 +159,5 @@ def get_clinic_license() -> dict:
         "legal_address": LICENSE_LEGAL_ADDRESS,
         "activity_address": CLINIC_CONTACTS["address_full"],
         "documents": list(LICENSE_DOCUMENTS),
-        "scopes": list(LICENSE_SCOPES),
+        "work_groups": list(LICENSE_WORK_GROUPS),
     }

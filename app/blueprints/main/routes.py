@@ -28,6 +28,11 @@ def home():
         meta_title=HOME_TITLE,
         meta_description=HOME_DESCRIPTION,
         canonical=_canonical("/"),
+        clinic_license=get_clinic_license(),
+        price_notes=get_price_notes(),
+        price_groups=get_price_groups(),
+        review_sources=get_service_reviews(),
+        review_stats=get_service_review_stats(),
     )
 
 
