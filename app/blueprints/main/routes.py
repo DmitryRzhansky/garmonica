@@ -5,7 +5,7 @@ from app.data.doctors import get_clinic_doctors
 from app.data.faq_page import get_faq_page
 from app.data.gallery_page import get_gallery_page
 from app.data.license import get_clinic_license
-from app.data.prices import get_price_groups, get_price_notes
+from app.data.prices import get_price_groups
 from app.data.service_reviews import get_service_review_stats, get_service_reviews
 from app.services.catalog import get_catalog
 from app.services.info_pages import INFO_PAGES
@@ -76,7 +76,6 @@ def info_page(slug):
             "pages/prices.html",
             page=page,
             price_groups=get_price_groups(),
-            price_notes=get_price_notes(),
             clinic_contacts=get_clinic_contacts(),
             meta_title=meta_title,
             meta_description=meta_description,

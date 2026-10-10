@@ -261,8 +261,7 @@ def test_prices_page(client):
     assert "Цены" in html
     assert "pp-head__lead" not in html
     assert "pp-head__actions" not in html
-    assert "Стоимость называют до начала помощи" in html
-    assert "Способы оплаты: СБП" in html
+    assert "pp-notes" not in html
     assert "Стационар" in html
     assert "4-местная палата" in html
     assert "от 12" in html

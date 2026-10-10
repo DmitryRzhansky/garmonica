@@ -9,17 +9,6 @@
         <h1 class="pp-head__title" id="prices-page-title">Цены</h1>
       </header>
 
-      <ul class="pp-notes" role="list" aria-label="Как формируется стоимость">
-        {% for note in price_notes %}
-        <li class="pp-notes__item">
-          <span class="pp-notes__icon" aria-hidden="true">
-            <img src="{{ note.icon }}" alt="" width="22" height="22" decoding="async">
-          </span>
-          <p class="pp-notes__text">{{ note.text }}</p>
-        </li>
-        {% endfor %}
-      </ul>
-
       {% for group in price_groups %}
       <section class="pp-group" id="{{ group.id }}" aria-labelledby="pp-{{ group.id }}-title">
         <header class="pp-group__header">

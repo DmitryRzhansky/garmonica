@@ -2,30 +2,6 @@
 
 from __future__ import annotations
 
-PRICE_NOTES = [
-    {
-        "icon": "/assets/icons/phosphor/shield-check.svg",
-        "text": (
-            "Стоимость называют до начала помощи. "
-            "Итог подтверждают после оценки состояния."
-        ),
-    },
-    {
-        "icon": "/assets/icons/phosphor/hospital.svg",
-        "text": (
-            "В стационаре в цену палаты входят размещение, питание и наблюдение. "
-            "Анализы, процедуры и врачебное ведение оплачиваются отдельно по прайсу."
-        ),
-    },
-    {
-        "icon": "/assets/icons/phosphor/credit-card.svg",
-        "text": (
-            "Способы оплаты: СБП, банковская карта, QR-код. "
-            "Договор оформляют до начала лечения."
-        ),
-    },
-]
-
 PRICE_GROUPS = [
     {
         "id": "stationary",
@@ -215,8 +191,4 @@ PRICE_GROUPS = [
 
 def get_price_groups() -> list[dict]:
     return list(PRICE_GROUPS)
-
-
-def get_price_notes() -> list[dict]:
-    return list(PRICE_NOTES)
 
