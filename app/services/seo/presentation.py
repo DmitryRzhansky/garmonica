@@ -23,7 +23,6 @@ INPATIENT_MARKERS = (
 
 @dataclass(frozen=True)
 class HeroCopy:
-    badge: str
     features: tuple[tuple[str, str], tuple[str, str], tuple[str, str]]
     price_label: str
     price_value: str
@@ -109,7 +108,6 @@ def hero_for(presentation: str, drip: bool) -> HeroCopy:
     del drip
     if presentation == "home":
         return HeroCopy(
-            badge="Бригада в вашем районе",
             features=(
                 ("Приезд специалиста", "30–45 минут"),
                 ("Оплата", "после помощи"),
@@ -123,7 +121,6 @@ def hero_for(presentation: str, drip: bool) -> HeroCopy:
         )
     if presentation == "inpatient":
         return HeroCopy(
-            badge="Стационар на Люблинской, 46",
             features=(
                 ("Питание", "входит в сутки"),
                 ("Срок", "3–21 день по состоянию"),
@@ -137,7 +134,6 @@ def hero_for(presentation: str, drip: bool) -> HeroCopy:
         )
     if presentation == "online":
         return HeroCopy(
-            badge="Онлайн-консультация",
             features=(
                 ("Формат", "без выезда"),
                 ("Дальше", "очный приём, если нужен"),
@@ -151,7 +147,6 @@ def hero_for(presentation: str, drip: bool) -> HeroCopy:
         )
     if presentation == "rehab":
         return HeroCopy(
-            badge="Реабилитация",
             features=(
                 ("Программа", "условия уточняют"),
                 ("Запись", "после разговора"),
@@ -165,7 +160,6 @@ def hero_for(presentation: str, drip: bool) -> HeroCopy:
         )
     if presentation == "coding":
         return HeroCopy(
-            badge="Кодирование после консультации",
             features=(
                 ("Сначала", "осмотр и согласие"),
                 ("Метод", "выбирает врач"),
@@ -179,7 +173,6 @@ def hero_for(presentation: str, drip: bool) -> HeroCopy:
         )
     if presentation == "catalog":
         return HeroCopy(
-            badge="Клиника на Люблинской, 46",
             features=(
                 ("Форматы", "выезд, приём, стационар"),
                 ("Консультация", "8 000 ₽"),
@@ -193,7 +186,6 @@ def hero_for(presentation: str, drip: bool) -> HeroCopy:
         )
     if presentation == "clinic":
         return HeroCopy(
-            badge="Клиника на Люблинской, 46",
             features=(
                 ("На приёме", "осмотр и рекомендации"),
                 ("Госпитализация", "только с согласия"),
@@ -206,7 +198,6 @@ def hero_for(presentation: str, drip: bool) -> HeroCopy:
             cta="Записаться",
         )
     return HeroCopy(
-        badge="Приём в клинике",
         features=(
             ("Старт", "консультация врача"),
             ("Дальше", "амбулаторно или стационар"),

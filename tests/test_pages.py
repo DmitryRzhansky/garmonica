@@ -109,7 +109,7 @@ def test_narkolog_keeps_written_hero(client):
     assert "Перед выездом по телефону" in html
     assert "Антипов Дмитрий Евгеньевич" in html
     assert "8 000 ₽" in html
-    assert "Бригада в вашем районе" in html
+    assert "service-hero__badge" not in html
     assert "Приезд специалиста" in html
     assert "30–45 минут" in html
     assert "Полная анонимность" in html
