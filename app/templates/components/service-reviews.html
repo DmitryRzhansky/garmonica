@@ -1,9 +1,16 @@
-<section class="reviews reviews--service" id="service-reviews" data-reviews aria-labelledby="service-reviews-title">
+{% set reviews_title = reviews_title|default("Отзывы наших клиентов") %}
+{% set reviews_title_id = reviews_title_id|default("service-reviews-title") %}
+{% set reviews_section_id = reviews_section_id|default("service-reviews") %}
+{% set reviews_tab_name = reviews_tab_name|default("service-reviews-tab") %}
+{% set reviews_show_title = reviews_show_title if reviews_show_title is defined else true %}
+{% set reviews_class = reviews_class|default("reviews reviews--service") %}
+
+<section class="{{ reviews_class }}" id="{{ reviews_section_id }}" data-reviews aria-labelledby="{{ reviews_title_id }}">
   {% for source in review_sources %}
   <input
     class="reviews__tab-input"
     type="radio"
-    name="service-reviews-tab"
+    name="{{ reviews_tab_name }}"
     id="reviews-tab-{{ source.id }}"
     data-reviews-tab="{{ source.id }}"
     {% if loop.first %}checked{% endif %}
@@ -12,7 +19,9 @@
 
   <div class="reviews__inner">
     <div class="reviews__header">
-      <h2 class="reviews__title" id="service-reviews-title">Отзывы наших клиентов</h2>
+      {% if reviews_show_title %}
+      <h2 class="reviews__title" id="{{ reviews_title_id }}">{{ reviews_title }}</h2>
+      {% endif %}
 
       {% if review_stats %}
       <div class="reviews-stats" aria-label="Сводка оценок">

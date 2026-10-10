@@ -297,9 +297,26 @@ def test_gallery_page(client):
     assert "info-page__title" not in html
 
 
+def test_reviews_page(client):
+    response = client.get("/otzyvy/")
+    html = response.get_data(as_text=True)
+
+    assert response.status_code == 200
+    assert "rp-head__title" in html
+    assert "Отзывы" in html
+    assert "reviews--page" in html
+    assert "reviews-stats" in html
+    assert "Яндекс" in html
+    assert "2ГИС" in html
+    assert "Google" in html
+    assert "data-reviews" in html
+    assert "Здесь будет отдельная лента отзывов" not in html
+    assert "info-page__title" not in html
+    assert 'id="service-reviews-title"' not in html
+
+
 def test_remaining_site_pages(client):
     pages = {
-        "/otzyvy/": "Отзывы",
         "/kontakty/": "Контакты",
         "/politika-konfidencialnosti/": "Политика конфиденциальности",
         "/soglasie/": "Согласие на обработку персональных данных",

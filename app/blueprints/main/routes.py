@@ -6,6 +6,7 @@ from app.data.faq_page import get_faq_page
 from app.data.gallery_page import get_gallery_page
 from app.data.license import get_clinic_license
 from app.data.prices import get_price_groups, get_price_notes
+from app.data.service_reviews import get_service_review_stats, get_service_reviews
 from app.services.catalog import get_catalog
 from app.services.info_pages import INFO_PAGES
 from app.services.site_map import get_site_map
@@ -116,6 +117,18 @@ def info_page(slug):
             "pages/license.html",
             page=page,
             clinic_license=get_clinic_license(),
+            clinic_contacts=get_clinic_contacts(),
+            meta_title=meta_title,
+            meta_description=meta_description,
+            canonical=canonical,
+        )
+
+    if slug == "otzyvy":
+        return render_template(
+            "pages/reviews.html",
+            page=page,
+            review_sources=get_service_reviews(),
+            review_stats=get_service_review_stats(),
             clinic_contacts=get_clinic_contacts(),
             meta_title=meta_title,
             meta_description=meta_description,
