@@ -56,6 +56,8 @@ def test_home_city_and_psych_titles():
     assert accents["Химки"] == "Химках"
     depression = catalog.view("/uslugi/psihiatriya/rasstrojstva-nastroeniya/depressiya/").seo
     assert depression.meta_title == "Помощь при депрессии — анонимно, приём в клинике, 8 000 ₽"
+    anorexia = catalog.view("/uslugi/psihiatriya/rasstrojstva-pishchevogo-povedeniya/anoreksiya/").seo
+    assert anorexia.h1 == "Лечение нервной анорексии"
     assert "капельниц" not in depression.lead.lower()
     assert "выезд нарколога" not in depression.meta_description.lower()
     coding = catalog.view("/uslugi/kodirovanie/").seo
