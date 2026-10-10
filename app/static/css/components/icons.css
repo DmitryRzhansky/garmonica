@@ -1,7 +1,6 @@
 /* Soft blue tint for monochrome Phosphor SVGs loaded via <img> */
 .hero-header__meta-icon,
 .hero-header__phone-icon,
-.hero__signal-icon,
 .specialist-quiz__eyebrow-icon,
 .perks__tile-icon,
 .prices__geo-icon img,
@@ -23,7 +22,8 @@ details.faq__item > .faq__question > .faq__icon,
   filter: invert(45%) sepia(18%) saturate(650%) hue-rotate(170deg) brightness(90%) contrast(95%);
 }
 
-/* Doctors: чёткий --color-accent (#5b9bd5) */
+/* Чёткий --color-accent (#5b9bd5) */
+.hero__signal-icon,
 .doctors-card__meta-icon,
 .doctors-card__list-icon,
 .doctors-card__badge-icon,

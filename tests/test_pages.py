@@ -40,7 +40,7 @@ def test_home(client):
 
     assert response.status_code == 200
     html = response.get_data(as_text=True)
-    assert "Наркологическая помощь при алкогольной и наркотической зависимости" in html
+    assert "Психонаркологическая клиника — Нова" in html
     assert 'href="/uslugi/narkolog-na-dom/"' in html
     assert 'href="/uslugi/kapelnitsy/ot-zapoya-i-alkogolya/"' in html
     assert 'href="/vrachi/"' in html
