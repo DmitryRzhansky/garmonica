@@ -315,9 +315,36 @@ def test_reviews_page(client):
     assert 'id="service-reviews-title"' not in html
 
 
+def test_contacts_page(client):
+    response = client.get("/kontakty/")
+    html = response.get_data(as_text=True)
+    main_html = html.split("site-footer", 1)[0]
+    if 'id="top"' in main_html:
+        main_html = main_html.split('id="top"', 1)[1]
+
+    assert response.status_code == 200
+    assert "cp-head__title" in html
+    assert "Контакты" in html
+    assert "+7 (495) 120-45-67" in main_html
+    assert "tel:+74951204567" in main_html
+    assert "novaklinika111@yandex.ru" in main_html
+    assert "Люблинская" in main_html
+    assert "Круглосуточно 24/7" in main_html
+    assert "Телеграм" in main_html
+    assert "Ватсап" in main_html
+    assert "Макс" in main_html
+    assert "ВКонтакте" in main_html
+    assert "9715492100" in main_html
+    assert "1247700585186" in main_html
+    assert "Л041-01137-77/01838787" in main_html
+    assert "Марьиной Рощи" in main_html
+    assert "map-widget" in main_html
+    assert "Профсоюзная" not in main_html
+    assert "info-page__title" not in html
+
+
 def test_remaining_site_pages(client):
     pages = {
-        "/kontakty/": "Контакты",
         "/politika-konfidencialnosti/": "Политика конфиденциальности",
         "/soglasie/": "Согласие на обработку персональных данных",
     }

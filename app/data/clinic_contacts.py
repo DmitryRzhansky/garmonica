@@ -34,14 +34,19 @@ CLINIC_CONTACTS = {
             "icon": "/assets/icons/messengers/telegram.svg",
         },
         {
+            "label": "Ватсап",
+            "href": "https://wa.me/74951204567",
+            "icon": "/assets/icons/messengers/whatsapp.png",
+        },
+        {
             "label": "Макс",
             "href": "https://max.ru/",
             "icon": "/assets/icons/messengers/max.png",
         },
         {
-            "label": "Ватсап",
-            "href": "https://wa.me/",
-            "icon": "/assets/icons/messengers/whatsapp.png",
+            "label": "ВКонтакте",
+            "href": "https://vk.com/",
+            "icon": "/assets/icons/messengers/vk.png",
         },
     ],
 }

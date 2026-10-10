@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main id="top" class="contacts-page">
+      <header class="cp-head">
+        {% with crumbs=[{"name": "Главная", "url": "/"}, {"name": "Контакты"}] %}
+        {% include "components/breadcrumbs.html" %}
+        {% endwith %}
+        <h1 class="cp-head__title" id="contacts-page-title">Контакты</h1>
+      </header>
+
+      <section class="cp-hero" aria-labelledby="contacts-page-title">
+        <div class="cp-hero__actions">
+          <a class="button button--warm" href="tel:{{ clinic_contacts.phone_tel }}">
+            <img class="button__icon" src="/assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
+            {{ clinic_contacts.phone_display }}
+          </a>
+          <a class="button button--primary" href="mailto:{{ clinic_contacts.email }}">
+            <img class="button__icon" src="/assets/icons/paper-plane-tilt.svg" alt="" width="16" height="16" decoding="async">
+            Написать на почту
+          </a>
+        </div>
+      </section>
+
+      <section class="cp-grid" aria-label="Как связаться">
+        <article class="cp-card">
+          <span class="cp-card__icon" aria-hidden="true">
+            <img src="/assets/icons/map-pin.svg" alt="" width="22" height="22" decoding="async">
+          </span>
+          <p class="cp-card__label">Адрес клиники</p>
+          <address class="cp-card__value">{{ clinic_contacts.address_full }}</address>
+        </article>
+
+        <article class="cp-card">
+          <span class="cp-card__icon" aria-hidden="true">
+            <img src="/assets/icons/clock.svg" alt="" width="22" height="22" decoding="async">
+          </span>
+          <p class="cp-card__label">Часы работы</p>
+          <p class="cp-card__value">{{ clinic_contacts.hours }}</p>
+        </article>
+
+        <article class="cp-card">
+          <span class="cp-card__icon" aria-hidden="true">
+            <img src="/assets/icons/phone.svg" alt="" width="22" height="22" decoding="async">
+          </span>
+          <p class="cp-card__label">Телефон</p>
+          <p class="cp-card__value">
+            <a href="tel:{{ clinic_contacts.phone_tel }}">{{ clinic_contacts.phone_display }}</a>
+          </p>
+        </article>
+
+        <article class="cp-card">
+          <span class="cp-card__icon" aria-hidden="true">
+            <img src="/assets/icons/paper-plane-tilt.svg" alt="" width="22" height="22" decoding="async">
+          </span>
+          <p class="cp-card__label">Почта</p>
+          <p class="cp-card__value">
+            <a href="mailto:{{ clinic_contacts.email }}">{{ clinic_contacts.email }}</a>
+          </p>
+        </article>
+      </section>
+
+      <section class="cp-messengers" aria-labelledby="cp-messengers-title">
+        <h2 class="cp-messengers__title" id="cp-messengers-title">Мессенджеры</h2>
+        <ul class="cp-messengers__list" role="list">
+          {% for messenger in clinic_contacts.messengers %}
+          <li>
+            <a
+              class="cp-messengers__link"
+              href="{{ messenger.href }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="cp-messengers__icon"
+                src="{{ messenger.icon }}"
+                alt=""
+                width="22"
+                height="22"
+                decoding="async"
+              >
+              <span>{{ messenger.label }}</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section class="cp-legal" aria-labelledby="cp-legal-title">
+        <h2 class="cp-legal__title" id="cp-legal-title">Реквизиты</h2>
+        <ul class="cp-legal__list" role="list">
+          <li class="cp-legal__item">
+            <span class="cp-legal__label">Юрлицо</span>
+            <p class="cp-legal__value">{{ clinic_contacts.legal_name }}</p>
+          </li>
+          <li class="cp-legal__item">
+            <span class="cp-legal__label">ИНН</span>
+            <p class="cp-legal__value">{{ clinic_contacts.inn }}</p>
+          </li>
+          <li class="cp-legal__item">
+            <span class="cp-legal__label">ОГРН</span>
+            <p class="cp-legal__value">{{ clinic_contacts.ogrn }}</p>
+          </li>
+          <li class="cp-legal__item">
+            <span class="cp-legal__label">Лицензия</span>
+            <p class="cp-legal__value">
+              <a href="/licenziya/">{{ clinic_contacts.license_number }}</a>
+            </p>
+          </li>
+          <li class="cp-legal__item cp-legal__item--wide">
+            <span class="cp-legal__label">Юридический адрес</span>
+            <p class="cp-legal__value">{{ clinic_contacts.legal_address }}</p>
+          </li>
+          <li class="cp-legal__item cp-legal__item--wide">
+            <span class="cp-legal__label">Адрес оказания услуг</span>
+            <p class="cp-legal__value">{{ clinic_contacts.address_full }}</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="cp-map" aria-labelledby="cp-map-title">
+        <h2 class="cp-map__title" id="cp-map-title">Как добраться</h2>
+        <div class="cp-map__frame">
+          <iframe
+            class="cp-map__iframe"
+            title="{{ clinic_contacts.map_title }}"
+            src="{{ clinic_contacts.map_embed }}"
+            width="100%"
+            height="420"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+    </main>
+{% endblock %}

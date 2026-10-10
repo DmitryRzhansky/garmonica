@@ -135,6 +135,16 @@ def info_page(slug):
             canonical=canonical,
         )
 
+    if slug == "kontakty":
+        return render_template(
+            "pages/contacts.html",
+            page=page,
+            clinic_contacts=get_clinic_contacts(),
+            meta_title=meta_title,
+            meta_description=meta_description,
+            canonical=canonical,
+        )
+
     return render_template(
         "pages/info.html",
         page=page,
