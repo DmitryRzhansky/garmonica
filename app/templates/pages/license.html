@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main id="top" class="license-page" data-licenses>
+      <header class="lp-head">
+        {% with crumbs=[{"name": "Главная", "url": "/"}, {"name": "Лицензия"}] %}
+        {% include "components/breadcrumbs.html" %}
+        {% endwith %}
+        <h1 class="lp-head__title" id="license-page-title">Лицензия</h1>
+      </header>
+
+      <section class="lp-facts" aria-labelledby="license-page-title">
+        <ul class="lp-facts__list" role="list">
+          <li class="lp-facts__item">
+            <span class="lp-facts__label">Лицензия</span>
+            <p class="lp-facts__value">{{ clinic_license.number }}</p>
+          </li>
+          <li class="lp-facts__item">
+            <span class="lp-facts__label">Статус</span>
+            <p class="lp-facts__value">{{ clinic_license.status|capitalize }}</p>
+          </li>
+          <li class="lp-facts__item">
+            <span class="lp-facts__label">Дата предоставления</span>
+            <p class="lp-facts__value">{{ clinic_license.issued_at }}</p>
+          </li>
+          <li class="lp-facts__item">
+            <span class="lp-facts__label">Лицензирующий орган</span>
+            <p class="lp-facts__value">{{ clinic_license.authority }}</p>
+          </li>
+          <li class="lp-facts__item">
+            <span class="lp-facts__label">Юрлицо</span>
+            <p class="lp-facts__value">{{ clinic_license.legal_name }}</p>
+          </li>
+          <li class="lp-facts__item">
+            <span class="lp-facts__label">ИНН / ОГРН</span>
+            <p class="lp-facts__value">{{ clinic_license.inn }} · {{ clinic_license.ogrn }}</p>
+          </li>
+          <li class="lp-facts__item">
+            <span class="lp-facts__label">Юридический адрес</span>
+            <p class="lp-facts__value">{{ clinic_license.legal_address }}</p>
+          </li>
+          <li class="lp-facts__item">
+            <span class="lp-facts__label">Адрес оказания услуг</span>
+            <p class="lp-facts__value">{{ clinic_license.activity_address }}</p>
+          </li>
+        </ul>
+
+        <div class="lp-facts__actions">
+          <a
+            class="button button--primary"
+            href="{{ clinic_license.registry_url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img class="button__icon" src="/assets/icons/magnifying-glass.svg" alt="" width="16" height="16" decoding="async">
+            Проверить в реестре
+          </a>
+          <a
+            class="button button--outline"
+            href="{{ clinic_license.pdf_url }}"
+            download
+          >
+            <img class="button__icon" src="/assets/icons/file-text.svg" alt="" width="16" height="16" decoding="async">
+            Скачать PDF
+          </a>
+        </div>
+      </section>
+
+      <section class="lp-docs" aria-labelledby="lp-docs-title">
+        <h2 class="lp-docs__title" id="lp-docs-title">Выписка из реестра лицензий</h2>
+        <ul class="lp-docs__grid" role="list">
+          {% for doc in clinic_license.documents %}
+          <li class="lp-docs__item">
+            <article class="license-card">
+              <button
+                class="license-card__preview"
+                type="button"
+                aria-label="Открыть {{ doc.meta|lower }}"
+                data-license-open
+                data-license-image="{{ doc.image }}"
+                data-license-alt="{{ doc.alt }}"
+              >
+                <img
+                  class="license-card__image"
+                  src="{{ doc.image }}"
+                  alt=""
+                  width="{{ doc.width }}"
+                  height="{{ doc.height }}"
+                  {% if loop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+                  decoding="async"
+                >
+                <span class="license-card__zoom" aria-hidden="true">
+                  <img src="/assets/icons/magnifying-glass.svg" alt="" width="22" height="22">
+                </span>
+              </button>
+              <div class="license-card__body">
+                <div>
+                  <span class="license-card__title">{{ doc.title }}</span>
+                  <p class="license-card__meta">{{ doc.meta }}</p>
+                </div>
+                <a class="button button--outline license-card__download" href="{{ clinic_license.pdf_url }}" download>
+                  <img class="button__icon" src="/assets/icons/file-text.svg" alt="" width="16" height="16" aria-hidden="true">
+                  Скачать PDF
+                </a>
+              </div>
+            </article>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <dialog class="license-viewer" data-license-dialog aria-label="Просмотр документа">
+        <div class="license-viewer__bar">
+          <button class="license-viewer__close" type="button" aria-label="Закрыть просмотр" data-license-close>
+            <img src="/assets/icons/x.svg" alt="" width="24" height="24" aria-hidden="true">
+          </button>
+        </div>
+        <div class="license-viewer__stage">
+          <img class="license-viewer__image" src="" alt="" width="1190" height="1584" data-license-dialog-image>
+        </div>
+      </dialog>
+    </main>
+{% endblock %}

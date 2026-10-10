@@ -1,3 +1,4 @@
+{% set license = clinic_license %}
 <section class="service-licenses" id="service-licenses" aria-labelledby="service-licenses-title" data-licenses>
   <div class="service-licenses__inner">
     <div class="service-licenses__intro">
@@ -10,7 +11,7 @@
       <div class="service-licenses__cta">
         <a
           class="button button--primary"
-          href="https://roszdravnadzor.gov.ru/services/licenses"
+          href="{{ license.registry_url }}"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -26,27 +27,28 @@
 
     <div class="service-licenses__panel">
       <ul class="service-licenses__docs" role="list">
+        {% for doc in license.documents %}
         <li>
           <button
             class="license-doc"
             type="button"
-            aria-label="Открыть: Выписка из реестра лицензий"
+            aria-label="Открыть: {{ doc.label }}"
             data-license-open
-            data-license-image="/assets/images/licenses/license-register-page-1.png"
-            data-license-alt="Выписка из реестра лицензий, страница 1"
+            data-license-image="{{ doc.image }}"
+            data-license-alt="{{ doc.alt }}"
           >
             <span class="license-doc__media">
               <img
                 class="license-doc__image"
-                src="/assets/images/licenses/license-register-page-1.png"
-                alt="Выписка из реестра лицензий, страница 1"
-                width="770"
-                height="1024"
+                src="{{ doc.image }}"
+                alt="{{ doc.alt }}"
+                width="{{ doc.width }}"
+                height="{{ doc.height }}"
                 loading="lazy"
                 decoding="async"
               >
             </span>
-            <span class="license-doc__label">Выписка из реестра лицензий</span>
+            <span class="license-doc__label">{{ doc.label }}</span>
             <span class="license-doc__preview" aria-hidden="true">
               <img
                 class="license-doc__preview-icon"
@@ -59,85 +61,21 @@
             </span>
           </button>
         </li>
-        <li>
-          <button
-            class="license-doc"
-            type="button"
-            aria-label="Открыть: Выписка из реестра лицензий, стр. 2"
-            data-license-open
-            data-license-image="/assets/images/licenses/license-register-page-2.png"
-            data-license-alt="Выписка из реестра лицензий, страница 2"
-          >
-            <span class="license-doc__media">
-              <img
-                class="license-doc__image"
-                src="/assets/images/licenses/license-register-page-2.png"
-                alt="Выписка из реестра лицензий, страница 2"
-                width="770"
-                height="1024"
-                loading="lazy"
-                decoding="async"
-              >
-            </span>
-            <span class="license-doc__label">Выписка из реестра лицензий, стр. 2</span>
-            <span class="license-doc__preview" aria-hidden="true">
-              <img
-                class="license-doc__preview-icon"
-                src="/assets/icons/magnifying-glass.svg"
-                alt=""
-                width="18"
-                height="18"
-                decoding="async"
-              >
-            </span>
-          </button>
-        </li>
-        <li>
-          <button
-            class="license-doc"
-            type="button"
-            aria-label="Открыть: Санитарно-эпидемиологическое заключение"
-            data-license-open
-            data-license-image="/assets/images/licenses/sanitary-conclusion.png"
-            data-license-alt="Выписка из санитарно-эпидемиологического заключения"
-          >
-            <span class="license-doc__media">
-              <img
-                class="license-doc__image"
-                src="/assets/images/licenses/sanitary-conclusion.png"
-                alt="Выписка из санитарно-эпидемиологического заключения"
-                width="970"
-                height="1024"
-                loading="lazy"
-                decoding="async"
-              >
-            </span>
-            <span class="license-doc__label">Санитарно-эпидемиологическое заключение</span>
-            <span class="license-doc__preview" aria-hidden="true">
-              <img
-                class="license-doc__preview-icon"
-                src="/assets/icons/magnifying-glass.svg"
-                alt=""
-                width="18"
-                height="18"
-                decoding="async"
-              >
-            </span>
-          </button>
-        </li>
+        {% endfor %}
       </ul>
 
       <div class="service-licenses__details">
         <div class="service-licenses__legal-block">
           <p class="service-licenses__legal">
-            <strong>ООО «НикаПроМЕД»</strong><br>
-            ИНН: 7703842196;<br>
-            ОГРН: 1237700518472;<br>
-            Адрес: 117335, г.&nbsp;Москва, ул.&nbsp;Вавилова, д.&nbsp;19, стр.&nbsp;1, эт.&nbsp;4, оф.&nbsp;407;<br>
-            Генеральный директор: Ковалёв Алексей Петрович;<br>
-            Медицинская лицензия — <span class="service-licenses__nowrap">Л041-01137-77/00918432</span>, выдана 14.03.2021 Федеральной службой по&nbsp;надзору в&nbsp;сфере здравоохранения;<br>
-            Начало срока действия лицензии — 14&nbsp;марта 2021&nbsp;г.;<br>
-            Окончание срока действия лицензии — бессрочно.
+            <strong>{{ license.legal_name }}</strong><br>
+            ИНН: {{ license.inn }};<br>
+            ОГРН: {{ license.ogrn }};<br>
+            Юридический адрес: {{ license.legal_address }};<br>
+            Адрес оказания услуг: {{ license.activity_address }};<br>
+            Медицинская лицензия — <span class="service-licenses__nowrap">{{ license.number }}</span>,
+            выдана {{ license.issued_at }} ({{ license.authority }});<br>
+            Статус лицензии — {{ license.status }};<br>
+            Приказы: {{ license.order_issue }}; {{ license.order_reissue }}.
           </p>
         </div>
         <div class="service-licenses__seal" aria-hidden="true">
@@ -149,7 +87,7 @@
             height="40"
             decoding="async"
           >
-          <span class="service-licenses__seal-text">Лицензия бессрочная</span>
+          <span class="service-licenses__seal-text">Лицензия действует</span>
         </div>
       </div>
     </div>
@@ -162,7 +100,7 @@
       </button>
     </div>
     <div class="license-viewer__stage">
-      <img class="license-viewer__image" src="" alt="" width="1024" height="1536" data-license-dialog-image>
+      <img class="license-viewer__image" src="" alt="" width="1190" height="1584" data-license-dialog-image>
     </div>
   </dialog>
 </section>

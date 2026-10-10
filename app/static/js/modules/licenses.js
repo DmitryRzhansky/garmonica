@@ -1,32 +1,21 @@
 (function () {
-  function initLicenses() {
-    var section = document.querySelector("[data-licenses]");
-
-    if (!section) {
-      return;
-    }
-
+  function initLicenseSection(section) {
     var dialog = section.querySelector("[data-license-dialog]");
     var dialogImage = section.querySelector("[data-license-dialog-image]");
     var closeButton = section.querySelector("[data-license-close]");
-    var notice = section.querySelector("[data-license-notice]");
     var lastTrigger = null;
 
     section.addEventListener("click", function (event) {
       var openButton = event.target.closest("[data-license-open]");
-      var downloadButton = event.target.closest("[data-license-download]");
 
-      if (openButton && dialog && dialogImage) {
-        lastTrigger = openButton;
-        dialogImage.src = openButton.dataset.licenseImage || "";
-        dialogImage.alt = openButton.dataset.licenseAlt || "Демонстрационный образец документа";
-        dialog.showModal();
+      if (!openButton || !dialog || !dialogImage) {
         return;
       }
 
-      if (downloadButton && notice) {
-        notice.textContent = "Демонстрационная кнопка: файл для скачивания пока не подключён.";
-      }
+      lastTrigger = openButton;
+      dialogImage.src = openButton.dataset.licenseImage || "";
+      dialogImage.alt = openButton.dataset.licenseAlt || "Документ лицензии";
+      dialog.showModal();
     });
 
     if (!dialog) {
@@ -48,6 +37,19 @@
       if (event.target === dialog) {
         closeDialog();
       }
+    });
+  }
+
+  function initLicenses() {
+    var sections = document.querySelectorAll("[data-licenses]");
+
+    Array.prototype.forEach.call(sections, function (section) {
+      if (section.dataset.licensesReady === "true") {
+        return;
+      }
+
+      section.dataset.licensesReady = "true";
+      initLicenseSection(section);
     });
   }
 

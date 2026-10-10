@@ -47,6 +47,10 @@ def test_home(client):
     assert "/uslugi/pomoshch-rodstvennikam/" not in html
     assert "/uslugi/diagnostika/" not in html
     assert "/uslugi/vosstanovitelnaya-terapiya/" not in html
+    assert "license-extract-page-1.png" in html
+    assert "sanitary-conclusion" not in html
+    assert "Л041-01137-77/01838787" in html
+    assert "9715492100" in html.split("site-footer", 1)[-1]
 
 
 def test_narkolog_keeps_written_hero(client):
@@ -178,11 +182,26 @@ def test_removed_and_help_sections_are_missing(client):
     assert client.get("/pomosh/").status_code == 404
 
 
-def test_info_page(client):
+def test_license_page(client):
     response = client.get("/licenziya/")
+    html = response.get_data(as_text=True)
 
     assert response.status_code == 200
-    assert "<h1 class=\"info-page__title\">Лицензия</h1>" in response.get_data(as_text=True)
+    assert "lp-head__title" in html
+    assert "Лицензия" in html
+    assert "Л041-01137-77/01838787" in html
+    assert "ООО «НикаПроМЕД»" in html
+    assert "9715492100" in html
+    assert "1247700585186" in html
+    assert "Люблинская" in html
+    assert "Марьиной Рощи" in html
+    assert "license-extract-page-1.png" in html
+    assert "license-extract-page-3.png" in html
+    assert "sanitary-conclusion" not in html
+    assert "Вавилова" not in html
+    assert "00918432" not in html
+    assert "info-page__title" not in html
+    assert "/assets/docs/license-L041-01137-77-01838787.pdf" in html
 
 
 def test_about_clinic_page(client):

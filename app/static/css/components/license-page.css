@@ -1,0 +1,131 @@
+.license-page {
+  padding-bottom: var(--section-fade);
+}
+
+.lp-head {
+  display: grid;
+  gap: 0.65rem;
+  width: var(--page-shell-width);
+  margin:
+    calc(var(--header-offset) + 0.75rem)
+    auto
+    1.25rem;
+}
+
+.lp-head__title {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-h1);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text-dark);
+}
+
+.lp-facts {
+  display: grid;
+  gap: 1.25rem;
+  width: var(--page-shell-width);
+  margin: 0 auto var(--section-fade);
+}
+
+.lp-facts__list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.lp-facts__item {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1.05rem 1.15rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.lp-facts__item:last-child {
+  border-bottom: 0;
+}
+
+.lp-facts__label {
+  font-family: var(--font-text);
+  font-size: var(--font-size-body-sm);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+.lp-facts__value {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--color-text-dark);
+  text-wrap: pretty;
+}
+
+.lp-facts__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.lp-docs {
+  width: var(--page-shell-width);
+  margin: 0 auto;
+}
+
+.lp-docs__title {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-headline);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-h2);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text-dark);
+}
+
+.lp-docs__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lp-docs__item {
+  min-width: 0;
+}
+
+@media (min-width: 40rem) {
+  .lp-facts__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lp-facts__item {
+    border-right: 1px solid var(--color-border-light);
+  }
+
+  .lp-facts__item:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .lp-facts__item:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+}
+
+@media (min-width: 48rem) {
+  .lp-docs__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.15rem;
+  }
+}

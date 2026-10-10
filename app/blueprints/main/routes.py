@@ -4,6 +4,7 @@ from app.data.clinic_contacts import get_clinic_contacts
 from app.data.doctors import get_clinic_doctors
 from app.data.faq_page import get_faq_page
 from app.data.gallery_page import get_gallery_page
+from app.data.license import get_clinic_license
 from app.data.prices import get_price_groups, get_price_notes
 from app.services.catalog import get_catalog
 from app.services.info_pages import INFO_PAGES
@@ -26,6 +27,7 @@ def home():
         meta_title=HOME_TITLE,
         meta_description=HOME_DESCRIPTION,
         canonical=_canonical("/"),
+        clinic_license=get_clinic_license(),
     )
 
 
@@ -103,6 +105,17 @@ def info_page(slug):
             "pages/gallery.html",
             page=page,
             gallery_page=get_gallery_page(),
+            clinic_contacts=get_clinic_contacts(),
+            meta_title=meta_title,
+            meta_description=meta_description,
+            canonical=canonical,
+        )
+
+    if slug == "licenziya":
+        return render_template(
+            "pages/license.html",
+            page=page,
+            clinic_license=get_clinic_license(),
             clinic_contacts=get_clinic_contacts(),
             meta_title=meta_title,
             meta_description=meta_description,
