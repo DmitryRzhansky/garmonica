@@ -25,6 +25,7 @@ function initApp() {
   safeInit("service-call-form", window.initServiceCallForm);
   safeInit("contract-stub", initContractStub);
   safeInit("reviews", window.initReviews);
+  safeInit("prices", window.initPrices);
   safeInit("licenses", window.initLicenses);
   safeInit("clinic-gallery", window.initClinicGallery);
   safeInit("about-slider", window.initAboutSlider);

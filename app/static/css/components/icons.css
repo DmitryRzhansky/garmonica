@@ -10,7 +10,6 @@
 .contact__info-icon,
 details.faq__item > .faq__question > .faq__icon,
 .about__route-icon,
-.about-dept__trait-icon,
 .licenses__scope-icon,
 .service-hero__badge-icon,
 .service-price__icon img,
@@ -24,6 +23,7 @@ details.faq__item > .faq__question > .faq__icon,
 
 /* Чёткий --color-accent (#5b9bd5) */
 .hero__signal-icon,
+.about-dept__trait-icon,
 .doctors-card__meta-icon,
 .doctors-card__list-icon,
 .doctors-card__badge-icon,

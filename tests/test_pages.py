@@ -49,9 +49,10 @@ def test_home(client):
     assert "/uslugi/vosstanovitelnaya-terapiya/" not in html
     assert "Запись к специалисту" not in html
     assert "Виды оказываемых медицинских услуг" not in html
-    assert "Лицензия и коды услуг" in html
-    assert "Психиатрия-наркология" in html
-    assert "Наши лицензии и документы" in html
+    assert "Лицензия и коды услуг" not in html
+    assert "Наши лицензии и документы" not in html
+    assert 'id="service-licenses-title"' in html
+    assert 'id="guidelines-title"' in html
     assert "license-extract-page-1.png" in html
     assert "sanitary-conclusion" not in html
     assert "Цены на наши услуги" in html
