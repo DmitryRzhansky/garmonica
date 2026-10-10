@@ -14,6 +14,7 @@ def create_app(config_class=Config):
 
     register_blueprints(app)
     register_error_handlers(app)
+    register_context_processors(app)
     return app
 
 
@@ -23,3 +24,11 @@ def register_blueprints(app):
 
     app.register_blueprint(main_bp)
     app.register_blueprint(services_bp)
+
+
+def register_context_processors(app):
+    @app.context_processor
+    def inject_clinic_contacts():
+        from app.data.clinic_contacts import get_clinic_contacts
+
+        return {"clinic_contacts": get_clinic_contacts()}

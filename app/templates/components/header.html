@@ -25,12 +25,12 @@
               >
               <span class="hero-header__meta-text">
                 <span class="hero-header__meta-label">Адрес</span>
-                <span class="hero-header__meta-value">г. Москва, ул. Профсоюзная, 56</span>
+                <span class="hero-header__meta-value">{{ clinic_contacts.address }}</span>
               </span>
             </a>
           </address>
 
-          <p class="hero-header__org">Нова — психонаркологическая клиника</p>
+          <p class="hero-header__org">{{ clinic_contacts.brand }} — {{ clinic_contacts.positioning }}</p>
 
           <p class="hero-header__meta-item hero-header__hours">
             <img
@@ -43,13 +43,13 @@
             >
             <span class="hero-header__meta-text">
               <span class="hero-header__meta-label">Время работы</span>
-              <span class="hero-header__meta-value">Круглосуточно 24/7</span>
+              <span class="hero-header__meta-value">{{ clinic_contacts.hours }}</span>
             </span>
           </p>
         </div>
 
         <div class="hero-header__bar">
-          <p class="hero-header__brand">Нова — психонаркологическая клиника</p>
+          <p class="hero-header__brand">{{ clinic_contacts.brand }} — {{ clinic_contacts.positioning }}</p>
           <nav class="hero-header__nav" aria-label="Основная навигация">
             <ul class="hero-header__nav-list" role="list">
               <li class="hero-header__nav-item hero-header__nav-item--about hero-header__nav-item--dropdown" data-nav-dropdown>
@@ -124,7 +124,11 @@
           </nav>
 
           <div class="hero-header__actions">
-            <a class="hero-header__phone" href="tel:+74951204567" aria-label="Позвонить: +7 (495) 120-45-67">
+            <a
+              class="hero-header__phone"
+              href="tel:{{ clinic_contacts.phone_tel }}"
+              aria-label="Позвонить: {{ clinic_contacts.phone_display }}"
+            >
               <img
                 class="hero-header__phone-icon"
                 src="/assets/icons/phone.svg"
@@ -133,49 +137,24 @@
                 height="15"
                 decoding="async"
               >
-              <span class="hero-header__phone-text">+7 (495) 120-45-67</span>
+              <span class="hero-header__phone-text">{{ clinic_contacts.phone_display }}</span>
             </a>
 
             <div class="hero-header__socials">
+              {% for messenger in clinic_contacts.messengers %}
               <a
                 class="hero-header__social"
-                href="https://t.me/"
+                href="{{ messenger.href }}"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Telegram"
+                aria-label="{{ messenger.label }}"
               >
-                <img class="hero-header__social-icon" src="/assets/icons/messengers/telegram.svg" alt="" width="16" height="16" decoding="async">
+                <img class="hero-header__social-icon" src="{{ messenger.icon }}" alt="" width="16" height="16" decoding="async">
               </a>
+              {% endfor %}
               <a
                 class="hero-header__social"
-                href="https://wa.me/74951204567"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-              >
-                <img class="hero-header__social-icon" src="/assets/icons/messengers/whatsapp.png" alt="" width="16" height="16" decoding="async">
-              </a>
-              <a
-                class="hero-header__social"
-                href="https://max.ru/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="MAX"
-              >
-                <img class="hero-header__social-icon" src="/assets/icons/messengers/max.png" alt="" width="16" height="16" decoding="async">
-              </a>
-              <a
-                class="hero-header__social"
-                href="https://vk.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="ВКонтакте"
-              >
-                <img class="hero-header__social-icon" src="/assets/icons/messengers/vk.png" alt="" width="16" height="16" decoding="async">
-              </a>
-              <a
-                class="hero-header__social"
-                href="mailto:info@nova-clinic.ru"
+                href="mailto:{{ clinic_contacts.email }}"
                 aria-label="Написать на почту"
               >
                 <img class="hero-header__social-icon hero-header__social-icon--mail" src="/assets/icons/envelope.svg" alt="" width="16" height="16" decoding="async">
@@ -990,33 +969,32 @@
 
         <div class="mobile-menu__footer">
           <div class="mobile-menu__details">
-            <p class="mobile-menu__detail">г. Москва, ул. Профсоюзная, 56</p>
-            <p class="mobile-menu__detail">Круглосуточно 24/7</p>
+            <p class="mobile-menu__detail">{{ clinic_contacts.address }}</p>
+            <p class="mobile-menu__detail">{{ clinic_contacts.hours }}</p>
           </div>
           <div class="mobile-menu__contacts">
-            <a class="mobile-menu__phone" href="tel:+74951204567">+7 (495) 120-45-67</a>
+            <a class="mobile-menu__phone" href="tel:{{ clinic_contacts.phone_tel }}">{{ clinic_contacts.phone_display }}</a>
             <div class="mobile-menu__socials">
-              <a class="mobile-menu__social" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-                <img class="mobile-menu__social-icon" src="/assets/icons/messengers/telegram.svg" alt="" width="16" height="16" decoding="async">
+              {% for messenger in clinic_contacts.messengers %}
+              <a
+                class="mobile-menu__social"
+                href="{{ messenger.href }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="{{ messenger.label }}"
+              >
+                <img class="mobile-menu__social-icon" src="{{ messenger.icon }}" alt="" width="16" height="16" decoding="async">
               </a>
-              <a class="mobile-menu__social" href="https://wa.me/74951204567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                <img class="mobile-menu__social-icon" src="/assets/icons/messengers/whatsapp.png" alt="" width="16" height="16" decoding="async">
-              </a>
-              <a class="mobile-menu__social" href="https://max.ru/" target="_blank" rel="noopener noreferrer" aria-label="MAX">
-                <img class="mobile-menu__social-icon" src="/assets/icons/messengers/max.png" alt="" width="16" height="16" decoding="async">
-              </a>
-              <a class="mobile-menu__social" href="https://vk.com/" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
-                <img class="mobile-menu__social-icon" src="/assets/icons/messengers/vk.png" alt="" width="16" height="16" decoding="async">
-              </a>
-              <a class="mobile-menu__social" href="mailto:info@nova-clinic.ru" aria-label="Написать на почту">
+              {% endfor %}
+              <a class="mobile-menu__social" href="mailto:{{ clinic_contacts.email }}" aria-label="Написать на почту">
                 <img class="mobile-menu__social-icon" src="/assets/icons/envelope.svg" alt="" width="16" height="16" decoding="async">
               </a>
             </div>
           </div>
           <div class="mobile-menu__cta">
-            <a class="button button--primary" href="tel:+74951204567">
+            <a class="button button--primary" href="tel:{{ clinic_contacts.phone_tel }}">
               <img class="button__icon" src="/assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
-              Позвонить в «Нова»
+              Позвонить в «{{ clinic_contacts.brand }}»
             </a>
             <a class="button button--outline" href="/kontakty/" data-menu-close>
               <img class="button__icon" src="/assets/icons/paper-plane-tilt.svg" alt="" width="16" height="16" decoding="async">

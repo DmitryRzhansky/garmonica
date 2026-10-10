@@ -51,6 +51,11 @@ def test_home(client):
     assert "sanitary-conclusion" not in html
     assert "Л041-01137-77/01838787" in html
     assert "9715492100" in html.split("site-footer", 1)[-1]
+    assert 'hero-header__meta-value">г. Москва, ул. Люблинская, д. 46' in html
+    assert 'mobile-menu__detail">г. Москва, ул. Люблинская, д. 46' in html
+    assert 'mailto:novaklinika111@yandex.ru' in html
+    assert 'mailto:info@nova-clinic.ru' not in html
+    assert "Профсоюзная" not in html
 
 
 def test_narkolog_keeps_written_hero(client):
