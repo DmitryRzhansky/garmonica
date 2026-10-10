@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main id="top" class="faq-page">
+      <header class="fq-head">
+        {% with crumbs=[{"name": "Главная", "url": "/"}, {"name": "Частые вопросы"}] %}
+        {% include "components/breadcrumbs.html" %}
+        {% endwith %}
+        <h1 class="fq-head__title" id="faq-page-title">Частые вопросы</h1>
+      </header>
+
+      {% if faq_page.questions %}
+      <section
+        class="faq faq--service faq--page"
+        aria-labelledby="faq-page-title"
+        data-faq
+        data-faq-mode="accordion"
+      >
+        <div class="faq__inner">
+          <div class="faq__columns">
+            {% for item in faq_page.questions %}
+            <div class="faq__item" data-faq-item>
+              <span class="faq__heading">
+                <button
+                  class="faq__trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-page-panel-{{ loop.index }}"
+                  id="faq-page-trigger-{{ loop.index }}"
+                  data-faq-trigger
+                >
+                  <span class="faq__question">{{ item.ask }}</span>
+                  <span class="faq__icon" aria-hidden="true">
+                    <img
+                      class="faq__icon-glyph faq__icon-glyph--plus"
+                      src="/assets/icons/plus.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                      decoding="async"
+                    >
+                    <img
+                      class="faq__icon-glyph faq__icon-glyph--minus"
+                      src="/assets/icons/minus.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                      decoding="async"
+                    >
+                  </span>
+                </button>
+              </span>
+              <div
+                class="faq__panel"
+                id="faq-page-panel-{{ loop.index }}"
+                role="region"
+                aria-labelledby="faq-page-trigger-{{ loop.index }}"
+                aria-hidden="true"
+                inert
+                data-faq-panel
+              >
+                <div class="faq__panel-inner">
+                  <div class="faq__answer">
+                    <p>{{ item.answer }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {% for item in faq_page.questions %}
+          {
+            "@type": "Question",
+            "name": {{ item.ask | tojson }},
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": {{ item.answer | tojson }}
+            }
+          }{% if not loop.last %},{% endif %}
+          {% endfor %}
+        ]
+      }
+      </script>
+      {% endif %}
+
+      <section class="fq-cta" aria-labelledby="fq-cta-title">
+        <h2 class="fq-cta__title" id="fq-cta-title">Не нашли свой вопрос?</h2>
+        <p class="fq-cta__text">
+          Опишите ситуацию по телефону — подскажем, с какого формата помощи
+          безопаснее начать и что можно сделать уже сегодня.
+        </p>
+        <a class="button button--warm" href="tel:{{ clinic_contacts.phone_tel }}">
+          <img class="button__icon" src="/assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
+          {{ clinic_contacts.phone_display }}
+        </a>
+      </section>
+    </main>
+{% endblock %}

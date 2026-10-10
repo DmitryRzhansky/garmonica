@@ -237,6 +237,28 @@ def test_prices_page(client):
     assert "Нова" in html
 
 
+def test_faq_page(client):
+    response = client.get("/voprosy/")
+    html = response.get_data(as_text=True)
+
+    assert response.status_code == 200
+    assert "fq-head__title" in html
+    assert "Частые вопросы" in html
+    assert "Узнает ли работодатель" in html
+    assert "Паспорт всё равно просят" in html
+    assert "не хочет лечиться" in html
+    assert "ограничивают телефон" in html
+    assert "подростков" in html
+    assert "Капельница на дому" in html
+    assert "снова сорвался" in html
+    assert "только поговорить" in html
+    assert "Родственникам расскажете" in html
+    assert "Когда звонить 103" in html
+    assert '"@type": "FAQPage"' in html
+    assert "Развёрнутые ответы на вопросы" not in html
+    assert "info-page__title" not in html
+
+
 def test_remaining_site_pages(client):
     pages = {
         "/otzyvy/": "Отзывы",

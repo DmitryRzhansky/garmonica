@@ -2,6 +2,7 @@ from flask import Blueprint, Response, render_template, request
 
 from app.data.clinic_contacts import get_clinic_contacts
 from app.data.doctors import get_clinic_doctors
+from app.data.faq_page import get_faq_page
 from app.data.prices import get_price_groups, get_price_notes
 from app.services.catalog import get_catalog
 from app.services.info_pages import INFO_PAGES
@@ -80,6 +81,17 @@ def info_page(slug):
             "pages/site-map.html",
             page=page,
             site_map=get_site_map(),
+            meta_title=meta_title,
+            meta_description=meta_description,
+            canonical=canonical,
+        )
+
+    if slug == "voprosy":
+        return render_template(
+            "pages/faq.html",
+            page=page,
+            faq_page=get_faq_page(),
+            clinic_contacts=get_clinic_contacts(),
             meta_title=meta_title,
             meta_description=meta_description,
             canonical=canonical,
