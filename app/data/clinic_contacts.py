@@ -4,7 +4,7 @@ from __future__ import annotations
 
 CLINIC_CONTACTS = {
     "brand": "Нова",
-    "positioning": "психонаркологическая клиника",
+    "positioning": "клиника психиатрии и наркологии",
     "legal_name": "ООО «НикаПроМЕД»",
     "inn": "9715492100",
     "ogrn": "1247700585186",
