@@ -4,6 +4,7 @@ from app import create_app
 from app.services.catalog import get_catalog
 from app.services.seo.geo_forms import CITY_LOCATIVE
 from app.services.seo.phrases import PHRASES
+from app.data.faq_answerer import get_faq_answerer
 from app.services.seo.presentation import price_groups_for, price_tab_for
 
 BANNED = ("аноним", "круглосуточ", "₽", "30–60", "8 000", "12 000", "5 000", "24/7", "полная аноним")
@@ -108,6 +109,23 @@ def test_cluster_blocks_render(client):
     inpatient_seo = get_catalog().view("/uslugi/vyvod-iz-zapoya/v-stacionare/").seo
     assert "капельниц" not in inpatient_seo.lead.lower()
     assert "на дом" not in inpatient_seo.meta_description.lower()
+
+
+def test_faq_answerer_by_cluster():
+    assert get_faq_answerer()["slug"] == "antipov-dmitriy-evgenevich"
+    assert get_faq_answerer("/uslugi/narkolog-na-dom/", "home")["slug"] == (
+        "antipov-dmitriy-evgenevich"
+    )
+    assert get_faq_answerer("/uslugi/psihiatriya/", "clinic")["slug"] == (
+        "mishcherekova-kristina-dmitrievna"
+    )
+    assert get_faq_answerer(
+        "/uslugi/psihoterapiya-i-psihologiya/",
+        "clinic",
+    )["slug"] == "sychev-artemiy-valerevich"
+    assert get_faq_answerer("/uslugi/reabilitaciya/", "rehab")["slug"] == (
+        "sychev-artemiy-valerevich"
+    )
 
 
 def test_price_groups_for_clusters():

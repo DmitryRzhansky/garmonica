@@ -6,6 +6,7 @@ from app.data.field_service import get_field_service_context, resolve_field_serv
 from app.data.license import get_clinic_license
 from app.data.service_credits import get_service_credits
 from app.data.service_doctors import get_service_doctors
+from app.data.faq_answerer import get_faq_answerer
 from app.data.prices import get_price_groups
 from app.data.service_facility import (
     get_service_facility,
@@ -57,6 +58,10 @@ def page(page_path):
             "title": view.seo.faq_title,
             "questions": [{"ask": ask, "answer": answer} for ask, answer in view.seo.faq_items],
         },
+        faq_answerer=get_faq_answerer(
+            view.seo.service_url,
+            view.seo.presentation,
+        ),
         price_groups=get_price_groups(
             price_groups_for(view.seo.service_url, view.seo.presentation)
         ),

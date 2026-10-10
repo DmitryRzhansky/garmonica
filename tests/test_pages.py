@@ -96,6 +96,9 @@ def test_home(client):
     assert 'mailto:info@nova-clinic.ru' not in html
     assert "ул. Профсоюзная" not in html
     assert "Профсоюзная" not in html.split("hero-header", 1)[-1].split("mobile-menu", 1)[0]
+    assert "На вопрос ответил:" in html
+    assert "Антипов Дмитрий Евгеньевич" in html
+    assert "faq__answerer" in html
 
 
 def test_narkolog_keeps_written_hero(client):
@@ -377,6 +380,27 @@ def test_faq_page(client):
     assert '"@type": "FAQPage"' in html
     assert "Развёрнутые ответы на вопросы" not in html
     assert "info-page__title" not in html
+    assert "На вопрос ответил:" in html
+    assert "Антипов Дмитрий Евгеньевич" in html
+    assert "faq__answerer" in html
+
+
+def test_service_faq_answerer_matches_cluster(client):
+    home = client.get("/uslugi/narkolog-na-dom/").get_data(as_text=True)
+    assert "На вопрос ответил:" in home
+    assert "Антипов Дмитрий Евгеньевич" in home
+    answerer = home.split("faq__answerer", 1)[1].split("faq__answerer-role", 1)[0]
+    assert "<a " not in answerer
+    assert "href=" not in answerer
+
+    psychiatry = client.get("/uslugi/psihiatriya/").get_data(as_text=True)
+    assert "Мищерекова Кристина Дмитриевна" in psychiatry
+
+    therapy = client.get("/uslugi/psihoterapiya-i-psihologiya/").get_data(as_text=True)
+    assert "Сычев Артемий Валерьевич" in therapy
+
+    rehab = client.get("/uslugi/reabilitaciya/").get_data(as_text=True)
+    assert "Сычев Артемий Валерьевич" in rehab
 
 
 def test_gallery_page(client):

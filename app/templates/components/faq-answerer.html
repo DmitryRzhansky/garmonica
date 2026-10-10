@@ -1,0 +1,21 @@
+{% if faq_answerer %}
+<div class="faq__answerer">
+  <div class="faq__answerer-card">
+    <span class="faq__answerer-avatar" aria-hidden="true">
+      <img
+        class="faq__answerer-icon"
+        src="{{ faq_answerer.icon }}"
+        alt=""
+        width="22"
+        height="22"
+        decoding="async"
+      >
+    </span>
+    <span class="faq__answerer-body">
+      <span class="faq__answerer-label">На вопрос ответил:</span>
+      <span class="faq__answerer-name">{{ faq_answerer.name }}</span>
+      <span class="faq__answerer-role">{{ faq_answerer.role }}</span>
+    </span>
+  </div>
+</div>
+{% endif %}

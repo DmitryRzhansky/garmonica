@@ -14,7 +14,6 @@ FIELD_SERVICE_TABS = [
     {"key": "equipment", "label": "Оборудование", "icon": "/assets/icons/first-aid-kit.svg"},
     {"key": "overview", "label": "География выезда", "icon": "/assets/icons/map-pin.svg"},
     {"key": "vehicles", "label": "Автомобили", "icon": "/assets/icons/car.svg"},
-    {"key": "doctors", "label": "Специалисты", "icon": "/assets/icons/users.svg"},
     {"key": "process", "label": "Как проходит выезд", "icon": "/assets/icons/arrow-right.svg"},
 ]
 

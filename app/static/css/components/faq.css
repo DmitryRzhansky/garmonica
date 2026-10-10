@@ -111,10 +111,69 @@ details.faq__item .faq__answer {
 
 details.faq__item .faq__answer p {
   margin: 0;
-  padding: 0.15rem 1.15rem 1.15rem;
+  padding: 0.15rem 1.15rem 0.85rem;
   color: var(--color-text-muted);
   font-size: var(--font-size-body-sm);
   line-height: 1.5;
+}
+
+.faq__answerer {
+  margin: 0;
+  padding: 0 1.15rem 1.1rem;
+}
+
+.faq__answerer-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.65rem;
+  align-items: center;
+  max-width: 22rem;
+}
+
+.faq__answerer-avatar {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+}
+
+.faq__answerer-icon {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
+.faq__answerer-body {
+  display: grid;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.faq__answerer-label {
+  font-family: var(--font-text);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-text-muted);
+}
+
+.faq__answerer-name {
+  font-family: var(--font-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--color-text-dark);
+}
+
+.faq__answerer-role {
+  font-family: var(--font-text);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--color-text-muted);
 }
 
 details.faq__item[open] .faq__answer-inner {
@@ -335,8 +394,13 @@ details.faq__item[open] .faq__answer-inner {
   color: var(--color-text-muted);
 }
 
-.faq--service .faq__answer :last-child {
-  padding-bottom: 1.125rem;
+.faq--service .faq__answerer {
+  max-width: 22rem;
+  padding: 0 1.125rem 1.125rem;
+}
+
+.faq--service .faq__answer > p {
+  padding-bottom: 0.65rem;
 }
 
 @media (min-width: 48rem) {

@@ -2,6 +2,7 @@ from flask import Blueprint, Response, render_template, request
 
 from app.data.clinic_contacts import get_clinic_contacts
 from app.data.doctors import get_clinic_doctors
+from app.data.faq_answerer import get_faq_answerer
 from app.data.faq_page import get_faq_page
 from app.data.field_service import get_field_service_context
 from app.data.gallery_page import get_gallery_page
@@ -38,6 +39,7 @@ def home():
         price_groups=get_price_groups(),
         review_sources=get_service_reviews(),
         review_stats=get_service_review_stats(),
+        faq_answerer=get_faq_answerer(),
     )
 
 
@@ -103,6 +105,7 @@ def info_page(slug):
             "pages/faq.html",
             page=page,
             faq_page=get_faq_page(),
+            faq_answerer=get_faq_answerer(),
             clinic_contacts=get_clinic_contacts(),
             meta_title=meta_title,
             meta_description=meta_description,
