@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main id="top" class="gallery-page">
+      <header class="gp-head">
+        {% with crumbs=[{"name": "Главная", "url": "/"}, {"name": "Фотогалерея"}] %}
+        {% include "components/breadcrumbs.html" %}
+        {% endwith %}
+        <h1 class="gp-head__title" id="gallery-page-title">Фотогалерея</h1>
+      </header>
+
+      {% if gallery_page.photos %}
+      <section
+        class="service-facility service-facility--page"
+        aria-labelledby="gallery-page-title"
+      >
+        <div class="service-facility__inner">
+          <ul class="service-facility__photos" role="list">
+            {% for photo in gallery_page.photos %}
+            <li class="service-facility__photo">
+              <figure class="service-facility__figure">
+                <div class="service-facility__frame">
+                  <img
+                    class="service-facility__image"
+                    src="{{ photo.src }}"
+                    alt="{{ photo.alt }}"
+                    width="1152"
+                    height="864"
+                    {% if loop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+                    decoding="async"
+                  >
+                </div>
+                {% if photo.title or photo.text %}
+                <figcaption class="service-facility__caption">
+                  {% if photo.title %}
+                  <span class="service-facility__caption-title">{{ photo.title }}</span>
+                  {% endif %}
+                  {% if photo.text %}
+                  <span class="service-facility__caption-text">{{ photo.text }}</span>
+                  {% endif %}
+                </figcaption>
+                {% endif %}
+              </figure>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+      {% endif %}
+
+      <section class="gp-cta" aria-labelledby="gp-cta-title">
+        <h2 class="gp-cta__title" id="gp-cta-title">Хотите увидеть клинику лично?</h2>
+        <p class="gp-cta__text">
+          Позвоните — расскажем про палаты, условия и как проходит госпитализация
+          на ул. Люблинская, 46.
+        </p>
+        <a class="button button--warm" href="tel:{{ clinic_contacts.phone_tel }}">
+          <img class="button__icon" src="/assets/icons/phone.svg" alt="" width="16" height="16" decoding="async">
+          {{ clinic_contacts.phone_display }}
+        </a>
+      </section>
+    </main>
+{% endblock %}

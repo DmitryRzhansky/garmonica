@@ -259,6 +259,25 @@ def test_faq_page(client):
     assert "info-page__title" not in html
 
 
+def test_gallery_page(client):
+    response = client.get("/galereya/")
+    html = response.get_data(as_text=True)
+
+    assert response.status_code == 200
+    assert "gp-head__title" in html
+    assert "Фотогалерея" in html
+    assert "service-facility--page" in html
+    assert "Общая палата" in html
+    assert "Палата комфорт / VIP" in html
+    assert "Осмотр и диагностика" in html
+    assert "Санузел" in html
+    assert "Общая зона" in html
+    assert "/assets/images/service-facility/ward-shared.webp" in html
+    assert "service-facility__facts" not in html
+    assert "Здесь будет фотогалерея" not in html
+    assert "info-page__title" not in html
+
+
 def test_remaining_site_pages(client):
     pages = {
         "/otzyvy/": "Отзывы",
