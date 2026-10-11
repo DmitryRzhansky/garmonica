@@ -64,15 +64,21 @@ def build_aggregate_rating() -> dict[str, Any]:
     }
 
 
+def attach_aggregate_rating(clinic: dict[str, Any]) -> dict[str, Any]:
+    """Add AggregateRating onto the shared MedicalClinic entity."""
+    clinic = dict(clinic)
+    clinic["aggregateRating"] = build_aggregate_rating()
+    return clinic
+
+
 def attach_reviews_to_clinic(
     clinic: dict[str, Any],
     host: str,
     reviews: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
-    """Add aggregateRating + review refs onto the shared MedicalClinic entity."""
+    """Add aggregateRating + review refs (for the /otzyvy/ page only)."""
     reviews = reviews if reviews is not None else build_review_entities(host)
-    clinic = dict(clinic)
-    clinic["aggregateRating"] = build_aggregate_rating()
+    clinic = attach_aggregate_rating(clinic)
     clinic["review"] = [{"@id": item["@id"]} for item in reviews]
     return clinic
 

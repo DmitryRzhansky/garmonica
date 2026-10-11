@@ -20,6 +20,7 @@ from app.services.structured_data.clinic import (
 )
 from app.services.structured_data.offers import build_offer_catalog
 from app.services.structured_data.reviews import (
+    attach_aggregate_rating,
     attach_reviews_to_clinic,
     build_review_entities,
     build_reviews_item_list,
@@ -68,15 +69,14 @@ def _graph_for_path(host: str, path: str) -> list[dict[str, Any]] | None:
     return None
 
 
-def _clinic_with_reviews(host: str) -> tuple[dict[str, Any], list[dict[str, Any]]]:
-    reviews = build_review_entities(host)
-    clinic = attach_reviews_to_clinic(build_medical_clinic(host), host, reviews)
-    return clinic, reviews
+def _clinic(host: str) -> dict[str, Any]:
+    """Shared MedicalClinic with aggregateRating only (no Review dump)."""
+    return attach_aggregate_rating(build_medical_clinic(host))
 
 
 def _home_graph(host: str) -> list[dict[str, Any]]:
     page_id = f"{host}/"
-    clinic, reviews = _clinic_with_reviews(host)
+    clinic = _clinic(host)
     website = build_website(host)
     hubs = get_home_service_hubs()
     item_list = {
@@ -111,7 +111,7 @@ def _home_graph(host: str) -> list[dict[str, Any]]:
         "mainEntity": {"@id": clinic_id(host)},
         "hasPart": {"@id": item_list["@id"]},
     }
-    return [clinic, website, webpage, item_list, *reviews]
+    return [clinic, website, webpage, item_list]
 
 
 def _service_graph(host: str, path: str) -> list[dict[str, Any]] | None:
@@ -122,7 +122,7 @@ def _service_graph(host: str, path: str) -> list[dict[str, Any]] | None:
         return None
 
     page_id = absolute_url(host, view.url)
-    clinic, reviews = _clinic_with_reviews(host)
+    clinic = _clinic(host)
     website = build_website(host)
     graph: list[dict[str, Any]] = [clinic, website]
 
@@ -184,7 +184,6 @@ def _service_graph(host: str, path: str) -> list[dict[str, Any]] | None:
     if faq_items:
         graph.append(_faq_page(page_id, faq_items))
 
-    graph.extend(reviews)
     return graph
 
 
@@ -252,8 +251,13 @@ def _area_served(page: dict) -> dict[str, Any] | None:
 def _info_graph(host: str, slug: str) -> list[dict[str, Any]]:
     page = INFO_PAGES[slug]
     page_id = absolute_url(host, f"/{slug}/")
-    clinic, reviews = _clinic_with_reviews(host)
     website = build_website(host)
+    reviews: list[dict[str, Any]] = []
+    if slug == "otzyvy":
+        reviews = build_review_entities(host)
+        clinic = attach_reviews_to_clinic(build_medical_clinic(host), host, reviews)
+    else:
+        clinic = _clinic(host)
     graph: list[dict[str, Any]] = [clinic, website]
 
     crumbs = INFO_BREADCRUMBS.get(slug)
@@ -361,7 +365,8 @@ def _info_graph(host: str, slug: str) -> list[dict[str, Any]]:
         # Legal stubs and any other info pages.
         graph.append({"@type": "WebPage", **base_page})
 
-    graph.extend(reviews)
+    if reviews:
+        graph.extend(reviews)
     return graph
 
 

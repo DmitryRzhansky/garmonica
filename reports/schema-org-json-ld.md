@@ -67,13 +67,15 @@
 
 ## 5. Отзывы и рейтинги
 
-На **всех** публичных HTML-страницах:
+На **всех** публичных HTML-страницах у `MedicalClinic` есть `aggregateRating` (как в блоке статистики: 4.9 / 847).
 
-- у `MedicalClinic`: `aggregateRating` (как в блоке статистики: 4.9 / 847) и `review` (ссылки на 70 отзывов);
+Полные сущности `Review` и массив `review` у клиники — **только** на `/otzyvy/`:
+
 - 70 сущностей `Review` со стабильными `@id` вида `/otzyvy/#review-…`;
-- у каждого отзыва: `author`, `reviewBody`, `reviewRating`, `datePublished`, `publisher`, `itemReviewed`.
+- у каждого отзыва: `author`, `reviewBody`, `reviewRating`, `datePublished`, `publisher`, `itemReviewed`;
+- `CollectionPage` + `ItemList` отзывов.
 
-На `/otzyvy/` дополнительно: `CollectionPage` + `ItemList` отзывов.
+На остальных страницах `Review` в `@graph` не дублируются.
 
 Даты отзывов разнесены по 2024–2026 (70 уникальных дат).
 
