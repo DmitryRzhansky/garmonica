@@ -7,6 +7,7 @@ from app.data.faq_page import get_faq_page
 from app.data.field_service import get_field_service_context
 from app.data.gallery_page import get_gallery_page
 from app.data.home_services import get_home_service_hubs
+from app.data.legal_pages import get_consent_page, get_privacy_policy_page
 from app.data.license import get_clinic_license
 from app.data.prices import get_price_groups
 from app.data.service_doctors import get_service_doctors
@@ -153,6 +154,26 @@ def info_page(slug):
             clinic_contacts=get_clinic_contacts(),
             meta_title=meta_title,
             meta_description=meta_description,
+            canonical=canonical,
+        )
+
+    if slug == "politika-konfidencialnosti":
+        legal_page = get_privacy_policy_page()
+        return render_template(
+            "pages/legal.html",
+            page=legal_page,
+            meta_title=f"{legal_page['title']} — Нова",
+            meta_description=legal_page["description"],
+            canonical=canonical,
+        )
+
+    if slug == "soglasie":
+        legal_page = get_consent_page()
+        return render_template(
+            "pages/legal.html",
+            page=legal_page,
+            meta_title=f"{legal_page['title']} — Нова",
+            meta_description=legal_page["description"],
             canonical=canonical,
         )
 

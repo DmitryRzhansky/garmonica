@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% macro legal_paragraph(paragraph) -%}
+  {% if paragraph is mapping and paragraph.html %}
+  <p class="legal-page__text">{{ paragraph.html|safe }}</p>
+  {% else %}
+  <p class="legal-page__text">{{ paragraph }}</p>
+  {% endif %}
+{%- endmacro %}
+
+{% block content %}
+    <main id="top">
+      <article class="legal-page" aria-labelledby="legal-page-title">
+        <div class="container legal-page__container">
+          <h1 class="legal-page__title" id="legal-page-title">{{ page.title }}</h1>
+          {% if page.updated %}
+          <p class="legal-page__updated">Дата публикации: {{ page.updated }}</p>
+          {% endif %}
+
+          {% if page.intro %}
+          {{ legal_paragraph(page.intro) }}
+          {% endif %}
+
+          {% for section in page.sections %}
+          <section class="legal-page__section" aria-labelledby="legal-section-{{ loop.index }}">
+            <h2 class="legal-page__section-title" id="legal-section-{{ loop.index }}">{{ section.title }}</h2>
+
+            {% for paragraph in section.paragraphs or [] %}
+            {{ legal_paragraph(paragraph) }}
+            {% endfor %}
+
+            {% if section.bullets %}
+            <ul class="legal-page__list">
+              {% for item in section.bullets %}
+              <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% for paragraph in section.paragraphs_after or [] %}
+            {{ legal_paragraph(paragraph) }}
+            {% endfor %}
+          </section>
+          {% endfor %}
+        </div>
+      </article>
+    </main>
+{% endblock %}
