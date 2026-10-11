@@ -32,6 +32,7 @@ function initApp() {
   safeInit("specialist-quiz", window.initSpecialistQuiz);
   safeInit("field-service", window.initFieldService);
   safeInit("float-bar", window.initFloatBar);
+  safeInit("privacy-notice", window.initPrivacyNotice);
 }
 
 if (document.readyState === "loading") {
