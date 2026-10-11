@@ -547,3 +547,14 @@ def test_sitemap_lists_services_and_skips_removed_sections(client):
     assert "pomoshch-rodstvennikam" not in body
     assert "/pomoshch/" not in body
     assert "/pomosh/" not in body
+
+
+def test_robots_txt_allows_all_and_points_to_sitemap(client):
+    response = client.get("/robots.txt")
+    body = response.get_data(as_text=True)
+
+    assert response.status_code == 200
+    assert response.mimetype == "text/plain"
+    assert "User-agent: *" in body
+    assert "Allow: /" in body
+    assert "Sitemap: http://localhost/sitemap.xml" in body

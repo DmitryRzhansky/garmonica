@@ -11,7 +11,7 @@ from app.data.license import get_clinic_license
 from app.data.prices import get_price_groups
 from app.data.service_doctors import get_service_doctors
 from app.data.service_reviews import get_service_review_stats, get_service_reviews
-from app.services.catalog import get_catalog
+from app.services.catalog import all_public_urls
 from app.services.info_pages import INFO_PAGES
 from app.services.site_map import get_site_map
 
@@ -167,18 +167,29 @@ def info_page(slug):
 
 @main_bp.route("/sitemap.xml")
 def sitemap():
-    urls = ["/"] + [f"/{slug}/" for slug in INFO_PAGES] + get_catalog().public_urls()
     host = request.host_url.rstrip("/")
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
-    for path in urls:
+    for path in all_public_urls():
         lines.append("  <url>")
         lines.append(f"    <loc>{host}{path}</loc>")
         lines.append("  </url>")
     lines.append("</urlset>")
     return Response("\n".join(lines) + "\n", mimetype="application/xml")
+
+
+@main_bp.route("/robots.txt")
+def robots():
+    host = request.host_url.rstrip("/")
+    body = (
+        "User-agent: *\n"
+        "Allow: /\n"
+        "\n"
+        f"Sitemap: {host}/sitemap.xml\n"
+    )
+    return Response(body, mimetype="text/plain")
 
 
 def _canonical(path: str) -> str:

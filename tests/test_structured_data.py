@@ -12,7 +12,7 @@ import pytest
 
 from app import create_app
 from app.data.faq_page import get_faq_page
-from app.services.catalog import get_catalog
+from app.services.catalog import all_public_urls, get_catalog
 from app.services.info_pages import INFO_PAGES
 
 LD_RE = re.compile(
@@ -35,7 +35,7 @@ def client():
 
 
 def public_urls() -> list[str]:
-    return ["/"] + [f"/{slug}/" for slug in INFO_PAGES] + get_catalog().public_urls()
+    return all_public_urls()
 
 
 def extract_graphs(html: str) -> list[dict]:

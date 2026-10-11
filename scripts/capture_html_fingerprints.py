@@ -13,8 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from app import create_app
-from app.services.catalog import get_catalog
-from app.services.info_pages import INFO_PAGES
+from app.services.catalog import all_public_urls
 
 LD_RE = re.compile(
     r"\s*<script\b[^>]*type=[\"']application/ld\+json[\"'][^>]*>.*?</script>",
@@ -26,16 +25,12 @@ def strip_ld(html: str) -> str:
     return LD_RE.sub("", html)
 
 
-def public_urls() -> list[str]:
-    return ["/"] + [f"/{slug}/" for slug in INFO_PAGES] + get_catalog().public_urls()
-
-
 def main() -> None:
     app = create_app()
     app.config["TESTING"] = True
     client = app.test_client()
 
-    urls = public_urls()
+    urls = all_public_urls()
     fingerprints: dict[str, dict] = {}
     status_counts: Counter[int] = Counter()
     errors: list[tuple[str, int]] = []

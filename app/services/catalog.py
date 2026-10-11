@@ -4,6 +4,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
+from app.services.info_pages import INFO_PAGES
 from app.services.seo.generator import SeoCopy, build_page_seo
 
 DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "pages.json"
@@ -126,3 +127,7 @@ def get_catalog() -> PageCatalog:
     if _catalog is None:
         _catalog = PageCatalog.load()
     return _catalog
+
+
+def all_public_urls() -> list[str]:
+    return ["/"] + [f"/{slug}/" for slug in INFO_PAGES] + get_catalog().public_urls()
