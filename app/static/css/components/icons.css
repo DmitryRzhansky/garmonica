@@ -70,8 +70,10 @@ details.faq__item > .faq__question > .faq__icon,
 .request-form__button .request-form__button-icon,
 .float-bar__btn--chat .float-bar__icon,
 .float-bar__btn--top .float-bar__icon,
-.float-bar__channel--phone .float-bar__channel-icon {
+.float-bar__channel--phone .float-bar__channel-icon,
+.site-footer__okved-icon {
   filter: brightness(0) invert(1);
+  opacity: 0.75;
 }
 
 .reviews__star {

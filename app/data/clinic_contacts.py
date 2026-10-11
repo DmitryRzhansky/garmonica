@@ -9,6 +9,39 @@ CLINIC_CONTACTS = {
     "inn": "9715492100",
     "ogrn": "1247700585186",
     "license_number": "Л041-01137-77/01838787",
+    # Релевантные ОКВЭД из выписки ЕГРЮЛ (для футера / E-E-A-T), не полный перечень.
+    "okved": [
+        {
+            "code": "86.10",
+            "name": "Больничные организации",
+            "primary": True,
+            "icon": "/assets/icons/hospital.svg",
+        },
+        {
+            "code": "86.21",
+            "name": "Общая врачебная практика",
+            "primary": False,
+            "icon": "/assets/icons/stethoscope.svg",
+        },
+        {
+            "code": "86.90",
+            "name": "Медицина прочая",
+            "primary": False,
+            "icon": "/assets/icons/first-aid.svg",
+        },
+        {
+            "code": "87.10",
+            "name": "Медуход с проживанием",
+            "primary": False,
+            "icon": "/assets/icons/house.svg",
+        },
+        {
+            "code": "87.20",
+            "name": "Помощь наркозависимым на дому",
+            "primary": False,
+            "icon": "/assets/icons/heartbeat.svg",
+        },
+    ],
     "legal_address": (
         "127018, г. Москва, вн.тер.г. муниципальный округ Марьина Роща, "
         "проезд Марьиной Рощи 3-й, д. 40, стр. 1, помещ. 22/22"

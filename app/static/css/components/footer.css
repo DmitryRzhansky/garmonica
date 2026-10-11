@@ -47,7 +47,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 20rem;
+  max-width: 22.5rem;
 }
 
 .site-footer__logo {
@@ -173,6 +173,66 @@ a.site-footer__contact-value {
 
 a.site-footer__contact-value:hover {
   color: var(--color-warm);
+}
+
+.site-footer__okved {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.site-footer__okved-title {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-headline);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.site-footer__okved-list {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__okved-item {
+  display: grid;
+  grid-template-columns: 0.875rem 2.5rem minmax(0, 1fr);
+  gap: 0.4rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.site-footer__okved-icon {
+  display: block;
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.site-footer__okved-code {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.88);
+  white-space: nowrap;
+}
+
+.site-footer__okved-name {
+  min-width: 0;
+  font-size: 0.6875rem;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.58);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .site-footer__cta {
