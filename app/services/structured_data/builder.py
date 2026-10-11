@@ -3,13 +3,11 @@
 from __future__ import annotations
 
 from typing import Any
-from urllib.parse import urlparse
 
 from app.data.doctors import get_clinic_doctors
 from app.data.faq_page import get_faq_page
 from app.data.gallery_page import get_gallery_page
 from app.data.home_services import get_home_service_hubs
-from app.data.service_reviews import get_service_reviews
 from app.services.catalog import get_catalog, normalize_url
 from app.services.info_pages import INFO_PAGES
 from app.services.site_map import get_site_map
@@ -21,6 +19,11 @@ from app.services.structured_data.clinic import (
     website_id,
 )
 from app.services.structured_data.offers import build_offer_catalog
+from app.services.structured_data.reviews import (
+    attach_reviews_to_clinic,
+    build_review_entities,
+    build_reviews_item_list,
+)
 from app.services.structured_data.serialize import dumps_json_ld, prune_empty
 
 INFO_BREADCRUMBS: dict[str, list[tuple[str, str | None]]] = {
@@ -65,9 +68,15 @@ def _graph_for_path(host: str, path: str) -> list[dict[str, Any]] | None:
     return None
 
 
+def _clinic_with_reviews(host: str) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    reviews = build_review_entities(host)
+    clinic = attach_reviews_to_clinic(build_medical_clinic(host), host, reviews)
+    return clinic, reviews
+
+
 def _home_graph(host: str) -> list[dict[str, Any]]:
     page_id = f"{host}/"
-    clinic = build_medical_clinic(host)
+    clinic, reviews = _clinic_with_reviews(host)
     website = build_website(host)
     hubs = get_home_service_hubs()
     item_list = {
@@ -102,7 +111,7 @@ def _home_graph(host: str) -> list[dict[str, Any]]:
         "mainEntity": {"@id": clinic_id(host)},
         "hasPart": {"@id": item_list["@id"]},
     }
-    return [clinic, website, webpage, item_list]
+    return [clinic, website, webpage, item_list, *reviews]
 
 
 def _service_graph(host: str, path: str) -> list[dict[str, Any]] | None:
@@ -113,7 +122,7 @@ def _service_graph(host: str, path: str) -> list[dict[str, Any]] | None:
         return None
 
     page_id = absolute_url(host, view.url)
-    clinic = build_medical_clinic(host)
+    clinic, reviews = _clinic_with_reviews(host)
     website = build_website(host)
     graph: list[dict[str, Any]] = [clinic, website]
 
@@ -175,6 +184,7 @@ def _service_graph(host: str, path: str) -> list[dict[str, Any]] | None:
     if faq_items:
         graph.append(_faq_page(page_id, faq_items))
 
+    graph.extend(reviews)
     return graph
 
 
@@ -242,7 +252,7 @@ def _area_served(page: dict) -> dict[str, Any] | None:
 def _info_graph(host: str, slug: str) -> list[dict[str, Any]]:
     page = INFO_PAGES[slug]
     page_id = absolute_url(host, f"/{slug}/")
-    clinic = build_medical_clinic(host)
+    clinic, reviews = _clinic_with_reviews(host)
     website = build_website(host)
     graph: list[dict[str, Any]] = [clinic, website]
 
@@ -271,9 +281,7 @@ def _info_graph(host: str, slug: str) -> list[dict[str, Any]]:
                 "mainEntity": {"@id": clinic_id(host)},
             }
         )
-        return graph
-
-    if slug == "kontakty":
+    elif slug == "kontakty":
         graph.append(
             {
                 "@type": "ContactPage",
@@ -281,9 +289,7 @@ def _info_graph(host: str, slug: str) -> list[dict[str, Any]]:
                 "mainEntity": {"@id": clinic_id(host)},
             }
         )
-        return graph
-
-    if slug == "voprosy":
+    elif slug == "voprosy":
         faq = get_faq_page()
         questions = [(item["ask"], item["answer"]) for item in faq["questions"]]
         # FAQPage is the document type (WebPage subtype) — do not also emit WebPage.
@@ -291,9 +297,7 @@ def _info_graph(host: str, slug: str) -> list[dict[str, Any]]:
         faq_node.update({k: v for k, v in base_page.items() if k != "@id"})
         faq_node["@id"] = page_id
         graph.append(faq_node)
-        return graph
-
-    if slug == "vrachi":
+    elif slug == "vrachi":
         people, item_list = _doctors_list(host, page_id)
         graph.append(
             {
@@ -304,9 +308,7 @@ def _info_graph(host: str, slug: str) -> list[dict[str, Any]]:
         )
         graph.append(item_list)
         graph.extend(people)
-        return graph
-
-    if slug == "ceny":
+    elif slug == "ceny":
         catalog = build_offer_catalog(host, page_id)
         graph.append(
             {
@@ -316,10 +318,8 @@ def _info_graph(host: str, slug: str) -> list[dict[str, Any]]:
             }
         )
         graph.append(catalog)
-        return graph
-
-    if slug == "otzyvy":
-        item_list = _reviews_item_list(page_id)
+    elif slug == "otzyvy":
+        item_list = build_reviews_item_list(host, page_id, reviews)
         graph.append(
             {
                 "@type": "CollectionPage",
@@ -328,9 +328,7 @@ def _info_graph(host: str, slug: str) -> list[dict[str, Any]]:
             }
         )
         graph.append(item_list)
-        return graph
-
-    if slug == "galereya":
+    elif slug == "galereya":
         images, item_list = _gallery_list(host, page_id)
         graph.append(
             {
@@ -341,9 +339,7 @@ def _info_graph(host: str, slug: str) -> list[dict[str, Any]]:
         )
         graph.append(item_list)
         graph.extend(images)
-        return graph
-
-    if slug == "licenziya":
+    elif slug == "licenziya":
         graph.append(
             {
                 "@type": "WebPage",
@@ -351,9 +347,7 @@ def _info_graph(host: str, slug: str) -> list[dict[str, Any]]:
                 "mainEntity": {"@id": clinic_id(host)},
             }
         )
-        return graph
-
-    if slug == "karta-sajta":
+    elif slug == "karta-sajta":
         item_list = _sitemap_item_list(host, page_id)
         graph.append(
             {
@@ -363,10 +357,11 @@ def _info_graph(host: str, slug: str) -> list[dict[str, Any]]:
             }
         )
         graph.append(item_list)
-        return graph
+    else:
+        # Legal stubs and any other info pages.
+        graph.append({"@type": "WebPage", **base_page})
 
-    # Legal stubs and any other info pages.
-    graph.append({"@type": "WebPage", **base_page})
+    graph.extend(reviews)
     return graph
 
 
@@ -479,53 +474,6 @@ def _doctors_list(host: str, page_id: str) -> tuple[list[dict[str, Any]], dict[s
         "itemListElement": elements,
     }
     return people, item_list
-
-
-def _reviews_item_list(page_id: str) -> dict[str, Any]:
-    """Neutral collection of published review texts without rating claims.
-
-    Individual Review / AggregateRating on MedicalClinic are omitted: dates lack
-    a year, third-party aggregate scores must not become clinic AggregateRating,
-    and self-serving LocalBusiness review stars are ineligible for Google.
-    """
-    elements: list[dict[str, Any]] = []
-    position = 0
-    for source in get_service_reviews():
-        for review in source.get("reviews") or []:
-            position += 1
-            work_id = f"{page_id}#review-{source['id']}-{position}"
-            elements.append(
-                {
-                    "@type": "ListItem",
-                    "position": position,
-                    "item": {
-                        "@type": "CreativeWork",
-                        "@id": work_id,
-                        "author": {
-                            "@type": "Person",
-                            "name": review["name"],
-                        },
-                        "text": review["text"],
-                        "about": {"@id": clinic_id(_host_from_page_id(page_id))},
-                        "isPartOf": {
-                            "@type": "CreativeWork",
-                            "name": source["label"],
-                        },
-                    },
-                }
-            )
-    return {
-        "@type": "ItemList",
-        "@id": f"{page_id}#itemlist",
-        "name": "Отзывы",
-        "numberOfItems": len(elements),
-        "itemListElement": elements,
-    }
-
-
-def _host_from_page_id(page_id: str) -> str:
-    parsed = urlparse(page_id)
-    return f"{parsed.scheme}://{parsed.netloc}"
 
 
 def _gallery_list(

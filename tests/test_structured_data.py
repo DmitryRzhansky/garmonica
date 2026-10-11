@@ -91,27 +91,27 @@ def test_public_url_count():
 @pytest.mark.parametrize(
     ("url", "required_types"),
     [
-        ("/", {"WebSite", "WebPage", "MedicalClinic"}),
-        ("/uslugi/", {"CollectionPage", "ItemList", "MedicalClinic", "FAQPage"}),
-        ("/uslugi/narkolog-na-dom/", {"WebPage", "Service", "MedicalClinic", "FAQPage", "BreadcrumbList"}),
-        ("/uslugi/narkolog-na-dom/aeroport/", {"WebPage", "Service", "MedicalClinic", "FAQPage", "BreadcrumbList"}),
-        ("/uslugi/narkolog-na-dom/cao/", {"WebPage", "Service", "MedicalClinic", "FAQPage", "BreadcrumbList"}),
+        ("/", {"WebSite", "WebPage", "MedicalClinic", "Review"}),
+        ("/uslugi/", {"CollectionPage", "ItemList", "MedicalClinic", "FAQPage", "Review"}),
+        ("/uslugi/narkolog-na-dom/", {"WebPage", "Service", "MedicalClinic", "FAQPage", "BreadcrumbList", "Review"}),
+        ("/uslugi/narkolog-na-dom/aeroport/", {"WebPage", "Service", "MedicalClinic", "FAQPage", "BreadcrumbList", "Review"}),
+        ("/uslugi/narkolog-na-dom/cao/", {"WebPage", "Service", "MedicalClinic", "FAQPage", "BreadcrumbList", "Review"}),
         (
             "/uslugi/narkolog-na-dom/moskovskaya-oblast/balashiha/",
-            {"WebPage", "Service", "MedicalClinic", "FAQPage", "BreadcrumbList"},
+            {"WebPage", "Service", "MedicalClinic", "FAQPage", "BreadcrumbList", "Review"},
         ),
-        ("/uslugi/narkolog-na-dom/moskovskaya-oblast/", {"WebPage", "Service", "MedicalClinic", "FAQPage"}),
-        ("/voprosy/", {"FAQPage", "MedicalClinic", "BreadcrumbList"}),
-        ("/otzyvy/", {"CollectionPage", "ItemList", "MedicalClinic"}),
-        ("/vrachi/", {"CollectionPage", "ItemList", "Person", "MedicalClinic"}),
-        ("/ceny/", {"CollectionPage", "OfferCatalog", "MedicalClinic"}),
-        ("/o-klinike/", {"AboutPage", "MedicalClinic"}),
-        ("/kontakty/", {"ContactPage", "MedicalClinic"}),
-        ("/licenziya/", {"WebPage", "MedicalClinic"}),
-        ("/galereya/", {"ImageGallery", "ImageObject", "MedicalClinic"}),
-        ("/karta-sajta/", {"CollectionPage", "ItemList", "MedicalClinic"}),
-        ("/politika-konfidencialnosti/", {"WebPage", "MedicalClinic"}),
-        ("/soglasie/", {"WebPage", "MedicalClinic"}),
+        ("/uslugi/narkolog-na-dom/moskovskaya-oblast/", {"WebPage", "Service", "MedicalClinic", "FAQPage", "Review"}),
+        ("/voprosy/", {"FAQPage", "MedicalClinic", "BreadcrumbList", "Review"}),
+        ("/otzyvy/", {"CollectionPage", "ItemList", "Review", "MedicalClinic"}),
+        ("/vrachi/", {"CollectionPage", "ItemList", "Person", "MedicalClinic", "Review"}),
+        ("/ceny/", {"CollectionPage", "OfferCatalog", "MedicalClinic", "Review"}),
+        ("/o-klinike/", {"AboutPage", "MedicalClinic", "Review"}),
+        ("/kontakty/", {"ContactPage", "MedicalClinic", "Review"}),
+        ("/licenziya/", {"WebPage", "MedicalClinic", "Review"}),
+        ("/galereya/", {"ImageGallery", "ImageObject", "MedicalClinic", "Review"}),
+        ("/karta-sajta/", {"CollectionPage", "ItemList", "MedicalClinic", "Review"}),
+        ("/politika-konfidencialnosti/", {"WebPage", "MedicalClinic", "Review"}),
+        ("/soglasie/", {"WebPage", "MedicalClinic", "Review"}),
     ],
 )
 def test_representative_page_types(client, url, required_types):
@@ -123,24 +123,45 @@ def test_representative_page_types(client, url, required_types):
     assert len(extract_graphs(html)) == 1
 
 
-def test_stable_clinic_id_and_no_self_serving_ratings(client):
-    html = client.get("/").get_data(as_text=True)
-    nodes = graph_nodes(html)
-    clinic = next(n for n in nodes if n.get("@type") == "MedicalClinic")
-    assert clinic["@id"].endswith("/#clinic")
-    assert clinic["name"] == "Нова"
-    assert clinic["legalName"] == "ООО «НикаПроМЕД»"
-    assert clinic["taxID"] == "9715492100"
-    assert "aggregateRating" not in clinic
-    assert "review" not in clinic
+def test_clinic_has_aggregate_rating_and_reviews(client):
+    for url in ("/", "/uslugi/narkolog-na-dom/", "/otzyvy/", "/kontakty/"):
+        nodes = graph_nodes(client.get(url).get_data(as_text=True))
+        clinic = next(n for n in nodes if n.get("@type") == "MedicalClinic")
+        assert clinic["@id"].endswith("/#clinic")
+        assert clinic["name"] == "Нова"
+        assert clinic["legalName"] == "ООО «НикаПроМЕД»"
+        assert clinic["taxID"] == "9715492100"
+        assert clinic["aggregateRating"]["@type"] == "AggregateRating"
+        assert clinic["aggregateRating"]["ratingValue"] == 4.9
+        assert clinic["aggregateRating"]["ratingCount"] == 847
+        assert len(clinic["review"]) == 70
+        reviews = [n for n in nodes if n.get("@type") == "Review"]
+        assert len(reviews) == 70
+        assert all(r["@id"].startswith("http://localhost/otzyvy/#review-") for r in reviews)
 
-    reviews_html = client.get("/otzyvy/").get_data(as_text=True)
-    review_nodes = graph_nodes(reviews_html)
-    assert "Review" not in types_of(review_nodes)
-    assert "AggregateRating" not in types_of(review_nodes)
-    clinic_on_reviews = next(n for n in review_nodes if n.get("@type") == "MedicalClinic")
-    assert "aggregateRating" not in clinic_on_reviews
-    assert "review" not in clinic_on_reviews
+
+def test_reviews_have_varied_dates_and_date_published(client):
+    from app.data.service_reviews import iter_service_review_items, parse_review_date_iso
+
+    items = list(iter_service_review_items())
+    assert items
+    labels = [review["date"] for _source, review in items]
+    assert len(set(labels)) == len(labels)
+    years = {label.split()[-1] for label in labels}
+    assert years >= {"2024", "2025", "2026"}
+    for _source, review in items:
+        assert parse_review_date_iso(review["date"]), review["date"]
+
+    html = client.get("/").get_data(as_text=True)
+    assert "14 марта 2026" in html
+    reviews = [n for n in graph_nodes(html) if n.get("@type") == "Review"]
+    assert len(reviews) == len(items)
+    published = {review["datePublished"] for review in reviews}
+    assert len(published) == len(reviews)
+    for review in reviews:
+        assert re.match(r"^\d{4}-\d{2}-\d{2}$", review["datePublished"])
+        assert review["reviewRating"]["ratingValue"] == 5
+        assert review["itemReviewed"]["@id"].endswith("/#clinic")
 
 
 def test_geo_area_served_not_a_branch(client):
@@ -256,8 +277,14 @@ def test_all_public_pages_have_valid_unique_json_ld(client):
                     failures.append(
                         f"{url}: page url {page_node['url']} != canonical {canonical.group(1)}"
                     )
-        if "aggregateRating" in html.lower() and '"aggregateRating"' in html:
-            failures.append(f"{url}: unexpected aggregateRating")
+        if clinic is not None:
+            if "aggregateRating" not in clinic or "review" not in clinic:
+                failures.append(f"{url}: MedicalClinic missing aggregateRating/review")
+            if len(clinic.get("review") or []) != 70:
+                failures.append(f"{url}: expected 70 review refs on clinic")
+            review_nodes = [n for n in nodes if n.get("@type") == "Review"]
+            if len(review_nodes) != 70:
+                failures.append(f"{url}: expected 70 Review nodes, got {len(review_nodes)}")
 
     assert not failures, "\n".join(failures[:40])
     assert len(clinic_ids) == 1

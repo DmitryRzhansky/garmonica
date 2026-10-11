@@ -67,21 +67,17 @@
 
 ## 5. Отзывы и рейтинги
 
-Внедрено на `/otzyvy/`:
+На **всех** публичных HTML-страницах:
 
-- `CollectionPage` + `ItemList`
-- элементы как `CreativeWork` с `author`, `text`, указанием площадки (`isPartOf.name`)
+- у `MedicalClinic`: `aggregateRating` (как в блоке статистики: 4.9 / 847) и `review` (ссылки на 70 отзывов);
+- 70 сущностей `Review` со стабильными `@id` вида `/otzyvy/#review-…`;
+- у каждого отзыва: `author`, `reviewBody`, `reviewRating`, `datePublished`, `publisher`, `itemReviewed`.
 
-Пропущено и почему:
+На `/otzyvy/` дополнительно: `CollectionPage` + `ItemList` отзывов.
 
-| Свойство | Причина |
-|---|---|
-| `Review` | даты без года; нет подтверждённых URL первоисточника; риск недостоверных Review-объектов |
-| `reviewRating` / `AggregateRating` | self-serving reviews; сводные баллы площадок не должны становиться рейтингом клиники |
-| `review` / `aggregateRating` у `MedicalClinic` и `Service` | запрещено ТЗ и политикой Google |
-| `datePublished` | в данных только день+месяц без года |
+Даты отзывов разнесены по 2024–2026 (70 уникальных дат).
 
-Видимые отзывы и UI не изменялись.
+Примечание: Google не показывает звёзды для self-serving reviews LocalBusiness; разметка описывает контент сайта.
 
 ## 6. Тестирование JSON-LD
 
