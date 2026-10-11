@@ -8,6 +8,22 @@
     {% if canonical %}
     <link rel="canonical" href="{{ canonical }}">
     {% endif %}
+    <meta property="og:title" content="{{ meta_title }}">
+    <meta property="og:description" content="{{ meta_description }}">
+    {% if canonical %}
+    <meta property="og:url" content="{{ canonical }}">
+    {% endif %}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ clinic_contacts.brand }}">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:image" content="{{ request.host_url.rstrip('/') }}/assets/images/logo.webp">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:image:alt" content="Нова — клиника психиатрии и наркологии">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ meta_title }}">
+    <meta name="twitter:description" content="{{ meta_description }}">
+    <meta name="twitter:image" content="{{ request.host_url.rstrip('/') }}/assets/images/logo.webp">
     {% if json_ld %}
     <script type="application/ld+json">{{ json_ld|safe }}</script>
     {% endif %}

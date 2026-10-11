@@ -40,6 +40,12 @@ def test_home(client):
 
     assert response.status_code == 200
     html = response.get_data(as_text=True)
+    assert 'rel="canonical" href="http://localhost/"' in html
+    assert 'property="og:title" content="Нова — клиника психиатрии и наркологии | Помощь 24/7"' in html
+    assert 'property="og:type" content="website"' in html
+    assert 'property="og:image" content="http://localhost/assets/images/logo.webp"' in html
+    assert 'name="twitter:card" content="summary"' in html
+    assert 'name="twitter:image" content="http://localhost/assets/images/logo.webp"' in html
     assert "Психонаркологическая клиника — Нова" in html
     assert "Наши услуги" in html
     assert 'id="home-services-title"' in html
