@@ -116,9 +116,7 @@ def desktop_html() -> str:
 def mobile_html() -> str:
     categories = []
     for item in MENU:
-        links = [
-            f'                <a href="{esc(item["link"])}" data-menu-close>Все услуги раздела</a>'
-        ]
+        links = []
         for child in item.get("child") or []:
             links.append(
                 f'                <a href="{esc(child["link"])}" data-menu-close>{esc(child["title"])}</a>'
