@@ -28,12 +28,13 @@
     <script type="application/ld+json">{{ json_ld|safe }}</script>
     {% endif %}
     <link rel="icon" href="/assets/images/logo-mark.png" type="image/png">
-    <link rel="stylesheet" href="/assets/css/main.css?v=20261011-03">
+    <link rel="stylesheet" href="/assets/css/main.css?v=20261011-05">
   </head>
   <body>
     {% include "components/header.html" %}
     {% block content %}{% endblock %}
     {% include "components/footer.html" %}
+    {% include "components/mobile-phone-bar.html" %}
     <script src="/assets/js/modules/menu.js" defer></script>
     <script src="/assets/js/modules/services-menu.js" defer></script>
     <script src="/assets/js/modules/contact-form.js?v=20261009-45" defer></script>

@@ -1,0 +1,16 @@
+<div class="mobile-phone-bar" role="region" aria-label="Быстрый звонок">
+  <a
+    class="mobile-phone-bar__button button button--warm"
+    href="tel:{{ clinic_contacts.phone_tel }}"
+  >
+    <img
+      class="button__icon"
+      src="/assets/icons/phone.svg"
+      alt=""
+      width="16"
+      height="16"
+      decoding="async"
+    >
+    {{ clinic_contacts.phone_display }}
+  </a>
+</div>
