@@ -16,4 +16,12 @@ def register_error_handlers(app):
 
     @app.errorhandler(500)
     def server_error(_error):
-        return render_template("errors/500.html"), 500
+        return (
+            render_template(
+                "errors/500.html",
+                meta_title="Ошибка сервера — Нова",
+                meta_description="На сайте Нова произошёл временный сбой. Повторите попытку позже.",
+                canonical=None,
+            ),
+            500,
+        )

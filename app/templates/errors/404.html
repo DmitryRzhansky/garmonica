@@ -2,11 +2,24 @@
 
 {% block content %}
     <main id="top">
-      <article class="info-page">
-        <div class="container">
-          <h1 class="info-page__title">Страница не найдена</h1>
-          <p class="info-page__text">Такого адреса на сайте нет. Вернитесь на <a href="/">главную</a> или откройте <a href="/uslugi/">каталог услуг</a>.</p>
+      <section class="error-page" aria-labelledby="error-page-title">
+        <div class="container error-page__inner">
+          <p class="error-page__code" aria-hidden="true">404</p>
+          <h1 class="error-page__title" id="error-page-title">Страница не найдена</h1>
+          <div class="error-page__actions">
+            <a class="button button--primary" href="/">
+              <img
+                class="button__icon"
+                src="/assets/icons/phosphor/house-line.svg"
+                alt=""
+                width="16"
+                height="16"
+                decoding="async"
+              >
+              На главную
+            </a>
+          </div>
         </div>
-      </article>
+      </section>
     </main>
 {% endblock %}
