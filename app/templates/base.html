@@ -28,13 +28,14 @@
     <script type="application/ld+json">{{ json_ld|safe }}</script>
     {% endif %}
     <link rel="icon" href="/assets/images/logo-mark.png" type="image/png">
-    <link rel="stylesheet" href="/assets/css/main.css?v=20261011-05">
+    <link rel="stylesheet" href="/assets/css/main.css?v=20261011-07">
   </head>
   <body>
     {% include "components/header.html" %}
     {% block content %}{% endblock %}
     {% include "components/footer.html" %}
     {% include "components/mobile-phone-bar.html" %}
+    {% include "components/float-bar.html" %}
     <script src="/assets/js/modules/menu.js" defer></script>
     <script src="/assets/js/modules/services-menu.js" defer></script>
     <script src="/assets/js/modules/contact-form.js?v=20261009-45" defer></script>
@@ -54,6 +55,7 @@
     <script src="/assets/js/modules/specialist-dialog.js" defer></script>
     <script src="/assets/js/modules/specialist-quiz.js" defer></script>
     <script src="/assets/js/modules/field-service.js?v=20261009-40" defer></script>
-    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/modules/float-bar.js?v=20261011-01" defer></script>
+    <script src="/assets/js/main.js?v=20261011-01" defer></script>
   </body>
 </html>

@@ -31,6 +31,7 @@ function initApp() {
   safeInit("about-slider", window.initAboutSlider);
   safeInit("specialist-quiz", window.initSpecialistQuiz);
   safeInit("field-service", window.initFieldService);
+  safeInit("float-bar", window.initFloatBar);
 }
 
 if (document.readyState === "loading") {

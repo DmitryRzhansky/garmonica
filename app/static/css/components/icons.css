@@ -67,7 +67,10 @@ details.faq__item > .faq__question > .faq__icon,
 .button--primary .button__icon,
 .button--warm .button__icon,
 .button--outline:hover .button__icon,
-.request-form__button .request-form__button-icon {
+.request-form__button .request-form__button-icon,
+.float-bar__btn--chat .float-bar__icon,
+.float-bar__btn--top .float-bar__icon,
+.float-bar__channel--phone .float-bar__channel-icon {
   filter: brightness(0) invert(1);
 }
 

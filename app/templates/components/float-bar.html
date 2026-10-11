@@ -1,0 +1,114 @@
+<div class="float-bar" data-float-bar>
+  <div class="float-bar__stack">
+    <div class="float-bar__chat" data-float-chat>
+      <div class="float-bar__tip" data-float-tip hidden>
+        <img
+          class="float-bar__tip-photo"
+          src="/assets/images/doctors/doctor-call-form.webp"
+          alt=""
+          width="48"
+          height="48"
+          loading="lazy"
+          decoding="async"
+        >
+        <p class="float-bar__tip-text">Получите бесплатную консультацию</p>
+        <button
+          class="float-bar__tip-close"
+          type="button"
+          aria-label="Закрыть подсказку"
+          data-float-tip-close
+        >
+          <img
+            class="float-bar__tip-close-icon"
+            src="/assets/icons/x.svg"
+            alt=""
+            width="16"
+            height="16"
+            decoding="async"
+          >
+        </button>
+      </div>
+
+      <ul class="float-bar__channels" data-float-channels id="float-bar-channels" hidden>
+        {% for messenger in clinic_contacts.messengers %}
+        {% if messenger.label in ["Телеграм", "Ватсап", "Макс"] %}
+        <li>
+          <a
+            class="float-bar__channel{% if messenger.label == 'Телеграм' %} float-bar__channel--telegram{% elif messenger.label == 'Ватсап' %} float-bar__channel--whatsapp{% elif messenger.label == 'Макс' %} float-bar__channel--max{% endif %}"
+            href="{{ messenger.href }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Написать в {{ messenger.label }}"
+          >
+            <img src="{{ messenger.icon }}" alt="" width="24" height="24" decoding="async">
+          </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+        <li>
+          <a
+            class="float-bar__channel float-bar__channel--phone"
+            href="tel:{{ clinic_contacts.phone_tel }}"
+            aria-label="Позвонить: {{ clinic_contacts.phone_display }}"
+          >
+            <img
+              class="float-bar__channel-icon"
+              src="/assets/icons/phone.svg"
+              alt=""
+              width="22"
+              height="22"
+              decoding="async"
+            >
+          </a>
+        </li>
+      </ul>
+
+      <button
+        class="float-bar__btn float-bar__btn--chat"
+        type="button"
+        aria-label="Открыть чат"
+        aria-expanded="false"
+        aria-controls="float-bar-channels"
+        data-float-chat-toggle
+      >
+        <span class="float-bar__waves" aria-hidden="true">
+          <span class="float-bar__wave"></span>
+          <span class="float-bar__wave"></span>
+        </span>
+        <img
+          class="float-bar__icon float-bar__icon-chat"
+          src="/assets/icons/chat-circle.svg"
+          alt=""
+          width="24"
+          height="24"
+          decoding="async"
+        >
+        <img
+          class="float-bar__icon float-bar__icon-close"
+          src="/assets/icons/x.svg"
+          alt=""
+          width="22"
+          height="22"
+          decoding="async"
+        >
+      </button>
+    </div>
+
+    <button
+      class="float-bar__btn float-bar__btn--top"
+      type="button"
+      aria-label="Подняться вверх"
+      data-float-top
+      hidden
+    >
+      <img
+        class="float-bar__icon"
+        src="/assets/icons/arrow-up.svg"
+        alt=""
+        width="22"
+        height="22"
+        decoding="async"
+      >
+    </button>
+  </div>
+</div>
