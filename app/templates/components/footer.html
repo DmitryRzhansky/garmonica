@@ -73,10 +73,16 @@
               <span class="site-footer__contact-value">{{ clinic_contacts.address }}</span>
             </li>
             <li>
-              <a href="tel:{{ clinic_contacts.phone_tel }}">{{ clinic_contacts.phone_display }}</a>
+              <span class="site-footer__contact-label">Юридический адрес:</span>
+              <span class="site-footer__contact-value">{{ clinic_contacts.legal_address }}</span>
             </li>
             <li>
-              <a href="mailto:{{ clinic_contacts.email }}">{{ clinic_contacts.email }}</a>
+              <span class="site-footer__contact-label">Номер телефона:</span>
+              <a class="site-footer__contact-value" href="tel:{{ clinic_contacts.phone_tel }}">{{ clinic_contacts.phone_display }}</a>
+            </li>
+            <li>
+              <span class="site-footer__contact-label">Электронная почта:</span>
+              <a class="site-footer__contact-value" href="mailto:{{ clinic_contacts.email }}">{{ clinic_contacts.email }}</a>
             </li>
             <li>
               <span class="site-footer__contact-label">ИНН:</span>
