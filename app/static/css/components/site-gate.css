@@ -1,0 +1,108 @@
+.site-gate {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--color-text-dark);
+  font-family: var(--font-text);
+  background:
+    radial-gradient(circle at top left, var(--page-gradient-warm), transparent 42%),
+    linear-gradient(
+      165deg,
+      var(--page-gradient-top) 0%,
+      var(--page-gradient-mid) 45%,
+      var(--page-gradient-end) 100%
+    );
+}
+
+.site-gate__main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: var(--section-padding-inline);
+}
+
+.site-gate__card {
+  width: min(100%, 26rem);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  background: var(--glass-bg);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(0.75rem);
+}
+
+.site-gate__brand {
+  margin: 0 0 0.75rem;
+  color: var(--color-accent);
+  font-family: var(--font-headline);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.site-gate__title {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-headline);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-h2);
+  line-height: 1.2;
+}
+
+.site-gate__lead {
+  margin: 0 0 1.5rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body-sm);
+  line-height: 1.5;
+}
+
+.site-gate__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.site-gate__field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.site-gate__label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.site-gate__input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  color: var(--color-text-dark);
+  font: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.site-gate__input:focus-visible {
+  outline: 0.1875rem solid var(--color-accent);
+  outline-offset: 0.125rem;
+  border-color: var(--color-accent);
+}
+
+.site-gate__input--error {
+  border-color: #c45c5c;
+}
+
+.site-gate__error {
+  margin: 0;
+  color: #b42318;
+  font-size: 0.875rem;
+}
+
+.site-gate__submit {
+  width: 100%;
+}
+
+.site-gate .button__icon {
+  filter: brightness(0) invert(1);
+}

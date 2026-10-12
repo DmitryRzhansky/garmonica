@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>{{ meta_title }}</title>
+    <meta name="description" content="{{ meta_description }}">
+    <link rel="icon" href="/assets/images/logo-mark.png" type="image/png">
+    <link rel="stylesheet" href="/assets/css/main.css?v=20261012-01">
+  </head>
+  <body class="site-gate">
+    <main class="site-gate__main">
+      <section class="site-gate__card" aria-labelledby="site-gate-title">
+        <p class="site-gate__brand">Нова</p>
+        <h1 class="site-gate__title" id="site-gate-title">Закрытый доступ</h1>
+        <p class="site-gate__lead">
+          Введите пароль, чтобы открыть тестовую версию сайта.
+        </p>
+
+        <form class="site-gate__form" method="post" action="{{ url_for('main.site_login') }}" autocomplete="off">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+          <input type="hidden" name="next" value="{{ next_url }}">
+
+          <div class="site-gate__field">
+            <label class="site-gate__label" for="site-gate-password">Пароль</label>
+            <input
+              class="site-gate__input{% if error %} site-gate__input--error{% endif %}"
+              id="site-gate-password"
+              name="password"
+              type="password"
+              required
+              autofocus
+              autocomplete="current-password"
+              {% if error %}aria-describedby="site-gate-error"{% endif %}
+            >
+          </div>
+
+          {% if error %}
+          <p class="site-gate__error" id="site-gate-error" role="alert">{{ error }}</p>
+          {% endif %}
+
+          <button class="button button--primary site-gate__submit" type="submit">
+            <img
+              class="button__icon"
+              src="/assets/icons/phosphor/shield-check.svg"
+              alt=""
+              width="16"
+              height="16"
+              decoding="async"
+            >
+            Войти
+          </button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

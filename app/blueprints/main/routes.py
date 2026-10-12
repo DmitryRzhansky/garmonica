@@ -1,4 +1,4 @@
-from flask import Blueprint, Response, render_template, request
+from flask import Blueprint, Response, current_app, redirect, render_template, request
 
 from app.data.clinic_contacts import get_clinic_contacts
 from app.data.doctors import get_clinic_doctors
@@ -15,6 +15,14 @@ from app.data.service_reviews import get_service_review_stats, get_service_revie
 from app.services.catalog import all_public_urls
 from app.services.info_pages import INFO_PAGES
 from app.services.site_map import get_site_map
+from app.site_gate import (
+    gate_csrf_token,
+    is_site_unlocked,
+    password_matches,
+    safe_next_url,
+    unlock_site,
+    validate_gate_csrf,
+)
 
 main_bp = Blueprint("main", __name__)
 
@@ -24,6 +32,38 @@ HOME_DESCRIPTION = (
     "стационар и сопровождение восстановления. Круглосуточно, конфиденциально, "
     "с понятной стоимостью до начала помощи."
 )
+
+
+@main_bp.route("/login/", methods=["GET", "POST"])
+def site_login():
+    next_url = safe_next_url(request.values.get("next"))
+
+    if current_app.config.get("TESTING") or not current_app.config.get(
+        "SITE_PASSWORD_PROTECT", True
+    ):
+        return redirect(next_url)
+
+    if is_site_unlocked():
+        return redirect(next_url)
+
+    error = None
+    if request.method == "POST":
+        if not validate_gate_csrf(request.form.get("csrf_token")):
+            error = "Сессия устарела. Обновите страницу и попробуйте снова."
+        elif password_matches(request.form.get("password") or ""):
+            unlock_site()
+            return redirect(next_url)
+        else:
+            error = "Неверный пароль"
+
+    return render_template(
+        "pages/site-gate.html",
+        error=error,
+        next_url=next_url,
+        csrf_token=gate_csrf_token(),
+        meta_title="Вход — Нова",
+        meta_description="Закрытый доступ к тестовой версии сайта клиники Нова.",
+    )
 
 
 @main_bp.route("/")

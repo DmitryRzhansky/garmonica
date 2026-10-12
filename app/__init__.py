@@ -2,6 +2,7 @@ from flask import Flask
 
 from app.config import Config
 from app.errors import register_error_handlers
+from app.site_gate import register_site_gate
 
 
 def create_app(config_class=Config):
@@ -14,6 +15,7 @@ def create_app(config_class=Config):
 
     register_blueprints(app)
     register_error_handlers(app)
+    register_site_gate(app)
     register_context_processors(app)
     return app
 
